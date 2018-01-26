@@ -8,7 +8,7 @@
 
 
 /*----------------------------------------------------*/
-/*	Flexslider
+/* Flexslider
 /*----------------------------------------------------*/
    $('#intro-slider').flexslider({
       animation: 'fade',
@@ -43,23 +43,23 @@
    });
 
 /*----------------------------------------------------*/
-/*	gmaps
+/* gmaps
 ------------------------------------------------------*/
 
-   var map;
+   // var map;
 
-   // main directions
-   map = new GMaps({
-      el: '#map', lat: 51.5003646652, lng: -0.1214328476, zoom: 14, zoomControl : true,
-      zoomControlOpt: { style : 'SMALL', position: 'TOP_LEFT' }, panControl : false, scrollwheel: false
-   });
+   // // main directions
+   // map = new GMaps({
+   //    el: '#map', lat: 51.5003646652, lng: -0.1214328476, zoom: 14, zoomControl : true,
+   //    zoomControlOpt: { style : 'SMALL', position: 'TOP_LEFT' }, panControl : false, scrollwheel: false
+   // });
 
-   // add address markers
-   map.addMarker({ lat: 51.5003646652, lng: -0.1214328476, title: 'Appvia Tower',
-   infoWindow: { content: '<p>Appvia.<br>Big Ben<br>Westminster<br><a>http://appvia.io</a></p>' } });
+   // // add address markers
+   // map.addMarker({ lat: 51.5003646652, lng: -0.1214328476, title: 'Appvia',
+   // infoWindow: { content: '<p>Appvia.<br><a>http://appvia.io</a></p>' } });
 
 /*----------------------------------------------------*/
-/*	contact form
+/* contact form
 ------------------------------------------------------*/
 
    $('form#contactForm button.submit').click(function() {
@@ -76,10 +76,10 @@
 
       $.ajax({
 
-	      type: "POST",
-	      url: "inc/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
+         type: "POST",
+         url: "inc/sendEmail.php",
+         data: data,
+         success: function(msg) {
 
             // Message was sent
             if (msg == 'OK') {
@@ -92,10 +92,10 @@
             else {
                $('#image-loader').fadeOut();
                $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
+               $('#message-warning').fadeIn();
             }
 
-	      }
+         }
 
       });
 
