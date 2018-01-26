@@ -288,7 +288,7 @@ transition:color .3s ease-in-out;
 
 }
 
-a:hover, a:focus { color:#333; }
+a:hover, a:focus { color:#11ABB0; }
 p a, p a:visited { line-height: inherit; }
 
 
@@ -753,6 +753,3 @@ col.collapsed { padding: 0; }
 .align-right  { text-align: right; }
 .pull-left    { float: left; }
 .pull-right   { float: right; }
-
-
-
