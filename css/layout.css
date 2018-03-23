@@ -108,13 +108,13 @@ header .logo a {
    display: block;
    padding: 0;
    margin: 0;
-   height: 18px;
-   width: 91px;
-   line-height: 18px;
+   height: 36px;
+   width: 130px;
+   line-height: 36px;
 
    position: absolute;
-   left: 12px;
-   top: 16px;
+   left: 5px;
+   top: 10px;
 }
 
 /* primary navigation
@@ -1378,7 +1378,7 @@ footer .social-links li:first-child { margin-left: 0; }
    -------------------------------------------------------------------- */
 
    header.mobile { height: 66px; }
-   header.mobile .logo a { top: 22px; }
+   header.mobile .logo a { top: 16px; }
 
    .mobile #nav-wrap {
       position: absolute;
