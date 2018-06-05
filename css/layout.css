@@ -183,7 +183,7 @@ ul#nav li.active a { color: #11ABB0; }
 
 /* ================================================================== */
 
-#intro {
+#home {
    background: #111 url(../images/bgs/contact-bg.jpg) no-repeat center;
    overflow: hidden;
 }
@@ -309,18 +309,18 @@ ul#nav li.active a { color: #11ABB0; }
 
 /* ================================================================== */
 
-#portfolio {
+#products {
    background: #f5f5f5 url(../images/bgs/hero-bg.png);
    padding-top: 90px;
    padding-bottom: 90px;
 }
-#portfolio .section-head h2 { color: #0f9095; }
-#portfolio .section-head p.desc { color: #CCC; }
-#portfolio .section-head .intro { color: #CCC; }
+#products .section-head h2 { color: #0f9095; }
+#products .section-head p.desc { color: #CCC; }
+#products .section-head .intro { color: #CCC; }
 
 /* Portfolio Content */
-#portfolio-wrapper { margin-top: 36px; }
-#portfolio-wrapper .col {
+#products-wrapper { margin-top: 36px; }
+#products-wrapper .col {
    width: 25%;
    margin-bottom: 36px;
 }
@@ -1294,7 +1294,7 @@ footer .social-links li:first-child { margin-left: 0; }
 @media only screen and (max-width: 836px) {
 
    /* adjust sections padding top */
-   #services, #portfolio,
+   #services, #products,
    #journal, #about { padding-top: 90px; }
 
    /* adjust font size */
@@ -1313,8 +1313,8 @@ footer .social-links li:first-child { margin-left: 0; }
 
    /* portfolio section
    -------------------------------------------------------------------- */
-   #portfolio #portfolio-wrapper { margin-top: 12px; }
-   #portfolio #portfolio-wrapper .col { width: 33.33333%; }
+   #products #products-wrapper { margin-top: 12px; }
+   #products #products-wrapper .col { width: 33.33333%; }
 
    /* journal section
    -------------------------------------------------------------------- */
