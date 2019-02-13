@@ -1,0 +1,21 @@
+{% macro nav(header='', headerBg='../assets/fabrex/img/bg/bg-sample.jpg', darkOverlay='0') %}
+<!-- start header section -->
+<section class="padding-0 bg-gradient-green-1">
+    <div class="padding-80 page-title-section bg-img cover-background" data-overlay-dark="{{darkOverlay}}" data-background="{{headerBg}}" style="background-image: url(&quot;{{headerBg}}&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-shadow-dark">{{header}}</h1>
+                </div>
+                <div class="col-md-12">
+                    <ul>
+                        <li><a class="text-shadow-dark" href="home-1.html">Home</a></li>
+                        <li><a class="dark text-shadow-light" href="javascript:void(0)">{{header}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end header section -->
+{% endmacro %}

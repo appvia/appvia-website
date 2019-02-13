@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% import "../views/partials/nav.html" as navigation %}
+    {{ navigation.nav('services') }}
+
+    {% import "../views/partials/headers.html" as header %}
+    {{ header.nav('Services', '../assets/img/services-banner.png') }}
+
+
+        <section class="padding-80">
+            <div class="container">
+                <div class="section-heading">
+                    <h3>What We Offer</h3>
+                    <p class="width-55 sm-width-75 xs-width-95">Appvia provides technical transformation services to help deliver innovative and simple solutions to your business.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <div ><section class="page-title-section2 bg-img background-80" data-overlay-dark="0" data-background="../assets/img/undraw_finance_0bdk.svg"></section></div>
+                            <div class="clearfix service-inner-box">
+                                <div class="service-icon-box"><i class="icon-presentation"></i></div>
+                                <div class="service-content-box">
+                                    <h3>Implementation</h3>
+                                    <p>Enabling software delivery with products and cloud.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <div ><section class="page-title-section2 bg-img background-80" data-overlay-dark="0" data-background="../assets/img/undraw_server_status_5pbv.svg" ></section></div>
+                            <div class="clearfix service-inner-box">
+                                <div class="service-icon-box"><i class="icon-pictures"></i></div>
+                                <div class="service-content-box">
+                                    <h3>Support</h3>
+                                    <p>Supporting services we implement with 24x7.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <div ><section class="page-title-section2 bg-img background-80" data-overlay-dark="0" data-background="../assets/img/undraw_business_plan_5i9d.svg"></section></div>
+                            <div class="clearfix service-inner-box">
+                                <div class="service-icon-box"><i class="icon-adjustments"></i></div>
+                                <div class="service-content-box">
+                                    <h3><a href="javascript:void(0)">Consultancy</a></h3>
+                                    <p>We listen to what you need and provide custom solutions for your business.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="service-box">
+                            <div ><section class="page-title-section2 bg-img background-80" data-overlay-dark="0" data-background="../assets/img/undraw_onboarding_o8mv.svg"></section></div>
+                            <div class="clearfix service-inner-box">
+                                <div class="service-icon-box"><i class="icon-recycle"></i></div>
+                                <div class="service-content-box">
+                                    <h3><a href="javascript:void(0)">Training</a></h3>
+                                    <p>We offer training in Kubernetes, Docker and modern software delivery implementations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- end clients section -->
+{% endblock %}
