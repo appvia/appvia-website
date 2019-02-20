@@ -27,13 +27,12 @@ jobs:
       - run:
           command: |
             apt-get install -qq -y gettext
-            gcloud components install beta
             echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
-            gcloud beta auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
-            gcloud beta --quiet config set project ${GOOGLE_PROJECT_ID}
-            gcloud beta --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run:
-          command: gcloud beta -q app deploy
+          command: gcloud -q app deploy
 
 workflows:
   version: 2
