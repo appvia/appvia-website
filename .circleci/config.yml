@@ -20,8 +20,8 @@ jobs:
       - image: google/cloud-sdk
     environment:
       - PROJECT_NAME: "appvia-website"
-      - GOOGLE_PROJECT_ID: 601743990716
-      - GOOGLE_COMPUTE_ZONE: europe-west2-a
+      - GOOGLE_PROJECT_ID: "601743990716"
+      - GOOGLE_COMPUTE_ZONE: "europe-west2-a"
     steps:
       - checkout
       - run:
