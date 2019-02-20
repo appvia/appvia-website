@@ -19,8 +19,8 @@ jobs:
     docker:
       - image: google/cloud-sdk
     environment:
-      - PROJECT_NAME: "appvia-website"
-      - GOOGLE_PROJECT_ID: "601743990716"
+      - PROJECT_NAME: "appvia-hosting"
+      - GOOGLE_PROJECT_ID: "appvia-hosting"
       - GOOGLE_COMPUTE_ZONE: "europe-west2-a"
     steps:
       - checkout
