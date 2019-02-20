@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - run:
-          comand: |
+          command: |
             apt-get install -qq -y gettext
             gcloud components install beta
             echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
