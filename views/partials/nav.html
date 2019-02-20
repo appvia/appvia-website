@@ -1,0 +1,39 @@
+{% macro nav(active='') %}
+<!-- start nav section -->
+<header>
+    <div class="navbar-default">
+        <!-- End Top Search -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-12">
+                    <div class="menu_area alt-font">
+                        <nav class="navbar navbar-expand-lg navbar-light no-padding">
+
+                            <div class="navbar-header navbar-header-custom">
+                                <!-- Start Logo -->
+                                <a href="/" class="navbar-brand logodefault"><img id="logo" src="../assets/fabrex/img/logos/logo.png" alt="logo"></a>
+                                <!-- End Logo -->
+                            </div>
+
+                            <div class="navbar-toggler"></div>
+
+                            <!-- Menu Area -->
+                            <ul class="navbar-nav ml-auto" id="nav">
+                                <li class="{% if active == 'home' %}current{% endif %}"><a href="/">Home</a></li>
+                                <li class="{% if active == 'about' %}current{% endif %}"><a href="/about">About</a></li>
+                                <li class="{% if active == 'products' %}current{% endif %}"><a href="/products">Products</a></li>
+                                <li class="{% if active == 'services' %}current{% endif %}"><a href="/services">Services</a></li>
+                                <li class="{% if active == 'blog' %}current{% endif %}"><a href="/blog">Blog</a></li>
+                                <li class="{% if active == 'contact' %}current{% endif %}"><a href="/contact">Contact</a></li>
+                            </ul>
+                            <!-- End Menu Area -->
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- end nav section -->
+{% endmacro %}

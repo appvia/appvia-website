@@ -1,0 +1,28 @@
+.padding-0{
+    padding: 0 !important;
+}
+.padding-80{
+    padding: 80px !important;
+}
+.bg-gradient-green-1{
+    background: #c8e4af; /* Old browsers */
+    background: -moz-linear-gradient(top, #c8e4af 0%, #88bc59 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #c8e4af 0%,#88bc59 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #c8e4af 0%,#88bc59 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8e4af', endColorstr='#88bc59',GradientType=0 ); /* IE6-9 */
+}
+@media (max-width: 640px) {
+    .padding-80{
+        padding: 20px !important;
+    }
+}
+.text-shadow-dark{
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.38);
+}
+.text-shadow-light{
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.38);
+}
+.dark{
+    color: #000 !important
+}
+}

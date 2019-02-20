@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% import "../views/partials/nav.html" as navigation %}
+    {{ navigation.nav('products') }}
+
+    {% import "../views/partials/headers.html" as header %}
+    {{ header.nav('Products', '../assets/img/products-banner.png') }}
+
+
+        <section class="padding-80">
+            <div class="container">
+
+                <div class="section-heading" id="hub">
+                    <h3>Appvia Hub</h3>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>The Appvia Hub is an open-source hosting platform that allows you to focus your time on the things that matter to your business - like building, deploying and running your apps - without the complexity of building and maintaining your own infrastructure.</p>
+                        <p>With over ten years of experience of running open-source enterprise solutions, we have learnt what works best for our customers, which is why we built the Hub with DevOps best practices built in. The Appvia Hub will help your organisation, test and deploy code simply, quickly and more securely. </p>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-8">
+                        <h5>DevOps as a Service</h5>
+                        <p>The Hub simplifies the development lifecycle by providing DevOps as a Service. This means that industry best practice is already built in. So, instead of patching dependencies or managing tokens, you can concentrate on deploying great apps. But you can always access your services directly if you need to. </p>
+
+                        <h5>Automation</h5>
+                        <p>Appvia are committed to open-source. So we'll never sell you things you don't need and we will always design solutions with flexibility and portability in mind. We recognise that sometimes, as your business grows, so too will the technology you need to keep going.</p>
+                        <p>The underlying infrastructure is always there for to do what's right for your business. You can rely on the Hub as much or as little as you'd like.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../assets/img/undraw_operating_system_4lr6.svg" alt="" >
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-8">
+
+                        <h5>Why Appvia?</h5>
+                        <p>There are some great application platforms out there. But unlike many vendors, we’re committed to creating an open-source ecosystem for cloud application hosting. The tools we use are open-source, so the product we build should be too.</p>
+                        <p>We have some of the most experienced engineers in the industry and we’ve worked hard to help many organisations transform their technology landscape by utilising open-source tooling.</p>
+                        <p>We have a growing team of talented technologists who are passionate about improving and supporting the open-source community. You can <a href="#">read more about our contributions</a> or take a <a href="https://github.com/appvia/kops ">look on GitHub</a> at our contributions to Kops.</p>
+
+                    </div>
+                    <div class="col">
+                        <img src="../assets/img/undraw_features_overview_jg7a.svg" alt="" >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-very-light-gray">
+            <div class="container">
+                <div class="section-heading" id="kubernetes">
+                    <h3>Kubernetes Security Scanner</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>The Kubernetes Security Scanner is a tool developed by Appvia to simplify management of role-based access controls (or RBAC) across your Kubernetes clusters.</p>
+                        <p>It does this by attaching itself to multiple clusters in Kubernetes and scanning the environments for RBAC data. It then maps the relationships between people, service accounts, roles, role bindings and pod security policies.</p>
+                        <p>In doing so, it helps visualise the complexity of RBAC and enables users to search across their clusters for RBAC information and, even makes suggestions on core best practice rules around the security of your RBAC implementation.</p>
+                        <p>You can view the Kubernetes Security Scanner GitHub repo for more information or to download.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="../assets/img/undraw_Security_on_s9ym.svg" alt="" >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- end clients section -->
+{% endblock %}
