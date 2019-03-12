@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
-var compression = require('compression')
+var compression = require('compression');
 var routes = require('./routes/index');
 
 
@@ -13,7 +13,7 @@ var routes = require('./routes/index');
 var app = express();
 
 //compression
-app.use(compression())
+app.use(compression());
 
 //Nunjucks setup
 nunjucks.configure('views', {
@@ -24,7 +24,7 @@ app.set('view engine', 'nunjucks');
 
 // Routes setup
 app.use('/', routes);
-app.use('/assets', express.static(path.join(__dirname, 'public')))
+app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 
 // uncomment after placing your favicon in /public
