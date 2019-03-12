@@ -25,3 +25,9 @@
 .dark{
     color: #000 !important
 }
+a {
+    color: #86bc42;
+}
+p a:hover{
+  text-decoration: underline;
+}
