@@ -18,6 +18,7 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 .navbar-nav > li{ margin-left: 10px; float: left; }
 .navbar-nav > li.has-sub{ padding-right: 13px; }
 .navbar-nav > li > a{ position: relative; display: block; font-size: 12px; font-weight: 500; padding: 21px 0.5rem; color: #232323; letter-spacing: 0.5px; text-transform: uppercase; -webkit-transition-duration: 500ms; -o-transition-duration: 500ms; transition-duration: 500ms; }
+.navbar-nav > li > a:hover, .navbar-nav > li > a:active{ color: #86bc42; }
 .navbar-nav li.current > a{ color: #3498db; }
 .navbar-nav > li.has-sub > a:hover{ color: #000; }
 .navbar > ul > li.has-sub > a:hover:after{ border-color: transparent #000 #000 transparent; }
