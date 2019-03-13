@@ -5,7 +5,7 @@
     {{ navigation.nav('contact') }}
 
     {% import "../views/partials/headers.html" as header %}
-    {{ header.nav('Contact', '../assets/img/contact-banner.png') }}
+    {{ header.nav('Contact', [{ text: 'Contact', link: false }], '../assets/img/contact-banner.png') }}
 
         <section class="padding-80">
             <div class="container">

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% import "../views/partials/nav.html" as navigation %}
+    {{ navigation.nav('careers') }}
+
+    {% import "../views/partials/headers.html" as header %}
+    {{ header.nav('Careers', [{ text: 'Careers', link: false }], '../assets/img/clouds.png') }}
+
+
+    <section class="padding-80">
+        <div class="container">
+
+            <div class="section-heading">
+                <h3>Careers at Appvia</h3>
+                {% if jobCount %}
+                    <p>Please see our open positions below.</p>
+                {% else %}
+                    <p>Unfortunately, we have no open positions right now.</p>
+                {% endif %}
+            </div>
+
+            {% for job in jobs %}
+                <div class="row">
+                    <div class="col margin-30px-bottom xs-margin-20px-bottom">
+                        <div class="blog-grid-simple">
+                            <h4><a href="/careers/{{ job.slug }}">{{ job.title }}</a></h4>
+                            <p>{{ job.role | safe | truncate(220)}}</p>
+                            <hr />
+                            <div class="row">
+                                <div class="col">
+                                    <div><a href="/careers/{{ job.slug }}" class="butn"><span>More details</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+{% endblock %}
