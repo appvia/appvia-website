@@ -31,3 +31,9 @@ a {
 p a:hover{
   text-decoration: underline;
 }
+ul.bullets{
+    padding-left: 25px;
+}
+ul.bullets li{
+    list-style-type: disc;
+}

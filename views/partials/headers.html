@@ -1,4 +1,4 @@
-{% macro nav(header='', headerBg='../assets/fabrex/img/bg/bg-sample.jpg', darkOverlay='0') %}
+{% macro nav(header='', breadcrumb=[], headerBg='../assets/fabrex/img/bg/bg-sample.jpg', darkOverlay='0') %}
 <!-- start header section -->
 <section class="padding-0 bg-gradient-green-1">
     <div class="padding-80 page-title-section bg-img cover-background" data-overlay-dark="{{darkOverlay}}" data-background="{{headerBg}}" style="background-image: url(&quot;{{headerBg}}&quot;);">
@@ -10,7 +10,13 @@
                 <div class="col-md-12">
                     <ul>
                         <li><a class="text-shadow-dark" href="/">Home</a></li>
-                        <li class="dark text-shadow-light">{{header}}</li>
+                        {% for item in breadcrumb %}
+                            {% if item.link %}
+                                <li><a class="text-shadow-dark" href="{{item.link}}">{{item.text}}</a></li>
+                            {% else %}
+                                <li class="dark text-shadow-light">{{item.text}}</li>
+                            {% endif %}
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
