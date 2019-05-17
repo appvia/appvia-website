@@ -1,3 +1,6 @@
+h1,h2,h3,h4,h5,p{
+  font-family: 'Open Sans', sans-serif !important;
+}
 .padding-0{
     padding: 0 !important;
 }
@@ -44,6 +47,7 @@ ul.bullets{
 ul.bullets li{
     list-style-type: disc;
 }
+.services-block-two .icon-box,
 .navbar-nav li.current > a {
     color: #1b75bc;
 }
@@ -51,5 +55,8 @@ ul.bullets li{
     color: #1b75bc;
 }
 .section-heading h1:after, .section-heading h2:after, .section-heading h3:after, .section-heading h4:after, .section-heading h5:after, .section-heading h6:after {
+  background: #1b75bc;
+}
+.contact-box i {
   background: #1b75bc;
 }

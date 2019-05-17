@@ -4,7 +4,7 @@
 
 header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s; position: relative; z-index: 99999; }
 
-.navbar-brand img{ max-height: 43px; transition-duration: 0.5s; }
+.navbar-brand img{ max-height: 48px; transition-duration: 0.5s; }
 .navbar-header-custom{ padding: 22px 0 20px 0; }
 .navbar-default{ transition: all 0.5s ease 0s; -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
 .navbar-default .container, .navbar-default .container-fluid{ position: relative; }
@@ -90,7 +90,7 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 
 	header.scrollHeader .navbar-default{ position: fixed; top: 0; z-index: 99; width: 100%; background: #fff; left: 0; transition: all 0.2s ease 0s;  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
 	.wrapper-boxed .scrollHeader .navbar-default{ left: 0; margin: 0 auto; max-width: 1200px; right: 0; }
-	.scrollHeader .navbar-brand img{ max-height: 35px; transition-duration: 0.5s; }
+	.scrollHeader .navbar-brand img{ max-height: 34px; transition-duration: 0.5s; }
 	.scrollHeader .navbar-header-custom{ padding: 10px 0; transition-duration: 0.5s; }
 	.navbar-nav .megamenu{ margin: 0; padding: 30px 15px; right: 0; width: 100%; }
 	.navbar .megamenu > li{ margin: 0; float: left; }
@@ -175,7 +175,7 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 	.header-style2 .attr-nav ul.cart-list > li.total { border: none; }
 	.header-style2 .navbar ul.cart-list > li > h6 a { color: #6f6f6f; }
 	.header-style2 .navbar ul.cart-list > li > h6 a:hover { color: #232323; }
-	.header-style2 .navbar ul.cart-list > li > p { color: #232323; } 
+	.header-style2 .navbar ul.cart-list > li > p { color: #232323; }
 	.header-style2 .navbar ul.cart-list > li img { border:1px solid #c5c5c5; }
 	.header-style2 .attr-nav > ul { padding: 0 15px; }
 	.header-style2 .attr-nav > ul > li > a{ color: #fff; padding: 29px 15px; }
@@ -191,12 +191,12 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 
 	/* ===================================
 	    Header style04
-	====================================== */	
+	====================================== */
 	.header-style4 { box-shadow: none; }
 	header.header-style4.scrollHeader .navbar-default { position: relative; transition: all 0s ease 0s;  }
 	header.header-style4 .menu_area { background: #f5f5f5; border-top: 1px solid #e4e4e4; border-bottom: 1px solid #e4e4e4; }
 	.header-style4 .navbar-default { box-shadow: none; }
-	
+
 	.header-style4 .navbar-nav > li:first-child { margin-left: 0; }
 	.header-style4 .navbar-brand img { transition: all 0s ease 0s;  }
 
@@ -223,13 +223,13 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 
 	/* ===================================
 	    Header style05
-	====================================== */	
+	====================================== */
 	.header-style5 #top-bar { background: #3498db; }
 	.header-style5 #top-bar i { color: #fff; }
 
 	/* ===================================
 	    Header style06
-	====================================== */	
+	====================================== */
 	.header-style6 { box-shadow: none; position: absolute; left: 0; width: 100%; }
 	.header-style6 .navbar-header-custom { padding: 17px 0 15px 0; }
 	.header-style6 .navbar-default{ background: rgba(52, 152, 219,0.85); -webkit-box-shadow: none; -ms-box-shadow: none; box-shadow: none; }
@@ -276,19 +276,19 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 	.menu_area-light.scrollHeader .navbar > ul > li.has-sub > a:after { border-color: transparent #232323 #232323 transparent; }
 	.menu_area-light.scrollHeader .navbar-nav li.current > a{ color: #3498db; }
 	.menu_area-light.scrollHeader .navbar-nav li.current > a:hover{ color: #3498db; }
-	.menu_area-light.scrollHeader .navbar > ul > li.current > a:after{ border-color: transparent #3498db #3498db transparent; }	
+	.menu_area-light.scrollHeader .navbar > ul > li.current > a:after{ border-color: transparent #3498db #3498db transparent; }
 
 }
 
-@media screen and (max-width: 1199px){ 
+@media screen and (max-width: 1199px){
  	.navbar-nav > li{ margin-left: 5px; }
 }
 
-@media screen and (max-width: 991px){ 
+@media screen and (max-width: 991px){
 
 	/* ===================================
 		Default Header style
-	====================================== */	
+	====================================== */
 
 	.navbar-header-custom{ padding: 4px 0 8px;  }
 	.menu_area .navbar-brand{ margin-top: 6px;  }
@@ -361,7 +361,7 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 	.header-style1 .navbar-toggler.menu-opened:before{ background: #232323; }
 
 	.header-style1 .attr-nav > ul > li > a{ color: #fff; }
-	
+
 	/* ===================================
 	    Header style02
 	====================================== */
@@ -381,7 +381,7 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 	.header-style2 .attr-nav ul.cart-list > li.total { border: none; }
 	.header-style2 .navbar ul.cart-list > li > h6 a { color: #6f6f6f; }
 	.header-style2 .navbar ul.cart-list > li > h6 a:hover { color: #232323; }
-	.header-style2 .navbar ul.cart-list > li > p { color: #232323; } 
+	.header-style2 .navbar ul.cart-list > li > p { color: #232323; }
 	.header-style2 .navbar ul.cart-list > li img { border:1px solid #c5c5c5; }
 	.header-style2 .attr-nav > ul > li > a{ color: #fff;  }
 
@@ -405,9 +405,9 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 
 	/* ===================================
 	    Header style05
-	====================================== */	
+	====================================== */
 	.header-style5 #top-bar { background: #3498db; }
-	.header-style5 #top-bar i { color: #fff; }	
+	.header-style5 #top-bar i { color: #fff; }
 	.header-style5 .navbar-toggler { background: #3498db; }
 
 	/* ===================================
@@ -420,7 +420,7 @@ header{ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); transition: all 0.5s ease 0s;
 	.header-style6 .navbar-toggler:after{ border-top: 2px solid #232323; border-bottom: 2px solid #232323; }
 	.header-style6 .navbar-toggler:before{ background: #232323; }
 	.header-style6 .navbar-toggler.menu-opened:after{  background: #232323; border-bottom: none;  }
-	.header-style6 .navbar-toggler.menu-opened:before{ background: #232323; }	
+	.header-style6 .navbar-toggler.menu-opened:before{ background: #232323; }
 
 	.header-style6 .attr-nav > ul > li > a{ color: #fff; }
 	.header-style6 .attr-nav > ul > li > a span.badge { background: #232323; color: #fff; }
