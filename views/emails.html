@@ -1,0 +1,74 @@
+{% extends 'layout-email.html' %}
+{% block content %}
+
+<div style="display: none; max-height: 0px; overflow: hidden;">
+     Preheader message here
+</div>
+<table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" class="document">
+    <tr>
+        <td valign="top">
+            <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="525" class="container">
+                <tr class="top-row">
+                    <td>
+                        <a href="https://appvia.io/emails?name=Jo%20Blogs&cta=https%3A%2F%2Fappvia.io">View in browser</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://appvia.io/assets/img/email-header.png" width="100%" alt="Appvia header image">
+                        <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="30" border="0" align="center" width="100%">
+                            <tr>
+                                <td>
+                                    <p>To <span class="name">{{ name }}</span>,</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                                    <table border="0" cellspacing="0" cellpadding="0" class="button">
+                                        <tr>
+                                          <td><a href="{{ cta }}" target="_blank">Call to action &rarr;</a></td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="footer-row">
+                    <td>
+                        <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="30" border="0" align="center" width="100%" class="email-footer">
+                            <tr>
+                                <td>
+                                    <a href="https://www.linkedin.com/company/appvia/" target="_blank"><img class="icon-linkedin" src=".https://appvia.io/assets/img/icon-linkedin.png" width="50" height="50" alt="Appvia Linkedin"></a>
+                                    <a href="https://twitter.com/appvia_io" target="_blank"><img class="icon-twitter" src="https://appvia.io/assets/img/icon-twitter.png" width="50" height="50" alt="Appvia Twitter"></a>
+                                    <a href="https://medium.com/appvia" target="_blank"><img class="icon-medium" src="https://appvia.io/assets/img/icon-medium.png" width="50" height="50" alt="Appvia Medium"></a>
+                                    <a href="https://github.com/appvia" target="_blank"><img class="icon-git" src="https://appvia.io/assets/img/icon-git.png" width="50" height="50" alt="Appvia GitHub"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   © 2019 Appvia
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+            <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="750" class="container">
+                <tr>
+                    <td>
+                        <!-- Physical address -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- Unsubscribe link -->
+                        <unsubscribe></unsubscribe>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+{% endblock %}
