@@ -183,7 +183,7 @@ function initMap() {
 
   // Create a map object, and include the MapTypeId to add
   // to the map type control.
-  var myLatlng = new google.maps.LatLng(51.500401, -0.081197);
+  var myLatlng = new google.maps.LatLng(51.5206932, -0.1009525);
   var mapOptions = {
     zoom: 17,
     center: myLatlng
@@ -192,7 +192,7 @@ function initMap() {
 
   var marker = new google.maps.Marker({
       position: myLatlng,
-      title:"Hello World!"
+      title: "Appvia - Ground Floor, Cap House 9 - 12 Long Lane London, EC1A 9HA"
   });
 
   // To add the marker to the map, call setMap();
