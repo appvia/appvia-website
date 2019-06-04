@@ -5,7 +5,7 @@
     {{ navigation.nav('careers') }}
 
     {% import "../views/partials/headers.html" as header %}
-    {{ header.nav('Careers', [{ text: 'Careers', link: false }], '../assets/img/clouds.png') }}
+    {{ header.nav('Careers', [{ text: 'Careers', link: false }], '../assets/img/clouds.png', '0', 'background-position-4') }}
 
 
     <section class="padding-80">
@@ -25,8 +25,8 @@
                     <div class="col margin-30px-bottom xs-margin-20px-bottom">
                         <div class="blog-grid-simple">
                             <h4><a href="/careers/{{ job.slug }}">{{ job.title }}</a></h4>
-                            <p>{{ job.role | safe | truncate(220)}}</p>
                             <hr />
+                            <p>{{ job.role | safe | truncate(220)}}</p>
                             <div class="row">
                                 <div class="col">
                                     <div><a href="/careers/{{ job.slug }}" class="butn"><span>More details</span></a></div>
