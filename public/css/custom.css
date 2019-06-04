@@ -1,6 +1,19 @@
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
 h1,h2,h3,h4,h5,p{
   font-family: 'Open Sans', sans-serif !important;
 }
+p, li{
+  font-size: 1.2em !important;
+  line-height: 1.6em;
+}
+p{
+  margin-bottom: 2em !important;
+}
+
 .padding-0{
     padding: 0 !important;
 }
@@ -58,8 +71,68 @@ ul.bullets li{
   background: #1b75bc;
 }
 .contact-box i {
-  background: #1b75bc;
+  background: #f5b005;
+}
+.contact-box {
+  min-height: 240px;
 }
 .orange{
-  color: #ffa900 !important;
+  color: #f5b005 !important;
+}
+
+.cover-background{
+  z-index: 2;
+}
+
+.cover-background-image:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-image: url("/assets/img/clouds-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.background-position-1:before{
+  background-position: 0 70%;
+}
+
+.background-position-2:before{
+  background-position: 0 80%;
+}
+
+.background-position-3:before{
+  background-position: 0 90%;
+}
+
+.background-position-4:before{
+  background-position: 0 100%;
+}
+.strong{
+  font-weight: 800 !important;
+}
+.blog-grid-simple .meta {
+  margin: 0 0 5px 0;
+  font-size: .8em;
+}
+
+.blog-grid-simple ul li {
+  padding: 3px 0;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.blog-grid-simple ul li i {
+  margin-right: 5px;
 }

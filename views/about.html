@@ -5,7 +5,7 @@
     {{ navigation.nav('about') }}
 
     {% import "../views/partials/headers.html" as header %}
-    {{ header.nav('About', [{ text: 'About', link: false }], '../assets/img/clouds.png') }}
+    {{ header.nav('About', [{ text: 'About', link: false }], '../assets/img/clouds.png','0', 'background-position-2') }}
 
 
     <section class="padding-80">
@@ -16,7 +16,7 @@
             </div>
 
             <div class="row justify-content-center">
-              <div class="services-block-two col-lg-9 col-sm-12 margin-30px-bottom xs-margin-20px-bottom text-justify">
+              <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify">
                 <p>Appvia provides products, engineering and support to relieve developers of the pains and delays of infrastructure management so they can spend more time on making their companies brilliant.</p>
                 <p>That means giving you your very own Development Portal so your developers have all the resources they need to deliver extraordinary work. Everything from kubernetes namespaces through to monitoring dashboards without any dependencies. </p>
                 <p>We also can build, manage and run your Kubernetes clusters or provide training around docker best practices. Whatever is needed – on-site or off – Appvia helps developers dedicate every minute to achieving the exceptional.</p>
