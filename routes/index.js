@@ -37,10 +37,6 @@ router.get('/careers', function (req, res) {
   res.render('careers.html', {title: 'Appvia: Careers', jobCount: jobs.length, jobs});
 });
 
-router.get('/emails', function (req, res) {
-  res.render('emails.html', {title: 'Appvia: Emails',  name: req.query.name,  cta: req.query.cta});
-});
-
 jobs.forEach(job => {
     router.get(`/careers/${job.slug}`, function (req, res) {
         res.render('job.html', {title: 'Appvia: Careers', job: job});
@@ -51,5 +47,12 @@ router.get('/contact', function (req, res) {
   res.render('contact.html', {title: 'Appvia: Contact'});
 });
 
+router.get('/marketing-email-template', function (req, res) {
+  res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  name: req.query.name,  cta: req.query.cta});
+});
+
+router.get('/email-template', function (req, res) {
+  res.render('email-template.html', {title: 'Appvia: Email Template',  name: req.query.name,  cta: req.query.cta});
+});
 
 module.exports = router;
