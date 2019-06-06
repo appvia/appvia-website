@@ -1,21 +1,21 @@
 {% macro nav(header='', breadcrumb=[], headerBg='../assets/fabrex/img/bg/bg-sample.jpg', darkOverlay='0', bgPosition='') %}
 <!-- start header section -->
-<section class="padding-0 bg-gradient-blue">
+<section class="header-sub bg-gradient-blue">
   <div class="cover-background-image cover-background {{bgPosition}}">
-    <div class="padding-80 page-title-section bg-img cover-background" data-overlay-dark="{{darkOverlay}}" data-background="{{headerBg}}" style="background-image: url(&quot;{{headerBg}}&quot;);">
+    <div class="padding-40 page-title-section bg-img cover-background" data-overlay-dark="{{darkOverlay}}" data-background="{{headerBg}}" style="background-image: url(&quot;{{headerBg}}&quot;);">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-shadow-dark">{{header}}</h1>
+                    <h1>{{header}}</h1>
                 </div>
                 <div class="col-md-12">
                     <ul>
-                        <li><a class="text-shadow-dark" href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         {% for item in breadcrumb %}
                             {% if item.link %}
-                                <li><a class="text-shadow-dark" href="{{item.link}}">{{item.text}}</a></li>
+                                <li><a href="{{item.link}}">{{item.text}}</a></li>
                             {% else %}
-                                <li class="orange text-shadow-dark">{{item.text}}</li>
+                                <li class="text-white">{{item.text}}</li>
                             {% endif %}
                         {% endfor %}
                     </ul>

@@ -4,24 +4,18 @@
 {% import "../views/partials/nav.html" as navigation %}
 {{ navigation.nav('home') }}
 
-
-<section class="padding-0 bg-gradient-blue">
-  <div class="cover-background-image cover-background background-position-3">
-    <div class="page-title-section2 bg-img cover-background" data-overlay-dark="0" data-background="../assets/img/iStock-953443738.png"></div>
-  </div>
-</section>
-
-<!-- start service section -->
-<section class="pt-0">
-    <div class="container">
-        <div class="text-center section-heading">
-            <h1>Simplify building and deploying software</h1>
-            <p class="width-55 sm-width-75 xs-width-95">Appvia can help your organisation build, run and manage code more quickly without the distraction of managing complex infrastructure.</p>
+<div class="landing bg-gradient-blue">
+	<div class="hero page-title-section2">
+    <div class="wrapper section-heading section-heading-main text-white">
+      <h1>Simplify building and<br>deploying software</h1>
+      <p>Appvia can help your organisation build, run and manage code more quickly without the distraction of managing complex infrastructure.</p>
+    	<div class="landing-video">
+    		<div class="video-embed">
+    	    <iframe src="https://www.youtube.com/embed/L7oLVqClr9U?loop=1&playlist=L7oLVqClr9U&rel=0&autoplay=1&controls=0&disablekb=1&version=3&modestbranding=1&showinfo=0&autohide=1" frameborder="0" allowfullscreen=""></iframe>
         </div>
-
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/L7oLVqClr9U?loop=1&playlist=L7oLVqClr9U&rel=0&autoplay=1&controls=0&disablekb=1&version=3&modestbranding=1&showinfo=0&autohide=1" frameborder="0"></iframe>
-        </div>
+    	</div>
     </div>
-</section>
+  </div>
+</div>
+
 {% endblock %}
