@@ -164,7 +164,6 @@ ul.bullets li{
 }
 .blog-grid-simple .meta {
   margin: 0 0 5px 0;
-  font-size: .8em;
 }
 
 .blog-grid-simple ul li {
@@ -337,4 +336,8 @@ header.scrollHeader {
 
 .inner-box h3{
   margin-bottom: 1em;
+}
+
+.testmonial-single p:before {
+  color: #fff;
 }
