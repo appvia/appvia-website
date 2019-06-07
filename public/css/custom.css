@@ -90,9 +90,18 @@ ul.bullets li{
 .navbar-nav > li > a:active {
     color: #315886;
 }
-.services-block-two .icon-box{
+.services-block-two .icon-box,
+.feature-box-01 i{
   color: #f5b005;
 }
+.feature-box-01:hover {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.feature-box-01 {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: none;
+}
+
 .section-heading h1:after,
 .section-heading h2:after,
 .section-heading h3:after,
@@ -187,8 +196,9 @@ header.scrollHeader .navbar-default.bg-gradient-mustard,
 
 .page-title-section2 h1 {
   font-size: 4em;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
   line-height: 1.2em;
+
 }
 .page-title-section2 {
     padding-top: 80px;
@@ -200,7 +210,7 @@ header.scrollHeader .navbar-default.bg-gradient-mustard,
     line-height: 0;
     overflow: hidden;
     position: relative;
-    margin-bottom: -200px;
+    margin-bottom: -160px;
     box-shadow: 0 10px 50px 0 rgba(0,0,0,.3);
     max-width: 860px;
     margin-left: auto;
@@ -223,7 +233,7 @@ header.scrollHeader .navbar-default.bg-gradient-mustard,
     height: 100%;
 }
 .landing{
-  margin-bottom: 300px;
+  margin-bottom: 220px;
   text-align: center;
 }
 
