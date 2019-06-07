@@ -202,7 +202,7 @@ header.scrollHeader .navbar-default.bg-gradient-mustard,
     position: relative;
     margin-bottom: -200px;
     box-shadow: 0 10px 50px 0 rgba(0,0,0,.3);
-    max-width: 940px;
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -340,4 +340,22 @@ header.scrollHeader {
 
 .testmonial-single p:before {
   color: #fff;
+}
+
+.fittobox {                /* give fit to box an aspect ratio */
+    display: inline-block; /* let it be styled thusly */
+    padding: 0;            /* get rid of pre-styling */
+    margin: 0;
+    width: 100%;           /* take up full width available */
+    padding-top: 56.25%;   /* give aspect ratio of 16:9; "720 / 1280 = 0.5625" */
+    height: 0px;           /* don't want it to expand beyond padding */
+    position: relative;    /* allow for absolute positioning of child elements */
+}
+
+.fittobox > iframe {
+    position: absolute;    /* expand to fill */
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
