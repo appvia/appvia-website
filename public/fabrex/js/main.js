@@ -48,6 +48,7 @@
 
         $window.on('scroll', function() {
             var scroll = $window.scrollTop();
+    /*
             var logoinner = $(".navbar-brand img");
             var logodefault = $(".navbar-brand.logodefault img");
             var logowhite = $(".navbar-brand.logowhite img");
@@ -64,12 +65,6 @@
                 logodefault.attr('src', '../assets/fabrex/img/logos/logo.png');
                 logowhite.attr('src', '../assets/fabrex/img/logos/logo-white.png');
                 logowhitedark.attr('src', '../assets/fabrex/img/logos/logo-white.png');
-                logo2.attr('src', '../assets/fabrex/img/logos/logo-2-light.png');
-                logo4.attr('src', '../assets/fabrex/img/logos/logo-4.png');
-                logo5.attr('src', '../assets/fabrex/img/logos/logo-5-light.png');
-                logo6.attr('src', '../assets/fabrex/img/logos/logo-6.png');
-                logo7.attr('src', '../assets/fabrex/img/logos/logo-7.png');
-                logo8.attr('src', '../assets/fabrex//logos/logo-8.png');
             }
             else {
                 $("header").removeClass("fixedHeader").addClass("scrollHeader");
@@ -77,13 +72,8 @@
                 logodefault.attr('src', '../assets/fabrex/img/logos/logo.png');
                 logowhite.attr('src', '../assets/fabrex/img/logos/logo-white.png');
                 logowhitedark.attr('src', '../assets/fabrex/img/logos/logo-dark.png');
-                logo2.attr('src', '../assets/fabrex/img/logos/logo-2-dark.png');
-                logo4.attr('src', '../assets/fabrex/img/logos/logo-4.png');
-                logo5.attr('src', '../assets/fabrex/img/logos/logo-5-dark.png');
-                logo6.attr('src', '../assets/fabrex/img/logos/logo-6.png');
-                logo7.attr('src', '../assets/fabrex/img/logos/logo-7.png');
-                logo8.attr('src', '../assets/fabrex/img/logos/logo-8.png');
             }
+*/
         });
 
         /*------------------------------------

@@ -1,11 +1,27 @@
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
 h1,h2,h3,h4,h5,p{
   font-family: 'Open Sans', sans-serif !important;
 }
+p, .bullets li{
+  font-size: 1.2em !important;
+  line-height: 1.6em;
+}
+p{
+  margin-bottom: 2em !important;
+}
+
 .padding-0{
     padding: 0 !important;
 }
 .padding-80{
     padding: 80px !important;
+}
+.padding-40{
+    padding: 40px !important;
 }
 .bg-gradient-green-1{
     background: #c8e4af; /* Old browsers */
@@ -25,6 +41,19 @@ h1,h2,h3,h4,h5,p{
     .padding-80{
         padding: 20px !important;
     }
+    .padding-40{
+        padding: 20px !important;
+    }
+    .page-title-section2 h1 {
+      font-size: 2.4em !important;
+    }
+    .page-title-section2{
+      padding-top: 30px !important;
+    }
+    p, .bullets li{
+      font-size: 1em !important;
+    }
+
 }
 .text-shadow-dark{
     text-shadow: 1px 1px rgba(0, 0, 0, 0.38);
@@ -47,19 +76,296 @@ ul.bullets{
 ul.bullets li{
     list-style-type: disc;
 }
+
+.navbar-nav > li > a{
+  color: #fff;
+  font-weight: 800;
+  -webkit-transition-duration: 0ms;
+  -o-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+
+.navbar-nav li.current > a,
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:active {
+    color: #315886;
+}
 .services-block-two .icon-box,
-.navbar-nav li.current > a {
-    color: #1b75bc;
+.feature-box-01 i{
+  color: #f5b005;
 }
-.navbar-nav > li > a:hover, .navbar-nav > li > a:active {
-    color: #1b75bc;
+.feature-box-01:hover {
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
-.section-heading h1:after, .section-heading h2:after, .section-heading h3:after, .section-heading h4:after, .section-heading h5:after, .section-heading h6:after {
-  background: #1b75bc;
+.feature-box-01 {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: none;
 }
+
+.section-heading h1:after,
+.section-heading h2:after,
+.section-heading h3:after,
+.section-heading h4:after,
+.section-heading h5:after,
+.section-heading h6:after {
+  background: #f5b005;
+}
+.section-heading-main.section-heading h1:after{
+  background: #fff;
+  bottom: -20px;
+}
+
 .contact-box i {
-  background: #1b75bc;
+  background: #f5b005;
+}
+.contact-box {
+  min-height: 240px;
 }
 .orange{
-  color: #ffa900 !important;
+  color: #f5b005 !important;
+}
+
+.cover-background{
+  z-index: 2;
+}
+
+.loader-icon {
+  border: 5px solid #f5b005;
+}
+
+.cover-background-image:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("/assets/img/clouds-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.background-position-1:before{
+  background-position: 0 70%;
+}
+
+.background-position-2:before{
+  background-position: 0 80%;
+}
+
+.background-position-3:before{
+  background-position: 0 90%;
+}
+
+.background-position-4:before{
+  background-position: 0 100%;
+}
+.strong{
+  font-weight: 800 !important;
+}
+.blog-grid-simple .meta {
+  margin: 0 0 5px 0;
+}
+
+.blog-grid-simple ul li {
+  padding: 3px 0;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.blog-grid-simple ul li i {
+  margin-right: 5px;
+}
+
+header.scrollHeader .navbar-default.bg-gradient-mustard,
+.bg-gradient-mustard {
+    background: #ffb635;
+    background: -moz-linear-gradient(top, #ffb635 0%, #e39915 100%);
+    background: -webkit-linear-gradient(top, #ffb635 0%,#e39915 100%);
+    background: linear-gradient(to bottom, #ffb635 0%,#e39915 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb635', endColorstr='#e39915',GradientType=0 );
+}
+
+.page-title-section2 h1 {
+  font-size: 4em;
+  margin: 0 auto 20px auto;
+  line-height: 1.2em;
+
+}
+.page-title-section2 {
+    padding-top: 80px;
+    text-align: center;
+}
+.landing-video {
+    border: 10px solid #fff;
+    border-radius: 2px;
+    line-height: 0;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: -160px;
+    box-shadow: 0 10px 50px 0 rgba(0,0,0,.3);
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.video-embed {
+    width: 100%;
+    position: relative;
+    padding: 0 0 62.5% 0;
+    height: 0;
+}
+.video-embed iframe {
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.landing{
+  margin-bottom: 220px;
+  text-align: center;
+}
+
+
+.hero {
+    padding-bottom: 0;
+    background-image: url("/assets/img/cloud-bg-opacity.png");
+    background-repeat: no-repeat;
+    background-position: 0 70%;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.wrapper {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+footer {
+    color: #696969;
+}
+.footer-social-icons ul li a {
+  color: #696969;
+}
+.footer-social-icons ul li {
+  border: 1px solid #696969;
+  color: #696969;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.footer-social-icons ul li:hover {
+    background: #f5b005;
+    border-color: #f5b005;
+}
+.footer-bar {
+  color: #505050;
+}
+
+.menu_area .navbar-brand {
+    transition: none;
+}
+
+header.scrollHeader {
+  transition: none;
+}
+@media screen and (min-width: 992px){
+  .scrollHeader .navbar-brand img {
+    max-height: 46px;
+    transition-duration: unset;
+    margin-top: 8px;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .navbar-toggler {
+    background: #315886;
+  }
+  .menu_area .navbar-brand {
+    margin-top: 8px;
+  }
+  .header-sub{
+    padding: 0 !important;
+  }
+
+}
+
+.scroll-to-top:visited {
+  color: #315886;
+}
+.scroll-to-top {
+  background: #315886;
+  border: 1px solid #315886;
+}
+.navbar-header{
+  height: 70px;
+}
+.footer-text{
+  width: 40%;
+  margin: 35px auto 0 auto;
+}
+@media (max-width: 640px) {
+  .footer-text{
+    width: 90%;
+  }
+}
+.header-sub{
+    padding: 70px 0 0 0;
+}
+
+.page-title-section ul li:after {
+  padding: 0 6px 0 10px;
+}
+.butn:after {
+  background: #f5b005;
+}
+.butn{
+  background: #315886;
+}
+
+.blog-grid-simple h4 a:hover {
+  color: #315886;
+}
+
+.inner-box h3{
+  margin-bottom: 1em;
+}
+
+.testmonial-single p:before {
+  color: #fff;
+}
+
+.fittobox {                /* give fit to box an aspect ratio */
+    display: inline-block; /* let it be styled thusly */
+    padding: 0;            /* get rid of pre-styling */
+    margin: 0;
+    width: 100%;           /* take up full width available */
+    padding-top: 56.25%;   /* give aspect ratio of 16:9; "720 / 1280 = 0.5625" */
+    height: 0px;           /* don't want it to expand beyond padding */
+    position: relative;    /* allow for absolute positioning of child elements */
+}
+
+.fittobox > iframe {
+    position: absolute;    /* expand to fill */
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
