@@ -210,5 +210,57 @@ module.exports = [
           'Performance Related Bonus'
         ],
         securityClearanceRequired: false
+    },
+    {
+        title: 'Senior Sales Account Director',
+        slug: 'senior-sales-account-director',
+        active: true,
+        postedDate: '11th Jun 2019',
+        type: 'Permanent',
+        hours: 'Full-time',
+        location: 'London',
+        role: `We are looking for someone to join the company in the newly created role of Senior Sales
+          Account Director. The successful candidate will have a great opportunity to help build and
+          shape the sales team, drive new ideas and work closely with directors on driving good
+          prospects, marketing and enhancing current product and service offerings.<br /><br />
+          The Senior Sales Account Director will work closely with product and engineering teams to
+          understand the problem domain the Company is working with and be able to articulate the
+          value proposition effectively to clients.<br /><br />
+          The role requires the execution of ideas and initiatives to secure future clients, whilst
+          maintaining and building on existing accounts.`,
+        keyResponsibilities: [
+          'Contribute to defining and executing a sales strategy',
+          'Work on prospect generation to build and create leads and opportunities',
+          'Collaborate on and help coordinate market research activities to help improve prospect material',
+          'Drive a consistent and proven prospecting process through the sales team',
+          'Be a point of contact and representative for our prospects',
+          'Own the full sales process including; sales negotiations, documenting the buying process, legal, pricing and commercial negotiations',
+          'Develop and maintain customer relationships and drive new opportunities through understanding and learning their core business problems and drivers',
+          'Clearly present and articulate value proposition and solutions in relation to the customer problems'
+        ],
+        desirableAttributes: [
+          'A desire to see customers succeed through products and services',
+          'Be proficient in recognising and adopting opportunities that meet our business direction',
+          'Demonstrate good experience in technology or software sales',
+          'Understanding of open source technologies and the ecosystem surrounding them',
+          'Understanding of cloud technologies',
+          'Effective executor of sales strategies, with improvement feedback loops',
+          'Experience of leading sales teams and the desire to measure effectiveness of techniques',
+          'Fantastic communication and presentation skills',
+          'Driven, self-motivated and results orientated',
+          'Ability to form and maintain key relationships with a demonstrable successful sales technique',
+          'A proven track record of driving and closing enterprise deals'
+        ],
+        remuneration: [
+          'Competitive salary',
+          'Competitive commission structure',
+          '25 Days Holiday (plus bank holidays)',
+          'Flexible working hours',
+          'Training and personal development',
+          'Pension',
+          'Health Insurance',
+          'Performance Related Bonus'
+        ],
+        securityClearanceRequired: false
     }
 ];
