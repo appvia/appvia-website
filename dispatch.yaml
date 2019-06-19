@@ -1,0 +1,3 @@
+dispatch:
+  - url: "www-dev.appvia.io/*"
+    service: appvia-dev
