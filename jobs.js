@@ -110,51 +110,6 @@ module.exports = [
         securityClearanceRequired: true
     },
     {
-        title: 'Senior Technical Copywriter',
-        slug: 'senior-technical-copywriter',
-        active: true,
-        postedDate: '17th May 2019',
-        type: 'Permanent',
-        hours: 'Full-time',
-        location: 'London',
-        role: `We are looking for someone to join the company in the newly created role of Senior Technical
-          Copywriter. You will have an opportunity to grow the role, and will have freedom and autonomy
-          for creating a consistent image for the company. This position offers a great opportunity for
-          the right candidate to build a small team to help drive the copy / content side of the business.
-          We recognise the importance of good communication and welcome new ideas, improvements
-          and change.<br /><br />
-          You will work closely with product teams, engineers, marketing and business leaders to
-          translate complex technical and business terms into tangible easily understandable concepts
-          for users.`,
-        keyResponsibilities: [
-          'Work with product teams to take complex technical information and make it clear and comprehensible to product users',
-          'Write technical documentation to support the build and development processes of the products',
-          'Work with business leaders and engineers to produce website content, blogs and presentation material',
-          'Maintain a consistent communication image to users across all product and service material',
-          'Work closely with marketing organisations on company branding and image',
-          'Produce clear and concise training material for different product streams'
-        ],
-        desirableAttributes: [
-          'Strong motivation to learn new things and ask the right questions to get the information you require',
-          'Ability and willingness to comfortably switch between copy and technical copywriting',
-          'Significant experience of technical content writing and copywriting',
-          'Experience of writing customer-facing content and product documentation',
-          'Experience of mark-up languages such as Markdown etc.',
-          'Fantastic communication and collaboration skills',
-          'Superior writing skills with a keen eye for detail',
-          'High level of understanding of technology, cloud products and the business benefitssurrounding them'
-        ],
-        remuneration: [
-            'Competitive salary',
-            '25 Days Holiday (plus bank holidays)',
-            'Flexible working hours',
-            'Training and personal development',
-            'Pension',
-            'Performance Related Bonus'
-        ],
-        securityClearanceRequired: false
-    },
-    {
         title: 'Senior Product Manager',
         slug: 'senior-product-manager',
         active: true,

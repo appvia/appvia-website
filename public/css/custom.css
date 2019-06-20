@@ -304,6 +304,9 @@ header.scrollHeader {
   .header-sub{
     padding: 0 !important;
   }
+  .navbar-nav > li > a {
+      color: #232323 !important;
+  }
 
 }
 
