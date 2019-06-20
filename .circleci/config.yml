@@ -15,7 +15,26 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-  deploy:
+
+  deploy_test:
+    docker:
+      - image: google/cloud-sdk
+    environment:
+      - PROJECT_NAME: "appvia-hosting"
+      - GOOGLE_PROJECT_ID: "appvia-hosting"
+      - GOOGLE_COMPUTE_ZONE: "europe-west2-a"
+    steps:
+      - checkout
+      - run:
+          command: |
+            apt-get install -qq -y gettext
+            echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
+            gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+      - run:
+          command: gcloud -q app deploy app-dev.yaml dispatch.yaml
+  deploy_main:
     docker:
       - image: google/cloud-sdk
     environment:
@@ -39,7 +58,13 @@ workflows:
   run_release:
     jobs:
       - build
-      - deploy:
+      - deploy_test:
+          filters:
+            tags:
+              ignore: /.*/
+            branches:
+              only: /^master/
+      - deploy_main:
           filters:
             tags:
               only: /^v.*/
