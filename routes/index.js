@@ -55,4 +55,25 @@ router.get('/email-template', function (req, res) {
   res.render('email-template.html', {title: 'Appvia: Email Template',  name: req.query.name,  cta: req.query.cta});
 });
 
+router.get('/products/hub-demo', function (req, res) {
+  res.render('demo.html', {
+    title: 'Appvia: Request a Demo',
+    slug: req.query.slug,
+    firstName: req.query.firstName,
+    lastName: req.query.lastName,
+    email: req.query.email,
+    companyName: req.query.companyName,
+    companySize: req.query.companySize,
+    role: req.query.role,
+    github: req.query.github,
+    errors: req.query.errors
+  });
+});
+
+router.get('/products/request-submit', function (req, res) {
+  res.render('request-submit.html', {title: 'Appvia: Request Success'});
+});
+
+
+
 module.exports = router;

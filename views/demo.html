@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% import "../views/partials/nav.html" as navigation %}
+    {{ navigation.nav('products') }}
+
+    {% import "../views/partials/headers.html" as header %}
+    {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Request a Appvia Hub Demo', link: false }], '', '0', 'background-position-1') }}
+
+    <section class="padding-80">
+        <div class="container">
+          <div class="section-heading">
+            <h3>Request a Appvia Hub Demo</h3>
+          </div>
+          <div class="row justify-content-center">
+            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
+              <p>The Appvia Hub provides a platform for developers from your organisation to create the applications simply and quickly with a flexibility beyond a typical developer platform product.</p>
+              <p>For this demo we’ve chosen some integrations to get you started and we will create new organisations for you with the following providers:</p>
+              <ul class="bullets">
+                <li>Github</li>
+                <li>Quay</li>
+                <li>GKE</li>
+              </ul>
+
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="card p-4 bg-light">
+
+              <h4 class="h4">Please provide us these details:</h4>
+
+              <form id="demo-request" method="POST" action="/success">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input class="form-control" type="text" name="firstName" id="firstName" required value="{{firstName}}" />
+                  </div>
+                  <div class="col-md-6">
+                    <label>Last Name</label>
+                    <input class="form-control" type="text" name="lastName" id="lastName" required value="{{lastName}}" />
+                  </div>
+                  <div class="col-md-6">
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" id="email" required value="{{email}}" />
+                  </div>
+                  <div class="col-md-6">
+                    <label>Company Name</label>
+                    <input class="form-control" type="text" name="companyName" id="companyName" required value="{{companyName}}" />
+                  </div>
+                  <div class="col-md-6">
+                    <label>Role</label>
+                    <input class="form-control" type="text" name="role" id="role" required  value="{{role}}" />
+                  </div>
+                  <div class="col-md-6">
+                    <label for="companySize">Company Size</label>
+                    <select class="form-control" name="companySize" id="companySize" required >
+                      <option disabled selected value>Select your company size</option>
+                      <option value="1">1</option>
+                      <option value="2-10">1 to 10</option>
+                      <option value="11-50">11 to 50</option>
+                      <option value="51-200">51 to 200</option>
+                      <option value="201-500">201 to 500</option>
+                      <option value="501-1000">501 to 1000</option>
+                      <option value="1001-5000">1001 to 5000</option>
+                      <option value="5001-10,000">5001 to 10,000</option>
+                      <option value="5001-10,000">10,001 or more</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12">
+                    <label>GitHub ID</label>
+                    <div class="mb-2">We need this to create a GitHub org that you will have access to</div>
+                    <input class="form-control" type="text" name="github" id="github" required value="{{github}}" data-parsley-git>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="submit"id="submit-form" class="btn btn-primary">Request a Demo</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block customScripts %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
+  <script src="../assets/fabrex/js/jquery.serialize-object.js"></script>
+  <script src="../assets/fabrex/js/form.js"></script>
+{% endblock %}
