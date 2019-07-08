@@ -48,11 +48,11 @@ router.get('/contact', function (req, res) {
 });
 
 router.get('/marketing-email-template', function (req, res) {
-  res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  name: req.query.name,  cta: req.query.cta});
+  res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,  cta: req.query.cta});
 });
 
 router.get('/email-template', function (req, res) {
-  res.render('email-template.html', {title: 'Appvia: Email Template',  name: req.query.name,  cta: req.query.cta});
+  res.render('email-template.html', {title: 'Appvia: Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,   cta: req.query.cta});
 });
 
 router.get('/products/hub-demo', function (req, res) {
