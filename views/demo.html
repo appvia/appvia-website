@@ -68,7 +68,7 @@
                   <div class="col-md-12">
                     <label>GitHub ID</label>
                     <div class="mb-2">We need this to create a GitHub org that you will have access to</div>
-                    <input class="form-control" type="text" name="github" id="github" required value="{{github}}" data-parsley-git>
+                    <input class="form-control" type="text" name="github" id="github" required value="{{github}}" data-parsley-git data-parsley-trigger-after-failure="focusout">
                   </div>
                   <div class="col-md-12">
                     <button type="submit"id="submit-form" class="btn btn-primary">Request a Demo</button>
