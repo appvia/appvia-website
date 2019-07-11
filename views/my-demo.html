@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+    {% import "../views/partials/nav.html" as navigation %}
+    {{ navigation.nav('products') }}
+
+    {% import "../views/partials/headers.html" as header %}
+    {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Request a Appvia Hub Demo', link: false }], '', '0', 'background-position-1') }}
+
+    <section class="padding-80">
+        <div class="container">
+          <div class="section-heading">
+            <h3>Request a Appvia Hub Demo</h3>
+          </div>
+          <div class="row justify-content-center">
+            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
+                here
+              <div class="col-sm-12 col-md-6">
+                <div class="card p-4 bg-light">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block customScripts %}
+
+{% endblock %}
