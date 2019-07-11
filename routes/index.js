@@ -75,7 +75,7 @@ router.get('/products/request-submit', function (req, res) {
 });
 
 router.get('/products/hub-demo/my-demo', function (req, res) {
-  res.render('my-demo.html', {title: 'Appvia: My Demo' });
+  res.render('my-demo.html', {title: 'Appvia: My Demo', email: req.query.email });
 });
 
 module.exports = router;
