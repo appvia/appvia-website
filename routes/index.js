@@ -71,9 +71,7 @@ router.get('/products/hub-demo', function (req, res) {
 });
 
 router.get('/products/request-submit', function (req, res) {
-  res.render('request-submit.html', {title: 'Appvia: Request Success'});
+  res.render('request-submit.html', {title: 'Appvia: Thank you for your request', qualified: true });
 });
-
-
 
 module.exports = router;
