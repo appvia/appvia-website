@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: node:10
-    working_directory: ~/repo 
+    working_directory: ~/repo
     steps:
       - checkout
       - restore_cache:
@@ -32,6 +32,8 @@ jobs:
             gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            echo "  SF_USER: $SF_USER">>app-dev.yaml
+            echo "  SF_PW: $SF_PW">>app-dev.yaml
       - run:
           command: gcloud -q app deploy app-dev.yaml dispatch.yaml
   deploy_main:
@@ -50,6 +52,8 @@ jobs:
             gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            echo "  SF_USER: $SF_USER">>app-dev.yaml
+            echo "  SF_PW: $SF_PW">>app-dev.yaml
       - run:
           command: gcloud -q app deploy
 
@@ -70,4 +74,3 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
-

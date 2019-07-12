@@ -1,4 +1,6 @@
 var express = require('express');
+var salesforce = require('../modules/salesforce');
+var salesforce = require('../modules/gform');
 var Parser = require('rss-parser');
 var parser = new Parser();
 var router = express.Router();
@@ -74,6 +76,41 @@ router.get('/products/request-submit', function (req, res) {
   res.render('request-submit.html', {title: 'Appvia: Request Success'});
 });
 
+router.post('/products/request-submit', function (req, res) {
+  // First stick the data into google forms
+  console.log('Data submitted:' + req.body);
+  Promise.all([
+    salesforce.IsContact(req.body.email),
+    gform.AddContact(req.body)
+  ])
+  .then(function(promises) {
+    // first process the salesforce promise...
+    sfContact = promises[0];
+    if sfContact {
+      // They are a contact in salesforce - we're onto the demo!
+      res.redirect('/products/request-submit');
+    } else {
+      // Not a contact, but in form - we'll get back to them:
+      res.redirect('/products/request-submit-prending');
+    })
+    .catch(function(err) {
+      // Just record here for now...
+      console.log(err)
 
+      // Generic error - don't want to leak secrets
+      res.render('error.html', {
+        title: "Sorry, error recording details",
+        message: "Please try again soon",
+    		status: err.status,
+    		html_class: 'error',
+        error: {}
+      })
+    }
+  });
+}
+
+router.get('/products/request-submit-pending', function (req, res) {
+  res.render('request-submit-pending.html', {title: 'Appvia: Request Pending'});
+});
 
 module.exports = router;
