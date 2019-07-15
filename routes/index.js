@@ -73,7 +73,7 @@ router.get('/products/hub-demo', function (req, res) {
 });
 
 router.get('/products/request-submit', function (req, res) {
-  res.render('request-submit.html', {title: 'Appvia: Thank you for your request', qualified: true });
+  res.render('request-submit.html', {title: 'Appvia: Thank you for your request'});
 });
 
 router.post('/products/request-submit', function (req, res) {
@@ -92,7 +92,7 @@ router.post('/products/request-submit', function (req, res) {
       res.redirect('/products/request-submit');
     } else {
       // Not a contact, but in form - we'll get back to them:
-      res.redirect('/products/request-submit-prending');
+      res.redirect('/products/request-submit-pending');
     }
   })
   .catch(function(err) {
