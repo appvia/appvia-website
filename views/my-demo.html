@@ -14,17 +14,24 @@
           </div>
           <div class="row justify-content-center">
             <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
+
+
+              {% if email %}
+              <div class="form-check mb-4">
+                <input type="checkbox" class="form-check-input" id="acknowledge">
+                <label class="form-check-label" for="acknowledge">Please acknowledge that you have already <a href="#">joined the Github organisation</a> we’ve created for the hub demo BEFORE you sign up.</label>
+              </div>
+              {% else %}
                 <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
+                <label for="email"><strong>Signup email</strong></label>
+                <div class="mb-2">Please provide the email address you used when signing up for the demo</div>
+                <input class="form-control" type="text" name="email" id="email" required  value="{{email}}" />
+              {% endif %}
 
-                <p>Signup email: {{ email }}</p>
-
-                <p>[ ] If you haven’t already, you will need to join the Github organisation we’ve created for the hub demo to work BEFORE you sign up:</p>
-
-                <a href="" class="butn"><span>Start demo</span></a>
+              <a href="#" class="butn"><span>Start demo</span></a>
 
               </div>
-              <div class="col-sm-12 col-md-6">
-              </div>
+
 
           </div>
         </div>
