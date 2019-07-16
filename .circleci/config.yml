@@ -69,7 +69,9 @@ workflows:
       - deploy_test:
           filters:
             tags:
-              only: /test*/
+              only: /^test.*/
+            branches:
+              only: /master/
       - deploy_main:
           filters:
             tags:
