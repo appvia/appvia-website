@@ -13,26 +13,45 @@
             <h3>Hub Demo Instructions</h3>
           </div>
           <div class="row justify-content-center">
-            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
+            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
 
+              <form id="demo-start" >
+                {% if email %}
+                <p>
+                  Before you start the demo, please ensure that you have joined the Github organisation we’ve created for this hub demo via the email from GitHub.
+                </p>
 
-              {% if email %}
-              <div class="form-check mb-4">
-                <input type="checkbox" class="form-check-input" id="acknowledge">
-                <label class="form-check-label" for="acknowledge">Please acknowledge that you have already <a href="#">joined the Github organisation</a> we’ve created for the hub demo BEFORE you sign up.</label>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="acknowledge" required data-parsley-error-message="Please join the Github organisation we setup for this demo">
+                  <label class="form-check-label" for="acknowledge">Yes I've done this</label>
+                </div>
+                {% else %}
+                  <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
+                  <label for="email"><strong>Signup email</strong></label>
+                  <div class="mb-2">Please provide the email address you used when signing up for the demo</div>
+                  <div class="form-row">
+                    <div class="col-7">
+                      <input class="form-control" type="text" name="email" id="email" required  value="{{email}}" />
+                    </div>
+                  </div>
+                {% endif %}
+
+                <button type="submit"id="submit-form"class="butn mt-4"><span>Start Appvia Hub Demo</span></button>
+                </form>
+
               </div>
-              {% else %}
-                <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
-                <label for="email"><strong>Signup email</strong></label>
-                <div class="mb-2">Please provide the email address you used when signing up for the demo</div>
-                <input class="form-control" type="text" name="email" id="email" required  value="{{email}}" />
-              {% endif %}
+              <div class="col-sm-12 col-md-4">
 
-              <a href="#" class="butn"><span>Start demo</span></a>
+                <h5>Helpful links</h5>
+                <div class="project-single-info ">
+                  <ul class="no-margin">
+                    <li><span class="value"><a href="#">How to use the hub</a></span></li>
+                    <li><span class="value"><a href="/products/hub-demo/integration-setup-admin-pages">Admin pages</a></span></li>
+                    <li><span class="value"><a href="#">Feedback on the Hub Demo</a></span></li>
+                  </ul>
+                </div>
 
               </div>
-
-
           </div>
         </div>
     </section>
@@ -40,5 +59,6 @@
 {% endblock %}
 
 {% block customScripts %}
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
+  <script src="/assets/fabrex/js/form.js"></script>
 {% endblock %}
