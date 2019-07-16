@@ -6,4 +6,4 @@ handlers:
   secure: always
   redirect_http_response_code: 301
 env_variables:
-  DEV_SITE: false
+  DEV_SITE: "false"
