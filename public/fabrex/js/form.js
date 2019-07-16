@@ -1,6 +1,6 @@
-  var frm = $('#demo-request');
+  var demoRequestForm = $('#demo-request');
 
-  frm.parsley();
+  demoRequestForm.parsley();
 
   Parsley.addValidator('git', {
     validateString: function(value) {
@@ -8,3 +8,6 @@
     },
     messages: {en: 'Must be a valid GitHub ID'}
   });
+
+  var demoStartForm = $('#demo-start');
+  demoStartForm.parsley();

@@ -134,4 +134,10 @@ router.get('/products/hub-demo/my-demo', function (req, res) {
   res.render('my-demo.html', {title: 'Appvia: My Demo', email: req.query.email });
 });
 
+router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
+  res.render('integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages' });
+});
+
+
+
 module.exports = router;
