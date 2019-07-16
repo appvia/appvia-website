@@ -1,6 +1,7 @@
 var express = require('express');
 var salesforce = require('../modules/salesforce');
 var gform = require('../modules/gform');
+var slack = require('../modules/slack');
 var Parser = require('rss-parser');
 var parser = new Parser();
 var router = express.Router();
@@ -88,6 +89,21 @@ router.post('/products/request-submit', function (req, res) {
     // first process the salesforce promise...
     sfContact = promises[0];
     if (sfContact) {
+      var devBanner = '';
+      if (process.env.DEV_SITE == 'true') {
+        devBanner = '*DEVELOPEMENT TEST ONLY* ';
+      }
+      slack.Message(
+        process.env.SLACK_DEMOS_URL,
+        "New demo creation required for:" + req.body.email,
+        devBanner + "*Qualified Customer* please create a new demo for " + req.body.email + " at " + req.body.companyName
+      )
+      .then(function() {
+        console.log('Successful slack post:' + req.body.email)
+      })
+      .catch(function (err) {
+        console.log('error posting to slack for ' + req.body.email + err)
+      });
       // They are a contact in salesforce - we're onto the demo!
       res.redirect('/products/request-submit');
     } else {
