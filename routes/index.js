@@ -85,8 +85,8 @@ if (hubDemoEnabled) {
         console.log(`Data submitted: ${JSON.stringify(req.body)}`);
 
         Promise.all([
-            salesforce.IsContact(req.body.email),
-            gform.AddContact(req.body)
+            salesforce.isContact(req.body.email),
+            gform.addContact(req.body)
         ])
         .then(function (promises) {
             // first process the salesforce promise...
