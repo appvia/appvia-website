@@ -6,7 +6,7 @@ function addContact(data) {
   */
 	// Do async job
   var formsURL = process.env.GFORM_URL;
-  requestPromise.get({ uri: formsURL, qs: data, resolveWithFullResponse: true })
+  return requestPromise.get({ uri: formsURL, qs: data, resolveWithFullResponse: true })
   .then((resp) => {
     if (resp.body.result == 'error') {
       // An error in the user form?
