@@ -427,3 +427,17 @@ textarea.parsley-error {
 .parsley-errors-list.filled {
   opacity: 1;
 }
+
+.badge.alpha-badge{
+  color: #fff;
+  background-color: #86bc42;
+  padding: 4px 8px;
+  margin-top: .8em;
+  position: absolute;
+  margin-left: 10px;
+}
+@media screen and (min-width: 992px){
+  .badge.alpha-badge{
+    margin-top: 1.2em !important;
+  }
+}
