@@ -63,7 +63,7 @@ if (hubDemoEnabled) {
 
     router.get('/products/hub-demo', function (req, res) {
         res.render('demo.html', {
-            title: 'Appvia: Request a Demo',
+            title: 'Appvia: Request a Hub Demo',
             slug: req.query.slug,
             firstName: req.query.firstName,
             lastName: req.query.lastName,
@@ -85,8 +85,8 @@ if (hubDemoEnabled) {
         console.log(`Data submitted: ${JSON.stringify(req.body)}`);
 
         Promise.all([
-            salesforce.isContact(req.body.email),
-            gform.addContact(req.body)
+            salesforce.IsContact(req.body.email),
+            gform.AddContact(req.body)
         ])
         .then(function (promises) {
             // first process the salesforce promise...
@@ -96,17 +96,17 @@ if (hubDemoEnabled) {
                 if (process.env.DEV_SITE == 'true') {
                     devBanner = '*DEVELOPEMENT TEST ONLY*\n';
                 }
-                slack.message(
+                slack.Message(
                     process.env.SLACK_DEMOS_URL,
-                    'New demo creation required for:' + req.body.email,
+                    `New demo creation required for: ${req.body.email}`,
                     `${devBanner}*Qualified Customer* please create a new demo for ${req.body.email} at ${req.body.companyName}`
                 )
-                    .then(function () {
-                        console.log(`Successful slack post: ${req.body.email}`)
-                    })
-                    .catch(function (err) {
-                        console.log(`error posting to slack for ${req.body.email}: ${err}`)
-                    });
+                .then(function () {
+                    console.log(`Successful slack post: ${req.body.email}`)
+                })
+                .catch(function (err) {
+                    console.log(`error posting to slack for ${req.body.email}: ${err}`)
+                });
                 // They are a contact in salesforce - we're onto the demo!
                 res.redirect('/products/request-submit');
             } else {
@@ -116,12 +116,12 @@ if (hubDemoEnabled) {
         })
         .catch(function (err) {
             // Just record here for now...
-            console.log(err)
+            console.log(err);
 
             // Generic error - don't want to leak secrets
             res.render('error.html', {
-                title: 'Oops, sorry',
-                message: 'Oops, sorry, error recording details',
+                title: "Oops, sorry",
+                message: "Oops, sorry, error recording details",
                 status: err.status,
                 html_class: 'error',
                 error: {}
@@ -129,6 +129,7 @@ if (hubDemoEnabled) {
         });
     });
 
+    // Not a contact, but in form - we'll get back to them:
     router.get('/products/request-submit-pending', function (req, res) {
         res.render('request-submit-pending.html', {title: 'Appvia: Request Pending'});
     });
@@ -140,6 +141,11 @@ if (hubDemoEnabled) {
     router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
         res.render('integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages'});
     });
+
+    router.get('/products/hub-demo/feedback', function (req, res) {
+      res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback' });
+    });
+
 }
 
 module.exports = router;
