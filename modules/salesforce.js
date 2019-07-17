@@ -31,7 +31,5 @@ function isContact(email) {
 // =============
 module.exports = {
   // Return a Promise
-  IsContact: function(email) {
-    return isContact(email);
-  }
+  isContact: isContact
 };

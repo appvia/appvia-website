@@ -12,7 +12,7 @@ function addContact(data) {
         reject(err);
       } else {
         // all good, as far as trying to post
-        if (resp.body.result == "error") {
+        if (resp.body.result == 'error') {
           // An error in the user form?
           console.log('Request OK but error returned - something wrong with the form?');
           console.log('Data:' + data);
@@ -29,8 +29,5 @@ function addContact(data) {
 // gform.js
 // ========
 module.exports = {
-  // Return a Promise
-  AddContact: function(data) {
-    return addContact(data);
-  }
+  addContact: addContact
 };

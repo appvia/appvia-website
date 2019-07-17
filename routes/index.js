@@ -85,8 +85,8 @@ if (hubDemoEnabled) {
         console.log('Data submitted:' + req);
 
         Promise.all([
-            salesforce.IsContact(req.body.email),
-            gform.AddContact(req.body)
+            salesforce.isContact(req.body.email),
+            gform.addContact(req.body)
         ])
             .then(function (promises) {
                 // first process the salesforce promise...
@@ -96,10 +96,10 @@ if (hubDemoEnabled) {
                     if (process.env.DEV_SITE == 'true') {
                         devBanner = '*DEVELOPEMENT TEST ONLY* ';
                     }
-                    slack.Message(
+                    slack.message(
                         process.env.SLACK_DEMOS_URL,
-                        "New demo creation required for:" + req.body.email,
-                        devBanner + "*Qualified Customer* please create a new demo for " + req.body.email + " at " + req.body.companyName
+                        'New demo creation required for:' + req.body.email,
+                        devBanner + '*Qualified Customer* please create a new demo for ' + req.body.email + ' at ' + req.body.companyName
                     )
                         .then(function () {
                             console.log('Successful slack post:' + req.body.email)
@@ -116,12 +116,12 @@ if (hubDemoEnabled) {
             })
             .catch(function (err) {
                 // Just record here for now...
-                console.log(err);
+                console.log(err)
 
                 // Generic error - don't want to leak secrets
                 res.render('error.html', {
-                    title: "Oops, sorry",
-                    message: "Oops, sorry, error recording details",
+                    title: 'Oops, sorry',
+                    message: 'Oops, sorry, error recording details',
                     status: err.status,
                     html_class: 'error',
                     error: {}
@@ -129,7 +129,6 @@ if (hubDemoEnabled) {
             });
     });
 
-    // Not a contact, but in form - we'll get back to them:
     router.get('/products/request-submit-pending', function (req, res) {
         res.render('request-submit-pending.html', {title: 'Appvia: Request Pending'});
     });
