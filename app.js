@@ -8,8 +8,6 @@ var nunjucks = require('nunjucks');
 var compression = require('compression');
 var routes = require('./routes/index');
 
-
-
 var app = express();
 
 //compression
@@ -22,8 +20,6 @@ nunjucks.configure('views', {
 });
 app.set('view engine', 'nunjucks');
 
-// Routes setup
-app.use('/', routes);
 app.use('/assets', express.static(path.join(__dirname, 'public')));
 
 
@@ -34,6 +30,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Routes setup
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

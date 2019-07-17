@@ -1,8 +1,12 @@
 var express = require('express');
+var salesforce = require('../modules/salesforce');
+var gform = require('../modules/gform');
+var slack = require('../modules/slack');
 var Parser = require('rss-parser');
 var parser = new Parser();
 var router = express.Router();
 
+const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 const jobs = require('../jobs').filter(j => j.active);
 
 async function getBlogFeed() {
@@ -22,7 +26,7 @@ router.get('/about', function (req, res) {
 });
 
 router.get('/products', function (req, res) {
-    res.render('products.html', {title: 'Appvia: Products'});
+    res.render('products.html', {title: 'Appvia: Products', hubDemoEnabled});
 });
 
 router.get('/services', function (req, res) {
@@ -48,11 +52,100 @@ router.get('/contact', function (req, res) {
 });
 
 router.get('/marketing-email-template', function (req, res) {
-  res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  name: req.query.name,  cta: req.query.cta});
+  res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,  cta: req.query.cta});
 });
 
 router.get('/email-template', function (req, res) {
-  res.render('email-template.html', {title: 'Appvia: Email Template',  name: req.query.name,  cta: req.query.cta});
+  res.render('email-template.html', {title: 'Appvia: Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,   cta: req.query.cta});
 });
+
+if (hubDemoEnabled) {
+
+    router.get('/products/hub-demo', function (req, res) {
+        res.render('demo.html', {
+            title: 'Appvia: Request a Hub Demo',
+            slug: req.query.slug,
+            firstName: req.query.firstName,
+            lastName: req.query.lastName,
+            email: req.query.email,
+            companyName: req.query.companyName,
+            companySize: req.query.companySize,
+            role: req.query.role,
+            github: req.query.github,
+            errors: req.query.errors
+        });
+    });
+
+    router.get('/products/request-submit', function (req, res) {
+        res.render('request-submit.html', {title: 'Appvia: Thank you for your request'});
+    });
+
+    router.post('/products/request-submit', function (req, res) {
+        // First stick the data into google forms
+        console.log(`Data submitted: ${JSON.stringify(req.body)}`);
+
+        Promise.all([
+            salesforce.isContact(req.body.email),
+            gform.addContact(req.body)
+        ])
+        .then(function (promises) {
+            // first process the salesforce promise...
+            sfContact = promises[0];
+            if (sfContact) {
+                var devBanner = '';
+                if (process.env.DEV_SITE == 'true') {
+                    devBanner = '*DEVELOPEMENT TEST ONLY*\n';
+                }
+                slack.Message(
+                    process.env.SLACK_DEMOS_URL,
+                    `New demo creation required for: ${req.body.email}`,
+                    `${devBanner}*Qualified Customer* please create a new demo for ${req.body.email} at ${req.body.companyName}`
+                )
+                .then(function () {
+                    console.log(`Successful slack post: ${req.body.email}`)
+                })
+                .catch(function (err) {
+                    console.log(`error posting to slack for ${req.body.email}: ${err}`)
+                });
+                // They are a contact in salesforce - we're onto the demo!
+                res.redirect('/products/request-submit');
+            } else {
+                // Not a contact, but in form - we'll get back to them:
+                res.redirect('/products/request-submit-pending');
+            }
+        })
+        .catch(function (err) {
+            // Just record here for now...
+            console.log(err);
+
+            // Generic error - don't want to leak secrets
+            res.render('error.html', {
+                title: "Oops, sorry",
+                message: "Oops, sorry, error recording details",
+                status: err.status,
+                html_class: 'error',
+                error: {}
+            });
+        });
+    });
+
+    // Not a contact, but in form - we'll get back to them:
+    router.get('/products/request-submit-pending', function (req, res) {
+        res.render('request-submit-pending.html', {title: 'Appvia: Request Pending'});
+    });
+
+    router.get('/products/hub-demo/my-demo', function (req, res) {
+        res.render('my-demo.html', {title: 'Appvia: My Demo', email: req.query.email});
+    });
+
+    router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
+        res.render('integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages'});
+    });
+
+    router.get('/products/hub-demo/feedback', function (req, res) {
+      res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback' });
+    });
+
+}
 
 module.exports = router;

@@ -13,6 +13,7 @@
                 margin:0 auto;
             }
         }
+        @media only screen and (min-width:10px) and (max-width: 500px){.mobile-button {width: 100%; }}
     </style>
   </head>
   <body>
@@ -22,13 +23,51 @@
               <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="600" class="container" style="background-color: #fff;">
                   <tr>
                       <td>
-                          <img src="http://www.appvia.io/assets/fabrex/img/logos/logo.png" width="120px" alt="Appvia logo" style="float:right; margin-top: 20px; margin-right:20px">
+                          <img src="https://appvia.io/assets/fabrex/img/logos/logo-email.png" width="120px" alt="Appvia logo" style="float:right; margin-top: 20px; margin-right:20px">
                           <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="20" border="0" align="center" width="100%" style="margin-top: 60px; font-size: 16px; line-height:24px">
                               <tr>
                                   <td>
-                                      <p>To {{ name }},</p>
-                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                      <p><a href="{{ cta }}" style="color:#1b75bc">A call to action link</a>
+                                      <p>To {{ firstName }} {{ lastName }},</p>
+
+                                      <p>Thanks for your time at Kubecon - we’ve been busy....</p>
+
+                                      <p>The hub provides a platform for developers from your organisation to create and run applications simply and quickly with a flexibility beyond a typical developer platform product.</p>
+
+                                      <p>Our product “The Appvia Hub” has grown since March into a product with the following capabilities:</p>
+
+                                      <ul>
+                                        <li><img src="https://appvia.io/assets/img/new.png" height="18"  alt="NEW" style="margin-right: 6px; margin-top: 2px; float: left;">Build GKE Kubernetes Cluster Support</li>
+                                        <li><img src="https://appvia.io/assets/img/new.png" height="18"  alt="NEW" style="margin-right: 6px; margin-top: 2px; float: left;">GitHub Templates</li>
+                                        <li><img src="https://appvia.io/assets/img/new.png" height="18"  alt="NEW" style="margin-right: 6px; margin-top: 2px; float: left;">Logging</li>
+                                        <li>Monitoring</li>
+                                        <li>My Access</li>
+                                        <li>Kubernetes namespaces</li>
+                                        <li>Github repositories</li>
+                                        <li>Quay containers</li>
+                                      </ul>
+
+                                      <p>We can now offer you and your team members a personalised Hub Demo instance on GKE and the chance to influence the product direction and integrations.</p>
+
+                                      <!--Button-->
+
+                                       <table align="center" cellspacing="0" cellpadding="0" width="100%">
+                                         <tr>
+                                           <td align="left" >
+                                             <table border="0" class="mobile-button" cellspacing="0" cellpadding="0">
+                                               <tr>
+                                                 <td align="center" bgcolor="#009127" style="background-color: #009127; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px; " width="100%">
+                                                 <!--[if mso]>&nbsp;<![endif]-->
+                                                     <a href="{{ cta }}" target="_blank" style="20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #009127; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;">
+                                                         <span style="font-size: 20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Request a Demo</span>
+                                                   </a>
+                                                 <!--[if mso]>&nbsp;<![endif]-->
+                                                 </td>
+                                               </tr>
+                                             </table>
+                                           </td>
+                                         </tr>
+                                       </table>
+
                                   </td>
                               </tr>
                           </table>
@@ -39,7 +78,7 @@
                           <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" class="email-footer" style="margin-top: 10px; background-color: #f7f7f7; border-top: solid 1px #c4c4c4">
                               <tr>
                                   <td style="text-align: center; font-size: 12px;padding:20px 0 60px 0">
-                                    <p>Ground Floor, Cap House 9 - 12 Long Lane London, EC1A 9HA&nbsp;&nbsp;&nbsp;&nbsp;0203 475 0546</p>
+                                    <p>Ground Floor, Cap House 9 - 12 Long Lane London, EC1A 9HA. Contact: 0203 475 0546</p>
                                     <p>© 2019 <a href="https://appvia.io" target="_blank" style="color: #000">Appvia</a></p>
                                   </td>
                               </tr>
