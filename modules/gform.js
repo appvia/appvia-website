@@ -29,8 +29,5 @@ function addContact(data) {
 // gform.js
 // ========
 module.exports = {
-  // Return a Promise
-  AddContact: function(data) {
-    return addContact(data);
-  }
+  addContact: addContact
 };

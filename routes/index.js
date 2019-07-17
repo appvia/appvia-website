@@ -82,8 +82,8 @@ router.post('/products/request-submit', function (req, res) {
   console.log('Data submitted:' + req);
 
   Promise.all([
-    salesforce.IsContact(req.body.email),
-    gform.AddContact(req.body)
+    salesforce.isContact(req.body.email),
+    gform.addContact(req.body)
   ])
   .then(function(promises) {
     // first process the salesforce promise...
@@ -93,7 +93,7 @@ router.post('/products/request-submit', function (req, res) {
       if (process.env.DEV_SITE == 'true') {
         devBanner = '*DEVELOPEMENT TEST ONLY* ';
       }
-      slack.Message(
+      slack.message(
         process.env.SLACK_DEMOS_URL,
         "New demo creation required for:" + req.body.email,
         devBanner + "*Qualified Customer* please create a new demo for " + req.body.email + " at " + req.body.companyName
@@ -137,7 +137,5 @@ router.get('/products/hub-demo/my-demo', function (req, res) {
 router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
   res.render('integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages' });
 });
-
-
 
 module.exports = router;
