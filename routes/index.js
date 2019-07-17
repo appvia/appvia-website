@@ -95,8 +95,8 @@ router.post('/products/request-submit', function (req, res) {
       }
       slack.message(
         process.env.SLACK_DEMOS_URL,
-        "New demo creation required for:" + req.body.email,
-        devBanner + "*Qualified Customer* please create a new demo for " + req.body.email + " at " + req.body.companyName
+        'New demo creation required for:' + req.body.email,
+        devBanner + '*Qualified Customer* please create a new demo for ' + req.body.email + ' at ' + req.body.companyName
       )
       .then(function() {
         console.log('Successful slack post:' + req.body.email)
@@ -117,8 +117,8 @@ router.post('/products/request-submit', function (req, res) {
 
     // Generic error - don't want to leak secrets
     res.render('error.html', {
-      title: "Oops, sorry",
-      message: "Oops, sorry, error recording details",
+      title: 'Oops, sorry',
+      message: 'Oops, sorry, error recording details',
   		status: err.status,
   		html_class: 'error',
       error: {}

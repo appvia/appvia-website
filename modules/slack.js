@@ -4,20 +4,20 @@ function message(
   slackChannelUrl,
   title,
   text,
-  icon_emoji = ":tada:",
+  icon_emoji = ':tada:',
   fallback = text,
-  color = "good"
+  color = 'good'
 ) {
   data = {
-    "icon_emoji": icon_emoji,
-    "attachments": [
+    'icon_emoji': icon_emoji,
+    'attachments': [
       {
-        "fallback": fallback,
-        "color": color,
-        "fields": [
+        'fallback': fallback,
+        'color': color,
+        'fields': [
           {
-            "title": title,
-            "value": text
+            'title': title,
+            'value': text
           }
         ]
       }
@@ -33,7 +33,7 @@ function messageRaw(slackChannelUrl, data) {
   return new Promise(function(resolve, reject) {
     // Do async job
     var slackURL = slackChannelUrl;
-    request({ url: slackChannelUrl, method: "POST", json: data }, function(err, resp, body) {
+    request({ url: slackChannelUrl, method: 'POST', json: data }, function(err, resp, body) {
       if (err) {
         console.log('Slack error!' + body)
         reject(err);
