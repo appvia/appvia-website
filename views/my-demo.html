@@ -13,9 +13,9 @@
             <h3>Hub Demo Instructions</h3>
           </div>
           <div class="row justify-content-center">
-            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
+            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
 
-              <form id="demo-start" >
+              <form id="demo-start" class="mb-5">
                 {% if email %}
                 <p>
                   Before you start the demo, please ensure that you have joined the Github organisation we’ve created for this hub demo via the email from GitHub.
@@ -39,18 +39,76 @@
                 <button type="submit"id="submit-form"class="butn mt-4"><span>Start Appvia Hub Demo</span></button>
                 </form>
 
-              </div>
-              <div class="col-sm-12 col-md-4">
+                <h4>FAQ</h4>
+                <div id="accordion" class="accordion-style2">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Appvia HUB Prerequisites
+                              </button>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                              <ul class="bullets">
+                                <li>GitHub Account (see above)</li>
+                                <li>A basic understanding of the following:</li>
+                                <ul class="bullets">
+                                  <li>Source Code</li>
+                                  <li>Docker</li>
+                                  <li>Kubernetes</li>
+                                </ul>
+                              </ul>
 
-                <h5>Helpful links</h5>
-                <div class="project-single-info ">
-                  <ul class="no-margin">
-                    <li><span class="value"><a href="#">How to use the hub</a></span></li>
-                    <li><span class="value"><a href="/products/hub-demo/integration-setup-admin-pages">Admin pages</a></span></li>
-                    <li><span class="value"><a href="#">Feedback on the Hub Demo</a></span></li>
-                  </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Limitations
+                              </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                              <ul class="bullets">
+                                <li>
+                                  <strong>A Small Kubernetes Cluster</strong><br>
+                                  <span>We’ve created a dedicated Kubernetes cluster with a couple of nodes and some resources limits. Please use the Chat facility <img src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26"> if you need more resources to complete your evaluation.</span>
+                                </li>
+                                <li>
+                                  <strong>Admin pages</strong><br>
+                                  <span>For demo purposes, unfortunately you won’t be an administrator of the Hub. See <a href="/products/hub-demo/integration-setup-admin-pages">Demo Integration Setup</a></span>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                          <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              Feedback / Help for the Hub Demo
+                            </button>
+                          </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                              <ul class="bullets">
+                                <li>Use this icon <img src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26"> within your demo instance to get help on using the demo.</li>
+                                <li><a href="https://github.com/appvia/appvia-hub" target="_blank">Appvia Hub on GitHub</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
               </div>
           </div>
         </div>

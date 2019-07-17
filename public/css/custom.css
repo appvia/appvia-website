@@ -441,3 +441,6 @@ textarea.parsley-error {
     margin-top: 1.2em !important;
   }
 }
+.accordion-style2 h5 button{
+  font-size: .7em !important;
+}

@@ -60,7 +60,7 @@ router.get('/email-template', function (req, res) {
 
 router.get('/products/hub-demo', function (req, res) {
   res.render('demo.html', {
-    title: 'Appvia: Request a Demo',
+    title: 'Appvia: Request a Hub Demo',
     slug: req.query.slug,
     firstName: req.query.firstName,
     lastName: req.query.lastName,
@@ -136,6 +136,10 @@ router.get('/products/hub-demo/my-demo', function (req, res) {
 
 router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
   res.render('integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages' });
+});
+
+router.get('/products/hub-demo/feedback', function (req, res) {
+  res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback' });
 });
 
 
