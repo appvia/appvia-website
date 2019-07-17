@@ -8,3 +8,4 @@ handlers:
   redirect_http_response_code: 301
 env_variables:
   DEV_SITE: "true"
+  HUB_DEMO_ENABLED: "true"
