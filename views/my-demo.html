@@ -15,7 +15,7 @@
           <div class="row justify-content-center">
             <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
 
-              <form id="demo-start" class="mb-5">
+              <form class="mb-5" data-parsley-validate>
                 {% if email %}
                 <p>
                   Before you start the demo, please ensure that you have joined the Github organisation we’ve created for this hub demo via the email from GitHub.
@@ -25,6 +25,7 @@
                   <input type="checkbox" class="form-check-input" id="acknowledge" required data-parsley-error-message="Please join the Github organisation we setup for this demo">
                   <label class="form-check-label" for="acknowledge">Yes I've done this</label>
                 </div>
+
                 {% else %}
                   <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
                   <label for="email"><strong>Signup email</strong></label>
@@ -36,7 +37,7 @@
                   </div>
                 {% endif %}
 
-                <button type="submit"id="submit-form"class="butn mt-4"><span>Start Appvia Hub Demo</span></button>
+                <button type="submit"id="submit-form"class="butn mt-4"><span>Start the Hub Demo</span></button>
                 </form>
 
                 <h4>FAQ</h4>
@@ -60,8 +61,6 @@
                                   <li>Kubernetes</li>
                                 </ul>
                               </ul>
-
-
                             </div>
                         </div>
                     </div>
