@@ -1,12 +1,3 @@
-// salesforce.js
-// =============
-module.exports = {
-  // Return a Promise
-  IsContact: function(email) {
-    return isContact(email);
-  }
-};
-
 function isContact(email) {
   /*
     Need to 1. Check if we have existing **contact** for this email...
@@ -35,3 +26,12 @@ function isContact(email) {
     }
   );
 }
+
+// salesforce.js
+// =============
+module.exports = {
+  // Return a Promise
+  IsContact: function(email) {
+    return isContact(email);
+  }
+};

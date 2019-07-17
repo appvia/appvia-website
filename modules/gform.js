@@ -1,14 +1,5 @@
 var request = require('request');
 
-// salesforce.js
-// =============
-module.exports = {
-  // Return a Promise
-  AddContact: function(data) {
-    return addContact(data);
-  }
-};
-
 function addContact(data) {
   /*
     Will post to google forms
@@ -34,3 +25,12 @@ function addContact(data) {
     })
   });
 }
+
+// gform.js
+// ========
+module.exports = {
+  // Return a Promise
+  AddContact: function(data) {
+    return addContact(data);
+  }
+};
