@@ -1,17 +1,5 @@
 var request = require('request');
 
-// salesforce.js
-// =============
-module.exports = {
-  Message: function(slackChannelUrl, title, text) {
-    return message(slackChannelUrl, title, text);
-  },
-  // Return a Promise
-  MessageRaw: function(slackChannelUrl, data) {
-    return messageFields(slackChannelUrl, data);
-  }
-};
-
 function message(
   slackChannelUrl,
   title,
@@ -60,3 +48,15 @@ function messageRaw(slackChannelUrl, data) {
     })
   });
 }
+
+// slack.js
+// ========
+module.exports = {
+  Message: function(slackChannelUrl, title, text) {
+    return message(slackChannelUrl, title, text);
+  },
+  // Return a Promise
+  MessageRaw: function(slackChannelUrl, data) {
+    return messageFields(slackChannelUrl, data);
+  }
+};
