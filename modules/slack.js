@@ -34,13 +34,13 @@ function messageRaw(slackChannelUrl, data) {
   return requestPromise({ url: slackChannelUrl, method: 'POST', json: data })
   .then((resp, body) => {
     if (body == 'invalid_payload') {
-      return Promise.reject(new Error('Invalid payload submitted to slack:' + data))
+      return Promise.reject(new Error(`Invalid payload submitted to slack: ${data}`))
     }
     // all good, as far as trying to post
     console.log('Slack submission was successful');
   })
   .catch(err => {
-    console.log('Slack error!' + err.body)
+    console.log(`Slack error: ${err.body}`)
     return Promise.reject(err);
   });
 }

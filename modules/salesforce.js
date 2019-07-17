@@ -14,12 +14,12 @@ function isContact(email) {
 
   return conn.login(sfUser, sfPass + sfToken)
     .then(function() {
-      return conn.query('SELECT Id, Email FROM Contact WHERE Email=\'' + email + '\'');
+      return conn.query(`SELECT Id, Email FROM Contact WHERE Email='${email}'`);
     })
     .then(function(res) {
       // receive resolved result from the promise,
       if (res['totalSize'] > 0) {
-        console.log('Salesforce contact found:' + email);
+        console.log(`Salesforce contact found: ${email}`);
         return true;
       }
       return false;
