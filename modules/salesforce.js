@@ -1,4 +1,4 @@
-function isContact(email) {
+function isContact(contactOrLead) {
   /*
     Need to 1. Check if we have existing **contact** for this email...
             2. If we do:
@@ -13,18 +13,41 @@ function isContact(email) {
   var conn = new jsforce.Connection();
 
   return conn.login(sfUser, sfPass + sfToken)
-    .then(function() {
-      return conn.query(`SELECT Id, Email FROM Contact WHERE Email='${email}'`);
-    })
-    .then(function(res) {
-      // receive resolved result from the promise,
-      if (res['totalSize'] > 0) {
-        console.log(`Salesforce contact found: ${email}`);
-        return true;
-      }
-      return false;
+  .then(() => {
+    return conn.query(`SELECT Id, Email FROM Contact WHERE Email='${contactOrLead.email}'`);
+  })
+  .then( res => {
+    // receive resolved result from the promise,
+    if (res['totalSize'] > 0) {
+      console.log(`Salesforce contact found: ${contactOrLead.email}`);
+      return true;
     }
-  );
+    // not a contact, create next promise:
+    return conn.query(`SELECT Id, Name, Email FROM Lead WHERE Email = '${contactOrLead.email}'`)
+    .then(function(res) {
+      console.log(`Successfully queried leads for: ${contactOrLead.email}, totalSize === ${res['totalSize']}`)
+
+      // Not a contact, lets see if the lead exists:
+      if (res['totalSize'] === 0) {
+        // no lead, lets create one...
+        return conn.sobject("Lead").create(
+          {
+            FirstName: contactOrLead.firstName,
+            LastName: contactOrLead.lastName,
+            Email: contactOrLead.email,
+            Company: contactOrLead.companyName,
+            Title: contactOrLead.role,
+            NumberOfEmployees: contactOrLead.companySize
+          }
+        );
+      }
+      console.log(`Lead already exists: ${contactOrLead.email}, totalSize === ${res['totalSize']}`)
+    })
+    .then(function(ret) {
+      console.log(`Successfully created lead for ${contactOrLead.email}, ret = ${JSON.stringify(ret)}`)
+      return false;
+    });
+  });
 }
 
 // salesforce.js
