@@ -8,3 +8,4 @@ handlers:
 env_variables:
   DEV_SITE: "false"
   HUB_DEMO_ENABLED: "false"
+  EMAIL_ADMIN_ENABLED: "false"

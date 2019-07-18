@@ -6,9 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 var compression = require('compression');
-var routes = require('./routes/index');
 
 var app = express();
+
+const routes = require('./routes/index');
+const hubDemo = require('./routes/hub-demo');
+const emailTemplates = require('./routes/email-templates');
+
+const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
+const emailAdminEnabled = process.env.EMAIL_ADMIN_ENABLED === 'true';
 
 //compression
 app.use(compression());
@@ -32,7 +38,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes setup
-app.use('/', routes);
+app.use(routes);
+if (hubDemoEnabled) {
+  app.use(hubDemo);
+}
+if (emailAdminEnabled) {
+  app.use(emailTemplates);
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
