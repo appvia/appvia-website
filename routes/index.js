@@ -54,17 +54,17 @@ router.get('/contact', function (req, res) {
 
 if (emailAdminEnabled) {
   router.get('/marketing-email-template', function (req, res) {
-    res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,  cta: req.query.cta});
+    res.render('email-templates/marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,  cta: req.query.cta});
   });
 
   router.get('/email-template', function (req, res) {
-    res.render('email-template.html', {title: 'Appvia: Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,   cta: req.query.cta});
+    res.render('email-templates/email-template.html', {title: 'Appvia: Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,   cta: req.query.cta});
   });
 }
 
 if (hubDemoEnabled) {
     router.get('/products/hub-demo', function (req, res) {
-        res.render('demo.html', {
+        res.render('hub-demo/demo.html', {
             title: 'Appvia: Request a Hub Demo',
             slug: req.query.slug,
             firstName: req.query.firstName,
@@ -79,7 +79,7 @@ if (hubDemoEnabled) {
     });
 
     router.get('/products/request-submit', function (req, res) {
-        res.render('request-submit.html', {title: 'Appvia: Thank you for your request'});
+        res.render('hub-demo/request-submit.html', {title: 'Appvia: Thank you for your request'});
     });
 
     router.post('/products/request-submit', async function (req, res) {
@@ -111,19 +111,19 @@ if (hubDemoEnabled) {
 
     // Not a contact, but in form - we'll get back to them:
     router.get('/products/request-submit-pending', function (req, res) {
-        res.render('request-submit-pending.html', {title: 'Appvia: Request Pending'});
+        res.render('hub-demo/request-submit-pending.html', {title: 'Appvia: Request Pending'});
     });
 
     router.get('/products/hub-demo/my-demo', function (req, res) {
-        res.render('my-demo.html', {title: 'Appvia: My Demo', email: req.query.email});
+        res.render('hub-demo/my-demo.html', {title: 'Appvia: My Demo', email: req.query.email});
     });
 
     router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
-        res.render('integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages'});
+        res.render('hub-demo/integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages'});
     });
 
     router.get('/products/hub-demo/feedback', function (req, res) {
-      res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback' });
+      res.render('hub-demo/feedback.html', {title: 'Appvia: Hub Demo Feedback' });
     });
 }
 
