@@ -143,7 +143,7 @@ if (hubDemoEnabled) {
     });
 
     router.get('/products/hub-demo/feedback', function (req, res) {
-      res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback' });
+      res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback', email: req.query.email });
     });
 
 }

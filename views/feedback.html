@@ -46,38 +46,38 @@
                     <fieldset>
                       <legend>What application types do your teams develop with?*</legend>
                       <div class="form-check">
-                        <input class="form-check-input" name="application_types[]" type="checkbox" value="PHP" id="application_types_php" data-parsley-mincheck="1" data-parsley-errors-container="#application-types-errors" required>
-                        <label class="form-check-label" for="application_types_php">
+                        <input class="form-check-input" name="application-types[]" type="checkbox" value="PHP" id="application-types-php" data-parsley-mincheck="1" data-parsley-errors-container="#application-types-errors" required>
+                        <label class="form-check-label" for="application-types-php">
                           PHP
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="application_types[]" type="checkbox" value="Java" id="application_types_java" >
-                        <label class="form-check-label" for="application_types_java">
+                        <input class="form-check-input" name="application-types[]" type="checkbox" value="Java" id="application-types-java" >
+                        <label class="form-check-label" for="application-types-java">
                           Java
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="application_types[]" type="checkbox" value="Node" id="application_types_node" >
-                        <label class="form-check-label" for="application_types_node">
+                        <input class="form-check-input" name="application-types[]" type="checkbox" value="Node" id="application-types-node" >
+                        <label class="form-check-label" for="application-types-node">
                           Node
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="application_types[]" type="checkbox" value="Ruby / Rails" id="application_types_ruby_rails"  >
-                        <label class="form-check-label" for="application_types_ruby_rails">
+                        <input class="form-check-input" name="application-types[]" type="checkbox" value="Ruby / Rails" id="application-types-ruby_rails"  >
+                        <label class="form-check-label" for="application-types-ruby_rails">
                           Ruby / Rails
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="application_types[]" type="checkbox" value="C #" id="application_types_c"  >
-                        <label class="form-check-label" for="application_types_c">
+                        <input class="form-check-input" name="application-types[]" type="checkbox" value="C #" id="application-types-c"  >
+                        <label class="form-check-label" for="application-types-c">
                           C #
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input conditionals" name="application_types[]" type="checkbox" value="Other" id="application_types_other" >
-                        <label class="form-check-label" for="application_types_other">
+                        <input class="form-check-input conditionals" name="application-types[]" type="checkbox" value="Other" id="application-types-other" >
+                        <label class="form-check-label" for="application-types-other">
                           Other
                         </label>
                         <div class="conditional-inputs" style="display:none;">
@@ -89,7 +89,7 @@
                   </div>
                   <div class="col-md-12">
                     <label >Number of people in the first development team that may want to help drive our product?*</label>
-                    <input class="form-control col-md-4" type="text" name="dev-team-number" id="devTeamNumber" required />
+                    <input class="form-control col-md-4" type="text" name="devs-in-my-team" id="devTeamNumber" required />
                   </div>
                   <div class="col-md-12">
                     <label >How many development teams in your organisation?*</label>
@@ -135,36 +135,36 @@
                     <fieldset>
                       <legend>Are you using any of the following Cloud Providers?*</legend>
                       <div class="form-check">
-                        <input class="form-check-input" name="cloud_providers[]" type="checkbox" value="Openstack" id="cloud_providers_Openstack" data-parsley-mincheck="1" data-parsley-errors-container="#cloud-providers-errors" required>
-                        <label class="form-check-label" for="cloud_providers_Openstack">
+                        <input class="form-check-input" name="cloud-providers[]" type="checkbox" value="Openstack" id="cloud-providers-Openstack" data-parsley-mincheck="1" data-parsley-errors-container="#cloud-providers-errors" required>
+                        <label class="form-check-label" for="cloud-providers-Openstack">
                           Openstack (on prem)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="cloud_providers[]" type="checkbox" value="GCP" id="offerings_GCP" >
+                        <input class="form-check-input" name="cloud-providers[]" type="checkbox" value="GCP" id="offerings_GCP" >
                         <label class="form-check-label" for="offerings_GCP">
                           GCP (Google Cloud Platform)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="cloud_providers[]" type="checkbox" value="EC2" id="offerings_AKS" >
+                        <input class="form-check-input" name="cloud-providers[]" type="checkbox" value="EC2" id="offerings_AKS" >
                         <label class="form-check-label" for="offerings_EC2">
                           EC2 (Amazon Elastic Compute)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="cloud_providers[]" type="checkbox" value="Azure" id="offerings_KOPS"  >
+                        <input class="form-check-input" name="cloud-providers[]" type="checkbox" value="Azure" id="offerings_KOPS"  >
                         <label class="form-check-label" for="offerings_Azure">
                           Azure (MS)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input conditionals" name="cloud_providers[]" type="checkbox" value="Other" id="cloud_providers_other"  >
-                        <label class="form-check-label" for="cloud_providers_other">
+                        <input class="form-check-input conditionals" name="cloud-providers[]" type="checkbox" value="Other" id="cloud-providers-other"  >
+                        <label class="form-check-label" for="cloud-providers-other">
                           Other
                         </label>
                         <div class="conditional-inputs" style="display:none;">
-                          <input type="text" class="form-control" name="cloud_providers_other" />
+                          <input type="text" class="form-control" name="cloud-providers-other" />
                         </div>
                       </div>
                       <div id="cloud-providers-errors"></div>
@@ -174,6 +174,7 @@
                     <label for="message" >Hub Feedback Comments:</label>
                     <textarea id="message" rows="8" class="form-control" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.." data-parsley-validation-threshold="10"></textarea>
                   </div>
+                  <input type="hidden" name="email" value="{{email}}" />
                 <div class="col-md-12">
                   <button type="submit"id="submit-form"class="butn"><span>Submit Request</span></button>
                 </div>
