@@ -1,10 +1,10 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-    {% import "../views/partials/nav.html" as navigation %}
+    {% import "../../views/partials/nav.html" as navigation %}
     {{ navigation.nav('products') }}
 
-    {% import "../views/partials/headers.html" as header %}
+    {% import "../../views/partials/headers.html" as header %}
     {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Hub Demo Instructions', link: false }], '', '0', 'background-position-1') }}
 
     <section class="padding-80">
