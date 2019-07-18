@@ -9,3 +9,4 @@ handlers:
 env_variables:
   DEV_SITE: "true"
   HUB_DEMO_ENABLED: "true"
+  EMAIL_ADMIN_ENABLED: "true"

@@ -7,6 +7,7 @@ var parser = new Parser();
 var router = express.Router();
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
+const emailAdminEnabled = process.env.EMAIL_ADMIN_ENABLED === 'true';
 const jobs = require('../jobs').filter(j => j.active);
 
 async function getBlogFeed() {
@@ -51,16 +52,17 @@ router.get('/contact', function (req, res) {
   res.render('contact.html', {title: 'Appvia: Contact'});
 });
 
-router.get('/marketing-email-template', function (req, res) {
-  res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,  cta: req.query.cta});
-});
+if (emailAdminEnabled) {
+  router.get('/marketing-email-template', function (req, res) {
+    res.render('marketing-email-template.html', {title: 'Appvia: Marketing Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,  cta: req.query.cta});
+  });
 
-router.get('/email-template', function (req, res) {
-  res.render('email-template.html', {title: 'Appvia: Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,   cta: req.query.cta});
-});
+  router.get('/email-template', function (req, res) {
+    res.render('email-template.html', {title: 'Appvia: Email Template',  firstName: req.query.firstName, lastName: req.query.lastName,   cta: req.query.cta});
+  });
+}
 
 if (hubDemoEnabled) {
-
     router.get('/products/hub-demo', function (req, res) {
         res.render('demo.html', {
             title: 'Appvia: Request a Hub Demo',
@@ -123,7 +125,6 @@ if (hubDemoEnabled) {
     router.get('/products/hub-demo/feedback', function (req, res) {
       res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback' });
     });
-
 }
 
 module.exports = router;
