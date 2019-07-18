@@ -80,45 +80,23 @@ if (hubDemoEnabled) {
         res.render('request-submit.html', {title: 'Appvia: Thank you for your request'});
     });
 
-    router.post('/products/request-submit', function (req, res) {
-        // First stick the data into google forms
-        console.log(`Data submitted: ${JSON.stringify(req.body)}`);
-
-        Promise.all([
-            salesforce.isContact(req.body),
-            gform.addContact(req.body)
-        ])
-        .then(function (promises) {
-            // first process the salesforce promise...
-            sfContact = promises[0];
+    router.post('/products/request-submit', async function (req, res) {
+        console.log('Data submitted:', req.body);
+        try {
+            await gform.addContact(req.body);
+            const sfContact = await salesforce.isContact(req.body);
             if (sfContact) {
-                var devBanner = '';
-                if (process.env.DEV_SITE == 'true') {
-                    devBanner = '*DEVELOPEMENT TEST ONLY*\n';
-                }
-                slack.message(
+                await slack.message(
                     process.env.SLACK_DEMOS_URL,
                     `New demo creation required for: ${req.body.email}`,
-                    `${devBanner}*Qualified Customer* please create a new demo for ${req.body.email} at ${req.body.companyName}`
-                )
-                .then(function () {
-                    console.log(`Successful slack post: ${req.body.email}`)
-                })
-                .catch(function (err) {
-                    console.log(`error posting to slack for ${req.body.email}: ${err}`)
-                });
-                // They are a contact in salesforce - we're onto the demo!
+                    `*Qualified Customer* please create a new demo for ${req.body.email} at ${req.body.companyName}`
+                );
                 res.redirect('/products/request-submit');
             } else {
-                // Not a contact, but in form - we'll get back to them:
                 res.redirect('/products/request-submit-pending');
             }
-        })
-        .catch(function (err) {
-            // Just record here for now...
-            console.log(err);
-
-            // Generic error - don't want to leak secrets
+        } catch (err) {
+            console.log('Demo request failed:', err);
             res.render('error.html', {
                 title: "Oops, sorry",
                 message: "Oops, sorry, error recording details",
@@ -126,7 +104,7 @@ if (hubDemoEnabled) {
                 html_class: 'error',
                 error: {}
             });
-        });
+        }
     });
 
     // Not a contact, but in form - we'll get back to them:
