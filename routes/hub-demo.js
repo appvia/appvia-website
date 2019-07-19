@@ -63,7 +63,7 @@ router.get('/products/hub-demo/integration-setup-admin-pages', function (req, re
 });
 
 router.get('/products/hub-demo/feedback', function (req, res) {
-  res.render('feedback.html', {title: 'Appvia: Hub Demo Feedback', email: req.query.email });
+  res.render('hub-demo/feedback.html', {title: 'Appvia: Hub Demo Feedback', email: req.query.email });
 });
 
 module.exports = router;

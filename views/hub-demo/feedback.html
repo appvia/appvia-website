@@ -13,14 +13,15 @@
           <h3>Hub Demo Feedback</h3>
         </div>
         <div class="row justify-content-center">
-          <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
-            <p>In order to help drive product direction, we would appreciate the following feedback: </p>
+          <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom col-sm-12 col-md-8">
+            <p>In order to help drive product direction, we would appreciate the following feedback:</p>
             <p>* Required fields</p>
             <form method="POST" action="/products/request-submit" data-parsley-validate>
               <div class="row">
                 <div class="col-md-12 mb-4">
                   <fieldset>
                     <legend>How would you rate our current Alpha product?*</legend>
+                    <div id="rating-errors"></div>
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="rating" id="rating_1" value="Nice try" required data-parsley-errors-container="#rating-errors">
                         <label class="form-check-label" for="rating_1">
@@ -39,12 +40,12 @@
                             Really useful now
                         </label>
                       </div>
-                      <div id="rating-errors"></div>
                     </fieldset>
                   </div>
                   <div class="col-md-12 mb-4">
                     <fieldset>
                       <legend>What application types do your teams develop with?*</legend>
+                      <div id="application-types-errors"></div>
                       <div class="form-check">
                         <input class="form-check-input" name="application-types[]" type="checkbox" value="PHP" id="application-types-php" data-parsley-mincheck="1" data-parsley-errors-container="#application-types-errors" required>
                         <label class="form-check-label" for="application-types-php">
@@ -80,24 +81,27 @@
                         <label class="form-check-label" for="application-types-other">
                           Other
                         </label>
+                        <div id="othername-errors"></div>
                         <div class="conditional-inputs" style="display:none;">
-                          <input type="text" class="form-control" name="othername" />
+                          <input type="text" class="form-control" name="othername" data-parsley-errors-container="#othername-errors" />
                         </div>
                       </div>
-                      <div id="application-types-errors"></div>
                     </fieldset>
                   </div>
                   <div class="col-md-12">
-                    <label >Number of people in the first development team that may want to help drive our product?*</label>
-                    <input class="form-control col-md-4" type="text" name="devs-in-my-team" id="devTeamNumber" required />
+                    <label>Number of people in the first development team that may want to help drive our product?*</label>
+                    <div id="devs-in-my-team-errors"></div>
+                    <input class="form-control col-md-4" type="text" name="devs-in-my-team" id="devTeamNumber" data-parsley-type="digits" data-parsley-errors-container="#devs-in-my-team-errors" required />
                   </div>
                   <div class="col-md-12">
-                    <label >How many development teams in your organisation?*</label>
-                    <input class="form-control col-md-4" type="text" name="dev-teams-in-org" id="devTeamsInOrg" required  />
+                    <label>How many development teams in your organisation?*</label>
+                    <div id="dev-teams-in-org-errors"></div>
+                    <input class="form-control col-md-4" type="text" name="dev-teams-in-org" id="devTeamsInOrg" data-parsley-type="digits" data-parsley-errors-container="#dev-teams-in-org-errors" required  />
                   </div>
                   <div class="col-md-12 mb-4">
                     <fieldset>
                       <legend>Are you already using any of the following Kubernetes Offerings?*</legend>
+                      <div id="offerings-errors"></div>
                       <div class="form-check">
                         <input class="form-check-input" name="offerings[]" type="checkbox" value="GKE" id="offerings_GKE" data-parsley-mincheck="1" data-parsley-errors-container="#offerings-errors" required>
                         <label class="form-check-label" for="offerings_GKE">
@@ -128,12 +132,12 @@
                           No Kubernetes yet
                         </label>
                       </div>
-                      <div id="offerings-errors"></div>
                     </fieldset>
                   </div>
                   <div class="col-md-12 mb-4">
                     <fieldset>
                       <legend>Are you using any of the following Cloud Providers?*</legend>
+                      <div id="cloud-providers-errors"></div>
                       <div class="form-check">
                         <input class="form-check-input" name="cloud-providers[]" type="checkbox" value="Openstack" id="cloud-providers-Openstack" data-parsley-mincheck="1" data-parsley-errors-container="#cloud-providers-errors" required>
                         <label class="form-check-label" for="cloud-providers-Openstack">
@@ -163,11 +167,11 @@
                         <label class="form-check-label" for="cloud-providers-other">
                           Other
                         </label>
+                        <div id="cloud-providers-other-errors"></div>
                         <div class="conditional-inputs" style="display:none;">
-                          <input type="text" class="form-control" name="cloud-providers-other" />
+                          <input type="text" class="form-control" name="cloud-providers-other" data-parsley-errors-container="#cloud-providers-other-errors" />
                         </div>
                       </div>
-                      <div id="cloud-providers-errors"></div>
                     </fieldset>
                   </div>
                   <div class="col-md-12">
@@ -182,6 +186,26 @@
             </form>
           </div>
           <div class="col-sm-12 col-md-4">
+            <div class="card bg-light p-4">
+              <div>For more specific feedback (bugs or feature requests) please rasie an issue on GitHub.</div>
+              <div class="mt-2">
+                <a class="github-button" href="https://github.com/appvia/appvia-hub/issues" data-size="large" aria-label="Issue appvia/appvia-hub on GitHub">Issue</a>
+              </div>
+              <hr />
+              <div>If you want to track our progress follow us on Github.</div>
+              <div class="mt-2">
+                <a class="github-button" href="https://github.com/appvia" aria-label="Follow @appvia on GitHub" data-size="large">Follow @appvia</a>
+              </div>
+              <hr />
+              <div>If you like what you see rate us on GitHub.</div>
+              <div class="mt-2">
+                <a class="github-button" href="https://github.com/appvia/appvia-hub" aria-label="Star appvia/appvia-hub on GitHub" data-size="large">Star</a>
+              </div>
+              <hr />
+              <div>If you need some help to use the product (during normal office hours) contact us from within the demo via the live chat. Look for this icon on the bottom right <img src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26">.</div>
+              <hr />
+              <div>If you want to extend the time for the demo (we currently delete it after two weeks)</div>
+            </div>
           </div>
         </div>
       </div>
@@ -192,4 +216,5 @@
 {% block customScripts %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
   <script src="/assets/fabrex/js/form.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 {% endblock %}

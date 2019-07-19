@@ -444,3 +444,18 @@ textarea.parsley-error {
 .accordion-style2 h5 button{
   font-size: .7em !important;
 }
+
+fieldset legend,
+form label{
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-weight: 800;
+}
+fieldset label{
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+fieldset .form-check-input {
+  margin-top: .4rem;
+}
