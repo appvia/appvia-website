@@ -43,27 +43,33 @@
                 <div class="row">
                   <div class="col-md-12">
                     <label for="firstName">First Name</label>
-                    <input class="form-control" type="text" name="firstName" id="firstName" required value="{{firstName}}" />
+                    <div id="firstName-errors"></div>
+                    <input class="form-control" type="text" name="firstName" id="firstName" required value="{{firstName}}" data-parsley-errors-container="#firstName-errors" />
                   </div>
                   <div class="col-md-12">
-                    <label>Last Name</label>
-                    <input class="form-control" type="text" name="lastName" id="lastName" required value="{{lastName}}" />
+                    <label for="lastName">Last Name</label>
+                    <div id="lastName-errors"></div>
+                    <input class="form-control" type="text" name="lastName" id="lastName" required value="{{lastName}}" data-parsley-errors-container="#lastName-errors" />
                   </div>
                   <div class="col-md-12">
-                    <label>Email</label>
-                    <input class="form-control" type="email" name="email" id="email" required value="{{email}}" />
+                    <label for="email">Email</label>
+                    <div id="email-errors"></div>
+                    <input class="form-control" type="email" name="email" id="email" required value="{{email}}" data-parsley-errors-container="#email-errors" />
                   </div>
                   <div class="col-md-12">
-                    <label>Company Name</label>
-                    <input class="form-control" type="text" name="companyName" id="companyName" required value="{{companyName}}" />
+                    <label for="companyName">Company Name</label>
+                    <div id="companyName-errors"></div>
+                    <input class="form-control" type="text" name="companyName" id="companyName" required value="{{companyName}}" data-parsley-errors-container="#companyName-errors" />
                   </div>
                   <div class="col-md-12">
-                    <label>Role</label>
-                    <input class="form-control" type="text" name="role" id="role" required  value="{{role}}" />
+                    <label for="role">Role</label>
+                      <div id="role-errors"></div>
+                    <input class="form-control" type="text" name="role" id="role" required  value="{{role}}" data-parsley-errors-container="#role-errors" />
                   </div>
                   <div class="col-md-12">
                     <label for="companySize">Company Size</label>
-                    <select class="form-control" name="companySize" id="companySize" required >
+                    <div id="companySize-errors"></div>
+                    <select class="form-control" name="companySize" id="companySize" required data-parsley-errors-container="#companySize-errors" >
                       <option disabled selected value>Select your company size</option>
                       <option value="1" {% if companySize == "1" %}selected{% endif %}>1</option>
                       <option value="10" {% if companySize == "2 to 10" %}selected{% endif %}>2 to 10</option>
@@ -79,7 +85,8 @@
                   <div class="col-md-12">
                     <label>GitHub ID</label>
                     <div class="mb-2">We need this to create a GitHub org that you will have access to</div>
-                    <input class="form-control" type="text" name="github" id="github" required value="{{github}}" data-parsley-git data-parsley-trigger-after-failure="focusout">
+                    <div id="github-errors"></div>
+                    <input class="form-control" type="text" name="github" id="github" required value="{{github}}" data-parsley-git data-parsley-trigger-after-failure="focusout" data-parsley-errors-container="#github-errors">
                   </div>
                   <div class="col-md-12">
                     <button type="submit"id="submit-form"class="butn"><span>Submit Request</span></button>
