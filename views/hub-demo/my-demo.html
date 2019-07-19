@@ -22,7 +22,7 @@
                 </p>
 
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="acknowledge" required data-parsley-error-message="Please join the Github organisation we setup for this demo">
+                  <input type="checkbox" class="form-check-input" id="acknowledge" required data-parsley-error-message="Please join the Github organisation we setup for this demo" />
                   <label class="form-check-label" for="acknowledge">Yes I've done this</label>
                 </div>
 
@@ -30,9 +30,10 @@
                   <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
                   <label for="email"><strong>Signup email</strong></label>
                   <div class="mb-2">Please provide the email address you used when signing up for the demo</div>
+                  <div id="email-errors"></div>
                   <div class="form-row">
                     <div class="col-7">
-                      <input class="form-control" type="text" name="email" id="email" required  value="{{email}}" />
+                      <input class="form-control" type="text" name="email" id="email" required  value="{{email}}" data-parsley-errors-container="#email-errors" />
                     </div>
                   </div>
                 {% endif %}
