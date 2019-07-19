@@ -15,7 +15,7 @@
         <div class="row justify-content-center">
           <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom col-sm-12 col-md-8">
             <p>In order to help drive product direction, we would appreciate the following feedback:</p>
-            <p>* Required fields</p>
+            <small>* Required fields</small>
             <form method="POST" action="/products/request-submit" data-parsley-validate>
               <div class="row">
                 <div class="col-md-12 mb-4">
@@ -25,19 +25,19 @@
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="rating" id="rating_1" value="Nice try" required data-parsley-errors-container="#rating-errors">
                         <label class="form-check-label" for="rating_1">
-                          Nice try
+                          Not good (won’t ever use)
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="rating" id="rating_2" value="Can’t use yet...">
                         <label class="form-check-label" for="rating_2">
-                          Can’t use yet...
+                          Interesting (could use in the future)
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="rating" id="rating_3" value="Really useful now">
                         <label class="form-check-label" for="rating_3">
-                            Really useful now
+                            Good (Would be happy to use now)
                         </label>
                       </div>
                     </fieldset>
@@ -83,7 +83,7 @@
                         </label>
                         <div id="othername-errors"></div>
                         <div class="conditional-inputs" style="display:none;">
-                          <input type="text" class="form-control" name="othername" data-parsley-errors-container="#othername-errors" />
+                          <input type="text" class="form-control col-md-6" name="application-types-other" data-parsley-errors-container="#othername-errors" />
                         </div>
                       </div>
                     </fieldset>
@@ -132,6 +132,16 @@
                           No Kubernetes yet
                         </label>
                       </div>
+                      <div class="form-check">
+                        <input class="form-check-input conditionals" name="offerings[]" type="checkbox" value="Other Kubernetes" id="offerings_other_kubernetes"  >
+                        <label class="form-check-label" for="offerings_other_kubernetes">
+                          Other Kubernetes
+                        </label>
+                        <div id="offerings-other-errors"></div>
+                        <div class="conditional-inputs" style="display:none;">
+                          <input type="text" class="form-control col-md-6" name="offerings-other" data-parsley-errors-container="#offerings-other-errors" />
+                        </div>
+                      </div>
                     </fieldset>
                   </div>
                   <div class="col-md-12 mb-4">
@@ -168,9 +178,86 @@
                           Other
                         </label>
                         <div id="cloud-providers-other-errors"></div>
-                        <div class="conditional-inputs" style="display:none;">
-                          <input type="text" class="form-control" name="cloud-providers-other" data-parsley-errors-container="#cloud-providers-other-errors" />
+                        <div class="conditional-inputs row" style="display:none;">
+                          <input type="text" class="form-control col-md-6" name="cloud-providers-specify" data-parsley-errors-container="#cloud-providers-other-errors" />
                         </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12 mb-4">
+                    <fieldset>
+                      <legend>Which of the following features would you be most interested in us prioritising? (pick 3)*</legend>
+                      <div id="features-errors"></div>
+                      <div class="form-check">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="Identity Teams and RBAC (across all services)" id="features-identity-teams-RBAC" data-parsley-mincheck="3" data-parsley-maxcheck="3" data-parsley-errors-container="#features-errors" required>
+                        <label class="form-check-label" for="features-identity-teams-RBAC">
+                          Identity Teams and RBAC (across all services)
+                        </label>
+                      </div>
+                      <h3 class="h6">Build Kubernetes Clusters:</h3>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="Cloud" id="features-build-kubernete-clusters-cloud">
+                        <label class="form-check-label" for="features-build-kubernete-clusters-cloud">
+                          Cloud
+                        </label>
+                      </div>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="On prem" id="features-build-kubernete-clusters-on-prem">
+                        <label class="form-check-label" for="features-build-kubernete-clusters-on-prem">
+                          On prem
+                        </label>
+                      </div>
+                      <h3 class="h6">Cloud Container Registries:</h3>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="ECR" id="features-cloud-container-registries-ecr">
+                        <label class="form-check-label" for="features-cloud-container-registries-ecr">
+                          <a href="https://aws.amazon.com/ecr/" target="_blank">ECR</a>
+                        </label>
+                      </div>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="ACR" id="features-cloud-container-registries-acr">
+                        <label class="form-check-label" for="features-cloud-container-registries-acr">
+                          <a href="https://azure.microsoft.com/en-gb/services/container-registry/" target="_blank">ACR</a>
+                        </label>
+                      </div>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="GCR" id="features-cloud-container-registries-gcr">
+                        <label class="form-check-label" for="features-cloud-container-registries-gcr">
+                          <a href="https://cloud.google.com/container-registry/" target="_blank">GCR</a>
+                        </label>
+                      </div>
+                      <h3 class="h6">Resource Status:</h3>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="CI Status" id="features-resource-status-ci">
+                        <label class="form-check-label" for="features-resource-status-ci">
+                          CI Status
+                        </label>
+                      </div>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="Live Application Status" id="features-resource-status-live-status">
+                        <label class="form-check-label" for="features-resource-status-live-status">
+                          Live Application Status
+                        </label>
+                      </div>
+                      <div class="form-check ml-4">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="Security Status" id="features-resource-status-security-status">
+                        <label class="form-check-label" for="features-resource-status-security-status">
+                          Security Status
+                        </label>
+                        <div><small>(e.g. <a href="https://cve.mitre.org/" target="_blank">CVE Scanning Feedback</a>)</small></div>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="Enterprise View / Status / Data" id="features-enterprise-view">
+                        <label class="form-check-label" for="features-enterprise-view">
+                          Enterprise View / Status / Data
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" name="features[]" type="checkbox" value="Kubernetes Cloud Services" id="features-kubernetes-cloud-services">
+                        <label class="form-check-label" for="features-kubernetes-cloud-services">
+                          Kubernetes Cloud Services
+                        </label>
+                        <div><small>(e.g. <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/service-catalog/" target="_blank">Service Catalogue</a>)</small></div>
                       </div>
                     </fieldset>
                   </div>
