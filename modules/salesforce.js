@@ -12,7 +12,7 @@ async function createConnection() {
   await conn.login(sfUser, sfPass + sfToken);
 }
 
-async function isContact(contactOrLead) {
+async function isContact(contactOrLead, createLead = true) {
   if (!conn || !conn.userInfo) {
     await createConnection();
   }
@@ -25,22 +25,24 @@ async function isContact(contactOrLead) {
       return true;
     }
 
-    const leadQueryResult = await conn.query(`SELECT Id, Name, Email FROM Lead WHERE Email = '${contactOrLead.email}'`);
-    console.log('leadQueryResult', leadQueryResult);
-    console.log(`Successfully queried leads for: ${contactOrLead.email}, totalSize === ${leadQueryResult['totalSize']}`);
+    if (createLead) {
+      const leadQueryResult = await conn.query(`SELECT Id, Name, Email FROM Lead WHERE Email = '${contactOrLead.email}'`);
+      console.log('leadQueryResult', leadQueryResult);
+      console.log(`Successfully queried leads for: ${contactOrLead.email}, totalSize === ${leadQueryResult['totalSize']}`);
 
-    if (leadQueryResult['totalSize'] === 0) {
-      const createLeadResult = await conn.sobject("Lead").create(
-        {
-          FirstName: contactOrLead.firstName,
-          LastName: contactOrLead.lastName,
-          Email: contactOrLead.email,
-          Company: contactOrLead.companyName,
-          Title: contactOrLead.role,
-          NumberOfEmployees: contactOrLead.companySize
-        }
-      );
-      console.log(`Successfully created lead for ${contactOrLead.email}`, createLeadResult);
+      if (leadQueryResult['totalSize'] === 0) {
+        const createLeadResult = await conn.sobject("Lead").create(
+          {
+            FirstName: contactOrLead.firstName,
+            LastName: contactOrLead.lastName,
+            Email: contactOrLead.email,
+            Company: contactOrLead.companyName,
+            Title: contactOrLead.role,
+            NumberOfEmployees: contactOrLead.companySize
+          }
+        );
+        console.log(`Successfully created lead for ${contactOrLead.email}`, createLeadResult);
+      }
     }
     return false;
   } catch (error) {

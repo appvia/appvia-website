@@ -459,3 +459,10 @@ fieldset label{
 fieldset .form-check-input {
   margin-top: .4rem;
 }
+
+.form-check-input {
+    margin-top: .5rem;
+}
+.form-check-label-normal{
+  font-weight: 400;
+}

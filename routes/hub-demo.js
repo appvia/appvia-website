@@ -2,6 +2,7 @@ const router = require('express').Router();
 const salesforce = require('../modules/salesforce');
 const gform = require('../modules/gform');
 const slack = require('../modules/slack');
+const demo = require('../modules/demo');
 
 router.get('/products/hub-demo', function (req, res) {
   res.render('hub-demo/demo.html', {
@@ -54,8 +55,35 @@ router.get('/products/request-submit-pending', function (req, res) {
   res.render('hub-demo/request-submit-pending.html', {title: 'Appvia: Request Pending'});
 });
 
-router.get('/products/hub-demo/my-demo', function (req, res) {
-  res.render('hub-demo/my-demo.html', {title: 'Appvia: My Demo', email: req.query.email});
+router.get('/products/hub-demo/my-demo', async function (req, res) {
+  // If we have an email
+  console.log(req.query.email);
+  if (req.query.email === undefined ) {
+    console.log('No email');
+    res.render('hub-demo/my-demo-no-email.html', {title: 'Appvia: My Demo' });
+  } else {
+    console.log('Data submitted:', req.body);
+    try {
+      // Don't try and create a lead here - redirect first...
+      const sfContact = await salesforce.isContact(req.query, false);
+      if (sfContact) {
+        demoDetails = demo.getDemoDetails(req.query.email);
+        res.render('hub-demo/my-demo.html', {title: 'Appvia: My Demo', demoURL: demoDetails.demoURL });
+      } else {
+        // Ask them to fill in a request (they're not a contact...)
+        res.redirect('/products/hub-demo');
+      }
+    } catch (err) {
+      console.log('My Demo request failed:', err);
+      res.render('error.html', {
+        title: "Oops, sorry",
+        message: "Oops, sorry, error checking details",
+        status: err.status,
+        html_class: 'error',
+        error: {}
+      });
+    }
+  }
 });
 
 router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
