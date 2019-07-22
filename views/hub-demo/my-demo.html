@@ -8,7 +8,7 @@
     {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Hub Demo Instructions', link: false }], '', '0', 'background-position-1') }}
 
     <section class="padding-80">
-      <form class="mb-5" data-parsley-validate method="GET" action="{{demoURL}}">
+
       <div class="container">
         <div class="section-heading" id="hub">
           <h3>Hub Demo Instructions</h3>
@@ -16,6 +16,7 @@
       <div class="row justify-content-center">
         <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom col-sm-12 col-md-6">
           <h4>Appvia HUB Prerequisites</h4>
+          <form class="mb-5" data-parsley-validate method="GET" action="{{demoURL}}">
           <div class="col-md-12">
             <input type="checkbox" class="form-check-input" name="acknowledge" id="acknowledge"
             required data-parsley-error-message="Join Github Organisation"
@@ -37,40 +38,55 @@
             <li>Kubernetes</li>
           </ul>
           </div>
-          <div id="accordion" class="accordion-style2">
-              <div class="card">
-                  <div class="card-header" id="headingTwo">
-                      <h5 class="mb-0">
-                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                          Limitations
-                        </button>
-                      </h5>
-                  </div>
-                  <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion" style="">
-                      <div class="card-body">
-                        <ul class="bullets">
-                          <li>
-                            <strong>A Small Kubernetes Cluster</strong><br>
-                            <span>We’ve created a dedicated Kubernetes cluster with a couple of nodes and some resources limits. Please use the Chat facility <img src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26"> if you need more resources to complete your evaluation.</span>
-                          </li>
-                          <li>
-                            <strong>Admin pages</strong><br>
-                            <span>For demo purposes, unfortunately you won’t be an administrator of the Hub. See <a href="/products/hub-demo/integration-setup-admin-pages">Demo Integration Setup</a></span>
-                          </li>
-                        </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <button type="submit"id="submit-form"class="butn mt-4"><span>Start the Hub Demo</span></button>
+          </form>
         </div>
         <div class="col-sm-12 col-md-6">
-          <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
+          <!-- <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded"> -->
+          <div id="accordion" class="accordion-style2">
+              <div class="card">
+                 <div class="card-header" id="headingThree">
+                   <h5 class="mb-0">
+                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                       Feedback / Help for the Hub Demo
+                     </button>
+                   </h5>
+                 </div>
+                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                     <div class="card-body">
+                       <ul class="bullets">
+                         <li>If you need some help to use the product (during normal office hours) contact us from within the demo via the live chat. Look for this icon on the bottom right <img src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26">.</li>
+                         <li>If you want to extend the time for the demo (we currently delete it after two weeks).</li>
+                       </ul>
+                     </div>
+                 </div>
+             </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Limitations
+                      </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion" style="">
+                    <div class="card-body">
+                      <ul class="bullets">
+                        <li>
+                          <strong>A Small Kubernetes Cluster</strong><br>
+                          <span>We’ve created a dedicated Kubernetes cluster with a couple of nodes and some resources limits. Please use the Chat facility <img src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26"> if you need more resources to complete your evaluation.</span>
+                        </li>
+                        <li>
+                          <strong>Admin pages</strong><br>
+                          <span>For demo purposes, unfortunately you won’t be an administrator of the Hub. See <a href="/products/hub-demo/integration-setup-admin-pages">Demo Integration Setup</a></span>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <button type="submit"id="submit-form"class="butn mt-4"><span>Start the Hub Demo</span></button>
-    </form>
-
     </section>
 
 {% endblock %}
