@@ -18,6 +18,15 @@
             <small>* Required fields</small>
             <form method="POST" action="/products/request-submit" data-parsley-validate>
               <div class="row">
+                {% if(email) %}
+                  <input type="hidden" name="email" value="{{email}}" />
+                {% else %}
+                  <div class="col-md-12">
+                    <label for="email" >Email address*</label>
+                    <div id="email-errors"></div>
+                    <input class="form-control col-md-6" type="text" name="email" id="email" required  data-parsley-errors-container="#email-errors" />
+                  </div>
+                {% endif %}
                 <div class="col-md-12 mb-4">
                   <fieldset>
                     <legend>How would you rate our current Alpha product?*</legend>
@@ -272,9 +281,8 @@
                       data-parsley-validation-threshold="10"
                       data-parsley-errors-container="#message-errors"></textarea>
                   </div>
-                  <input type="hidden" name="email" value="{{email}}" />
                 <div class="col-md-12">
-                  <button type="submit"id="submit-form"class="butn"><span>Submit Request</span></button>
+                  <button type="submit" id="submit-form" class="butn"><span>Submit Request</span></button>
                 </div>
               </div>
             </form>
