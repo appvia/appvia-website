@@ -88,6 +88,9 @@
                     <div id="github-errors"></div>
                     <input class="form-control" type="text" name="github" id="github" required value="{{github}}" data-parsley-git data-parsley-trigger-after-failure="focusout" data-parsley-errors-container="#github-errors">
                   </div>
+                  <div class="col-md-12 mb-4">
+                    By clicking "Submit Request", I agree to the Appvia <a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy">Privacy Policy</a>.
+                  </div>
                   <div class="col-md-12">
                     <button type="submit"id="submit-form"class="butn"><span>Submit Request</span></button>
                   </div>
@@ -98,7 +101,7 @@
           </div>
         </div>
     </section>
-
+    <hr />
 {% endblock %}
 
 {% block customScripts %}

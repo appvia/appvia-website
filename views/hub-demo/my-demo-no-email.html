@@ -8,27 +8,35 @@
     {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Hub Demo Instructions', link: false }], '', '0', 'background-position-1') }}
 
     <section class="padding-80">
-        <div class="container">
-          <div class="section-heading">
-            <h3>Hub Demo Instructions</h3>
+      <div class="container">
+        <div class="section-heading">
+          <h3>Hub Demo Instructions</h3>
+        </div>
+        <div class="row justify-content-center">
+          <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
+            <form class="mb-5" data-parsley-validate method="GET" action="/products/hub-demo/my-demo">
+              <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
+              <label for="email"><strong>Signup email</strong></label>
+              <div class="mb-2">Please provide the email address you used when signing up for the demo</div>
+              <div id="email-errors"></div>
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form-control col-md-8" type="text" name="email" id="email" required  value="{{email}}" data-parsley-errors-container="#email-errors" />
+                </div>
+                <div class="col-md-12">
+                  By clicking "Access Hub Demo", I agree to the Appvia <a href="/terms-and-conditions">Terms and Conditions</a> and <a href="/privacy-policy">Privacy Policy</a>.
+                </div>
+                <div class="col-md-12">
+                  <button type="submit"id="submit-form"class="butn mt-4"><span>Access Hub Demo</span></button>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="row justify-content-center">
-            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
-              <form class="mb-5" data-parsley-validate method="GET" action="/products/hub-demo/my-demo">
-                  <p>As we create an isolated place for you to test the Hub, we need to use your signup email for your access to the demo.</p>
-                  <label for="email"><strong>Signup email</strong></label>
-                  <div class="mb-2">Please provide the email address you used when signing up for the demo</div>
-                  <div id="email-errors"></div>
-                  <div class="form-row">
-                    <div class="col-7">
-                      <input class="form-control" type="text" name="email" id="email" required  value="{{email}}" data-parsley-errors-container="#email-errors" />
-                    </div>
-                  </div>
-                <button type="submit"id="submit-form"class="butn mt-4"><span>Access Hub Demo</span></button>
-              </form>
-            </div>
+          <div class="col-sm-12 col-md-4">
+            <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
           </div>
         </div>
+      </div>
     </section>
 {% endblock %}
 

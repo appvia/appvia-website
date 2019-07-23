@@ -19,14 +19,14 @@
           <form class="mb-5" data-parsley-validate method="GET" action="{{demoURL}}">
           <div class="col-md-12">
             <input type="checkbox" class="form-check-input" name="acknowledge" id="acknowledge"
-            required data-parsley-error-message="Join Github Organisation"
+            required data-parsley-error-message="Join Github Organisation."
             data-parsley-errors-container="#acknowledge-errors" />
             <label class="form-check-label-normal" for="acknowledge">You should have received an email from GitHub and followed the instructions.</label>
             <div id="acknowledge-errors"></div>
           </div>
           <div class="col-md-12">
           <input type="checkbox" class="form-check-input" name="basic_understanding" id="basic_understanding"
-          required data-parsley-error-message="Minimum Developer Understanding"
+          required data-parsley-error-message="Minimum Developer Understanding."
           data-parsley-errors-container="#basic-understanding-errors" />
           <label class="form-check-label-normal" for="basic_understanding">
             A basic understanding of the following:
@@ -38,6 +38,17 @@
             <li>Kubernetes</li>
           </ul>
           </div>
+            <div class="col-md-12">
+              <input type="checkbox" class="form-check-input" name="cookie-consent" id="cookie-consent"
+              data-parsley-errors-container="#cookie-consent-errors" required
+              required data-parsley-error-message="You have to agree to the cookie consent." />
+              <label class="form-check-label-normal" for="cookie-consent">
+                Consent to the use of cookies: this demo uses cookies to ensure you get the best experience. <a href="/privacy-policy">Learn more</a>
+              </label>
+              <div id="cookie-consent-errors"></div>
+              </div>
+
+
             <button type="submit"id="submit-form"class="butn mt-4"><span>Start the Hub Demo</span></button>
           </form>
         </div>
