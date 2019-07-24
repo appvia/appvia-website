@@ -1,11 +1,25 @@
 var requestPromise = require('request-promise');
 
-function addContact(data) {
+function flattenDataWithOther(sourceObj, destObj, fieldName, otherFieldName = undefined) {
+  source = sourceObj[fieldName];
+  if ( Array.isArray(source) ) {
+    array = source
+  } else {
+    array = [ source ];
+  }
+  if ( otherFieldName != undefined ) {
+    if ( sourceObj[otherFieldName] != undefined ) {
+      array.push(sourceObj[otherFieldName]);
+    }
+  }
+  destObj[fieldName] = array.join('\n');
+}
+
+function addRowToSheet(data, formsURL) {
   /*
     Will post to google forms
   */
 	// Do async job
-  var formsURL = process.env.GFORM_URL;
   return requestPromise.get({ uri: formsURL, qs: data, resolveWithFullResponse: true })
   .then((resp) => {
     if (resp.body.result == 'error') {
@@ -25,5 +39,6 @@ function addContact(data) {
 // gform.js
 // ========
 module.exports = {
-  addContact: addContact
+  addRowToSheet: addRowToSheet,
+  flattenDataWithOther: flattenDataWithOther
 };

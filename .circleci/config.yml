@@ -35,7 +35,8 @@ jobs:
             echo "  SF_USER: $DEV_SF_USER">>app-dev.yaml
             echo "  SF_TOKEN: $DEV_SF_TOKEN">>app-dev.yaml
             echo "  SF_PW: $DEV_SF_PW">>app-dev.yaml
-            echo "  GFORM_URL: $DEV_GFORM_URL">>app-dev.yaml
+            echo "  DEMO_REQUEST_GFORM_URL: $DEV_DEMO_REQUEST_GFORM_URL">>app-dev.yaml
+            echo "  DEMO_FEEDBACK_GFORM_URL: $DEV_DEMO_FEEDBACK_GFORM_URL">>app-dev.yaml
             echo "  SLACK_DEMOS_URL: $DEV_SLACK_DEMOS_URL">>app-dev.yaml
       - run:
           command: gcloud -q app deploy app-dev.yaml dispatch.yaml
@@ -55,11 +56,12 @@ jobs:
             gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
-            echo "  SF_USER: $SF_USER">>app-dev.yaml
-            echo "  SF_TOKEN: $SF_TOKEN">>app-dev.yaml
-            echo "  SF_PW: $SF_PW">>app-dev.yaml
-            echo "  GFORM_URL: $GFORM_URL">>app-dev.yaml
-            echo "  SLACK_DEMOS_URL: $SLACK_DEMOS_URL">>app-dev.yaml
+            echo "  SF_USER: $SF_USER">>app.yaml
+            echo "  SF_TOKEN: $SF_TOKEN">>app.yaml
+            echo "  SF_PW: $SF_PW">>app.yaml
+            echo "  DEMO_REQUEST_GFORM_URL: $DEMO_REQUEST_GFORM_URL">>app.yaml
+            echo "  DEMO_FEEDBACK_GFORM_URL: $DEMO_FEEDBACK_GFORM_URL">>app.yaml
+            echo "  SLACK_DEMOS_URL: $SLACK_DEMOS_URL">>app.yaml
       - run:
           command: gcloud -q app deploy
 

@@ -16,7 +16,7 @@
           <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom col-sm-12 col-md-8">
             <p>In order to help drive product direction, we would appreciate the following feedback:</p>
             <small>* Required fields</small>
-            <form method="POST" action="/products/request-submit" data-parsley-validate>
+            <form method="POST" action="/products/hub-demo/feedback-submit" data-parsley-validate>
               <div class="row">
                 {% if(email) %}
                   <input type="hidden" name="email" value="{{email}}" />
@@ -32,19 +32,19 @@
                     <legend>How would you rate our current Alpha product?*</legend>
                     <div id="rating-errors"></div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rating" id="rating_1" value="Nice try" required data-parsley-errors-container="#rating-errors">
+                        <input class="form-check-input" type="radio" name="rating" id="rating_1" value="Not good, never use" required data-parsley-errors-container="#rating-errors">
                         <label class="form-check-label" for="rating_1">
                           Not good (won’t ever use)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rating" id="rating_2" value="Can’t use yet...">
+                        <input class="form-check-input" type="radio" name="rating" id="rating_2" value="Interesting (could use in future)">
                         <label class="form-check-label" for="rating_2">
                           Interesting (could use in the future)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="rating" id="rating_3" value="Really useful now">
+                        <input class="form-check-input" type="radio" name="rating" id="rating_3" value="Good (Would be happy to use now)">
                         <label class="form-check-label" for="rating_3">
                             Good (Would be happy to use now)
                         </label>
@@ -112,43 +112,43 @@
                       <legend>Are you already using any of the following Kubernetes Offerings?*</legend>
                       <div id="offerings-errors"></div>
                       <div class="form-check">
-                        <input class="form-check-input" name="offerings[]" type="checkbox" value="GKE" id="offerings_GKE" data-parsley-mincheck="1" data-parsley-errors-container="#offerings-errors" required>
+                        <input class="form-check-input" name="kube-offerings[]" type="checkbox" value="GKE" id="offerings_GKE" data-parsley-mincheck="1" data-parsley-errors-container="#offerings-errors" required>
                         <label class="form-check-label" for="offerings_GKE">
                           GKE (Google Kubernetes Engine)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="offerings[]" type="checkbox" value="EKS" id="offerings_EKS" >
+                        <input class="form-check-input" name="kube-offerings[]" type="checkbox" value="EKS" id="offerings_EKS" >
                         <label class="form-check-label" for="offerings_EKS">
                           EKS (Amazon Kubernetes Service)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="offerings[]" type="checkbox" value="AKS" id="offerings_AKS" >
+                        <input class="form-check-input" name="kube-offerings[]" type="checkbox" value="AKS" id="offerings_AKS" >
                         <label class="form-check-label" for="offerings_AKS">
                           AKS (Azure)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="offerings[]" type="checkbox" value="KOPS" id="offerings_KOPS"  >
+                        <input class="form-check-input" name="kube-offerings[]" type="checkbox" value="KOPS" id="offerings_KOPS"  >
                         <label class="form-check-label" for="offerings_KOPS">
                           KOPS (Kubernetes Operations)
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" name="offerings[]" type="checkbox" value="No Kubernetes yet" id="offerings_no_kubernetes"  >
+                        <input class="form-check-input" name="kube-offerings[]" type="checkbox" value="No Kubernetes yet" id="offerings_no_kubernetes"  >
                         <label class="form-check-label" for="offerings_no_kubernetes">
                           No Kubernetes yet
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input conditionals" name="offerings[]" type="checkbox" value="Other Kubernetes" id="offerings_other_kubernetes"  >
+                        <input class="form-check-input conditionals" name="kube-offerings[]" type="checkbox" value="Other Kubernetes" id="offerings_other_kubernetes"  >
                         <label class="form-check-label" for="offerings_other_kubernetes">
                           Other Kubernetes
                         </label>
                         <div id="offerings-other-errors"></div>
                         <div class="conditional-inputs" style="display:none;">
-                          <input type="text" class="form-control col-md-6" name="offerings-other" data-parsley-errors-container="#offerings-other-errors" />
+                          <input type="text" class="form-control col-md-6" name="kube-offerings-other" data-parsley-errors-container="#offerings-other-errors" />
                         </div>
                       </div>
                     </fieldset>
@@ -276,8 +276,8 @@
                     <textarea id="message" rows="8" class="form-control" name="message"
                       data-parsley-trigger="keyup"
                       data-parsley-minlength="20"
-                      data-parsley-maxlength="100"
-                      data-parsley-minlength-message="Come on! You need to enter at least a 20 character comment.."
+                      data-parsley-maxlength="300"
+                      data-parsley-minlength-message="You need to enter at least a 20 character comment.."
                       data-parsley-validation-threshold="10"
                       data-parsley-errors-container="#message-errors"></textarea>
                   </div>

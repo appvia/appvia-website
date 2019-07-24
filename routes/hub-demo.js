@@ -26,7 +26,7 @@ router.get('/products/request-submit', function (req, res) {
 router.post('/products/request-submit', async function (req, res) {
   console.log('Data submitted:', req.body);
   try {
-    await gform.addContact(req.body);
+    await gform.addRowToSheet(req.body, process.env.DEMO_REQUEST_GFORM_URL);
     const sfContact = await salesforce.isContact(req.body);
     if (sfContact) {
       await slack.message(
@@ -92,6 +92,40 @@ router.get('/products/hub-demo/integration-setup-admin-pages', function (req, re
 
 router.get('/products/hub-demo/feedback', function (req, res) {
   res.render('hub-demo/feedback.html', {title: 'Appvia: Hub Demo Feedback', email: req.query.email });
+});
+
+router.post('/products/hub-demo/feedback-submit', async function (req, res) {
+  console.log('Data submitted:', req.body);
+  try {
+    console.log('process.env.DEMO_FEEDBACK_GFORM_URL:' + process.env.DEMO_FEEDBACK_GFORM_URL);
+    var gFormData = {
+      email: req.body.email,
+      rating: req.body.rating,
+      message: req.body.message
+    };
+    gform.flattenDataWithOther(req.body, gFormData, 'application-types[]', 'application-types-other');
+    gform.flattenDataWithOther(req.body, gFormData, 'kube-offerings[]', 'kube-offerings-other');
+    gform.flattenDataWithOther(req.body, gFormData, 'cloud-providers[]', 'cloud-providers-other');
+    gform.flattenDataWithOther(req.body, gFormData, 'features[]');
+    gform.flattenDataWithOther(req.body, gFormData, 'devs-in-my-team');
+    gform.flattenDataWithOther(req.body, gFormData, 'dev-teams-in-org');
+    await gform.addRowToSheet(gFormData, process.env.DEMO_FEEDBACK_GFORM_URL);
+    await slack.message(
+      process.env.SLACK_DEMOS_URL,
+      `Feedback form submitted for: ${req.body.email}`,
+      `FYI ${req.body.email} has provided feedback!!!`
+    );
+    res.render('hub-demo/feedback-submit.html', {title: 'Appvia: Hub Demo Feedback' });
+  } catch (err) {
+    console.log('Feedback form failed:', err);
+    res.render('error.html', {
+      title: "Oops, sorry",
+      message: "Oops, sorry, error recording details",
+      status: err.status,
+      html_class: 'error',
+      error: {}
+    });
+  }
 });
 
 module.exports = router;
