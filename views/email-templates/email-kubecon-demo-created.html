@@ -1,0 +1,61 @@
+{% extends 'email-templates/layout-email.html' %}
+{% block content %}
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+  </head>
+  <body>
+    <table align="center" aria-hidden="true" border="0" cellpadding="0" cellspacing="0" class="document" style="font-family: sans-serif !important;">
+    	<tbody>
+    		<tr>
+    			<td valign="top">
+    			<table align="center" aria-hidden="true" border="0" cellpadding="0" cellspacing="0" class="container" style="background-color: #fff;" width="600">
+    				<tbody>
+    					<tr>
+    						<td><img alt="Appvia logo" src="https://appvia.io/assets/fabrex/img/logos/logo-email.png" style="float:right; margin-top: 20px; margin-right:20px" width="120px" />
+    						<table align="center" aria-hidden="true" border="0" cellpadding="20" cellspacing="0" style="margin-top: 60px; font-size: 16px; line-height:24px" width="100%">
+    							<tbody>
+    								<tr>
+    									<td>
+    									<p>Hi&nbsp;{{{Recipient.FirstName}}},</p>
+
+    									<p>Your Appvia Hub Demo has been created</p>
+
+    									<table border="0" cellpadding="0" cellspacing="0" class="mobile-button">
+    										<tbody>
+    											<tr>
+    												<td align="center" bgcolor="#009127" style="background-color: #009127; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px;" width="100%"><a href="#" style="20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #009127; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;" target="_blank"><span style="font-size: 20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Start Demo</span> </a></td>
+    											</tr>
+    										</tbody>
+    									</table>
+
+    									</td>
+    								</tr>
+    							</tbody>
+    						</table>
+    						</td>
+    					</tr>
+    					<tr class="footer-row">
+    						<td>
+    						<table align="center" aria-hidden="true" border="0" cellpadding="0" cellspacing="0" class="email-footer" style="margin-top: 10px; background-color: #f7f7f7; border-top: solid 1px #c4c4c4" width="100%">
+    							<tbody>
+    								<tr>
+    									<td style="text-align: center; font-size: 12px;padding:20px 0 60px 0">
+    									<p>Ground Floor, Cap House 9 - 12 Long Lane London, EC1A 9HA. Contact: 0203 475 0546</p>
+
+    									<p>&copy; 2019 <a href="https://appvia.io" style="color: #000" target="_blank">Appvia</a></p>
+    									</td>
+    								</tr>
+    							</tbody>
+    						</table>
+    						</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+  </body>
+</html>
+{% endblock %}
