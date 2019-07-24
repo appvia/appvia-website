@@ -1,6 +1,3 @@
-{% extends 'email-templates/layout-email.html' %}
-{% block content %}
-<!DOCTYPE html>
   <html lang="en">
   <head>
   </head>
@@ -19,12 +16,12 @@
     									<td>
     									<p>Hi&nbsp;{{{Recipient.FirstName}}},</p>
 
-    									<p>Your Appvia Hub Demo has been created</p>
+    									<p>You Appvia Hub Demo will be automatically deleted in 24 hours.</p>
 
     									<table border="0" cellpadding="0" cellspacing="0" class="mobile-button">
     										<tbody>
     											<tr>
-    												<td align="center" bgcolor="#009127" style="background-color: #009127; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px;" width="100%"><a href="#" style="20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #009127; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;" target="_blank"><span style="font-size: 20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Start Demo</span> </a></td>
+    												<td align="center" bgcolor="#009127" style="background-color: #009127; margin: auto; max-width: 600px; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; padding: 15px 20px;" width="100%"><a href="https://appvia.io/products/hub-demo/feedback?email={{{Recipient.Email}}}" style="20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; text-align:center; background-color: #009127; text-decoration: none; border: none; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; display: inline-block;" target="_blank"><span style="font-size: 20px; font-family: Arial Black, Arial, sans-serif; color: #ffffff; font-weight:normal; line-height:1.5em; text-align:center;">Demo Feedback</span> </a></td>
     											</tr>
     										</tbody>
     									</table>
@@ -58,4 +55,3 @@
     </table>
   </body>
 </html>
-{% endblock %}
