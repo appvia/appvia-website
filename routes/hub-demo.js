@@ -26,13 +26,20 @@ router.get('/products/request-submit', function (req, res) {
 router.post('/products/request-submit', async function (req, res) {
   console.log('Data submitted:', req.body);
   try {
-    await gform.addRowToSheet(req.body, process.env.DEMO_REQUEST_GFORM_URL);
+    var gformData = req.body;
+    var demoData = demo.getDemoDetails(req.body.email);
+    gformData.demoName = demoData.demoName;
+    await gform.addRowToSheet(gformData, process.env.DEMO_REQUEST_GFORM_URL);
     const sfContact = await salesforce.isContact(req.body);
     if (sfContact) {
       await slack.message(
         process.env.SLACK_DEMOS_URL,
-        `New demo creation required for: ${req.body.email}`,
-        `*Qualified Customer* please create a new demo for ${req.body.email} at ${req.body.companyName}`
+        `Please create new demo ${demoData.demoURL}`,
+        `*Qualified Customer* please create a new demo:
+        URL: ${demoData.demoURL}
+        Demo name: ${demoData.demoName}
+        Contact email: ${demoData.email}
+        Company: ${req.body.companyName}`
       );
       res.redirect('/products/request-submit');
     } else {
