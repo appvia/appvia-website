@@ -39,7 +39,8 @@ router.post('/products/request-submit', async function (req, res) {
         URL: ${demoData.demoURL}
         Demo name: ${demoData.demoName}
         Contact email: ${demoData.email}
-        Company: ${req.body.companyName}`
+        Company: ${req.body.companyName}
+        Instructions - https://github.com/appvia/hub-demo-deployments#setup-a-demo-instance`
       );
       res.redirect('/products/request-submit');
     } else {
