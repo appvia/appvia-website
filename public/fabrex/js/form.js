@@ -18,7 +18,8 @@ $('.conditionals').change(function() {
 
 $.listen('parsley:form:validated', function(e){
   if (e.validationResult) {
-    $('button[type=submit]').attr('disabled', 'disabled');
-    $('button[type=submit] span').text('Submitting...');
+    $('button[type=submit]').attr('disabled', 'disabled').
+      prepend('<i class="fas fa-spinner fa-pulse mr-2"></i>').
+        find('span').text('Submitting...');
   }
 });
