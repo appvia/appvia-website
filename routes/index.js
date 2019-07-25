@@ -48,4 +48,8 @@ router.get('/contact', function (req, res) {
   res.render('contact.html', {title: 'Appvia: Contact'});
 });
 
+router.get('/privacy-policy', function (req, res) {
+  res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy'});
+});
+
 module.exports = router;
