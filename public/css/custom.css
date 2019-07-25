@@ -468,4 +468,5 @@ fieldset .form-check-input {
 }
 button[type="submit"].butn:disabled{
   background-color: #7a7c7d;
+  cursor: initial;
 }
