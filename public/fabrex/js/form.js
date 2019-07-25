@@ -19,5 +19,6 @@ $('.conditionals').change(function() {
 $.listen('parsley:form:validated', function(e){
   if (e.validationResult) {
     $('button[type=submit]').attr('disabled', 'disabled');
+    $('button[type=submit] span').text('Submitting...');
   }
 });
