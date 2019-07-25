@@ -14,4 +14,11 @@ $('.conditionals').change(function() {
     $(this).closest('.form-check').find('.conditional-inputs').slideUp();
     $(this).closest('.form-check').find('.conditional-inputs :input').prop('required', false).val('');
   }
-})
+});
+
+$.listen('parsley:form:validated', function(e){
+  if (e.validationResult) {
+    $('button[type=submit]').attr('disabled', 'disabled');
+    $('button[type=submit] span').text('Submitting...');
+  }
+});
