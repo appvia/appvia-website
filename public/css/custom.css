@@ -466,6 +466,6 @@ fieldset .form-check-input {
 .form-check-label-normal{
   font-weight: 400;
 }
-button[type="submit"] .butn[disabled]{
+button[type="submit"].butn:disabled{
   background-color: #7a7c7d;
 }
