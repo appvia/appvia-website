@@ -106,7 +106,7 @@ router.post('/products/hub-demo/feedback-submit', async function (req, res) {
   console.log('Data submitted:', req.body);
   try {
     console.log('process.env.DEMO_FEEDBACK_GFORM_URL:' + process.env.DEMO_FEEDBACK_GFORM_URL);
-    var gFormData = {
+    const gFormData = {
       email: req.body.email,
       rating: req.body.rating,
       message: req.body.message
