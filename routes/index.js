@@ -52,4 +52,8 @@ router.get('/privacy-policy', function (req, res) {
   res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy'});
 });
 
+router.get('/new', function (req, res) {
+  res.render('new.html', {title: 'Appvia'});
+});
+
 module.exports = router;
