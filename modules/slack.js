@@ -30,12 +30,13 @@ function message(
 }
 
 function messageRaw(slackChannelUrl, data) {
-  return requestPromise({ url: slackChannelUrl, method: 'POST', json: data })
-  .then((resp, body) => {
-    if (body === 'invalid_payload') {
-      console.error('Invalid payload submitted to slack:', data)
+  return requestPromise.post({ url: slackChannelUrl, json: data, resolveWithFullResponse: true })
+  .then(resp => {
+    if (resp.body === 'invalid_payload') {
+      console.error('Invalid payload submitted to slack:', data);
+    } else {
+      console.log('Slack submission was successful');
     }
-    console.log('Slack submission was successful');
     // always resolve as we don't want an issue with slack to break the flow
     return Promise.resolve();
   })
@@ -46,4 +47,4 @@ function messageRaw(slackChannelUrl, data) {
   });
 }
 
-module.exports = { message, messageRaw };
+module.exports = { message };

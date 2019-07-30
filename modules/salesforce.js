@@ -27,7 +27,6 @@ async function isContact(contactOrLead, createLead = true) {
 
     if (createLead) {
       const leadQueryResult = await conn.query(`SELECT Id, Name, Email FROM Lead WHERE Email = '${contactOrLead.email}'`);
-      console.log('leadQueryResult', leadQueryResult);
       console.log(`Successfully queried leads for: ${contactOrLead.email}, totalSize === ${leadQueryResult['totalSize']}`);
 
       if (leadQueryResult['totalSize'] === 0) {
