@@ -11,14 +11,14 @@ async function createConnection() {
   logger.info('Creating salesforce connection and logging in');
   conn = new jsforce.Connection();
   await conn.login(sfUser, sfPass + sfToken);
+  logger.info('Successfully connected to salesforce');
 }
 
 async function isContact(contactOrLead, createLead = true) {
-  if (!conn || !conn.userInfo) {
-    await createConnection();
-  }
-
   try {
+    if (!conn || !conn.userInfo) {
+      await createConnection();
+    }
     const contactQueryResult = await conn.query(`SELECT Id, Email FROM Contact WHERE Email='${contactOrLead.email}'`);
     logger.info(`Successfully queried contacts for: ${contactOrLead.email}, totalSize === ${contactQueryResult['totalSize']}`);
     if (contactQueryResult['totalSize'] > 0) {
