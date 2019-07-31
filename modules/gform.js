@@ -1,4 +1,5 @@
 const requestPromise = require('request-promise');
+const logger = require('../logger');
 
 function flattenDataWithOther(sourceObj, destObj, fieldName, otherFieldName) {
   const source = sourceObj[fieldName];
@@ -23,13 +24,13 @@ function addRowToSheet(data, formsURL) {
   return requestPromise.get({ uri: formsURL, qs: data, resolveWithFullResponse: true, json: true })
   .then(resp => {
     if (resp.body.result === 'error') {
-      console.log('error found');
+      logger.info('error found');
       // An error in the user form?
-      console.error('Request OK but error returned - something wrong with the form?');
-      console.error('Data:', data);
+      logger.error('Request OK but error returned - something wrong with the form?');
+      logger.error('Data: %j', data);
       return Promise.reject(resp.body)
     }
-    console.log('Google forms submission was successful.');
+    logger.info('Google forms submission was successful.');
     return Promise.resolve();
   })
   .catch(err => {

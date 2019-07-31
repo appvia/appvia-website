@@ -2,11 +2,12 @@
 var debug = require('debug')('booktest');
 var app = require('../app');
 var redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
+var logger = require('../logger');
 
 app.set('trust proxy', true)
 app.set('port', process.env.PORT || 3000);
 app.use(redirectToHTTPS([/localhost:(\d{4})/], 301));
 
 var server = app.listen(app.get('port'), function() {
-  debug('Express server listening on port ' + server.address().port);
+  logger.info('Express server listening on port ' + server.address().port);
 });

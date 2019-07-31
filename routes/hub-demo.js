@@ -3,6 +3,7 @@ const salesforce = require('../modules/salesforce');
 const gform = require('../modules/gform');
 const slack = require('../modules/slack');
 const demo = require('../modules/demo');
+const logger = require('../logger');
 
 const demoRequestGformUrl = process.env.DEMO_REQUEST_GFORM_URL;
 const demoFeedbackGformUrl = process.env.DEMO_FEEDBACK_GFORM_URL;
@@ -27,7 +28,7 @@ function getRequestDemoSubmitted(req, res) {
 }
 
 async function postRequestDemoSubmitted(req, res) {
-  console.log('Data submitted:', req.body);
+  logger.info('Data submitted: %j', req.body);
   try {
     const gformData = req.body;
     const demoData = demo.getDemoDetails(req.body.email);
@@ -50,7 +51,7 @@ async function postRequestDemoSubmitted(req, res) {
       res.redirect('/products/request-submit-pending');
     }
   } catch (err) {
-    console.log('Demo request failed:', err);
+    logger.error('Demo request failed: %j', err);
     res.render('error.html', {
       title: 'Oops, sorry',
       message: 'Oops, sorry, error recording details',
@@ -67,12 +68,12 @@ function getRequestDemoSubmitPending(req, res) {
 
 async function getMyDemo(req, res) {
   // If we have an email
-  console.log(req.query.email);
+  logger.info(req.query.email);
   if (!req.query.email) {
-    console.log('No email');
+    logger.info('No email');
     res.render('hub-demo/my-demo-no-email.html', { title: 'Appvia: My Demo' });
   } else {
-    console.log('Data submitted:', req.body);
+    logger.info('Data submitted: %j', req.body);
     try {
       // Don't try and create a lead here - redirect first...
       const sfContact = await salesforce.isContact(req.query, false);
@@ -84,7 +85,7 @@ async function getMyDemo(req, res) {
         res.redirect('/products/hub-demo');
       }
     } catch (err) {
-      console.log('My Demo request failed:', err);
+      logger.error('My Demo request failed: %j', err);
       res.render('error.html', {
         title: 'Oops, sorry',
         message: 'Oops, sorry, error checking details',
@@ -105,9 +106,9 @@ function getDemoFeedback(req, res) {
 }
 
 async function postSubmitDemoFeedback(req, res) {
-  console.log('Data submitted:', req.body);
+  logger.info('Data submitted: %j', req.body);
   try {
-    console.log('demoFeedbackGformUrl:' + demoFeedbackGformUrl);
+    logger.info('demoFeedbackGformUrl: ' + demoFeedbackGformUrl);
     const gFormData = {
       email: req.body.email,
       rating: req.body.rating,
@@ -127,7 +128,7 @@ async function postSubmitDemoFeedback(req, res) {
     );
     res.render('hub-demo/feedback-submit.html', {title: 'Appvia: Hub Demo Feedback' });
   } catch (err) {
-    console.log('Feedback form failed:', err);
+    logger.error('Feedback form failed: %j', err);
     res.render('error.html', {
       title: 'Oops, sorry',
       message: 'Oops, sorry, error recording details',
