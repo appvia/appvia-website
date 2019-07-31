@@ -7,36 +7,36 @@
     {% import "../views/partials/headers.html" as header %}
     {{ header.nav('Blog', [{ text: 'Blog', link: false }], '', '0', 'background-position-3') }}
 
-        <section class="padding-80">
-            <div class="container">
-                <div class="section-heading">
-                    <h3>Medium blog</h3>
-                    <p class="width-55 sm-width-75 xs-width-95">Read our latest blog posts.</p>
-                </div>
+    <section class="padding-80">
+        <div class="container">
+            <div class="section-heading">
+                <h3>Medium blog</h3>
+                <p class="width-55 sm-width-75 xs-width-95">Read our latest blog posts.</p>
+            </div>
 
-                {% for item in rss.items %}
-                  <div class="row">
+            {% for item in rss.items %}
+                <div class="row">
                     <div class="col margin-30px-bottom xs-margin-20px-bottom">
                         <div class="blog-grid-simple">
-                          <a href="{{ item.link }}"><h4>{{ item.title }}</h4></a>
-                          <ul class="meta">
-                            <li><i aria-hidden="true" class="fa fa-user"></i> {{ item.creator }}</li>
-                            <li><i aria-hidden="true" class="fas fa-calendar-alt"></i> {{ item.pubDate}}</li>
-                          </ul>
-                          <hr />
-                          {{ item['content:encoded'] | safe | truncate(220)}}
-                          <div class="row">
-                            <div class="col">
-                              <a href="{{ item.link }}" class="butn"><span>Read Article</span></a>
+                            <a href="{{ item.link }}"><h4>{{ item.title }}</h4></a>
+                            <ul class="meta">
+                                <li><i aria-hidden="true" class="fa fa-user"></i> {{ item.creator }}</li>
+                                <li><i aria-hidden="true" class="fas fa-calendar-alt"></i> {{ item.pubDate}}</li>
+                            </ul>
+                            <hr/>
+                            {{ item['content:encoded'] | safe | truncate(220)}}
+                            <div class="row">
+                                <div class="col">
+                                    <a href="{{ item.link }}" class="butn"><span>Read Article</span></a>
+                                </div>
                             </div>
-                          </div>
                         </div>
                     </div>
-                  </div>
-                {% endfor %}
+                </div>
+            {% endfor %}
 
-            </div>
-        </section>
+        </div>
+    </section>
 
 <!-- end clients section -->
 {% endblock %}

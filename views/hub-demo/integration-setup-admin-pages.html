@@ -9,47 +9,50 @@
 
     <section class="padding-80">
         <div class="container">
-          <div class="section-heading">
-            <h3>Integration Setup Admin Pages</h3>
-          </div>
-          <div class="row justify-content-center">
-            <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
-
-              <p>Although you won’t have access to administer the Demo Hub we’ve setup, we have setup integrations for you.
-              Currently, the Hub supports the following Integration types:</p>
-                <ul class="bullets">
-                  <li>Code repositories</li>
-                  <li>Docker repositories</li>
-                  <li>Kubernetes namespaces</li>
-                  <li>Monitoring dashboards</li>
-                  <li>Logging dashboards</li>
-                </ul>
-              </div>
-              <div class="col-sm-12 col-md-4">
-                <img src="/img/The_Hub_Integrations.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
-              </div>
+            <div class="section-heading">
+                <h3>Integration Setup Admin Pages</h3>
             </div>
             <div class="row justify-content-center">
-              <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
-                <p>The Hub allows for multiple integrations of each type to be deployed but for demo purposes we’ve pre-configured the following:</p>
-                <ul class="bullets">
-                  <li>GitHub (code repositories in a demo github org)</li>
-                  <li>Quay (docker repositories)</li>
-                  <li>A custom Dedicated GKE Kubernetes Cluster for you to create namespaces in</li>
-                  <li>Grafana (prometheus) for Monitoring</li>
-                  <li>Loki (also Grafana) for Logging</li>
-                  </ul>
-              </div>
+                <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
+
+                    <p>Although you won’t have access to administer the Demo Hub we’ve setup, we have setup integrations for
+                        you.
+                        Currently, the Hub supports the following Integration types:</p>
+                    <ul class="bullets">
+                        <li>Code repositories</li>
+                        <li>Docker repositories</li>
+                        <li>Kubernetes namespaces</li>
+                        <li>Monitoring dashboards</li>
+                        <li>Logging dashboards</li>
+                    </ul>
+                </div>
                 <div class="col-sm-12 col-md-4">
-                  <img src="/img/Create_a_new_Integration.jpg" alt="The Hub Screenshot integrations" class="shadow mb-5 rounded">
-              </div>
-          </div>
+                    <img src="/img/The_Hub_Integrations.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-8">
+                    <p>The Hub allows for multiple integrations of each type to be deployed but for demo purposes we’ve
+                        pre-configured the following:</p>
+                    <ul class="bullets">
+                        <li>GitHub (code repositories in a demo github org)</li>
+                        <li>Quay (docker repositories)</li>
+                        <li>A custom Dedicated GKE Kubernetes Cluster for you to create namespaces in</li>
+                        <li>Grafana (prometheus) for Monitoring</li>
+                        <li>Loki (also Grafana) for Logging</li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <img src="/img/Create_a_new_Integration.jpg" alt="The Hub Screenshot integrations"
+                         class="shadow mb-5 rounded">
+                </div>
+            </div>
         </div>
     </section>
 
 {% endblock %}
 
 {% block customScripts %}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
-  <script src="/assets/fabrex/js/form.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
+    <script src="/assets/fabrex/js/form.js"></script>
 {% endblock %}
