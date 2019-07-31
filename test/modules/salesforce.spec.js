@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const sinon = require('sinon');
 const jsforce = require('jsforce');
+const logger = require('../../logger');
 
 const salesforce = require('../../modules/salesforce');
 
@@ -8,7 +9,7 @@ describe('modules/salesforce', function() {
   let jsforceConnectionStub;
   let jsforceStub;
   let jsforceSObjectCreateStub;
-  let consoleErrorStub;
+  let loggerErrorStub;
 
   beforeEach(function() {
     jsforceSObjectCreateStub = sinon.spy();
@@ -19,12 +20,12 @@ describe('modules/salesforce', function() {
     };
     jsforceConnectionStub = sinon.stub(jsforce, 'Connection');
     jsforceConnectionStub.returns(jsforceStub);
-    consoleErrorStub = sinon.stub(console, 'error');
+    loggerErrorStub = sinon.stub(logger, 'error');
   });
 
   afterEach(function() {
     jsforceConnectionStub.restore();
-    consoleErrorStub.restore();
+    loggerErrorStub.restore();
   });
 
   describe('#isContact()', async function() {
@@ -80,7 +81,7 @@ describe('modules/salesforce', function() {
       try {
         await salesforce.isContact(contactOrLead);
       } catch (error) {
-        expect(consoleErrorStub).to.be.calledOnce.calledWith('Error querying salesforce', error);
+        expect(loggerErrorStub).to.be.calledOnce.calledWith('Error querying salesforce: %j', error);
       }
     });
   });

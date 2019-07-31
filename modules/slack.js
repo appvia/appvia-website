@@ -1,4 +1,5 @@
 const requestPromise = require('request-promise');
+const logger = require('../logger');
 
 const isDev = process.env.DEV_SITE === 'true';
 
@@ -33,15 +34,15 @@ function messageRaw(slackChannelUrl, data) {
   return requestPromise.post({ url: slackChannelUrl, json: data, resolveWithFullResponse: true })
   .then(resp => {
     if (resp.body === 'invalid_payload') {
-      console.error('Invalid payload submitted to slack:', data);
+      logger.error('Invalid payload submitted to slack: %j', data);
     } else {
-      console.log('Slack submission was successful');
+      logger.info('Slack submission was successful');
     }
     // always resolve as we don't want an issue with slack to break the flow
     return Promise.resolve();
   })
   .catch(err => {
-    console.error('Slack error:', err);
+    logger.error('Slack error: %j', err);
     // always resolve as we don't want an issue with slack to break the flow
     return Promise.resolve();
   });

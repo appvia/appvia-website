@@ -1,6 +1,7 @@
 const sinon = require('sinon');
 const expect = require('chai').expect;
 const nock = require('nock');
+const logger = require('../../logger');
 
 const slack = require('../../modules/slack');
 
@@ -25,14 +26,14 @@ describe('modules/slack', function() {
       .post('/', getSlackRequestBody('My title', 'My text'))
       .reply(statusCode, body);
   };
-  let consoleErrorStub;
+  let loggerErrorStub;
 
   beforeEach(function() {
-    consoleErrorStub = sinon.stub(console, 'error');
+    loggerErrorStub = sinon.stub(logger, 'error');
   });
 
   afterEach(function() {
-    consoleErrorStub.restore();
+    loggerErrorStub.restore();
   });
 
   describe('#message()', function() {
@@ -48,12 +49,12 @@ describe('modules/slack', function() {
     it('resolves when receiving invalid_payload', async function() {
       nockSetup(200, 'invalid_payload');
       await slack.message(slackUrl, 'My title', 'My text');
-      expect(consoleErrorStub).to.be.calledOnce;
+      expect(loggerErrorStub).to.be.calledOnce.calledWith('Invalid payload submitted to slack: %j');
     });
     it('errors and resolves when receiving an error', async function() {
       nockSetup(500, 'server_error');
       await slack.message(slackUrl, 'My title', 'My text');
-      expect(consoleErrorStub).to.be.calledOnce;
+      expect(loggerErrorStub).to.be.calledOnce.calledWith('Slack error: %j');
     });
   });
 
