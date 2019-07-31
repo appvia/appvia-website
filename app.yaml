@@ -7,5 +7,5 @@ handlers:
   redirect_http_response_code: 301
 env_variables:
   DEV_SITE: "false"
-  HUB_DEMO_ENABLED: "false"
+  HUB_DEMO_ENABLED: "true"
   EMAIL_ADMIN_ENABLED: "false"
