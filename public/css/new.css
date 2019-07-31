@@ -493,8 +493,7 @@ a:hover
 
 
 .text-1{
-  color: #fff;
-  text-transform: uppercase;
+  color: #c3073f;
   font-size: 3em;
   line-height: .85em;
 }
@@ -503,9 +502,29 @@ a:hover
 }
 
 .line-600{
-  width: 600px;
+  width:80%;
   border: none;
-  background-color: red;
+  background-color: #fff;
   height: 2px;
   margin: .5em auto;
+  -webkit-animation: grow 1.2s  linear;
+    	-moz-animation:    grow 1.2s  linear;
+    	-o-animation:      grow 1.2s  linear;
+    	animation:         grow 1.2s  linear;
+}
+
+
+
+	@-moz-keyframes grow {
+    0%   { width: 0%;
+          opacity: 0 }
+	  100%{ width:80%;   opacity: 1}
+	}
+	@-o-keyframes grow {
+    0%   { width: 0%; opacity: 0}
+	  100%{ width:80%;opacity: 1}
+	}
+	@keyframes grow {
+    0%   { width: 0%; opacity: 0}
+	  100%{ width:80%;opacity: 1}
 }
