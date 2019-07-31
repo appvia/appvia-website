@@ -1,4 +1,5 @@
 const jsforce = require('jsforce');
+const logger = require('../logger');
 
 const sfUser = process.env.SF_USER;
 const sfPass = process.env.SF_PW;
@@ -7,7 +8,7 @@ const sfToken = process.env.SF_TOKEN;
 let conn;
 
 async function createConnection() {
-  console.log('Creating salesforce connection and logging in');
+  logger.info('Creating salesforce connection and logging in');
   conn = new jsforce.Connection();
   await conn.login(sfUser, sfPass + sfToken);
 }
@@ -19,16 +20,15 @@ async function isContact(contactOrLead, createLead = true) {
 
   try {
     const contactQueryResult = await conn.query(`SELECT Id, Email FROM Contact WHERE Email='${contactOrLead.email}'`);
-    console.log(`Successfully queried contacts for: ${contactOrLead.email}, totalSize === ${contactQueryResult['totalSize']}`);
+    logger.info(`Successfully queried contacts for: ${contactOrLead.email}, totalSize === ${contactQueryResult['totalSize']}`);
     if (contactQueryResult['totalSize'] > 0) {
-      console.log(`Salesforce contact found: ${contactOrLead.email}`);
+      logger.info(`Salesforce contact found: ${contactOrLead.email}`);
       return true;
     }
 
     if (createLead) {
       const leadQueryResult = await conn.query(`SELECT Id, Name, Email FROM Lead WHERE Email = '${contactOrLead.email}'`);
-      console.log('leadQueryResult', leadQueryResult);
-      console.log(`Successfully queried leads for: ${contactOrLead.email}, totalSize === ${leadQueryResult['totalSize']}`);
+      logger.info(`Successfully queried leads for: ${contactOrLead.email}, totalSize === ${leadQueryResult['totalSize']}`);
 
       if (leadQueryResult['totalSize'] === 0) {
         const createLeadResult = await conn.sobject("Lead").create(
@@ -41,14 +41,14 @@ async function isContact(contactOrLead, createLead = true) {
             NumberOfEmployees: contactOrLead.companySize
           }
         );
-        console.log(`Successfully created lead for ${contactOrLead.email}`, createLeadResult);
+        logger.info(`Successfully created lead for ${contactOrLead.email}`, createLeadResult);
       }
     }
     return false;
   } catch (error) {
-    console.error('Error querying salesforce', error);
+    logger.error('Error querying salesforce: %j', error);
     if (typeof error === 'string' && error.indexOf('INVALID_SESSION_ID') >= 0) {
-      console.error('INVALID_SESSION_ID found, resetting connection and trying again');
+      logger.error('INVALID_SESSION_ID found, resetting connection and trying again');
       conn = null;
       return isContact(contactOrLead);
     }

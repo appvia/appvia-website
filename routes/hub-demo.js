@@ -3,11 +3,15 @@ const salesforce = require('../modules/salesforce');
 const gform = require('../modules/gform');
 const slack = require('../modules/slack');
 const demo = require('../modules/demo');
+const logger = require('../logger');
 
-router.get('/products/hub-demo', function (req, res) {
+const demoRequestGformUrl = process.env.DEMO_REQUEST_GFORM_URL;
+const demoFeedbackGformUrl = process.env.DEMO_FEEDBACK_GFORM_URL;
+const slackWebhookUrl = process.env.SLACK_DEMOS_URL;
+
+function getRequestDemo(req, res) {
   res.render('hub-demo/demo.html', {
     title: 'Appvia: Request a Hub Demo',
-    slug: req.query.slug,
     firstName: req.query.firstName,
     lastName: req.query.lastName,
     email: req.query.email,
@@ -17,23 +21,23 @@ router.get('/products/hub-demo', function (req, res) {
     github: req.query.github,
     errors: req.query.errors
   });
-});
+}
 
-router.get('/products/request-submit', function (req, res) {
+function getRequestDemoSubmitted(req, res) {
   res.render('hub-demo/request-submit.html', {title: 'Appvia: Thank you for your request'});
-});
+}
 
-router.post('/products/request-submit', async function (req, res) {
-  console.log('Data submitted:', req.body);
+async function postRequestDemoSubmitted(req, res) {
+  logger.info('Data submitted: %j', req.body);
   try {
-    var gformData = req.body;
-    var demoData = demo.getDemoDetails(req.body.email);
+    const gformData = req.body;
+    const demoData = demo.getDemoDetails(req.body.email);
     gformData.demoName = demoData.demoName;
-    await gform.addRowToSheet(gformData, process.env.DEMO_REQUEST_GFORM_URL);
+    await gform.addRowToSheet(gformData, demoRequestGformUrl);
     const sfContact = await salesforce.isContact(req.body);
     if (sfContact) {
       await slack.message(
-        process.env.SLACK_DEMOS_URL,
+        slackWebhookUrl,
         `Please create new demo ${demoData.demoURL}`,
         `*Qualified Customer* please create a new demo:
         URL: ${demoData.demoURL}
@@ -47,66 +51,65 @@ router.post('/products/request-submit', async function (req, res) {
       res.redirect('/products/request-submit-pending');
     }
   } catch (err) {
-    console.log('Demo request failed:', err);
+    logger.error('Demo request failed: %j', err);
     res.render('error.html', {
-      title: "Oops, sorry",
-      message: "Oops, sorry, error recording details",
+      title: 'Oops, sorry',
+      message: 'Oops, sorry, error recording details',
       status: err.status,
       html_class: 'error',
       error: {}
     });
   }
-});
+}
 
-// Not a contact, but in form - we'll get back to them:
-router.get('/products/request-submit-pending', function (req, res) {
+function getRequestDemoSubmitPending(req, res) {
   res.render('hub-demo/request-submit-pending.html', {title: 'Appvia: Request Pending'});
-});
+}
 
-router.get('/products/hub-demo/my-demo', async function (req, res) {
+async function getMyDemo(req, res) {
   // If we have an email
-  console.log(req.query.email);
-  if (req.query.email === undefined ) {
-    console.log('No email');
-    res.render('hub-demo/my-demo-no-email.html', {title: 'Appvia: My Demo' });
+  logger.info(req.query.email);
+  if (!req.query.email) {
+    logger.info('No email');
+    res.render('hub-demo/my-demo-no-email.html', { title: 'Appvia: My Demo' });
   } else {
-    console.log('Data submitted:', req.body);
+    logger.info('Data submitted: %j', req.body);
     try {
       // Don't try and create a lead here - redirect first...
       const sfContact = await salesforce.isContact(req.query, false);
       if (sfContact) {
-        demoDetails = demo.getDemoDetails(req.query.email);
+        const demoDetails = demo.getDemoDetails(req.query.email);
         res.render('hub-demo/my-demo.html', {title: 'Appvia: My Demo', demoURL: demoDetails.demoURL });
       } else {
         // Ask them to fill in a request (they're not a contact...)
         res.redirect('/products/hub-demo');
       }
     } catch (err) {
-      console.log('My Demo request failed:', err);
+      logger.error('My Demo request failed: %j', err);
       res.render('error.html', {
-        title: "Oops, sorry",
-        message: "Oops, sorry, error checking details",
+        title: 'Oops, sorry',
+        message: 'Oops, sorry, error checking details',
         status: err.status,
         html_class: 'error',
         error: {}
       });
     }
   }
-});
+}
 
-router.get('/products/hub-demo/integration-setup-admin-pages', function (req, res) {
+function getDemoIntegrationSetupAdminPages(req, res) {
   res.render('hub-demo/integration-setup-admin-pages.html', {title: 'Appvia: Integration Setup Admin Pages'});
-});
+}
 
-router.get('/products/hub-demo/feedback', function (req, res) {
+function getDemoFeedback(req, res) {
   res.render('hub-demo/feedback.html', {title: 'Appvia: Hub Demo Feedback', email: req.query.email });
-});
+}
 
-router.post('/products/hub-demo/feedback-submit', async function (req, res) {
-  console.log('Data submitted:', req.body);
+async function postSubmitDemoFeedback(req, res) {
+  logger.info('Data submitted: %j', req.body);
   try {
-    console.log('process.env.DEMO_FEEDBACK_GFORM_URL:' + process.env.DEMO_FEEDBACK_GFORM_URL);
-    var gFormData = {
+    logger.info('demoFeedbackGformUrl: ' + demoFeedbackGformUrl);
+    const gFormData = {
       email: req.body.email,
       rating: req.body.rating,
       message: req.body.message
@@ -117,23 +120,43 @@ router.post('/products/hub-demo/feedback-submit', async function (req, res) {
     gform.flattenDataWithOther(req.body, gFormData, 'features[]');
     gform.flattenDataWithOther(req.body, gFormData, 'devs-in-my-team');
     gform.flattenDataWithOther(req.body, gFormData, 'dev-teams-in-org');
-    await gform.addRowToSheet(gFormData, process.env.DEMO_FEEDBACK_GFORM_URL);
+    await gform.addRowToSheet(gFormData, demoFeedbackGformUrl);
     await slack.message(
-      process.env.SLACK_DEMOS_URL,
+      slackWebhookUrl,
       `Feedback form submitted for: ${req.body.email}`,
       `FYI ${req.body.email} has provided feedback!!!`
     );
     res.render('hub-demo/feedback-submit.html', {title: 'Appvia: Hub Demo Feedback' });
   } catch (err) {
-    console.log('Feedback form failed:', err);
+    logger.error('Feedback form failed: %j', err);
     res.render('error.html', {
-      title: "Oops, sorry",
-      message: "Oops, sorry, error recording details",
+      title: 'Oops, sorry',
+      message: 'Oops, sorry, error recording details',
       status: err.status,
       html_class: 'error',
       error: {}
     });
   }
-});
+}
 
-module.exports = router;
+router.get('/products/hub-demo', getRequestDemo);
+router.get('/products/request-submit', getRequestDemoSubmitted);
+router.post('/products/request-submit', postRequestDemoSubmitted);
+// Not a contact, but in form - we'll get back to them:
+router.get('/products/request-submit-pending', getRequestDemoSubmitPending);
+router.get('/products/hub-demo/my-demo', getMyDemo);
+router.get('/products/hub-demo/integration-setup-admin-pages', getDemoIntegrationSetupAdminPages);
+router.get('/products/hub-demo/feedback', getDemoFeedback);
+router.post('/products/hub-demo/feedback-submit', postSubmitDemoFeedback);
+
+module.exports = {
+  router,
+  getRequestDemo,
+  getRequestDemoSubmitted,
+  postRequestDemoSubmitted,
+  getRequestDemoSubmitPending,
+  getMyDemo,
+  getDemoIntegrationSetupAdminPages,
+  getDemoFeedback,
+  postSubmitDemoFeedback
+};
