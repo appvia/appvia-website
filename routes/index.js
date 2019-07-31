@@ -7,31 +7,31 @@ const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 const jobs = require('../jobs').filter(j => j.active);
 
 async function getBlogFeed() {
-    try {
-        return await parser.parseURL('https://medium.com/feed/appvia');
-    } catch (err) {
-        return { items: [] }
-    }
+  try {
+    return await parser.parseURL('https://medium.com/feed/appvia');
+  } catch (err) {
+    return {items: []}
+  }
 }
 
 router.get('/', function (req, res) {
-    res.render('index.html', {title: 'Appvia: Home'});
+  res.render('index.html', {title: 'Appvia: Home'});
 });
 
 router.get('/about', function (req, res) {
-    res.render('about.html', {title: 'Appvia: About'});
+  res.render('about.html', {title: 'Appvia: About'});
 });
 
 router.get('/products', function (req, res) {
-    res.render('products.html', {title: 'Appvia: Products', hubDemoEnabled});
+  res.render('products.html', {title: 'Appvia: Products', hubDemoEnabled});
 });
 
 router.get('/services', function (req, res) {
-    res.render('services.html', {title: 'Appvia: Services'});
+  res.render('services.html', {title: 'Appvia: Services'});
 });
 
 router.get('/blog', async function (req, res) {
-    res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlogFeed()});
+  res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlogFeed()});
 });
 
 router.get('/careers', function (req, res) {
@@ -39,9 +39,9 @@ router.get('/careers', function (req, res) {
 });
 
 jobs.forEach(job => {
-    router.get(`/careers/${job.slug}`, function (req, res) {
-        res.render('job.html', {title: 'Appvia: Careers', job: job});
-    });
+  router.get(`/careers/${job.slug}`, function (req, res) {
+    res.render('job.html', {title: 'Appvia: Careers', job: job});
+  });
 });
 
 router.get('/contact', function (req, res) {

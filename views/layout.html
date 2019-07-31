@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <!-- metas -->
     <meta charset="utf-8">
-    <meta name="author" content="ChitrakootWeb" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="ChitrakootWeb"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Appvia - Simplify building and deploying software" />
+    <meta name="description" content="Appvia - Simplify building and deploying software"/>
     <meta name="author" content="Appvia">
-    <meta name="keywords" content="appvia, kubernetes, software, consultancy, app, development, engineering, london, uk, hosting, cloud, sre, devops">
+    <meta name="keywords"
+          content="appvia, kubernetes, software, consultancy, app, development, engineering, london, uk, hosting, cloud, sre, devops">
 
 
     <!-- title  -->
@@ -23,7 +24,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="/assets/fabrex/img/logos/apple-touch-icon-114x114.png">
 
     <!-- plugins -->
-    <link rel="stylesheet" href="/assets/fabrex/css/plugins.css" />
+    <link rel="stylesheet" href="/assets/fabrex/css/plugins.css"/>
 
     <!-- revolution slider css -->
     <link rel="stylesheet" href="/assets/fabrex/css/rev_slider/settings.css">
@@ -31,7 +32,7 @@
     <link rel="stylesheet" href="/assets/fabrex/css/rev_slider/navigation.css">
 
     <!-- search css -->
-    <link rel="stylesheet" href="/assets/fabrex/search/search.css" />
+    <link rel="stylesheet" href="/assets/fabrex/search/search.css"/>
 
     <!-- custom css -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic&display=swap" rel="stylesheet">
@@ -41,106 +42,112 @@
     {% block customStyles %}
     {% endblock %}
 
+</head>
 
-  </head>
+<body class="{{pageClass}}">
 
-  <body class="{{pageClass}}">
-
-    <!-- start page loading -->
-    <div id="preloader">
-      <div class="row loader">
+<!-- start page loading -->
+<div id="preloader">
+    <div class="row loader">
         <div class="loader-icon"></div>
-      </div>
     </div>
-    <!-- end page loading -->
+</div>
+<!-- end page loading -->
 
-    <!-- start main-wrapper section -->
-    <div class="main-wrapper">
+<!-- start main-wrapper section -->
+<div class="main-wrapper">
 
-      {% block content %}
-      {% endblock %}
-
-      <div class="section-clients">
-        <div class="container">
-          <div class="row justify-content-center align-items-center">
-            <div class=" col-4  text-center">
-              <a href="https://kubernetes.io/partners/#kcsp"><img alt="partner-image" src="/img/kubernetes-kcsp-color.png" style="width:100px"></a>
-            </div>
-            <div class="col-4 text-center">
-              <a href="https://www.cncf.io"><img alt="partner-image" src="/img/cncf-color.svg"  style="width:200px"></a>
-            </div>
-            <div class="col-4 text-center">
-              <a href="https://aws.amazon.com/partners/"><img alt="partner-image" src="/img/APN-Logo.png"  style="width:200px"></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- start footer section -->
-      <footer class="bg-light">
-        <div class="container">
-          <div class="row">
-            <div class="col sm-margin-30px-bottom text-center">
-              <div>
-                <img alt="footer-logo" src="/assets/fabrex/img/logos/logo-footer.png" width="120">
-              </div>
-              <div class="footer-text">
-                Appvia delivers quality hosting engineering that enables your software applications to meet any demand.
-              </div>
-              <div class="margin-25px-top footer-social-icons">
-                <ul>
-                  <li><a href="https://www.linkedin.com/company/appvia/"><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href="https://twitter.com/appvia_io"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="https://medium.com/appvia"><i class="fab fa-medium"></i></a></li>
-                  <li><a href="https://github.com/appvia"><i class="fab fa-github"></i></a></li>
-                </ul>
-              </div>
-              <div class="mt-4 small">
-                <p>&copy; 2019 Appvia</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- end footer section -->
-
-    </div>
-    <!-- end main-wrapper section -->
-
-    <!-- start scroll to top -->
-    <a href="javascript:void(0)" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
-    <!-- end scroll to top -->
-
-    <!-- all js include start -->
-
-    <!-- jQuery -->
-    <script src="/assets/fabrex/js/jquery.min.js"></script>
-
-    <!-- modernizr js -->
-    <script src="/assets/fabrex/js/modernizr.js"></script>
-
-    <!-- bootstrap -->
-    <script src="/assets/fabrex/js/bootstrap.min.js"></script>
-
-    <!-- navigation -->
-    <script src="/assets/fabrex/js/nav-menu.js"></script>
-
-    <!-- custom scripts -->
-    <script src="/assets/fabrex/js/main.js"></script>
-
-    {% block customScripts %}
+    {% block content %}
     {% endblock %}
 
+    <div class="section-clients">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class=" col-4  text-center">
+                    <a href="https://kubernetes.io/partners/#kcsp"><img alt="partner-image"
+                                                                        src="/img/kubernetes-kcsp-color.png"
+                                                                        style="width:100px"></a>
+                </div>
+                <div class="col-4 text-center">
+                    <a href="https://www.cncf.io"><img alt="partner-image" src="/img/cncf-color.svg"
+                                                       style="width:200px"></a>
+                </div>
+                <div class="col-4 text-center">
+                    <a href="https://aws.amazon.com/partners/"><img alt="partner-image" src="/img/APN-Logo.png"
+                                                                    style="width:200px"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- start footer section -->
+    <footer class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col sm-margin-30px-bottom text-center">
+                    <div>
+                        <img alt="footer-logo" src="/assets/fabrex/img/logos/logo-footer.png" width="120">
+                    </div>
+                    <div class="footer-text">
+                        Appvia delivers quality hosting engineering that enables your software applications to meet any
+                        demand.
+                    </div>
+                    <div class="margin-25px-top footer-social-icons">
+                        <ul>
+                            <li><a href="https://www.linkedin.com/company/appvia/"><i
+                                    class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="https://twitter.com/appvia_io"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="https://medium.com/appvia"><i class="fab fa-medium"></i></a></li>
+                            <li><a href="https://github.com/appvia"><i class="fab fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 small">
+                        <p>&copy; 2019 Appvia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer section -->
+
+</div>
+<!-- end main-wrapper section -->
+
+<!-- start scroll to top -->
+<a href="javascript:void(0)" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+<!-- end scroll to top -->
+
+<!-- all js include start -->
+
+<!-- jQuery -->
+<script src="/assets/fabrex/js/jquery.min.js"></script>
+
+<!-- modernizr js -->
+<script src="/assets/fabrex/js/modernizr.js"></script>
+
+<!-- bootstrap -->
+<script src="/assets/fabrex/js/bootstrap.min.js"></script>
+
+<!-- navigation -->
+<script src="/assets/fabrex/js/nav-menu.js"></script>
+
+<!-- custom scripts -->
+<script src="/assets/fabrex/js/main.js"></script>
+
+{% block customScripts %}
+{% endblock %}
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120919526-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-120919526-1');
-    </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120919526-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+  gtag('config', 'UA-120919526-1');
+</script>
 
-  </body>
+</body>
 </html>
