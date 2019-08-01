@@ -28,7 +28,6 @@
 		<link href="/assets/css/new.css" rel="stylesheet">
 
 
-
   </head>
 
   <body>
@@ -56,10 +55,10 @@
     <span></span>
     <span></span>
     <ul id="menu">
-      <a href="#"><li>Home</li></a>
-      <a href="#"><li>About</li></a>
-      <a href="#"><li>Info</li></a>
-      <a href="#"><li>Contact</li></a>
+      <a href="#"><li>HOME</li></a>
+      <a href="#"><li>PRODUCTS</li></a>
+      <a href="#"><li>SERVICES</li></a>
+      <a href="#"><li>CONTACT</li></a>
     </ul>
   </div>
 </nav>
@@ -76,8 +75,7 @@
         <i class="fa fa-angle-down slide-bottom-fade"></i>
       </div>
     </div>
-    <div id="group2" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base background-2"></div>
+    <div id="group2" class="parallax__group background-2">
       <div class="parallax__layer parallax__layer--base">
         <h1 class="text-2 uppercase">Get visibility of your applications across your teams</h1>
       </div>
@@ -115,16 +113,16 @@
         </div>
       </div>
       <div class="parallax__layer parallax__layer--fore">
-        <div class="column1-4">
+        <div class="column1-4 col-style1 ">
           <h1>“We want to help organisations deliver amazing products and applications”</h1>
         </div>
-        <div class="column1-4">
+        <div class="column1-4 col-style1">
         <h1>“We love engineering and built products around making this happen”</h1>
       </div>
-        <div class="column1-4">
+        <div class="column1-4 col-style1">
         <h1>“We believe in giving back to the community and open source”</h1>
         </div>
-        <div class="column1-4">
+        <div class="column1-4 col-style1">
         <h1>“We want to give an organisation a standard but efficient way to deliver modernised apps”</h1>
         </div>
       </div>
@@ -174,7 +172,7 @@
     <div id="group4" class="parallax__group">
       <div class="parallax__layer parallax__layer--base background-4">
         <div class="title-2">
-          <h1 class="text-5 uppercase">Our Products</h1>
+          <h1 class="text-5 uppercase">Choose your journey</h1>
         </div>
       </div>
       <div class="parallax__layer parallax__layer--fore">
@@ -185,31 +183,61 @@
       </div>
       </div>
     </div>
-<!--
-    <div id="group11" class="parallax__group">
-      <div class="parallax__layer parallax__layer--fore">
-        <div class="title">
-          <h1>Are you a Developer?</h1>
-          <button>Yes</button>
-          <button>No</button>
+
+    <div id="group5" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base">
+        <div class="title-2">
+          <h1 class="text-5 uppercase">Products</h1>
         </div>
       </div>
+    </div>
+    <div id="group6" class="parallax__group">
       <div class="parallax__layer parallax__layer--base">
-        <div class="title"></div>
+        <div class="title-2">
+          <h1 class="text-5 uppercase">Services</h1>
+        </div>
       </div>
     </div>
--->
+
+    <div id="group7" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base  background-1">
+        <div class="title-5">
+          <h1 class="text-5 uppercase">Get in Touch</h1>
+        </div>
+          <h2 class="title-4">Let us help your business achieve more.</h2>
+          <div class="copyright">
+            © 2019 Appvia
+          </div>
+      </div>
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="column1-4 col-style2">
+          <h3>Call us</h3>
+          <p>+44 (0)203 475 0546</p>
+        </div>
+        <div class="column1-4 col-style2">
+          <h3>Visit us</h3>
+          <p>Ground Floor, Cap House 9 - 12 Long Lane London, EC1A 9HA</p>
+        </div>
+        <div class="column1-4 col-style2">
+          <h3>Email us</h3>
+          <p>info@appvia.io</p>
+        </div>
+        <div class="column1-4 col-style2">
+          <h3>Connect with us</h3>
+          <ul class="social-icons">
+            <li><a href="https://www.linkedin.com/company/appvia/"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://twitter.com/appvia_io"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://medium.com/appvia"><i class="fab fa-medium"></i></a></li>
+            <li><a href="https://github.com/appvia"><i class="fab fa-github"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 
-  <script>
-    var debugInput = document.querySelector("input");
-    function updateDebugState() {
-        document.body.classList.toggle('debug-on', debugInput.checked);
-    }
-    debugInput.addEventListener("click", updateDebugState);
-    updateDebugState();
-  </script>
+
 
 
 
@@ -259,6 +287,16 @@
 	<script src="/assets/js/jquery.scrollie.min.js"></script>
 	<script src="/assets/js/script.js"></script>
 -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+<script>
+  var debugInput = document.querySelector("input");
+  function updateDebugState() {
+      document.body.classList.toggle('debug-on', debugInput.checked);
+  }
+  debugInput.addEventListener("click", updateDebugState);
+  updateDebugState();
+</script>
 
   </body>
 </html>
