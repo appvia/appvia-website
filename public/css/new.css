@@ -56,13 +56,13 @@
 
 .debug {
   position: fixed;
-  top: 0;
-  left: calc(50% - 3em);
+  bottom: 0;
+  right: 0;
   z-index: 99999;
   background: rgba(0,0,0,.85);
   color: #fff;
   padding: .5em;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px 5px 0 0;
   width: 6em;
   text-align: center;
 }
@@ -263,7 +263,9 @@ nav{
   position: fixed;
   top: 0;
   z-index: 1000;
-  width:100%;
+  width: 100%;
+  background-color: rgba(0,0,0,1);
+  height: 70px;
 
 }
 nav .appvia-logo{
@@ -272,6 +274,16 @@ nav .appvia-logo{
   margin-top: 1em;
 }
 
+#mainMenu{
+  float: right;
+  list-style: none;
+  margin-top: 1.4em;
+}
+
+#mainMenu li{
+  display: inline;
+  margin: 1em;
+}
 .scale-in-center {
 	-webkit-animation: scale-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: scale-in-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -379,7 +391,7 @@ a:hover
   display: block;
   position: sticky;
   position: -webkit-sticky;
-  top: 1em;
+  top: 1.4em;
   right: 1em;
 
   z-index: 1000;
@@ -501,7 +513,15 @@ a:hover
   font-weight: bold;
   line-height: .8em;
 }
+.request-demo{
+  border: solid 1px;
+  padding: .2em .4em;
+  color:  #c3073f;
+}
+.request-demo:hover{
 
+  color:  #fff;
+}
 
 
 
@@ -761,4 +781,12 @@ transition-duration: 0.3s;
   left: -0.15em;
   color: rgba(255,255,255, .1);
   font-size: 6em;
+ }
+ @media (max-width: 1000px) {
+   #mainMenu{
+     display: none;
+   }
+   #menuToggle{
+     display: block !important;
+   }
  }

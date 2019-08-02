@@ -40,25 +40,33 @@
     <label><input type="checkbox"> Debug</label>
   </div>
 
-<!--
-  <div class="demo__info">
-    Pure CSS parallax scroll demo #3 by Keith Clark. Please read the <a href="../">blog post</a> for more information.
-  </div>
--->
+
 
 
 <nav role="navigation">
   <img src="assets/img/appvia_logo.svg" class="appvia-logo">
-  <div id="menuToggle">
+  <ul id="mainMenu">
+    <li><a href="#">HOME</a></li>
+    <li><a href="#">PRODUCTS</a></li>
+    <li><a href="#">SERVICES</a></li>
+    <li><a href="#">BLOG</a></li>
+    <li><a href="#">CAREERS</a></li>
+    <li><a href="#">CONTACT</a></li>
+    <li><a href="#" class="request-demo">REQUEST A DEMO</a></li>
+  </ul>
+  <div id="menuToggle" style="display:none">
     <input type="checkbox" />
     <span></span>
     <span></span>
     <span></span>
     <ul id="menu">
-      <a href="#"><li>HOME</li></a>
-      <a href="#"><li>PRODUCTS</li></a>
-      <a href="#"><li>SERVICES</li></a>
-      <a href="#"><li>CONTACT</li></a>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">PRODUCTS</a></li>
+      <li><a href="#">SERVICES</a></li>
+      <li><a href="#">BLOG</a></li>
+      <li><a href="#">CAREERS</a></li>
+      <li><a href="#">CONTACT</a></li>
+      <li><a href="#">REQUEST A DEMO</a></li>
     </ul>
   </div>
 </nav>
@@ -73,7 +81,7 @@
 
     margin-left: .3em;
     display: block;
-
+margin-bottom: -.8em;
     margin-top: -1em;">How we can help</span>
           <span class="uppercase" style="color:#c3073f;    border-bottom: solid 2px;
     display: block;
@@ -81,8 +89,8 @@
 <span style="    font-size: .3em;
 
     display: block;
-
-    margin-bottom: -1em;">Fully managed by a team of experts</span>
+    margin-top: -.5em;
+">Fully managed by a team of experts</span>
           </h1>
 
           </div>
@@ -245,59 +253,6 @@
 
   </div>
 
-
-
-
-
-
-<!--
-		<div class="main-wrapper">
-
-		  <div class="slide slide-one" data-background="#1a1a1d">
-		    <div class="inside">
-		    <p><img src="assets/img/appvia_logo_white.svg" class="appvia-logo"> <br>
-		<i class="fa fa-angle-down"></i></p>
-		    </div>
-		  </div>
-		  <div class="slide slide-two" data-background="#4e4e50">
-		    <div class="inside">
-					<h1>Enable your developers to deliver software quickly and efficiently</h1>
-		      <p>Keep Scrolling</p>
-		    </div>
-		  </div>
-		  <div class="slide slide-three" data-background="#6f2232">
-		    <div class="inside">
-					<h1>Get visibility of your applications across your teams</h1>
-		      <p>Keep Scrolling</p>
-		    </div>
-		  </div>
-		  <div class="slide slide-four" data-background="#e67e22">
-		    <div class="inside">
-		      <p>Keep Scrolling</p>
-		    </div>
-		  </div>
-		  <div class="slide slide-five" data-background="#9b59b6">
-		    <div class="inside">
-		      <p>Keep Scrolling</p>
-		    </div>
-		  </div>
-
-		  <div class="slide slide-five" data-background="#34495e">
-		    <div class="inside">
-		      <p>Last Section</p>
-		    </div>
-		  </div>
-
-		</div>
-
-
-
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-	<script src="/assets/js/jquery.scrollie.min.js"></script>
-	<script src="/assets/js/script.js"></script>
--->
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
 <script>
   var debugInput = document.querySelector("input");
   function updateDebugState() {
