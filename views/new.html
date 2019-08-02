@@ -47,11 +47,11 @@
   <img src="assets/img/appvia_logo.svg" class="appvia-logo">
   <ul id="mainMenu">
     <li><a href="#">HOME</a></li>
-    <li><a href="#">PRODUCTS</a></li>
-    <li><a href="#">SERVICES</a></li>
+    <li><a href="#products">PRODUCTS</a></li>
+    <li><a href="#services">SERVICES</a></li>
     <li><a href="#">BLOG</a></li>
     <li><a href="#">CAREERS</a></li>
-    <li><a href="#">CONTACT</a></li>
+    <li><a href="#contact">CONTACT</a></li>
     <li><a href="#" class="request-demo">REQUEST A DEMO</a></li>
   </ul>
   <div id="menuToggle" style="display:none">
@@ -157,10 +157,11 @@ margin-bottom: -.8em;
       </div>
     </div>
 
+    <div id="products"></div>
     <div id="group5" class="parallax__group">
       <div class="parallax__layer parallax__layer--base background-6">
         <div class="title-2">
-          <h1 class="text-5 uppercase">Products and Services</h1>
+          <h1 class="text-5 uppercase">Products</h1>
         </div>
       </div>
       <div class="parallax__layer parallax__layer--fore">
@@ -200,7 +201,7 @@ margin-bottom: -.8em;
 </div>
 
 <div id="group8" class="parallax__group">
-  <div class="parallax__layer parallax__layer--base background-4" style="text-align:center">
+  <div class="parallax__layer parallax__layer--base background-2" style="text-align:center">
     <img src="/assets/img/products-banner.png" style="    width: 240%;
     margin-top: 3em;
 
@@ -215,8 +216,52 @@ margin-bottom: -.8em;
 </div>
 </div>
 
+<div id="services"></div>
+<div id="group9" class="parallax__group">
+  <div class="parallax__layer parallax__layer--base background-4">
+    <div class="title-2">
+      <h1 class="text-5 uppercase">Services</h1>
+    </div>
+  </div>
+  <div class="parallax__layer parallax__layer--fore" style="margin-top:10em">
+    <div class="column1-3 col-style3 ">
+          <i class="fas fa-layer-group services-icons"></i>
+        <p>We build and manage advanced Kubernetes based platforms to service all the applications across your business.</p>
 
-    <div id="group9" class="parallax__group">
+    </div>
+    <div class="column1-3 col-style3">
+      <i class="fas fa-cloud services-icons"></i>
+    <p>Organisations from across UK Government and the private sector have transformed their technology capability thanks to our olutions and support.</p>
+
+  </div>
+    <div class="column1-3 col-style3">
+<i class="fas fa-shield-alt services-icons"></i>
+    <p>We’re obsessive when it comes to security best practices.</p>
+
+    </div>
+    <div class="column1-3 col-style3">
+
+<i class="fas fa-user-tie services-icons"></i>
+    <p>We recognise that we need to work around our user and listen to what they need and want in order to provide the best help. </p>
+
+    </div>
+    <div class="column1-3 col-style3">
+
+<i class="fas fa-life-ring services-icons"></i>
+    <p>We provide full support for every service we deliver and can train your teams to understand every element of our solutions as if they were your own.</p>
+
+    </div>
+    <div class="column1-3 col-style3">
+
+<i class="fas fa-book-open services-icons"></i>
+    <p>We're suppliers to the public sector and listed on the GOV.UK Digital Marketplace.</p>
+
+    </div>
+  </div>
+</div>
+
+<div id="contact"></div>
+    <div id="group10" class="parallax__group">
       <div class="parallax__layer parallax__layer--base  background-5">
         <div class="title-5">
           <h1 class="text-5 uppercase">Get in Touch</h1>
@@ -260,6 +305,17 @@ margin-bottom: -.8em;
   }
   debugInput.addEventListener("click", updateDebugState);
   updateDebugState();
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+
 </script>
 
   </body>
