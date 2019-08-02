@@ -358,16 +358,6 @@ nav .appvia-logo{
 
 
 
-/*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- *
- *
- * If you are thinking of using this in
- * production code, beware of the browser
- * prefixes.
- */
 
 body
 {
@@ -572,7 +562,6 @@ a:hover
 padding: .2em;
 }
 .text-5{
-  color: #fff;
   font-size: 3em;
   line-height: .85em;
   text-transform: capitalize;
@@ -709,7 +698,6 @@ z-index: 10;
 }
 
 .col-style1{
-  color: #fff;
   background-color: #1a1a1d;
   display: inline-flex;
   padding: .2em;
@@ -720,7 +708,6 @@ z-index: 10;
   min-height: 22em;
 }
 .col-style2{
-  color: #fff;
   display: inline-grid;
   padding: .2em;
   font-size: .6em;
