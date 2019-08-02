@@ -24,7 +24,7 @@
                                 <li><i aria-hidden="true" class="fas fa-calendar-alt"></i> {{ item.pubDate}}</li>
                             </ul>
                             <hr/>
-                            {{ item['content:encoded'] | safe | truncate(220)}}
+                            <p>{{ item['content:encoded'] | striptags(true) | truncate(220)}}</p>
                             <div class="row">
                                 <div class="col">
                                     <a href="{{ item.link }}" class="butn"><span>Read Article</span></a>
