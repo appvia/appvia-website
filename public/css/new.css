@@ -739,7 +739,7 @@ z-index: 10;
   margin-left: 1em;
   padding: .8em;
   background-color: rgba(26, 26, 29, 0.5);
-  min-height: 6em;
+  min-height: 7.2em;
   text-align: center;
 }
 
@@ -815,5 +815,9 @@ transition-duration: 0.3s;
 .services-icons{
   font-size: 3em;
   margin-top: -.7em;
-  color: #fff;
+  color: #c3073f;
+}
+
+p a{
+  text-decoration: underline;
 }
