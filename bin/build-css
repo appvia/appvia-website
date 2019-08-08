@@ -1,0 +1,1 @@
+node-sass --watch public/scss -o public/css  --output-style compressed

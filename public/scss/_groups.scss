@@ -1,0 +1,70 @@
+
+#group1 {
+  z-index: 5; /* slide over group 2 */
+}
+#group1 .parallax__layer--base {
+  background: $red;
+}
+
+#group2 {
+  z-index: 6; /* slide under groups 1 and 3 */
+}
+#group2 .parallax__layer--back {
+
+}
+
+#group3 {
+  z-index: 7; /* slide over group 2 and 4 */
+}
+#group3 .parallax__layer--base {
+
+}
+
+#group4 {
+  z-index: 2; /* slide under group 3 and 5 */
+}
+#group4 .parallax__layer--deep {
+    background: rgb(0,0,0);
+}
+
+#group5 {
+  z-index: 3; /* slide over group 4 and 6 */
+}
+#group5 .parallax__layer--base {
+
+}
+
+#group6 {
+  z-index: 2; /* slide under group 5 and 7 */
+}
+#group6 .parallax__layer--back {
+
+}
+
+#group7 {
+  z-index: 3; /* slide over group 7 */
+}
+#group7 .parallax__layer--base {
+
+}
+
+#group8 {
+  z-index: 4; /* slide over group 7 */
+}
+#group8 .parallax__layer--base {
+
+}
+
+#group9 {
+  z-index: 2; /* slide over group 7 */
+}
+#group9 .parallax__layer--base {
+
+}
+
+#group10 {
+  z-index: 1; /* slide over group 7 */
+}
+#group10 .parallax__layer--base {
+
+}

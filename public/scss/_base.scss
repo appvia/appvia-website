@@ -1,0 +1,24 @@
+* {
+  margin:0;
+  padding:0;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif !important;
+  color: $off-white;
+}
+
+a{
+  text-decoration: none;
+
+  color:  #c3073f;
+
+}
+
+a:hover
+{
+  color: #fff;
+    text-decoration: underline;
+}

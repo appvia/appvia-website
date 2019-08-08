@@ -56,4 +56,16 @@ router.get('/new-s1opdafz3wvqvyv1', function (req, res) {
   res.render('new.html', {title: 'Appvia'});
 });
 
+router.get('/blog-s1opdafz3wvqvyv1', function (req, res) {
+  res.render('blog2.html', {title: 'Appvia: Blog'});
+});
+
+router.get('/careers-s1opdafz3wvqvyv1', function (req, res) {
+  res.render('careers2.html', {title: 'Appvia: Careers'});
+});
+
+router.get('/job-s1opdafz3wvqvyv1', function (req, res) {
+  res.render('job2.html', {title: 'Appvia: Careers'});
+});
+
 module.exports = router;

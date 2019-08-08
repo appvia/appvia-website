@@ -1,0 +1,29 @@
+
+button.choice{
+  padding: .4em;
+  font-size: 1em;
+  border-radius: .6em;
+  color: #c3073f;
+  background: none;
+  border: solid 2px #c3073f;
+  margin: 1em .4em;
+  width: 30%;
+}
+button.choice:hover{
+    background-color:  #1a1a1d;
+    cursor: pointer;
+}
+button:focus {outline:0;}
+
+
+a.button{
+  border: solid 1px #c3073f;
+  padding: .2em .4em;
+  text-transform: uppercase;
+  margin: 2em 0;
+  display: inline-block;
+  text-decoration: none;
+}
+a.button:hover{
+  border-color: #fff;
+}
