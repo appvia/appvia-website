@@ -14,16 +14,13 @@
 #menuToggle
 {
   display: block;
-  position: sticky;
+  position: absolute;
   position: -webkit-sticky;
-  top: 1.4em;
+  top: 1em;
   right: 1em;
-
   z-index: 1000;
-
   -webkit-user-select: none;
   user-select: none;
-  float: right;
 }
 
 #menuToggle input

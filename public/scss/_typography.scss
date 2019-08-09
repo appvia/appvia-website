@@ -99,7 +99,7 @@
 
 .content{
   top: 8em;
-  position: absolute;
+  position: relative;
   .page-title{
     width: auto;
     text-align: center;
@@ -234,4 +234,139 @@ z-index: 10;
   width: 50%;
   padding: 10px;
   font-size: 1.2em;
+}
+
+
+
+.badge {
+  padding: 7px 19px;
+  font-size: .2em;
+  letter-spacing: 3em;
+  text-indent: 3em;
+    &.alpha-badge{
+      color: $off-white;
+      background-color: $red;
+      padding: 4px 8px;
+      margin: 0 -4rem;
+    }
+  }
+.help-text{
+  margin-bottom: .5em;
+  display: inline-block
+}
+
+.small{
+  font-size: .8em;
+  display: inline-block
+}
+.text-center{
+  text-align:center;
+}
+//x-small
+@media (max-width: 320px) {
+  p{
+    font-size: .7em;
+  }
+  h3{
+    font-size: .8em;
+  }
+  .content{
+    top: 6em;
+    .page-title{
+      h1{
+        font-size: 1.3em;
+        padding: 0 1em;
+      }
+    }
+  }
+  .badge {
+    letter-spacing: 2em;
+    text-indent: 2em;
+      &.alpha-badge{
+        margin: 0 -1.3rem;
+      }
+    }
+
+    .item{
+    padding:  0;
+    }
+
+    .help-text{
+      font-size: .6em;
+    }
+    .small{
+      font-size: .6em;
+    }
+
+}
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+  p{
+    font-size: .8em;
+  }
+  h3{
+    font-size: .9em;
+  }
+  .content{
+    top: 6em;
+    .page-title{
+      h1{
+        font-size: 1.5em;
+        padding: 0 1em;
+      }
+    }
+  }
+  .badge {
+    letter-spacing: 2em;
+    text-indent: 2em;
+      &.alpha-badge{
+        margin: 0 -1.5rem;
+      }
+    }
+
+        .item{
+        padding:  0;
+        }
+        .help-text{
+          font-size: .6em;
+        }
+        .small{
+          font-size: .6em;
+        }
+}
+
+
+//medium
+@media screen and (min-width:575.99px) and (max-width:768px){
+  .content{
+    top: 6em;
+    .page-title{
+      h1{
+        font-size: 2.5em ;
+        padding: 0 1em;
+      }
+    }
+  }
+  .badge {
+      &.alpha-badge{
+        margin: 0 -2.5rem;
+      }
+    }
+}
+//large
+@media screen and (min-width:769px) and (max-width:992px){
+  .content{
+    top: 6em;
+    .page-title{
+      h1{
+        font-size: 3em ;
+        padding: 0 1em;
+      }
+    }
+  }
+  .badge {
+      &.alpha-badge{
+        margin: 0 -3rem;
+      }
+    }
 }

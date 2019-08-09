@@ -68,4 +68,8 @@ router.get('/job-s1opdafz3wvqvyv1', function (req, res) {
   res.render('job2.html', {title: 'Appvia: Careers'});
 });
 
+router.get('/hub-demo-s1opdafz3wvqvyv1', function (req, res) {
+  res.render('hub-demo.html', {title: 'Appvia: Hub Demo'});
+});
+
 module.exports = router;

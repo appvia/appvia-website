@@ -1,0 +1,87 @@
+.form-control{
+	display: block;
+	width:  calc(100% - 1.5rem);
+	height: calc(2.25rem + 2px);
+	padding: .375rem  .75rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: $off-white;
+	background-color: #1d1d1d;
+	background-clip: padding-box;
+	border: 1px solid #3c3c3c;
+	border-radius: .25rem;
+	margin-bottom:1em;
+	font-family: 'Open Sans', sans-serif !important;
+}
+select{
+	font-family: 'Open Sans', sans-serif !important;
+	width: 100% !important;
+	height: 2.8em !important;
+}
+
+label{
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 1em;
+	font-weight: bold;
+	margin: .4em 0;
+}
+button{
+	border: 1px solid $red;
+	color: $red;
+	padding: .2em .4em;
+	font-size: 2em;
+	margin-top: .8em;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif !important;
+	&:hover{
+		cursor: pointer;
+		border: 1px solid $off-white;
+		color: $off-white;
+	}
+}
+
+
+button{
+	border: 1px solid $red;
+	color: $red;
+	padding: .2em .4em;
+	font-size: 2em;
+	margin-top: .8em;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif !important;
+	&:hover{
+		cursor: pointer;
+		border: 1px solid $off-white;
+		color: $off-white;
+	}
+}
+
+
+
+
+//x-small
+@media (max-width: 320px) {
+	button{
+  	font-size: 1.6em;
+    width: 100%;
+  }
+	label{
+		font-size: .8em;
+	}
+}
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+	button{
+  	font-size: 1.6em;
+    width: 100%;
+  }
+	label{
+		font-size: .8em;
+	}
+	.form-control{
+		padding: .15rem  .75rem;
+		font-size: 1rem;
+			margin-bottom:.7em;
+	}
+}

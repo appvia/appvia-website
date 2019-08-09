@@ -5,11 +5,22 @@ nav{
   z-index: 1000;
   width: 100%;
   background-color: rgba(0,0,0,1);
-  height: 70px;
+  height: 54px;
 
 }
 nav .appvia-logo{
-  width: 160px;
+  width: 100px;
   margin-left: 1em;
   margin-top: 1em;
+}
+
+
+@media (min-width: 999px) {
+  nav .appvia-logo{
+    width: 160px;
+  }
+  nav{
+    height: 70px;
+
+  }
 }

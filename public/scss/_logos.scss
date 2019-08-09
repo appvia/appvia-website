@@ -1,0 +1,63 @@
+.logo-github{
+	width: 100px;
+}
+.logo-quay{
+	width:100px;
+	display:  inline-block;
+	margin-top: .4em;
+}
+.logo-kubernetes{
+	width:140px;
+	margin-top: .5em;
+	display: inline-block;
+}
+
+
+
+
+//large
+@media screen and (min-width:769px) and (max-width:992px){
+	.logo-github{
+		width: 80px;
+	}
+	.logo-quay{
+		width: 80px;
+	}
+	.logo-kubernetes{
+		width: 80px;
+	}
+
+}
+
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+	.logo-github{
+		width: 60px;
+		margin-top: .2em;
+	}
+	.logo-quay{
+		width:60px;
+		margin-top: .4em;
+	}
+	.logo-kubernetes{
+		width:60px;
+		margin-top: 0;
+	}
+}
+
+
+//x-small
+@media (max-width: 320px) {
+	.logo-github{
+		width: 60px;
+		margin-top: .2em;
+	}
+	.logo-quay{
+		width:60px;
+		margin-top: .4em;
+	}
+	.logo-kubernetes{
+		width:60px;
+		margin-top: 0;
+	}
+}
