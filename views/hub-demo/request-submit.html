@@ -1,39 +1,36 @@
 {% extends 'layout.html' %}
+{% import "../../views/partials/nav.html" as navigation %}
+{% import "../../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('products') }}
+  {{ navigation.nav('products') }}
 
-    {% import "../../views/partials/headers.html" as header %}
-    {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Request a Appvia Hub Demo', link: false }], '', '0', 'background-position-1') }}
+  {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Request a Appvia Hub Demo', link: false }]) }}
 
-    <section class="padding-80">
-        <div class="container">
-            <div class="section-heading">
-                <h3>Your demo request has been sent</h3>
-            </div>
-            <div class="row justify-content-center">
+  <div class="container-fluid text-center">
 
-                <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-justify col-sm-12 col-md-6">
-                    <p>We will create a dedicated hub instance for you to evaluate. This will be deleted in 14 Days.</p>
-                    <p>You can request more evaluation time by emailing <a href="mailto:hub-demo@appvia.io"
-                                                                           style="white-space:nowrap">hub-demo@appvia.io</a>
-                        or use the support chat within the demo.</p>
-                    <p>Please check your email for your new hub demo*.</p>
-                    <div class="small">
-                        <p>* We aim to provide you a custom demo instance within 24 hours although it should be
-                            significantly sooner.</p>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="page-title">
+      <h1>Your demo request has been sent</h1>
+    </div>
+
+    <br /><br />
+
+    <p>We will create a dedicated hub instance for you to evaluate. This will be deleted in 14 Days.</p>
+    <p>You can request more evaluation time by emailing <a href="mailto:hub-demo@appvia.io"
+                                                           style="white-space:nowrap">hub-demo@appvia.io</a>
+        or use the support chat within the demo.</p>
+    <p>Please check your email for your new hub demo*.</p>
+    <div class="small">
+      <p>* We aim to provide you a custom demo instance within 24 hours although it should be significantly sooner.</p>
+    </div>
+  </div>
 
 {% endblock %}
 
-{% block customScripts %}
-
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}

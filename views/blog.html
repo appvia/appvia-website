@@ -1,42 +1,44 @@
 {% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../views/partials/nav.html" as navigation %}
+
     {{ navigation.nav('blog') }}
 
-    {% import "../views/partials/headers.html" as header %}
-    {{ header.nav('Blog', [{ text: 'Blog', link: false }], '', '0', 'background-position-3') }}
+    {{ breadcrumb.links([{ text: 'Blog', link: false }]) }}
 
-    <section class="padding-80">
-        <div class="container">
-            <div class="section-heading">
-                <h3>Medium blog</h3>
-                <p class="width-55 sm-width-75 xs-width-95">Read our latest blog posts.</p>
-            </div>
 
-            {% for item in rss.items %}
-                <div class="row">
-                    <div class="col margin-30px-bottom xs-margin-20px-bottom">
-                        <div class="blog-grid-simple">
-                            <a href="{{ item.link }}"><h4>{{ item.title }}</h4></a>
-                            <ul class="meta">
-                                <li><i aria-hidden="true" class="fa fa-user"></i> {{ item.creator }}</li>
-                                <li><i aria-hidden="true" class="fas fa-calendar-alt"></i> {{ item.pubDate}}</li>
-                            </ul>
-                            <hr/>
-                            <p>{{ item['content:encoded'] | striptags(true) | truncate(220)}}</p>
-                            <div class="row">
-                                <div class="col">
-                                    <a href="{{ item.link }}" class="butn"><span>Read Article</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
+    <div class="page-title">
+      <h1>Medium Blog</h1>
+    </div>
 
+    <h2 class="sub-title">Read our latest blog posts.</h2>
+
+    <div style="padding: 0 2em; margin-top: 6em">
+      <div class="row">
+      {% for item in rss.items %}
+        <div class="col-12 col-md-6">
+          <div class="item">
+              <h3>{{ item.title }}</h3>
+              <ul class="meta">
+                  <li><i class="fa fa-user"></i> {{ item.creator }}</li>
+                  <li><i class="fas fa-calendar-alt"></i> {{ item.pubDate }}</li>
+              </ul>
+              <p>{{ item['content:encoded'] | striptags(true) | truncate(220)}}</p>
+              <a href="{{ item.link }}">Read Article</a>
+          </div>
         </div>
-    </section>
+      {% endfor %}
+      </div>
+    </div>
 
-<!-- end clients section -->
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}

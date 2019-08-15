@@ -40,9 +40,7 @@
   -webkit-touch-callout: none;
 }
 
-/*
- * Just a quick hamburger
- */
+
 #menuToggle span
 {
   display: block;
@@ -51,7 +49,7 @@
   margin-bottom: 5px;
   position: relative;
 
-  background: #cdcdcd;
+  background: $white;
   border-radius: 3px;
 
   z-index: 1;
@@ -73,29 +71,20 @@
   transform-origin: 0% 100%;
 }
 
-/*
- * Transform all the slices of hamburger
- * into a crossmark.
- */
+
 #menuToggle input:checked ~ span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+  background:  $white;
 }
 
-/*
- * But let's hide the middle one.
- */
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
- * Ohyeah and the last one should go the other direction
- */
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
@@ -103,14 +92,9 @@
 
 #menuToggle input:checked ~ ul{
   margin-left: 0% !important;
-/*  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;*/
 }
 #menuToggle input:not(:checked) ~ ul{
   margin-left: 100%;
-/*  transition: all .3s ease-in-out;
-  -webkit-transition: all .3s ease-in-out;
-  */
 }
 
 
@@ -158,5 +142,6 @@
   }
   #menuToggle{
     display: block !important;
+    position: absolute;
   }
 }

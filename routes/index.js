@@ -18,18 +18,6 @@ router.get('/', function (req, res) {
   res.render('index.html', {title: 'Appvia: Home'});
 });
 
-router.get('/about', function (req, res) {
-  res.render('about.html', {title: 'Appvia: About'});
-});
-
-router.get('/products', function (req, res) {
-  res.render('products.html', {title: 'Appvia: Products', hubDemoEnabled});
-});
-
-router.get('/services', function (req, res) {
-  res.render('services.html', {title: 'Appvia: Services'});
-});
-
 router.get('/blog', async function (req, res) {
   res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlogFeed()});
 });
@@ -44,32 +32,8 @@ jobs.forEach(job => {
   });
 });
 
-router.get('/contact', function (req, res) {
-  res.render('contact.html', {title: 'Appvia: Contact'});
-});
-
 router.get('/privacy-policy', function (req, res) {
   res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy'});
-});
-
-router.get('/new-s1opdafz3wvqvyv1', function (req, res) {
-  res.render('new.html', {title: 'Appvia'});
-});
-
-router.get('/blog-s1opdafz3wvqvyv1', function (req, res) {
-  res.render('blog2.html', {title: 'Appvia: Blog'});
-});
-
-router.get('/careers-s1opdafz3wvqvyv1', function (req, res) {
-  res.render('careers2.html', {title: 'Appvia: Careers'});
-});
-
-router.get('/job-s1opdafz3wvqvyv1', function (req, res) {
-  res.render('job2.html', {title: 'Appvia: Careers'});
-});
-
-router.get('/hub-demo-s1opdafz3wvqvyv1', function (req, res) {
-  res.render('hub-demo.html', {title: 'Appvia: Hub Demo'});
 });
 
 module.exports = router;
