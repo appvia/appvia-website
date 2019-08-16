@@ -74,15 +74,15 @@ form label{
 input.parsley-success,
 select.parsley-success,
 textarea.parsley-success {
-  color: #468847;
-  border: 1px solid #468847;
+  //color: #468847;
+  //border: 1px solid #468847;
 }
 
 input.parsley-error,
 select.parsley-error,
 textarea.parsley-error {
-  color: #B94A48;
-  border: 1px solid #B94A48;
+  color: $red;
+  //border: 1px solid #B94A48;
 }
 
 .parsley-errors-list {
@@ -92,7 +92,7 @@ textarea.parsley-error {
   font-size: 0.9em;
   line-height: 0.9em;
   opacity: 0;
-  color: #B94A48;
+  color: $red;
 
   transition: all .3s ease-in;
   -o-transition: all .3s ease-in;
@@ -107,12 +107,14 @@ textarea.parsley-error {
 
 button[type="submit"].butn:disabled,
 button[type="submit"].butn:disabled:after{
-  background-color: #7a7c7d;
   cursor: initial;
+	border: none;
+	color: $off-white;
 }
 button[type="submit"].butn:disabled i{
   z-index: 9;
   position: relative;
+	margin-right: .4em;
 }
 
 fieldset {

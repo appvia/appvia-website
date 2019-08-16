@@ -131,6 +131,9 @@
 #mainMenu a, #main a{
   color: #fff;
 }
+#mainMenu a.active{
+  color: $red;
+}
 #mainMenu a:hover, #main a:hover{
   color:  #c3073f;
   text-decoration: none;
