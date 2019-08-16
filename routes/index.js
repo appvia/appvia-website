@@ -15,25 +15,25 @@ async function getBlogFeed() {
 }
 
 router.get('/', function (req, res) {
-  res.render('index.html', {title: 'Appvia: Home'});
+  res.render('index.html', {title: 'Appvia: Home', hubDemoEnabled});
 });
 
 router.get('/blog', async function (req, res) {
-  res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlogFeed()});
+  res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlogFeed(), hubDemoEnabled});
 });
 
 router.get('/careers', function (req, res) {
-  res.render('careers.html', {title: 'Appvia: Careers', jobCount: jobs.length, jobs});
+  res.render('careers.html', {title: 'Appvia: Careers', jobCount: jobs.length, jobs, hubDemoEnabled});
 });
 
 jobs.forEach(job => {
   router.get(`/careers/${job.slug}`, function (req, res) {
-    res.render('job.html', {title: 'Appvia: Careers', job: job});
+    res.render('job.html', {title: 'Appvia: Careers', job: job, hubDemoEnabled});
   });
 });
 
 router.get('/privacy-policy', function (req, res) {
-  res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy'});
+  res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy', hubDemoEnabled});
 });
 
 module.exports = router;

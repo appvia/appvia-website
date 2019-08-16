@@ -1,4 +1,4 @@
-{% macro nav(active='') %}
+{% macro nav(active='', demoIsEnabled='') %}
 <!-- start nav section -->
 <nav role="navigation">
   <img src="../../assets/img/appvia_logo.svg" class="appvia-logo">
@@ -9,7 +9,9 @@
     <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#contact">CONTACT</a></li>
     <li><a href="/blog">BLOG</a></li>
     <li><a href="/careers">CAREERS</a></li>
+    {% if demoIsEnabled %}
     <li><a href="/products/hub-demo" class="request-demo">REQUEST A DEMO</a></li>
+    {% endif %}
   </ul>
   <div id="menuToggle" style="display:none">
     <input type="checkbox" />
@@ -23,7 +25,9 @@
       <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#contact">CONTACT</a></li>
       <li><a href="/blog">BLOG</a></li>
       <li><a href="/careers">CAREERS</a></li>
+      {% if demoIsEnabled %}
       <li><a href="/products/hub-demo">REQUEST A DEMO</a></li>
+      {% endif %}
     </ul>
   </div>
 </nav>
