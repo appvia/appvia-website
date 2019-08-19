@@ -10,4 +10,26 @@ $('.parallax').scroll(function() {
         $('#mainMenu a[href*='+ id +']').addClass('active');
       }
   });
+  scrollTopButton();
 });
+
+function scrollTopButton() {
+  if ($('.parallax').scrollTop() > 100 ) {
+    $("#top").css('display', 'block');
+  } else {
+    $("#top").css('display', 'none');
+  }
+}
+
+function scrollToAnchor() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
+}
+
+scrollToAnchor();

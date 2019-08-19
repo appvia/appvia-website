@@ -5,6 +5,10 @@
 *, ::after, ::before {
     box-sizing: border-box;
 }
+html{
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
 body {
   font-family: 'Open Sans', sans-serif !important;
   color: $off-white;

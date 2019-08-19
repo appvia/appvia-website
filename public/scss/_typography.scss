@@ -192,8 +192,6 @@ p a{
   text-decoration: underline;
 }
 
-
-
 .box-black{
   font-size: .6em;
   margin-bottom: 1em;
@@ -202,7 +200,6 @@ p a{
   min-height: 7em;
   text-align: center;
 }
-
 
 .services-box{
   display: grid;
@@ -535,7 +532,7 @@ z-index: 10;
       }
     }
 
-    .center-column{
-      width: 80%;
-    }
+  .center-column{
+    width: 80%;
+  }
 }

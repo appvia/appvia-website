@@ -30,7 +30,7 @@
                   <li><i class="fas fa-calendar-alt"></i> {{ item.pubDate }}</li>
               </ul>
               <p>{{ item['content:encoded'] | striptags(true) | truncate(220)}}</p>
-              <a href="{{ item.link }}">Read Article</a>
+              <a href="{{ item.link }}" class="button">Read Article</a>
           </div>
         </div>
       {% endfor %}

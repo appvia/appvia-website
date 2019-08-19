@@ -249,13 +249,17 @@
       </div>
     </div>
 
+    <a href="#home" id="top"><i class="fa fa-angle-up"></i></a>
+
 {% endblock %}
 
 {% block customScripts %}
+<script src="assets/javascript/smoothscroll.min.js"></script>
+
 
 <script>
-  //parallax debug
   /*
+  //parallax debug
   var debugInput = document.querySelector("input");
   function updateDebugState() {
       document.body.classList.toggle('debug-on', debugInput.checked);
@@ -263,14 +267,5 @@
   debugInput.addEventListener("click", updateDebugState);
   updateDebugState();
   */
-  //smooth scroll to anchor
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-  });
 </script>
 {% endblock %}
