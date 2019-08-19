@@ -18,7 +18,7 @@
   position: -webkit-sticky;
   top: 1em;
   right: 1em;
-  z-index: 1000;
+  z-index: 99999;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -112,12 +112,22 @@
   height: 100%;
   text-align: center;
   margin-left: 100%;
+  a{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .appvia-logo-mobile{
+    width: 200px;
+    margin-bottom: -40px;
+    margin-left: 24px;
+  }
 }
 
 #menu li{
   font-size: 5em;
   font-weight: bold;
-  line-height: .8em;
+  line-height: .9em;
 }
 #mainMenu a.request-demo{
   border: solid 1px;
@@ -146,5 +156,34 @@
   #menuToggle{
     display: block !important;
     position: absolute;
+  }
+}
+
+//x-small
+@media (max-width: 320px) {
+  #menu {
+    li{
+      font-size: 2.8em;
+    }
+    .appvia-logo-mobile{
+      width: 120px;
+      margin-left: 20px;
+    }
+  }
+}
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+  #menu {
+    li{
+      font-size: 3em;
+    }
+  }
+}
+//medium
+@media screen and (min-width:575.99px) and (max-width:768px){
+  #menu {
+    li{
+      font-size: 4em;
+    }
   }
 }
