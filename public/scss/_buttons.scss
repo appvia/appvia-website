@@ -47,16 +47,21 @@ a.button{
   text-align: center;
   width: 3em;
   height: 3em;
-  border: 1px solid $white;
+  border: 1px solid rgba(255,255,255, .4);
   border-radius: 100%;
   i{
     font-size: 2em;
     margin-top: .2em;
+    color: rgba(255,255,255, .4);
   }
 }
 
 #top:hover {
-  background-color: #555;
+  border: 1px solid rgba(255,255,255, 1);
+  background-color: rgba(85,85,85, .6);
+  i{
+    color: rgba(255,255,255, 1);
+  }
 }
 
 @keyframes fadein {

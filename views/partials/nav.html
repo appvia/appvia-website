@@ -20,14 +20,14 @@
     <span></span>
     <ul id="menu">
       <li><img src="../../assets/img/appvia_logo.svg" class="appvia-logo-mobile"></li>
-      <li><a href="{% if active == 'home' %}#home{% else %}/{% endif %}">HOME</a></li>
+      <li><a href="{% if active == 'home' %}#home{% else %}/{% endif %}" class="{% if active == 'home' %}active{% endif %}">HOME</a></li>
       <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#products">PRODUCTS</a></li>
       <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#services">SERVICES</a></li>
-      <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#contact">CONTACT</a></li>
-      <li><a href="/blog">BLOG</a></li>
-      <li><a href="/careers">CAREERS</a></li>
+      <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#contact" >CONTACT</a></li>
+      <li><a href="/blog" class="{% if active == 'blog' %}active{% endif %}">BLOG</a></li>
+      <li><a href="/careers" class="{% if active == 'careers' %}active{% endif %}">CAREERS</a></li>
       {% if demoIsEnabled %}
-      <li><a href="/products/hub-demo">REQUEST A DEMO</a></li>
+      <li><a href="/products/hub-demo" class="request-demo">REQUEST A DEMO</a></li>
       {% endif %}
     </ul>
   </div>
