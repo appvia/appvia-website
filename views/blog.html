@@ -12,14 +12,11 @@
 
     {{ breadcrumb.links([{ text: 'Blog', link: false }]) }}
 
-
     <div class="page-title">
       <h1>Medium Blog</h1>
     </div>
-
     <h2 class="sub-title">Read our latest blog posts.</h2>
-
-    <div style="padding: 0 2em; margin-top: 6em">
+    <div class="content-container">
       <div class="row">
       {% for item in rss.items %}
         <div class="col-12 col-md-6">

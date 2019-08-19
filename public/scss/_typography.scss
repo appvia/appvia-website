@@ -118,7 +118,7 @@ a.back-link{
   .page-title{
     width: auto;
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 2em auto;
     display: table;
     h1{
       font-size: 4em;
@@ -129,7 +129,7 @@ a.back-link{
     }
   }
   .sub-title{
-    margin-top: 2.6em;
+    margin-top: 1em;
   }
   .copyright{
     position: fixed;
@@ -269,7 +269,7 @@ z-index: 10;
   float: right;
 }
 .center-column{
-  margin: auto;
+  margin: 1em auto 0 auto;
   width: 66%;
   padding: 1em;
   font-size: 1.2em;
@@ -329,7 +329,7 @@ z-index: 10;
     }
     .sub-title{
       font-size: 1em;
-      margin-top: 2em;
+      margin-top: 0;
     }
   }
   .title-black-on-red{
@@ -413,7 +413,7 @@ z-index: 10;
     }
     .sub-title{
       font-size: 1.2em;
-      margin-top: 2em;
+      margin-top: 0;
     }
   }
   .title-black-on-red{
@@ -479,7 +479,6 @@ z-index: 10;
     }
     .sub-title{
       font-size: 1.2em;
-      margin-top: 2em;
     }
   }
   .title-black-on-red{
@@ -523,7 +522,6 @@ z-index: 10;
     }
     .sub-title{
       font-size: 1.4em;
-      margin-top: 2em;
     }
   }
   .badge {
