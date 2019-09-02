@@ -1,17 +1,45 @@
-{% macro nav(active='', demoIsEnabled='') %}
+
+{% macro navItems(active='',  mobile='') %}
+  {% if mobile%}<li><img src="../../assets/img/appvia_logo.svg" class="appvia-logo-mobile"></li>{% endif %}
+  <li><a href="/why-appvia" class="{% if active == 'why-appvia' %}active{% endif %}">Why Appvia</a></li>
+  <li>
+    <a href="/products" class="{% if active == 'products' %}active{% endif %}">Products</a>
+    <ul class="dropdown">
+      <li><a href="/products/hub">Appvia Hub</a></li>
+      <li><a href="/products/product">Product</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="/services" class="{% if active == 'services' %}active{% endif %}">Services</a>
+    <ul class="dropdown">
+      <li><a href="#">Consultancy</a></li>
+      <li><a href="#">Suport</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="/resources" class="{% if active == 'resources' %}active{% endif %}">Resources</a>
+    <ul class="dropdown">
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Case Study</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">More Appvia</a>
+    <ul class="dropdown">
+      <li><a href="#">Partners</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Tools</a></li>
+      <li><a href="/contact-us">Contact Us</a></li>
+    </ul>
+  </li>
+{% endmacro %}
+
+{% macro nav(active='') %}
 <!-- start nav section -->
 <nav role="navigation">
-  <img src="../../assets/img/appvia_logo.svg" class="appvia-logo">
+  <a href="/"><img src="../../assets/img/appvia_logo.svg" class="appvia-logo"></a>
   <ul id="mainMenu">
-    <li><a href="{% if active == 'home' %}#home{% else %}/{% endif %}" class="{% if active == 'home' %}active{% endif %}">HOME</a></li>
-    <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#products">PRODUCTS</a></li>
-    <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#services">SERVICES</a></li>
-    <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#contact" >CONTACT</a></li>
-    <li><a href="/blog" class="{% if active == 'blog' %}active{% endif %}">BLOG</a></li>
-    <li><a href="/careers" class="{% if active == 'careers' %}active{% endif %}">CAREERS</a></li>
-    {% if demoIsEnabled %}
-    <li><a href="/products/hub-demo" class="request-demo">REQUEST A DEMO</a></li>
-    {% endif %}
+    {{ navItems(active) }}
   </ul>
   <div id="menuToggle" style="display:none">
     <input type="checkbox" />
@@ -19,16 +47,7 @@
     <span></span>
     <span></span>
     <ul id="menu">
-      <li><img src="../../assets/img/appvia_logo.svg" class="appvia-logo-mobile"></li>
-      <li><a href="{% if active == 'home' %}#home{% else %}/{% endif %}" class="{% if active == 'home' %}active{% endif %}">HOME</a></li>
-      <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#products">PRODUCTS</a></li>
-      <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#services">SERVICES</a></li>
-      <li><a href="{% if active == 'home' %}{% else %}/{% endif %}#contact" >CONTACT</a></li>
-      <li><a href="/blog" class="{% if active == 'blog' %}active{% endif %}">BLOG</a></li>
-      <li><a href="/careers" class="{% if active == 'careers' %}active{% endif %}">CAREERS</a></li>
-      {% if demoIsEnabled %}
-      <li><a href="/products/hub-demo" class="request-demo">REQUEST A DEMO</a></li>
-      {% endif %}
+      {{ navItems(active, true) }}
     </ul>
   </div>
 </nav>

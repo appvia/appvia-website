@@ -3,12 +3,13 @@
 #mainMenu{
   float: right;
   list-style: none;
-  margin-top: 1.4em;
+  margin-top: 1em;
+  display: flex;
 }
 
 #mainMenu li{
   display: inline;
-  margin: 1em;
+  margin: .5em;
 }
 
 #menuToggle
@@ -120,14 +121,16 @@
   .appvia-logo-mobile{
     width: 200px;
     margin-bottom: -40px;
-    margin-left: 24px;
+    margin-left: 0;
   }
 }
 
 #menu li{
-  font-size: 5em;
+  font-size: 2.6em;
   font-weight: bold;
   line-height: .9em;
+  list-style-type: none;
+  margin-bottom: .4em;
 }
 #mainMenu a.request-demo{
   border: solid 1px;
@@ -140,6 +143,11 @@
 
 #mainMenu a, #menu a{
   color: #fff;
+  text-transform:uppercase;
+}
+
+#mainMenu a{
+  padding: .4em .6em;
 }
 #mainMenu a.active,
 #menu a.active{
@@ -164,11 +172,11 @@
 @media (max-width: 320px) {
   #menu {
     li{
-      font-size: 2.8em;
+      font-size: 1.4em;
     }
     .appvia-logo-mobile{
       width: 120px;
-      margin-left: 20px;
+      margin-left: 0px;
     }
   }
 }
@@ -176,7 +184,7 @@
 @media screen and (min-width:321px) and (max-width: 575.98px){
   #menu {
     li{
-      font-size: 3em;
+      font-size: 1.6em;
     }
   }
 }
@@ -184,7 +192,7 @@
 @media screen and (min-width:575.99px) and (max-width:768px){
   #menu {
     li{
-      font-size: 4em;
+      font-size: 3em;
     }
   }
 }

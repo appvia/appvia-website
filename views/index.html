@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
-{% block content %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
 
-  {% import "../views/partials/nav.html" as navigation %}
-  {% import "../views/partials/footer.html" as footer %}
+{% block content %}
 
 
   {{ navigation.nav('home', hubDemoEnabled) }}
+
 
 <!--
   <div class="debug">
@@ -18,33 +19,48 @@
 
     <div id="home" class="target">
       <div id="group1" class="parallax__group">
-        <div class="parallax__layer parallax__layer--back background-1"></div>
+        <div class="parallax__layer parallax__layer--back background-3"></div>
         <div class="parallax__layer parallax__layer--fore">
-          <div class="home-title scale-in-center">
-            <h1>
-              <span class="title-top">How we can help</span>
-              <span class="title-main">Kubernetes to fit your needs</span>
-              <span class="title-bottom">Fully managed by a team of experts</span>
-            </h1>
+          <div class="hero-title">
+            <h1 class="text-black-bordered">Leading companies build and run their most important applications with Appvia.</h1>
+            <div class="learn-why">
+              <a href="/why-appvia">Learn why</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <a href="/products">
+                <div class="feature-boxes left">
+                  <h2>Products</h2>
+                  <p>Run your enterprise apps on a multi-cloud platform</p>
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <a href="/services">
+                <div class="feature-boxes right">
+                  <h2>Services</h2>
+                  <p>Work with out teams to develop better products</p>
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="scroll">
-        <div>Scroll</div>
-        <i class="fa fa-angle-down slide-bottom-fade"></i>
-      </div>
-
       <div id="group2" class="parallax__group">
-        <div class="parallax__layer parallax__layer--base background-2">
+        <div class="parallax__layer parallax__layer--base background-4">
           <h1 class="title-black-on-red">Empowering your business</h1>
         </div>
         <div class="parallax__layer parallax__layer--fore">
+          <img src="/assets/img/undraw_super_woman_dv0y_a.svg" style="float:right;width:30%;margin-right:2em;margin-top:8em">
           <p class="paragraph-left-aligned">With technical issues behind the scenes, companies are often forced to neglect their front-line products and services. Let us handle your infrastructure,
-            while you focus on your strengths. Give your developers a break. <strong>Create a better product</strong>.</p>
+            while you focus on your strengths. Give your developers a break. <a href="#">Find out more</a></p>
         </div>
       </div>
-
+<!--
       <div id="group3" class="parallax__group">
         <div class="parallax__layer parallax__layer--base background-3">
           <div class="hero-title">
@@ -102,7 +118,7 @@
         </div>
         <div class="parallax__layer parallax__layer--fore">
           <div class="paragraph-left-aligned" style="margin-top:14em;width:98%">
-            <img src="/assets/img/undraw_wireframing_nxyi.svg" style="float:right;width:30%;margin-right:2em">
+            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="float:right;width:40%;margin-right:2em">
             <h2 class="red">Focus on your application</h2>
             <p>With technical issues behind the scenes, companies are often forced to neglect their front-line products and services.
             Let us handle your infrastructure, while you focus on your strengths. Give your developers a break. Create a better product.</p>
@@ -111,10 +127,10 @@
       </div>
       <div id="group6" class="parallax__group">
         <div class="parallax__layer parallax__layer--base background-7">
-          <img src="/assets/img/undraw_building_blocks_n0nc.svg" style="width:30%;margin-top: 6em;margin-left: 2em;">
+          <img src="/assets/img/undraw_building_blocks_n0nc_a.svg" style="width:30%;margin-top: 12em;margin-left: 2em;">
         </div>
         <div class="parallax__layer parallax__layer--fore">
-          <div class="pull-right text-right" style="margin-top:10em ;    width: 64%;margin-right: 1em;">
+          <div class="pull-right text-right" style="margin-top:10em;width:60%;margin-right: 1em;">
           <h2 style="color: #c3073f; ">Infrastructure you can build on</h2>
           <p>Growing companies need robust and agile infrastructure. We create fault-tolerant, self-healing systems that provide the stability and confidence you need to grow your application.</p>
           <p>We’ll also create future-proofed solutions that support new strategies, and automatically scale up alongside your company as you take it to the next level.</p></div>
@@ -122,7 +138,7 @@
       </div>
       <div id="group7" class="parallax__group">
         <div class="parallax__layer parallax__layer--base background-3">
-          <img src="/assets/img/undraw_scrum_board_cesn.svg" style="width:36%;margin-top:6em;float:right">
+          <img src="/assets/img/undraw_scrum_board_cesn_a.svg" style="width:36%;margin-top:6em;float:right">
         </div>
         <div class="parallax__layer parallax__layer--fore">
           <div class="paragraph-left-aligned" style="margin-top:10em">
@@ -134,12 +150,12 @@
 
       <div id="group8" class="parallax__group">
         <div class="parallax__layer parallax__layer--base background-2" style="text-align:center">
-          <img src="/assets/img/undraw_deliveries_131a.svg"
+          <img src="/assets/img/undraw_deliveries_131a_a.svg"
             style="width: 30%;
             margin-top: 3em">
         </div>
         <div class="parallax__layer parallax__layer--fore">
-          <div class="sub-title" style="margin-top:12em">
+          <div class="sub-title" style="margin-top:18em">
             <h2 style="color: #c3073f; ">Improving Kubernetes systems</h2>
             <p>We can help businesses who are already using Kubernetes get a hold on their system. We’ll optimize, we’ll improve, and we’ll walk you through the entire process, leaving you with more efficient, more empowering infrastructure.</p>
           </div>
@@ -247,10 +263,16 @@
         </div>
       </div>
     </div>
+    -->
+
   </div>
 
-  <a href="#home" id="top"><i class="fa fa-angle-up"></i></a>
 
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}
 
 {% block customScripts %}
