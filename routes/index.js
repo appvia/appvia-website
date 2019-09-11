@@ -2,9 +2,12 @@ var express = require('express');
 var Parser = require('rss-parser');
 var parser = new Parser();
 var router = express.Router();
+const superagent = require('superagent');
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
+
 const jobs = require('../jobs').filter(j => j.active);
+
 
 async function getBlogFeed() {
   try {
@@ -13,6 +16,31 @@ async function getBlogFeed() {
     return {items: []}
   }
 }
+
+async  function getBlog() {
+  try {
+    return await superagent.get('http://localhost:1337/blogposts')
+  } catch (err) {
+    return {items: []}
+  }
+}
+
+async  function getBlogPost(slug) {
+  try {
+    return await superagent.get('http://localhost:1337/blogposts?slug='+slug)
+  } catch (err) {
+    return {items: []}
+  }
+}
+
+async  function getBlogTaggedPosts(tag) {
+  try {
+    return await superagent.get('http://localhost:1337/blogposts?tags.tag='+tag)
+  } catch (err) {
+    return {items: []}
+  }
+}
+
 
 router.get('/', function (req, res) {
   res.render('index.html', {title: 'Appvia: Home', hubDemoEnabled});
@@ -36,7 +64,15 @@ router.get('/products/product', function (req, res) {
 
 
 router.get('/blog', async function (req, res) {
-  res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlogFeed(), hubDemoEnabled});
+  res.render('blog.html', {title: 'Appvia: Blog', rss: await getBlog()});
+});
+
+router.get('/blog/:blogpost', async function (req, res) {
+  res.render('blog-post.html', {title: 'Appvia: Blog', rss: await getBlogPost(req.params.blogpost)});
+});
+
+router.get('/blog/tag/:tag', async function (req, res) {
+  res.render('blog-tags.html', {title: 'Appvia: Blog', rss: await getBlogTaggedPosts(req.params.tag), tag: req.params.tag});
 });
 
 router.get('/careers', function (req, res) {

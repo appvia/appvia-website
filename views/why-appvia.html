@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+
+{% block content %}
+
+  {{ navigation.nav('why-appvia') }}
+
+  <div class="parallax">
+
+    <div id="group2" class="parallax__group">
+      <div class="parallax__layer parallax__layer--back background-1"></div>
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="row mt-3">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="section-panel hero-toplevel mt-3">
+              <h1>Why Appvia</h1>
+              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo.</h2>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <img src="/assets/img/undraw_deliveries_131a_a.svg" style="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="group3" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base background-4"></div>
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="section-panel hero-toplevel">
+              <h2>Incididunt ut labore et dolore magna aliqua</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur libero id faucibus nisl tincidunt eget. Quis ipsum suspendisse ultrices gravida dictum. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Pellentesque dignissim enim sit amet venenatis.</p>
+              <p>Nunc sed velit dignissim sodales ut. Diam quam nulla porttitor massa id neque aliquam vestibulum. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Sapien eget mi proin sed libero enim sed. Sit amet dictum sit amet justo donec enim diam vulputate. Id nibh tortor id aliquet lectus proin nibh nisl. Eu ultrices vitae auctor eu augue ut lectus arcu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}

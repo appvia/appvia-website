@@ -52,6 +52,18 @@
    }
   }
 }
+.hero-toplevel{
+
+  h1{
+    text-transform: uppercase;
+  }
+  h2{
+    margin-bottom: 1em;
+  }
+  p{
+    font-size: .8em;
+  }
+}
 
 .feature-boxes{
   font-size: .9em;
@@ -105,7 +117,23 @@
   padding: .2em;
   line-height: 1.7em;
 }
-
+.section-panel{
+  margin-left: 2em;
+  margin-right: 2em;
+  h1{
+    font-size: 1em;
+    line-height: .85em;
+    padding: .4em .6em;
+    background-color: $red;
+    color: $black;
+    text-transform: uppercase;
+    display: table;
+  }
+  p{
+    font-size: .8em;
+    margin-bottom: 1em;
+  }
+}
 .text-black-bordered{
   color: $dark-grey;
   font-size: 2em;
@@ -167,7 +195,7 @@ a.back-link{
     }
   }
   .sub-title{
-    margin-top: 1em;
+    margin-top: 2em;
   }
   .copyright{
     position: fixed;
@@ -197,6 +225,7 @@ hr {
   font-size: 1.2em;
   padding: 1em;
   margin: 1em 0;
+  min-height: 17em;
   background-color: rgba(26, 26, 29, 0.5);
   h3{
     text-transform: uppercase;
@@ -233,11 +262,11 @@ p a{
 }
 
 .box-black{
-  font-size: .6em;
+  font-size: 1em;
   margin-bottom: 1em;
   padding: 1em;
   background-color:  rgba(26, 26, 29, 0.8);
-  min-height: 7em;
+  min-height: 12em;
   text-align: center;
 }
 
@@ -314,8 +343,14 @@ z-index: 10;
   width: 66%;
   padding: 1em;
   font-size: 1.2em;
+  h2{
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+  h3{
+    margin-bottom: 1em;
+  }
 }
-
 
 
 .badge {
@@ -370,7 +405,6 @@ z-index: 10;
     }
     .sub-title{
       font-size: 1em;
-      margin-top: 0;
     }
   }
   .title-black-on-red{
@@ -412,6 +446,9 @@ z-index: 10;
   font-size: .8em;
   padding: .4em;
 }
+.box-black{
+  min-height: auto;
+}
   .badge {
     letter-spacing: 2em;
     text-indent: 2em;
@@ -422,6 +459,7 @@ z-index: 10;
 
     .item{
     padding:  0;
+    main-height: auto;
     }
 
     .help-text{
@@ -477,8 +515,10 @@ z-index: 10;
     }
     .sub-title{
       font-size: 1.2em;
-      margin-top: 0;
     }
+  }
+  .box-black{
+    min-height: auto;
   }
   .title-black-on-red{
     font-size: 1.4em;
@@ -529,6 +569,7 @@ z-index: 10;
 
         .item{
         padding:  0;
+        min-height: auto;
         }
         .help-text{
           font-size: .6em;
@@ -618,7 +659,9 @@ z-index: 10;
       padding: 1em;
       font-size: 1.2em;
     }
-
+    .item{
+      min-height: auto;
+    }
 
 }
 //large
@@ -642,6 +685,9 @@ z-index: 10;
   }
   .text-black-bordered{
     font-size: 1.8em;
+  }
+  .box-black{
+    font-size: .7em;
   }
   .badge {
       &.alpha-badge{

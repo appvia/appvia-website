@@ -30,7 +30,7 @@ button{
 	border: 1px solid $red;
 	color: $red;
 	padding: .2em .4em;
-	font-size: 2em;
+	font-size: 1.4em;
 	margin-top: .8em;
 	text-transform: uppercase;
 	font-family: 'Open Sans', sans-serif !important;
@@ -41,21 +41,6 @@ button{
 	}
 }
 
-
-button{
-	border: 1px solid $red;
-	color: $red;
-	padding: .2em .4em;
-	font-size: 2em;
-	margin-top: .8em;
-	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif !important;
-	&:hover{
-		cursor: pointer;
-		border: 1px solid $off-white;
-		color: $off-white;
-	}
-}
 
 
 .error-box-text h1,
@@ -131,7 +116,7 @@ fieldset {
 
 fieldset legend,
 form label{
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 1.5em;
   font-weight: 800;
 }

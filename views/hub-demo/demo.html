@@ -9,17 +9,17 @@
 
   {{ navigation.nav('products') }}
 
-  {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Request a Hub Demo', link: false }]) }}
+  {{ breadcrumb.links([{ text: 'Products', link: '/products' },{ text: 'Appvia Hub', link: '/products/hub' },{ text: 'Request a Hub Demo', link: false }]) }}
 
-  <div class="container-fluid">
 
-    <div class="page-title">
-      <h1>
-        <div class="badge alpha-badge">ALPHA</div>
-        <div>Request a Hub Demo</div>
-      </h1>
-    </div>
+  <div class="page-title">
+    <h1>
+      <div class="badge alpha-badge">ALPHA</div>
+      <div>Request a Hub Demo</div>
+    </h1>
+  </div>
 
+  <div class="center-column">
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="item">
@@ -124,6 +124,9 @@
       </div>
     </div>
   </div>
+
+
+
 {% endblock %}
 
 {% block footer %}

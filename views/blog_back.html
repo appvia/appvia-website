@@ -19,21 +19,16 @@
 
     <div class="content-container">
       <div class="row">
-      {% for item in rss.body %}
+      {% for item in rss.items %}
         <div class="col-12 col-md-6">
           <div class="item">
-              <h3>{{ item.Title }}</h3>
+              <h3>{{ item.title }}</h3>
               <ul class="meta">
-                  <li><i class="fa fa-user"></i> {{ item.Author }}</li>
-                  <li><i class="fas fa-calendar-alt"></i> {{ item.created_at }}</li>
+                  <li><i class="fa fa-user"></i> {{ item.creator }}</li>
+                  <li><i class="fas fa-calendar-alt"></i> {{ item.pubDate }}</li>
               </ul>
-              <p>{{ item.Body | striptags(true) | truncate(220)}}</p>
-              <a href="/blog/{{ item.slug }}" class="button">Read Article</a>
-              <ul class="tags">
-                {% for tag in item.tags %}
-                <li><a href="/blog/tag/{{ tag.tag }}">{{ tag.tag }}</a></li>
-                  {% endfor %}
-              </ul>
+              <p>{{ item['content:encoded'] | striptags(true) | truncate(220)}}</p>
+              <a href="{{ item.link }}" class="button">Read Article</a>
           </div>
         </div>
       {% endfor %}

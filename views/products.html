@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+{% block content %}
+
+  {{ navigation.nav('products') }}
+
+  <div class="parallax">
+
+    <div id="group2" class="parallax__group">
+      <div class="parallax__layer parallax__layer--back background-1"></div>
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="row mt-3">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="section-panel hero-toplevel mt-3">
+              <h1>Products</h1>
+              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempo.</h2>
+              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <img src="/assets/img/undraw_deliveries_131a_a.svg" style="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="group3" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base background-4"></div>
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="row  mt-4">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="section-panel hero-toplevel">
+              <h2>Appvia Hub</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Consectetur libero id faucibus nisl tincidunt eget.</p>
+                <p><a href="/products/hub">Find out more</a></p>
+              <a href="/products/hub/demo" class="button">Request a demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="group4" class="parallax__group">
+      <div class="parallax__layer parallax__layer--base background-6"></div>
+      <div class="parallax__layer parallax__layer--fore">
+        <div class="row  mt-4">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="section-panel hero-toplevel ">
+              <h2>Product B</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Consectetur libero id faucibus nisl tincidunt eget.</p>
+                <p><a href="/products/hub">Find out more</a></p>
+              <a href="/products/hub/product" class="button">Request a demo</a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 ">
+            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}

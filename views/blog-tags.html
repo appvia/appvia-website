@@ -10,13 +10,14 @@
 
     {{ navigation.nav('blog', hubDemoEnabled) }}
 
-    {{ breadcrumb.links([{ text: 'Blog', link: false }]) }}
+    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: tag, link: false }]) }}
 
     <div class="page-title">
       <h1>Appvia Blog</h1>
-      <h2 class="sub-title">Read our latest blog posts.</h2>
+      <h2 class="sub-title">Tag: {{tag}}</h2>
     </div>
 
+    {% if rss.body | length  %}
     <div class="content-container">
       <div class="row">
       {% for item in rss.body %}
@@ -39,6 +40,17 @@
       {% endfor %}
       </div>
     </div>
+
+      {% else %}
+      <div class="content-container">
+
+        Sorry, there is no content
+
+
+      </div>
+      {% endif %}
+
+
 
 {% endblock %}
 

@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
+{% block content %}
+
+  {{ navigation.nav('Products') }}
+
+  {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Appvia Hub', link: false }]) }}
+
+  <div class="page-title">
+    <h1>Appvia Hub</h1>
+
+  </div>
+
+  <div class="center-column">
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <h2>Lorem ipsum dolor sit amet ctetur adipiscing elit.</h2>
+        <h3>Velit ut tortor pretium viverra suspendisse. Tellus orci ac auctor augue mauris.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consectetur libero id faucibus nisl tincidunt eget. Quis ipsum suspendisse ultrices gravida dictum. Gravida cum sociis natoque penatibus et magnis dis parturient montes. Pellentesque dignissim enim sit amet venenatis.</p>
+        <p>Nunc sed velit dignissim sodales ut. Diam quam nulla porttitor massa id neque aliquam vestibulum. Pulvinar pellentesque habitant morbi tristique senectus et netus et malesuada. Sapien eget mi proin sed libero enim sed. Sit amet dictum sit amet justo donec enim diam vulputate. Id nibh tortor id aliquet lectus proin nibh nisl. Eu ultrices vitae auctor eu augue ut lectus arcu.</p>
+        <a href="/products/hub-demo" class="button">Request a demo</a>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <img src="/assets/img/undraw_scrum_board_cesn_a.svg" style="">
+      </div>
+    </div>
+
+
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}

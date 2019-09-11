@@ -13,12 +13,13 @@
 
   <div class="page-title">
     <h1>Careers</h1>
+    {% if jobCount %}
+        <h2 class="sub-title">Please see our open positions below.</h2>
+    {% else %}
+        <h2 class="sub-title">Unfortunately, we have no open positions right now.</h2>
+    {% endif %}
   </div>
-  {% if jobCount %}
-      <h2 class="sub-title">Please see our open positions below.</h2>
-  {% else %}
-      <h2 class="sub-title">Unfortunately, we have no open positions right now.</h2>
-  {% endif %}
+
   <div class="content-container">
     <div class="row">
     {% for job in jobs | reverse %}
