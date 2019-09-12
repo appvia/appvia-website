@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+
+{% set pageClass = 'content fixed-background' %}
+
+{% block content %}
+
+
+    {{ navigation.nav('blog', hubDemoEnabled) }}
+
+    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: rss.body.story.content.Title, link: false }]) }}
+
+    <div class="page-title">
+      <h1>{{rss.body.story.content.Title}}</h1>
+    </div>
+
+    <div class="center-column">
+
+      <ul>
+        <li>{{rss.body.story.content.Author}}</li>
+        <li>{{rss.body.story.content.Date}}</li>
+      </ul>
+
+
+      <p>{{rss.body.story.content.Story}}</p>
+
+      <h4>Tags</h4>
+      <ul>
+          {% for tag in rss.body.story.tag_list %}
+          <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
+          {% endfor %}
+      </ul>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}

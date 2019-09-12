@@ -1,42 +1,41 @@
 {% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('careers') }}
+  {{ navigation.nav('careers', hubDemoEnabled) }}
 
-    {% import "../views/partials/headers.html" as header %}
-    {{ header.nav('Careers', [{ text: 'Careers', link: false }], '', '0', 'background-position-4') }}
+  {{ breadcrumb.links([{ text:'Careers', link: false }]) }}
 
+  <div class="page-title">
+    <h1>Careers</h1>
+    {% if jobCount %}
+        <h2 class="sub-title">Please see our open positions below.</h2>
+    {% else %}
+        <h2 class="sub-title">Unfortunately, we have no open positions right now.</h2>
+    {% endif %}
+  </div>
 
-    <section class="padding-80">
-        <div class="container">
-
-            <div class="section-heading">
-                <h3>Careers at Appvia</h3>
-                {% if jobCount %}
-                    <p>Please see our open positions below.</p>
-                {% else %}
-                    <p>Unfortunately, we have no open positions right now.</p>
-                {% endif %}
-            </div>
-
-            {% for job in jobs | reverse %}
-                <div class="row">
-                    <div class="col margin-30px-bottom xs-margin-20px-bottom">
-                        <div class="blog-grid-simple">
-                            <h4><a href="/careers/{{ job.slug }}">{{ job.title }}</a></h4>
-                            <hr />
-                            <p>{{ job.role | safe | truncate(220) }}</p>
-                            <div class="row">
-                                <div class="col">
-                                    <div><a href="/careers/{{ job.slug }}" class="butn"><span>More Details</span></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endfor %}
-
+  <div class="content-container">
+    <div class="row">
+    {% for job in jobs | reverse %}
+      <div class="col-12 col-md-6">
+        <div class="item">
+            <h3>{{ job.title }}</h3>
+            <p>{{ job.role | safe | truncate(220) }}</p>
+            <a href="/careers/{{ job.slug }}" class="button">More details</a>
         </div>
-    </section>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}

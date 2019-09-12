@@ -1,21 +1,79 @@
 {% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+
 {% block content %}
 
-    {% import "../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('home') }}
 
-    <div class="landing bg-gradient-blue">
-        <div class="hero page-title-section2">
-        <div class="wrapper section-heading section-heading-main text-white">
-          <h1 class="width-75 sm-width-75 xs-width-95">Simplify building and deploying software</h1>
-          <p class="width-75 sm-width-75 xs-width-95">Appvia can help your organisation build, run and manage code more quickly without the distraction of managing complex infrastructure.</p>
-            <div class="landing-video">
-                <div class="video-embed fittobox">
-                <iframe src="https://www.youtube.com/embed/L7oLVqClr9U?loop=1&playlist=L7oLVqClr9U&rel=0&autoplay=1&controls=0&disablekb=1&version=3&modestbranding=1&showinfo=0&autohide=1" frameborder="0" allowfullscreen=""></iframe>
+  {{ navigation.nav('home', hubDemoEnabled) }}
+
+
+
+  <div class="parallax">
+
+    <div id="home" class="target">
+      <div id="group1" class="parallax__group">
+        <div class="parallax__layer parallax__layer--back background-3"></div>
+        <div class="parallax__layer parallax__layer--fore">
+          <div class="hero-title">
+            <img src="/assets/img/undraw_to_the_moon_v1mv.svg" style="float:right;width: 48%;">
+            <h1>
+              Appvia.
+              The freedom to develop software.
+              The power to deploy quickly.
+              </h1>
+            <div class="learn-why">
+              <a href="/why-appvia">Find out how</a>
             </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <a href="/products">
+                <div class="feature-boxes left">
+                  <h2>Products</h2>
+                  <p>Ready-made solutions to make your DevOps team more efficient.</p>
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </a>
             </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <a href="/services">
+                <div class="feature-boxes right">
+                  <h2>Services</h2>
+                  <p>Consultancy and support to shape your technological strategy.</p>
+                  <i class="fa fa-angle-right"></i>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div id="group2" class="parallax__group">
+        <div class="parallax__layer parallax__layer--base background-4">
+          <h1 class="title-black-on-red">Why Appvia can be the future of your organisation</h1>
+        </div>
+        <div class="parallax__layer parallax__layer--fore">
+          <img src="/assets/img/undraw_software_engineer_lvl5.svg" style="float:right;width:30%;margin-right:2em;margin-top:8em">
+          <p class="paragraph-left-aligned">
+            We live and breathe software engineering, leaving your developers free to create business-critical software.<br /><br />
+            <a href="/why-appvia" class="button">See how we do this</a>
+          </p>
+        </div>
+      </div>
+
+  </div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}
+
+{% block customScripts %}
+<script src="assets/javascript/smoothscroll.min.js"></script>
+
 
 {% endblock %}

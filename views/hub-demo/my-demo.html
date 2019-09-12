@@ -1,133 +1,134 @@
 {% extends 'layout.html' %}
+{% import "../../views/partials/nav.html" as navigation %}
+{% import "../../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('products') }}
+  {{ navigation.nav('products') }}
 
-    {% import "../../views/partials/headers.html" as header %}
-    {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Hub Demo Instructions', link: false }], '', '0', 'background-position-1') }}
+  {{ breadcrumb.links([{ text: 'Products', link: '/products' },{ text: 'Hub Demo Instructions', link: false }]) }}
 
-    <section class="padding-80">
-
-        <div class="container">
-            <div class="section-heading" id="hub">
-                <h3>Hub Demo Instructions</h3>
-            </div>
-            <div class="row justify-content-center">
-                <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom col-sm-12 col-md-6">
-                    <h4>Appvia HUB Prerequisites</h4>
-                    <form class="mb-5" data-parsley-validate method="GET" action="{{demoURL}}">
-                        <div class="col-md-12">
-                            <input type="checkbox" class="form-check-input" name="acknowledge" id="acknowledge"
-                                   required data-parsley-error-message="Join Github Organisation."
-                                   data-parsley-errors-container="#acknowledge-errors"/>
-                            <label class="form-check-label-normal" for="acknowledge">You should have received an email from
-                                GitHub and followed the instructions.</label>
-                            <div id="acknowledge-errors"></div>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="checkbox" class="form-check-input" name="basic_understanding"
-                                   id="basic_understanding"
-                                   required data-parsley-error-message="Minimum Developer Understanding."
-                                   data-parsley-errors-container="#basic-understanding-errors"/>
-                            <label class="form-check-label-normal" for="basic_understanding">
-                                A basic understanding of the following:
-                            </label>
-                            <div id="basic-understanding-errors"></div>
-                            <ul class="bullets small">
-                                <li>Source Code</li>
-                                <li>Docker</li>
-                                <li>Kubernetes</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="checkbox" class="form-check-input" name="cookie-consent" id="cookie-consent"
-                                   data-parsley-errors-container="#cookie-consent-errors" required
-                                   required data-parsley-error-message="You have to agree to the cookie consent."/>
-                            <label class="form-check-label-normal" for="cookie-consent">
-                                Consent to the use of cookies: this demo uses cookies to ensure you get the best experience.
-                                <a href="/privacy-policy">Learn more</a>
-                            </label>
-                            <div id="cookie-consent-errors"></div>
-                        </div>
-
-
-                        <button type="submit" id="submit-form" class="butn mt-4"><span>Start the Hub Demo</span></button>
-                    </form>
+  <div class="container-fluid">
+    <div class="page-title">
+      <h1>Hub Demo Instructions</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <div class="item">
+          <h2>Appvia HUB Prerequisites</h2>
+          <form data-parsley-validate method="GET" action="{{demoURL}}" style="margin-top: 1em">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="form-check">
+                  <label class="form-check-label-normal" for="acknowledge">
+                    You should have received an email from GitHub and followed the instructions.
+                    <input type="checkbox" class="form-check-input" name="acknowledge" id="acknowledge"
+                      required data-parsley-error-message="Join Github Organisation."
+                      data-parsley-errors-container="#acknowledge-errors"/>
+                    <span class="checkbox"></span>
+                  </label>
+                  <div id="acknowledge-errors"></div>
                 </div>
-                <div class="col-sm-12 col-md-6">
-                    <!-- <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded"> -->
-                    <div id="accordion" class="accordion-style2">
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse"
-                                            data-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
-                                        Feedback / Help for the Hub Demo
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                 data-parent="#accordion">
-                                <div class="card-body">
-                                    <ul class="bullets">
-                                        <li>We would love to hear your <a href="/products/hub-demo/feedback">feedback</a>.
-                                        </li>
-                                        <li>
-                                            Contact us from within the demo (during normal Office Hours). Look for this icon
-                                            on the bottom right <img src="/img/crisp-logo.png" alt="Crisp Chat Logo"
-                                                                     width="26">.<br/>
-                                            Use the chat facility for:
-                                            <ul class="bullets small">
-                                                <li>Product help</li>
-                                                <li>Extending the time to use the demo (we currently delet it after two
-                                                    weeks).
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="https://github.com/appvia/appvia-hub" target="_blank">Appvia Hub on
-                                            GitHub</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
-                                            aria-expanded="true" aria-controls="collapseTwo">
-                                        Limitations
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                                 data-parent="#accordion" style="">
-                                <div class="card-body">
-                                    <ul class="bullets">
-                                        <li>
-                                            <strong>A Small Kubernetes Cluster</strong><br>
-                                            <span>We’ve created a dedicated Kubernetes cluster with a couple of nodes and some resources limits. Please use the Chat facility <img
-                                                    src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26"> if you need more resources to complete your evaluation.</span>
-                                        </li>
-                                        <li>
-                                            <strong>Admin pages</strong><br>
-                                            <span>For demo purposes, unfortunately you won’t be an administrator of the Hub. See <a
-                                                    href="/products/hub-demo/integration-setup-admin-pages">Demo Integration Setup</a></span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <div class="row">
+                  <div class="form-check">
+                    <label class="form-check-label-normal" for="basic_understanding">
+                      A basic understanding of the following:
+                      <input type="checkbox" class="form-check-input" name="basic_understanding"
+                               id="basic_understanding"
+                               required data-parsley-error-message="Minimum Developer Understanding."
+                               data-parsley-errors-container="#basic-understanding-errors"/>
+                      <span class="checkbox"></span>
+                    </label>
+                    <div id="basic-understanding-errors"></div>
+                    <ul class="list-bullet small">
+                      <li>Source Code</li>
+                      <li>Docker</li>
+                      <li>Kubernetes</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-check">
+                    <label class="form-check-label-normal" for="cookie-consent">
+                      Consent to the use of cookies: this demo uses cookies to ensure you get the best experience.
+                      <a href="/privacy-policy">Learn more</a>
+                      <input type="checkbox" class="form-check-input" name="cookie-consent" id="cookie-consent"
+                             data-parsley-errors-container="#cookie-consent-errors" required
+                             required data-parsley-error-message="You have to agree to the cookie consent."/>
+                      <span class="checkbox"></span>
+                    </label>
+                    <div id="cookie-consent-errors"></div>
+                </div>
+              </div>
+              <div class="row">
+                <button type="submit" id="submit-form" class="butn mt-4"><span>Start the Hub Demo</span></button>
+              </div>
             </div>
+          </form>
         </div>
-    </section>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="item">
+          <div class="tabs">
+            <div class="tab">
+              <input type="checkbox" id="chck1">
+              <label class="tab-label" for="chck1">Feedback / Help for the Hub Demo</label>
+              <div class="tab-content">
+                <ul class="list-bullet">
+                  <li>
+                    We would love to hear your <a href="/products/hub-demo/feedback">feedback</a>.
+                  </li>
+                  <li>
+                    Contact us from within the demo (during normal Office Hours). Look for this icon
+                    on the bottom right <img src="/img/crisp-logo.png" alt="Crisp Chat Logo"
+                    width="26">.<br/>
+                    Use the chat facility for:
+                    <ul class="list-bullet small">
+                      <li>Product help</li>
+                      <li>Extending the time to use the demo (we currently delet it after two weeks).</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="https://github.com/appvia/appvia-hub" target="_blank">Appvia Hub on GitHub</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="tab">
+              <input type="checkbox" id="chck2">
+              <label class="tab-label" for="chck2">Limitations</label>
+              <div class="tab-content">
+                <ul class="list-bullet">
+                  <li>
+                    <strong>A Small Kubernetes Cluster</strong><br>
+                    <span>We’ve created a dedicated Kubernetes cluster with a couple of nodes and some resources limits. Please use the Chat facility <img
+                    src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26"> if you need more resources to complete your evaluation.</span>
+                  </li>
+                  <li>
+                    <strong>Admin pages</strong><br>
+                    <span>For demo purposes, unfortunately you won’t be an administrator of the Hub. See <a
+                    href="/products/hub-demo/integration-setup-admin-pages">Demo Integration Setup</a></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}
 
 {% block customScripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
-    <script src="/assets/fabrex/js/form.js"></script>
+    <script src="/assets/javascript/form.js"></script>
 {% endblock %}

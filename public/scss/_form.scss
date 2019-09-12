@@ -1,0 +1,283 @@
+.form-control{
+	display: block;
+	width:  calc(100% - 1.5rem);
+	height: calc(2.25rem + 2px);
+	padding: .375rem  .75rem;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: $off-white;
+	background-color: $dark-grey;
+	background-clip: padding-box;
+	border: 1px solid $mid-grey;
+	border-radius: .25rem;
+	margin-bottom:1em;
+	font-family: 'Open Sans', sans-serif !important;
+}
+select{
+	font-family: 'Open Sans', sans-serif !important;
+	width: 100% !important;
+	height: 2.8em !important;
+}
+
+label{
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 1em;
+	font-weight: bold;
+	margin: .4em 0;
+}
+button{
+	border: 1px solid $red;
+	color: $red;
+	padding: .2em .4em;
+	font-size: 1.4em;
+	margin-top: .8em;
+	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif !important;
+	&:hover{
+		cursor: pointer;
+		border: 1px solid $off-white;
+		color: $off-white;
+	}
+}
+
+
+
+.error-box-text h1,
+.error-box-text h3 {
+  color: #000;
+}
+
+form label{
+  font-weight: 800;
+}
+
+.form-error{
+  color: rgb(185, 74, 72);
+}
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  //color: #468847;
+  //border: 1px solid #468847;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: $red;
+  //border: 1px solid #B94A48;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 10px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: $red;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-custom-error-message{
+	font-size: 0.9em;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+
+button[type="submit"].butn:disabled,
+button[type="submit"].butn:disabled:after{
+  cursor: initial;
+	border: none;
+	color: $off-white;
+}
+button[type="submit"].butn:disabled i{
+  z-index: 9;
+  position: relative;
+	margin-right: .4em;
+}
+
+fieldset {
+	border: none;
+	margin-bottom: 2em;
+	legend{
+		margin-bottom: .4em;
+	}
+}
+
+fieldset legend,
+form label{
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: 800;
+}
+fieldset label{
+  font-weight: 400;
+  font-size: 1.2em;
+	margin: .1em 0;
+}
+
+fieldset .form-check-input {
+  margin-top: .1rem;
+	margin-left: 1.5em;
+}
+
+.form-check-input {
+    margin-top: .5rem;
+}
+.form-check-label-normal{
+  font-weight: 400;
+	display: initial;
+}
+
+//x-small
+@media (max-width: 320px) {
+	button{
+  	font-size: 1.6em;
+    width: 100%;
+  }
+	label{
+		font-size: .8em;
+	}
+}
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+	button{
+  	font-size: 1.6em;
+    width: 100%;
+  }
+	label{
+		font-size: .8em;
+	}
+	.form-control{
+		padding: .15rem  .75rem;
+		font-size: 1rem;
+			margin-bottom:.7em;
+	}
+}
+
+
+.form-check {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+	label{
+		font-size: .9em;
+		cursor: pointer;
+	}
+}
+
+/* Hide the browser's default radio button */
+.form-check input.form-check-input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	position: absolute;
+	top: .2em;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.form-check:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.form-check input:checked ~ .checkmark {
+  background-color: $red;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.form-check input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.form-check .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+
+
+
+
+
+/* Create a custom checkbox */
+.checkbox {
+  position: absolute;
+  top: .3em;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.form-check:hover input ~ .checkbox {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.form-check input:checked ~ .checkbox {
+  background-color: $red;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.form-check input:checked ~ .checkbox:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.form-check .checkbox:after {
+	left: 9px;
+	top: 4px;
+	width: 8px;
+	height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

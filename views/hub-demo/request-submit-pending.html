@@ -1,27 +1,25 @@
 {% extends 'layout.html' %}
+{% import "../../views/partials/nav.html" as navigation %}
+{% import "../../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('products') }}
+  {{ navigation.nav('products') }}
 
-    {% import "../../views/partials/headers.html" as header %}
-    {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Request a Appvia Hub Demo', link: false }], '', '0', 'background-position-1') }}
+  {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Request a Appvia Hub Demo', link: false }]) }}
 
-    <section class="padding-80">
-        <div class="container">
-            <div class="section-heading">
-                <h3>{{ title }}</h3>
-            </div>
-            <div class="row justify-content-center">
-                <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom text-center col-sm-12 col-md-6">
-                    <p>Thank you for your interest, we will contact you shortly.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="container-fluid">
+    <div class="page-title">
+      <h1>{{ title }}</h1>
+    </div>
+    <h2 class="text-center">Thank you for your interest, we will contact you shortly.</h2>
+  </div>
 
 {% endblock %}
 
-{% block customScripts %}
-
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}
