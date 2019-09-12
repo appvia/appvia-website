@@ -34,11 +34,19 @@
 }
 
 .hero-title {
-  @include absolute-centered()
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 74%;
   top: 40%;
+  h1{
+      margin-top: 2em;
+    font-size: 2.5em;
+  }
   .learn-why{
-    float: right;
+    display: inline-block;
+    margin-top: 1em;
   background-color: #1a1a1d;
   padding: .1em .4em;
   text-transform: uppercase;
@@ -58,18 +66,35 @@
     text-transform: uppercase;
   }
   h2{
+    margin-bottom: .4em;
+    font-size: 2em;
+    margin-top: .2em;
+  }
+  p{
+    font-size: 1.2em;
     margin-bottom: 1em;
+  }
+}
+ .hero-sublevel{
+
+  h1{
+    text-transform: uppercase;
+  }
+  h2{
+    margin-bottom: .4em;
+    font-size: 2em;
+    margin-top: .2em;
   }
   p{
     font-size: .8em;
+    margin-bottom: 1em;
   }
-}
-
+ }
 .feature-boxes{
-  font-size: .9em;
+  font-size: 1.2em;
   background-color: rgba(0,0,0,0.8);
   padding: 1.8em 2em 3em 2em;
-  margin-top:24em;
+  margin-top:22em;
   color: $white;
   position: fixed;
   width: 50%;
@@ -98,11 +123,11 @@
 }
 
 .title-black-on-red{
-  font-size: 3em;
-  line-height: .85em;
+  font-size: 2.6em;
+  line-height: 1em;
   margin-left: .5em;
-  width: 50%;
   margin-top: 1em;
+  width: 60%;
   padding: .2em;
   background-color: $red;
   color: $black;
@@ -110,8 +135,8 @@
   display: table;
 }
 .paragraph-left-aligned{
-  margin-top: 14em;
-  font-size: 1em;
+  margin-top: 12em;
+  font-size: 1.2em;
   margin-left: 1.5em;
   width: 60%;
   padding: .2em;
@@ -128,10 +153,6 @@
     color: $black;
     text-transform: uppercase;
     display: table;
-  }
-  p{
-    font-size: .8em;
-    margin-bottom: 1em;
   }
 }
 .text-black-bordered{
@@ -698,4 +719,14 @@ z-index: 10;
   .center-column{
     width: 80%;
   }
+}
+
+@media screen and (min-width:993px) and (max-width:1930px){
+
+.hero-title {
+ 
+  h1{
+    font-size: 2em;
+  }
+ }
 }

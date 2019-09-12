@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
+{% block content %}
+
+  {{ navigation.nav('Products') }}
+
+  {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Prouct', link: false }]) }}
+
+  <div class="page-title">
+    <h1>Kubernetes Security Scanner</h1>
+  </div>
+
+  <div class="center-column">
+	<div class="row">
+	      <div class="col-sm-12 col-md-6 col-lg-6">
+	        <h2>The benefits of Kubernetes Security Scanner (KSS)</h2>
+	        <p>Role-based access controls (RBAC) automatically grant user permissions across your Kubernetes clusters. Our Kubernetes Security Scanner tool makes managing them simpler.</p>
+ 
+	        <p>When you deploy components like Ingress, certificate management and key management into Kubernetes to enhance your app, managing the access controls to them is vital. It can also be complicated and problematic, especially when running your app across multiple clusters.</p>
+ 
+	        <p>KSS delivers clear sight of your role-based security. It does this by attaching to all your Kubernetes clusters and scanning for RBAC data. This builds a full picture of the relationships between users, groups or service accounts to the controls, no matter how complex.</p>
+ 
+	        <p>Using this information, KSS quickly finds issues around access policy defaults, and will automatically raise alerts about any changes that may pose a risk to the security of your overall platform. It can even go a step further and make recommendations on best practices for a secure RBAC implementation.</p>
+	            
+	          <h2>KSS at a glance</h2>
+
+	          <h3>It could benefit your business when</h3>
+	            <ul class="list-bullet">
+	             	<li>you deploy extra components into Kubernetes</li>
+					<li>you manage apps across multiple environments</li>
+	            </ul>  
+	           
+	          <h3>What it does for you</h3>
+	          <ul class="list-bullet">
+	             	<li>Provides a clear outline of RBAC in your Kubernetes clusters</li>
+	             	<li>Understands the controls for users, groups, service accounts, roles, role bindings and pod security policies</li>
+	             	<li>Helps make sure users in your business have the right access permissions</li>
+	             	<li>Lets users search across their clusters for RBAC information</li>
+
+	          </ul>  
+	           
+	         <h3>KSS can improve security by</h3>
+	          <ul class="list-bullet">
+	            <li>identifying risks around policy defaults</li>
+	            <li>making suggestions on best practices around your use of RBAC</li>
+	           </ul> 
+	           
+	         You can view the Kubernetes Security Scanner <a href="">GitHub repo</a> for more information or to download it.
+
+
+	      </div>
+	      <div class="col-sm-12 col-md-6 col-lg-6">
+	        <img src="/assets/img/undraw_fingerprint_swrc.svg" style="width: 100%">
+	      </div>
+	    </div>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}
