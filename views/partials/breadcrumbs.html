@@ -1,0 +1,12 @@
+{% macro links(breadcrumb=[]) %}
+  <ul class="breadcrumbs">
+    <li><a href="/">Home</a></li>
+    {% for item in breadcrumb %}
+    {% if item.link %}
+    <li><a href="{{item.link}}">{{item.text}}</a></li>
+    {% else %}
+    <li class="text-white">{{item.text}}</li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+{% endmacro %}

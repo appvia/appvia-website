@@ -1,107 +1,76 @@
 {% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('careers') }}
+  {{ navigation.nav('careers', hubDemoEnabled) }}
 
-    {% import "../views/partials/headers.html" as header %}
-    {{ header.nav('Careers', [{ text: 'Careers', link: '/careers' }, { text: job.title, link: false }], '', '0') }}
+  {{ breadcrumb.links([{ text: 'Careers', link: '/careers' }, { text: job.title, link: false }]) }}
 
-    <section class="padding-80">
-        <div class="container">
+  <div class="page-title">
+    <h1>{{job.title}}</h1>
+  </div>
 
-            <div class="section-heading">
-                <h3>{{job.title}}</h3>
-            </div>
+  <div class="center-column">
 
-            <div class="row">
-                <div class="col-md-8 justifty">
-                    <h5>About Appvia</h5>
-                    <p>Appvia is an IT consultancy providing industry leading engineering. We transform our clients ability
-                        to manage software delivery, by understanding requirements and developing solutions that help drive
-                        business value.</p>
-                    <p>One of the core principles to Appvia is company ethos. We have a positive and inclusive culture that
-                        ensures a happy team, committed to the quality of our work and who support each other to create a
-                        professional business environment. This helps us not only to maintain staff who feel contented and
-                        proud of where they work, but also happy and satisfied customers. It is not just our people who buy
-                        into our company culture, but our customers too.</p>
-                </div>
+    <ul class="callout-job">
+        <li><span class="callout-head">Type:</span> {{job.type}}</li>
+        <li><span class="callout-head">Hours:</span> {{job.hours}}</li>
+        <li><span class="callout-head">Location:</span> {{job.location}}</li>
+        <li><span class="callout-head">Posted:</span> {{job.postedDate}}</li>
+    </ul>
 
-                <div class="col-md-4 justifty">
-                    <div class="project-single-info">
-                        <ul class="no-margin">
-                            <li><span class="vertical-align-top">Type:</span> <span class="value">{{job.type}}</span></li>
-                            <li><span class="vertical-align-top">Hours:</span> <span class="value">{{job.hours}}</span></li>
-                            <li><span class="vertical-align-top">Location:</span> <span class="value">{{job.location}}</span></li>
-                            <li><span class="vertical-align-top">Posted:</span> <span class="value">{{job.postedDate}}</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <h3>About Appvia</h3>
+    <p>Appvia is an IT consultancy providing industry leading engineering. We transform our clients ability to manage software delivery, by understanding requirements and developing solutions that help drive business value.</p>
+    <p>One of the core principles to Appvia is company ethos. We have a positive and inclusive culture that ensures a happy team, committed to the quality of our work and who support each other to create a professional business environment. This helps us not only to maintain staff who feel contented and proud of where they work, but also happy and satisfied customers. It is not just our people who buy into our company culture, but our customers too.</p>
 
-            <div class="row">
-                <div class="col-md-12 justifty">
-                    <h5>The Role</h5>
-                    <p>{{job.role | safe}}</p>
-                </div>
-            </div>
+    <h3>The Role</h3>
+    <p>{{job.role | safe}}</p>
 
-            <div class="row">
-                <div class="col-md-12 justifty">
-                    <h5>Key Responsibilities</h5>
-                    <ul class="bullets">
-                        {% for item in job.keyResponsibilities %}
-                        <li>{{item}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+    <h3>Key Responsibilities</h3>
+    <ul class="list-bullet">
+      {% for item in job.keyResponsibilities %}
+      <li>{{item}}</li>
+      {% endfor %}
+    </ul>
 
-            <div class="row">
-                <div class="col-md-12 justifty">
-                    <h5>We're looking for someone with</h5>
-                    <ul class="bullets">
-                        {% for item in job.desirableAttributes %}
-                        <li>{{item}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
+    <h3>We're looking for someone with</h3>
+    <ul class="list-bullet">
+      {% for item in job.desirableAttributes %}
+      <li>{{item}}</li>
+      {% endfor %}
+    </ul>
 
-            <div class="row">
-                <div class="col-md-12 justifty">
-                    <h5>What you'll get in return</h5>
-                    <ul class="bullets">
-                        {% for item in job.remuneration %}
-                        <li>{{item}}</li>
-                        {% endfor %}
-                    </ul>
-                    {% if job.securityClearanceRequired %}
-                    <div class="row">
-                        <div class="col-md-12 justifty">
-                            <p>Note: As some of our customers require Security Clearance, you will need to be eligible, this
-                                means you will need:</p>
-                            <ul class="bullets">
-                                <li>To have resided in the country for at least 5 years</li>
-                                <li>Have no criminal records</li>
-                                <li>Have no financial irregularities</li>
-                            </ul>
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
+    <h3>What you'll get in return</h3>
+    <ul class="list-bullet">
+      {% for item in job.remuneration %}
+      <li>{{item}}</li>
+      {% endfor %}
+    </ul>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="mailto:hr@appvia.io?subject=Application for {{job.title}} position"
-                       class="butn"><span>Apply</span></a>
-                    <br/><br/>
-                    <strong class="strong">Please include a copy of your CV and your GitHub ID</strong>
-                    <br/><br/>
-                    <a href="/careers"><i class="fa fa-angle-left mr-2"></i>Go Back</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    {% if job.securityClearanceRequired %}
+    <h3>Note: As some of our customers require Security Clearance, you will need to be eligible, this means you will need:</h3>
+
+    <ul class="list-bullet">
+        <li>To have resided in the country for at least 5 years</li>
+        <li>Have no criminal records</li>
+        <li>Have no financial irregularities</li>
+    </ul>
+    {% endif %}
+
+    <p><a href="mailto:hr@appvia.io?subject=Application for {{job.title}} position" class="button">Apply</a></p>
+
+    <p><strong class="strong">If applicable please include a copy of your CV and your GitHub ID</strong></p>
+
+    <p><a href="/careers" class="back-link"><i class="fa fa-angle-left"></i>Go Back</a></p>
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}

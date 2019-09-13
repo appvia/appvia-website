@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "EMAIL_ADMIN_ENABLED=true nodemon -e js,html,css",
-    "test": "mocha"
+    "dev": "concurrently \"EMAIL_ADMIN_ENABLED=true nodemon -e js,html,css\"  \"npm run scss\"",
+    "test": "mocha",
+    "scss": "./bin/build-css"
   },
   "dependencies": {
     "body-parser": "^1.10.0",
     "compression": "^1.7.3",
+    "concurrently": "^4.1.2",
     "cookie-parser": "~1.3.3",
     "debug": "^2.1.0",
     "express": "^4.16.3",
@@ -22,6 +24,7 @@
     "request-promise": "^4.2.4",
     "rss-parser": "^3.6.2",
     "serve-favicon": "^2.2.0",
+    "superagent": "^5.1.0",
     "underscore": "^1.8.3",
     "winston": "^3.2.1"
   },
@@ -32,6 +35,7 @@
     "nock": "^10.0.6",
     "nodemon": "^1.18.10",
     "sinon": "^7.3.2",
-    "sinon-chai": "^3.3.0"
+    "sinon-chai": "^3.3.0",
+    "node-sass": "^4.12.0"
   }
 }

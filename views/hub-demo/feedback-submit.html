@@ -1,60 +1,25 @@
 {% extends 'layout.html' %}
+{% import "../../views/partials/nav.html" as navigation %}
+{% import "../../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content fixed-background' %}
+
 {% block content %}
 
-    {% import "../../views/partials/nav.html" as navigation %}
-    {{ navigation.nav('products') }}
+  {{ navigation.nav('products') }}
 
-    {% import "../../views/partials/headers.html" as header %}
-    {{ header.nav('Products', [{ text: 'Products', link: '/products' },{ text: 'Request a Appvia Hub Demo', link: false }], '', '0', 'background-position-1') }}
+  {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Request a Appvia Hub Demo', link: false }]) }}
 
-    <section class="padding-80">
-        <div class="container">
-            <div class="section-heading">
-                <h3>Hub Demo Feedback</h3>
-            </div>
-            <div class="row justify-content-center">
-                <div class="services-block-two margin-30px-bottom xs-margin-20px-bottom col-sm-12 col-md-8">
-                    <p>Thanks for your feedback.</p>
-                    <img src="/img/hub-screenshot.png" alt="The Hub Screenshot" class="shadow mb-5 rounded">
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card bg-light p-4">
-                        <div>For more specific feedback (bugs or feature requests) please rasie an issue on GitHub.</div>
-                        <div class="mt-2">
-                            <a class="github-button" href="https://github.com/appvia/appvia-hub/issues" data-size="large"
-                               aria-label="Issue appvia/appvia-hub on GitHub">Issue</a>
-                        </div>
-                        <hr/>
-                        <div>If you want to track our progress watch appvia/appvia-hub project on Github.</div>
-                        <div class="mt-2">
-                            <a class="github-button" href="https://github.com/appvia/appvia-hub"
-                               aria-label="Watch appvia/appvia-hub project" data-size="large">Watch appvia/appvia-hub
-                                project</a>
-                        </div>
-                        <hr/>
-                        <div>If you like what you see rate us on GitHub.</div>
-                        <div class="mt-2">
-                            <a class="github-button" href="https://github.com/appvia/appvia-hub"
-                               aria-label="Star appvia/appvia-hub on GitHub" data-size="large">Star</a>
-                        </div>
-                        <hr/>
-                        <div>If you need some help to use the product (during normal office hours) contact us from within
-                            the demo via the live chat. Look for this icon on the bottom right <img
-                                    src="/img/crisp-logo.png" alt="Crisp Chat Logo" width="26">.
-                        </div>
-                        <div class="mt-2">If you want to extend the time for the demo (we currently delete it after two
-                            weeks).
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="container-fluid text-center">
+    <div class="page-title">
+      <h1>Hub Demo Feedback</h1>
+    </div>
+    <h2>Thanks for your feedback.</h2>
+  </div>
 
 {% endblock %}
 
-{% block customScripts %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
-    <script src="/assets/fabrex/js/form.js"></script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+{% block footer %}
+  {{ footer.footer() }}
 {% endblock %}

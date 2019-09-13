@@ -1,40 +1,56 @@
+
+{% macro navItems(active='',  mobile='') %}
+  {% if mobile%}<li><img src="../../assets/img/appvia_logo.svg" class="appvia-logo-mobile"></li>{% endif %}
+  <li><a href="/why-appvia" class="{% if active == 'why-appvia' %}active{% endif %}">Why Appvia</a></li>
+  <li>
+    <a href="/products" class="{% if active == 'products' %}active{% endif %}">Our Products</a>
+    <ul class="dropdown">
+      <li><a href="/products/hub">Appvia Hub</a></li>
+      <li><a href="/products/kubernetes-security-scanner">Kubernetes Security Scanner</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="/services" class="{% if active == 'services' %}active{% endif %}">Our Services</a>
+    <ul class="dropdown">
+      <li><a href="#">Consultancy</a></li>
+      <li><a href="#">Suport</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="/resources" class="{% if active == 'resources' %}active{% endif %}">Resources</a>
+    <ul class="dropdown">
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="#">Case Study</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">More Appvia</a>
+    <ul class="dropdown">
+      <li><a href="#">Partners</a></li>
+      <li><a href="/careers">Careers</a></li>
+      <li><a href="#">Tools</a></li>
+      <li><a href="/contact-us">Contact Us</a></li>
+    </ul>
+  </li>
+{% endmacro %}
+
 {% macro nav(active='') %}
 <!-- start nav section -->
-<header class="scrollHeader">
-    <div class="navbar-default">
-        <!-- End Top Search -->
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-12">
-                    <div class="menu_area alt-font">
-                        <nav class="navbar navbar-expand-lg navbar-light no-padding">
+<nav role="navigation">
+  <a href="/"><img src="../../assets/img/appvia_logo.svg" class="appvia-logo"></a>
+  <ul id="mainMenu">
+    {{ navItems(active) }}
+  </ul>
+  <div id="menuToggle" style="display:none">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+    <ul id="menu">
+      {{ navItems(active, true) }}
+    </ul>
+  </div>
+</nav>
 
-                            <div class="navbar-header">
-                                <!-- Start Logo -->
-                                <a href="/" class="navbar-brand logodefault"><img id="logo" src="/assets/fabrex/img/logos/logo.png" alt="logo"></a>
-                                <!-- End Logo -->
-                            </div>
-
-                            <div class="navbar-toggler"></div>
-
-                            <!-- Menu Area -->
-                            <ul class="navbar-nav ml-auto" id="nav">
-                                <li class="{% if active == 'home' %}current{% endif %}"><a href="/">Home</a></li>
-                                <li class="{% if active == 'about' %}current{% endif %}"><a href="/about">About</a></li>
-                                <li class="{% if active == 'products' %}current{% endif %}"><a href="/products">Products</a></li>
-                                <li class="{% if active == 'services' %}current{% endif %}"><a href="/services">Services</a></li>
-                                <li class="{% if active == 'blog' %}current{% endif %}"><a href="/blog">Blog</a></li>
-                                <li class="{% if active == 'careers' %}current{% endif %}"><a href="/careers">Careers</a></li>
-                                <li class="{% if active == 'contact' %}current{% endif %}"><a href="/contact">Contact</a></li>
-                            </ul>
-                            <!-- End Menu Area -->
-
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
 <!-- end nav section -->
 {% endmacro %}
