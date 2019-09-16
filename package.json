@@ -24,6 +24,7 @@
     "request-promise": "^4.2.4",
     "rss-parser": "^3.6.2",
     "serve-favicon": "^2.2.0",
+    "storyblok-js-client": "^2.0.1",
     "superagent": "^5.1.0",
     "underscore": "^1.8.3",
     "winston": "^3.2.1"

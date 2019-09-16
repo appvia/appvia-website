@@ -1,69 +1,52 @@
 {% extends 'layout.html' %}
 {% import "../views/partials/nav.html" as navigation %}
 {% import "../views/partials/footer.html" as footer %}
-
+{% set pageClass = 'content background-fixed background-3' %}
 {% block content %}
 
 
   {{ navigation.nav('home', hubDemoEnabled) }}
 
+    <div class="center-column">
 
-
-  <div class="parallax">
-
-    <div id="home" class="target">
-      <div id="group1" class="parallax__group">
-        <div class="parallax__layer parallax__layer--back background-3"></div>
-        <div class="parallax__layer parallax__layer--fore">
-          <div class="hero-title">
-            <img src="/assets/img/undraw_to_the_moon_v1mv.svg" style="float:right;width: 48%;">
-            <h1>
-              Appvia.
-              The freedom to develop software.
-              The power to deploy quickly.
-              </h1>
-            <div class="learn-why">
-              <a href="/why-appvia">Find out how</a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-6">
-              <a href="/products">
-                <div class="feature-boxes left">
-                  <h2>Products</h2>
-                  <p>Ready-made solutions to make your DevOps team more efficient.</p>
-                  <i class="fa fa-angle-right"></i>
-                </div>
-              </a>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6">
-              <a href="/services">
-                <div class="feature-boxes right">
-                  <h2>Services</h2>
-                  <p>Consultancy and support to shape your technological strategy.</p>
-                  <i class="fa fa-angle-right"></i>
-                </div>
-              </a>
+        <div class="row">
+          <div class="col">
+            <div class="hero-title">
+              <h1>
+                Appvia.<br />
+                The freedom to develop software.<br />
+                The power to deploy quickly.
+                </h1>
+                <a href="/why-appvia" class="button-black">Find out more</a>
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="group2" class="parallax__group">
-        <div class="parallax__layer parallax__layer--base background-4">
-          <h1 class="title-black-on-red">Why Appvia can be the future of your organisation</h1>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <a href="/products" class="feature-button text-pop-up-top">Products</a>
+          </div>
+          <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <a href="/services" class="feature-button">Services</a>
+          </div>
         </div>
-        <div class="parallax__layer parallax__layer--fore">
-          <img src="/assets/img/undraw_software_engineer_lvl5.svg" style="float:right;width:30%;margin-right:2em;margin-top:8em">
-          <p class="paragraph-left-aligned">
-            We live and breathe software engineering, leaving your developers free to create business-critical software.<br /><br />
-            <a href="/why-appvia" class="button">See how we do this</a>
-          </p>
-        </div>
-      </div>
 
+          <div class="row  mt-4">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="hero-title">
+              <h2>Why Appvia can be the future of your organisation</h2>
+              <p>We live and breathe software engineering, leaving your developers free to create business-critical software.</p>       
+              <a href="/why-appvia" class="button-black">See how we do this</a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6 ">
+            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin-top:-2em">
+          </div>
+        </div>
+      
+         
+    
   </div>
-
 
 
 {% endblock %}

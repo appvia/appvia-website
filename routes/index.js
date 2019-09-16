@@ -3,13 +3,19 @@ var Parser = require('rss-parser');
 var parser = new Parser();
 var router = express.Router();
 const superagent = require('superagent');
+const StoryblokClient = require('storyblok-js-client')
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 
 const jobs = require('../jobs').filter(j => j.active);
 
+let Storyblok = new StoryblokClient({
+  accessToken: 'jea6Oj4I6rk2WChhurZRUgtt'
+})
+
 const apiBase = 'https://api.storyblok.com/v1/cdn/';
-const token = 'pktLzISg00u5e33rrefWPgtt';
+const token = 'jea6Oj4I6rk2WChhurZRUgtt';
+
 
 //todo: 
 // - put token in env configs
@@ -20,7 +26,7 @@ async  function apiRequest(path, filter){
     try {
       console.log(apiBase + path + '?' + filter + '&token='+token)
       return await superagent.get(apiBase + path + '?' + filter + '&token='+token)
-    } catch (err) {ß
+    } catch (err) {
       return {items: []}
   }
 }
@@ -49,12 +55,27 @@ router.get('/services', function (req, res) {
   res.render('services.html', {title: 'Appvia: Services'});
 });
 
+router.get('/services/consultancy', function (req, res) {
+  res.render('consultancy.html', {title: 'Appvia: Consultancy'});
+});
+
+router.get('/services/support', function (req, res) {
+  res.render('support.html', {title: 'Appvia: Support'});
+});
+
+
 router.get('/blog', async function (req, res) {
   res.render('blog.html', {title: 'Appvia: Blog', rss: await apiRequest('stories', '') });
 });
 
 router.get('/blog/:blogpost', async function (req, res) {
-  res.render('blog-post.html', {title: 'Appvia: Blog', rss: await  apiRequest('stories/blog/'+req.params.blogpost, '') });
+  Storyblok.get('cdn/stories/blog/'+req.params.blogpost)
+  .then(response => {
+    var data = response.data.story
+    res.render('blog-post.html', {title: 'Appvia: Blog',  story: Storyblok.richTextResolver.render(data.content.story), data: data});
+  }).catch(error => { 
+    console.log(error)
+  })
 });
 
 router.get('/blog/tag/:tag', async function (req, res) {

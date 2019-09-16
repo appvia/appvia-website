@@ -23,12 +23,12 @@
       {% for item in rss.body.stories %}
         <div class="col-12 col-md-6">
           <div class="item">
-              <h3>{{ item.content.Title }}</h3>
+              <h3>{{ item.content.title }}</h3>
               <ul class="meta">
                   <li><i class="fa fa-user"></i> {{ item.content.Author }}</li>
-                  <li><i class="fas fa-calendar-alt"></i> {{ item.Date}}</li>
+                  <li><i class="fas fa-calendar-alt"></i> {{ item.published_at}}</li>
               </ul>
-              <p>{{ item.content.Story | striptags(true) | truncate(220)}}</p>
+              <p>{{ item.content.story | dump }}</p>
               <a href="/blog/{{ item.slug }}" class="button">Read Article</a>
               <ul class="tags">
                 {% for tag in item.tag_list %}

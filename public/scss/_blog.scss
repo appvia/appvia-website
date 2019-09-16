@@ -1,0 +1,31 @@
+ul.tags{
+	list-style: none;
+	margin-top: 1em;
+}
+
+ul.tags li{
+	border: solid 1px $red;
+	border-radius: .6em;
+	display: inline-block;
+	padding: .1em .4em;
+	font-size: .7em;
+	margin-right: .6em;
+	&:hover{
+		background-color: $red;
+		a{
+			color: $white;
+		}
+	}	
+	a:hover{
+		text-decoration: none;
+	}
+}
+
+.blog-post-main-image{
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width:100%;
+    height:400px;
+}	

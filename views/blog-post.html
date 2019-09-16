@@ -10,28 +10,42 @@
 
     {{ navigation.nav('blog', hubDemoEnabled) }}
 
-    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: rss.body.story.content.Title, link: false }]) }}
+    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
 
     <div class="page-title">
-      <h1>{{rss.body.story.content.Title}}</h1>
+      <h1>{{data.name}}</h1>
     </div>
 
+    <div class="blog-post-main-image" style="background-image:url('{{data.content.thumbnail}}')"></div>
+
+
     <div class="center-column">
+       
 
-      <ul>
-        <li>{{rss.body.story.content.Author}}</li>
-        <li>{{rss.body.story.content.Date}}</li>
+      <div class="row">
+          <div class="col-2">
+            <div class="hero-toplevel mt-3">
+              <img src="{{data.content.thumbnail}}" alt="{{data.content.author}}" style="width:100%">
+            </div>
+          </div>
+          <div class="col-10">
+            <ul class="meta">
+        <li><i class="fa fa-user"></i> {{data.content.author}}</li>
+        <li><i class="fas fa-calendar-alt"></i> {{data.published_at}}</li>
       </ul>
-
-
-      <p>{{rss.body.story.content.Story}}</p>
-
-      <h4>Tags</h4>
-      <ul>
-          {% for tag in rss.body.story.tag_list %}
+            <div class="blog-body">{{story | safe }}</div>
+              <ul class="tags">
+          {% for tag in data.tag_list %}
           <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
           {% endfor %}
       </ul>
+          </div>
+        </div>
+
+    
+   
+
+    
     </div>
 
 {% endblock %}

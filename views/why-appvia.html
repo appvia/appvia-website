@@ -1,20 +1,27 @@
 {% extends 'layout.html' %}
 {% import "../views/partials/nav.html" as navigation %}
 {% import "../views/partials/footer.html" as footer %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+
+{% set pageClass = 'content fixed-background' %}
 
 {% block content %}
 
   {{ navigation.nav('why-appvia') }}
 
-  <div class="parallax">
+  {{ breadcrumb.links([{ text: 'Why Appvia?', link: false }]) }}
 
-    <div id="group2" class="parallax__group">
-      <div class="parallax__layer parallax__layer--back background-4"></div>
-      <div class="parallax__layer parallax__layer--fore">
-        <div class="row mt-3">
+    <div class="page-title">
+      <h1>Why Appvia?</h1>
+    </div>
+  
+    <div class="center-column">
+
+
+        <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="section-panel hero-toplevel mt-3">
-              <h1>Why Appvia?</h1>
+            <div class="hero-toplevel mt-3">
+       
               <h2>We make sense of tech complexity</h2>
               <p>The digital landscape is changing, and changing fast. With our help, your organisation can look forward with confidence, whether your challenge is modernising and migrating or creating a new platform that allows your fledgling company to flourish.</p>
             </div>
@@ -23,18 +30,15 @@
             <img src="/assets/img/undraw_setup_wizard_r6mr.svg" style="width:80%;margin-top:4em;">
           </div>
         </div>
-      </div>
-    </div>
 
-    <div id="group3" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base background-5"></div>
-      <div class="parallax__layer parallax__layer--fore">
-        <div class="row">
+
+
+        <div class="row mt-4">
           <div class="col-sm-12 col-md-6 col-lg-6">
             <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
           </div>
           <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="section-panel hero-sublevel">
+            <div class="hero-toplevel">
               <h2>A modern, forward-thinking mentality</h2>
               <p>As experts in software engineering, we’ll work closely with your development and operational teams. Our products can declutter your infrastructure and give your developers the freedom to develop, letting you focus on building the apps your customers deserve. Our consultants can help shape your cloud and DevOps strategies.</p>
  
@@ -46,8 +50,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
 
   </div>
 
