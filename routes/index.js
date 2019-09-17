@@ -2,7 +2,7 @@ var express = require('express');
 var Parser = require('rss-parser');
 var parser = new Parser();
 var router = express.Router();
-const superagent = require('superagent');
+
 const StoryblokClient = require('storyblok-js-client')
 const moment = require('moment');
 
@@ -14,24 +14,13 @@ let Storyblok = new StoryblokClient({
   accessToken: 'jea6Oj4I6rk2WChhurZRUgtt'
 })
 
-const apiBase = 'https://api.storyblok.com/v1/cdn/';
-const token = 'jea6Oj4I6rk2WChhurZRUgtt';
-
-//https://api.storyblok.com/v1/cdn/stories?&token=jea6Oj4I6rk2WChhurZRUgtt
 //todo:
 // - put token in env configs
 // - refactor in to blog routes
 
-
-async  function apiRequest(path, filter){
-    try {
-      console.log(apiBase + path + '?' + filter + '&token='+token)
-      return await superagent.get(apiBase + path + '?' + filter + '&token='+token)
-    } catch (err) {
-      return {items: []}
-  }
+function renderStory(data){
+  return Storyblok.richTextResolver.render(data)
 }
-
 function convertTime(date){
   return moment(date).format("MMM Do YYYY");
 }
@@ -70,21 +59,51 @@ router.get('/services/support', function (req, res) {
 
 
 router.get('/blog', async function (req, res) {
-  res.render('blog.html', {title: 'Appvia: Blog', rss: await apiRequest('stories', '') });
+  Storyblok.get('cdn/stories/')
+  .then(response => {
+    var data = response.data.stories
+    res.render('blog.html', {
+      title: 'Appvia: Blog',
+      story: renderStory,
+      data: data,
+      published: convertTime
+    });
+  }).catch(error => {
+    console.log(error)
+  })
 });
 
 router.get('/blog/:blogpost', async function (req, res) {
   Storyblok.get('cdn/stories/blog/'+req.params.blogpost)
   .then(response => {
     var data = response.data.story
-    res.render('blog-post.html', {title: 'Appvia: Blog',  story: Storyblok.richTextResolver.render(data.content.story), data: data, published: convertTime(data.content.published_at) });
+    res.render('blog-post.html', {
+      title: 'Appvia: Blog - ' + data.name ,
+      story: Storyblok.richTextResolver.render(data.content.story),
+      data: data,
+      published: convertTime
+    });
   }).catch(error => {
     console.log(error)
   })
 });
 
 router.get('/blog/tag/:tag', async function (req, res) {
-  res.render('blog-tags.html', {title: 'Appvia: Blog', rss: await  apiRequest('stories/', 'with_tag='+req.params.tag), tag: req.params.tag });
+  Storyblok.get('cdn/stories/', {
+    "with_tag": req.params.tag
+  })
+  .then(response => {
+    var data = response.data.stories
+    res.render('blog-tags.html', {
+      title: 'Appvia: Blog - Tag: ' + req.params.tag,
+      tag: req.params.tag,
+      story: renderStory,
+      data: data,
+      published: convertTime
+    });
+  }).catch(error => {
+    console.log(error)
+  })
 });
 
 router.get('/careers', function (req, res) {

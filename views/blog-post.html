@@ -8,41 +8,35 @@
 {% block content %}
 
 
-    {{ navigation.nav('blog', hubDemoEnabled) }}
+  {{ navigation.nav('blog', hubDemoEnabled) }}
 
-    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
+  {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
 
-
+  {% if data.content.thumbnail %}
     <div class="blog-post-main-image" style="background-image:url('{{data.content.thumbnail}}')"></div>
+  {% endif %}
 
-
-    <div class="center-column blog-column">
-
-
-            <div class="blog-head">
-              <h1>{{data.name}}</h1>
-              {% if data.content.author_profile_pic %}
-                <img src="{{data.content.author_profile_pic}}" alt="{{data.content.author}}" class="profile-image">
-              {% else %}
-                <i class="fas fa-user-circle generic-user"></i>
-              {% endif %}
-              <ul class="meta">
-                <li>{{data.content.author}}</li>
-                <li>{{published}}</li>
-              </ul>
-            </div>
-            <div class="blog-body">{{story | safe }}</div>
-              <ul class="tags">
-          {% for tag in data.tag_list %}
-          <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
-          {% endfor %}
+  <div class="center-column blog-column">
+    <div class="blog-head">
+      <h1>{{data.name}}</h1>
+      {% if data.content.author_profile_pic %}
+        <img src="{{data.content.author_profile_pic}}" alt="{{data.content.author}}" class="profile-image">
+      {% else %}
+        <i class="fas fa-user-circle generic-user"></i>
+      {% endif %}
+      <ul class="meta">
+        <li>{{data.content.author}}</li>
+        <li>{{published(data.first_published_at)}}</li>
       </ul>
-
-
-
-
-
     </div>
+    <div class="blog-body">{{story | safe }}</div>
+    <ul class="tags">
+      {% for tag in data.tag_list %}
+      <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    <button class="back-button" onclick="javascript:history.go(-1)"><i class="fas fa-angle-double-left"></i> Go Back</button>
+  </div>
 
 {% endblock %}
 

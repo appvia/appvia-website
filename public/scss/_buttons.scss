@@ -29,6 +29,12 @@ button.choice:hover{
 }
 button:focus {outline:0;}
 
+button.back-button{
+  margin-top: 2em;
+  display: block;
+  font-size: 1em;
+}
+
 
 a.button{
   border: solid 1px $red;
