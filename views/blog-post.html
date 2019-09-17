@@ -12,40 +12,36 @@
 
     {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
 
-    <div class="page-title">
-      <h1>{{data.name}}</h1>
-    </div>
 
     <div class="blog-post-main-image" style="background-image:url('{{data.content.thumbnail}}')"></div>
 
 
-    <div class="center-column">
-       
+    <div class="center-column blog-column">
 
-      <div class="row">
-          <div class="col-2">
-            <div class="hero-toplevel mt-3">
-              <img src="{{data.content.thumbnail}}" alt="{{data.content.author}}" style="width:100%">
+
+            <div class="blog-head">
+              <h1>{{data.name}}</h1>
+              {% if data.content.author_profile_pic %}
+                <img src="{{data.content.author_profile_pic}}" alt="{{data.content.author}}" class="profile-image">
+              {% else %}
+                <i class="fas fa-user-circle generic-user"></i>
+              {% endif %}
+              <ul class="meta">
+                <li>{{data.content.author}}</li>
+                <li>{{published}}</li>
+              </ul>
             </div>
-          </div>
-          <div class="col-10">
-            <ul class="meta">
-        <li><i class="fa fa-user"></i> {{data.content.author}}</li>
-        <li><i class="fas fa-calendar-alt"></i> {{data.published_at}}</li>
-      </ul>
             <div class="blog-body">{{story | safe }}</div>
               <ul class="tags">
           {% for tag in data.tag_list %}
           <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
           {% endfor %}
       </ul>
-          </div>
-        </div>
 
-    
-   
 
-    
+
+
+
     </div>
 
 {% endblock %}

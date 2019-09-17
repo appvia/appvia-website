@@ -4,6 +4,7 @@ var parser = new Parser();
 var router = express.Router();
 const superagent = require('superagent');
 const StoryblokClient = require('storyblok-js-client')
+const moment = require('moment');
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 
@@ -16,8 +17,8 @@ let Storyblok = new StoryblokClient({
 const apiBase = 'https://api.storyblok.com/v1/cdn/';
 const token = 'jea6Oj4I6rk2WChhurZRUgtt';
 
-
-//todo: 
+//https://api.storyblok.com/v1/cdn/stories?&token=jea6Oj4I6rk2WChhurZRUgtt
+//todo:
 // - put token in env configs
 // - refactor in to blog routes
 
@@ -29,6 +30,10 @@ async  function apiRequest(path, filter){
     } catch (err) {
       return {items: []}
   }
+}
+
+function convertTime(date){
+  return moment(date).format("MMM Do YYYY");
 }
 
 router.get('/', function (req, res) {
@@ -72,8 +77,8 @@ router.get('/blog/:blogpost', async function (req, res) {
   Storyblok.get('cdn/stories/blog/'+req.params.blogpost)
   .then(response => {
     var data = response.data.story
-    res.render('blog-post.html', {title: 'Appvia: Blog',  story: Storyblok.richTextResolver.render(data.content.story), data: data});
-  }).catch(error => { 
+    res.render('blog-post.html', {title: 'Appvia: Blog',  story: Storyblok.richTextResolver.render(data.content.story), data: data, published: convertTime(data.content.published_at) });
+  }).catch(error => {
     console.log(error)
   })
 });

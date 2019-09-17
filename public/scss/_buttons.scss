@@ -1,3 +1,17 @@
+@mixin transition-hover(){
+-webkit-transition-property: border, color, background-color;
+      -moz-transition-property: border, color, background-color;
+        -o-transition-property: border, color, background-color;
+           transition-property: border, color, background-color;
+   -webkit-transition-duration: .5s;
+      -moz-transition-duration: .5s;
+        -o-transition-duration: .5s;
+           transition-duration: .5s;
+   -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+           transition-timing-function: linear;
+}
 
 button.choice{
   padding: .4em;
@@ -38,20 +52,9 @@ a.feature-button{
   display: inline-block;
   text-decoration: none;
   font-size: 2em;
-      margin-top: 2.2em;
+  margin-top: 2.2em;
   background-color: rgba(0,0,0,0.8);
- -webkit-transition-property: border, color;
-       -moz-transition-property: border, color;
-         -o-transition-property: border, color;
-            transition-property: border, color;
-    -webkit-transition-duration: .5s;
-       -moz-transition-duration: .5s;
-         -o-transition-duration: .5s;
-            transition-duration: .5s;
-    -webkit-transition-timing-function: linear;
-       -moz-transition-timing-function: linear;
-         -o-transition-timing-function: linear;
-            transition-timing-function: linear;
+  @include transition-hover()
 }
 
 a.feature-button:hover{
@@ -70,7 +73,7 @@ a.button-black{
      &:hover{
        color: $red;
        text-decoration:none;
-     
+
    }
   }
 
@@ -182,4 +185,3 @@ a.button-black{
        margin-top: 1em;
   }
 }
-
