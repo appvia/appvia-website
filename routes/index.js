@@ -7,7 +7,7 @@ const moment = require('moment');
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 const storyBlokToken = process.env.STORYBLOK_TOKEN;
 
-let Storyblok = new StoryblokClient({
+const Storyblok = new StoryblokClient({
   accessToken: storyBlokToken
 })
 
