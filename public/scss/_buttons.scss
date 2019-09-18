@@ -1,3 +1,17 @@
+@mixin transition-hover(){
+-webkit-transition-property: border, color, background-color;
+      -moz-transition-property: border, color, background-color;
+        -o-transition-property: border, color, background-color;
+           transition-property: border, color, background-color;
+   -webkit-transition-duration: .5s;
+      -moz-transition-duration: .5s;
+        -o-transition-duration: .5s;
+           transition-duration: .5s;
+   -webkit-transition-timing-function: linear;
+      -moz-transition-timing-function: linear;
+        -o-transition-timing-function: linear;
+           transition-timing-function: linear;
+}
 
 button.choice{
   padding: .4em;
@@ -15,6 +29,12 @@ button.choice:hover{
 }
 button:focus {outline:0;}
 
+button.back-button{
+  margin-top: 2em;
+  display: block;
+  font-size: 1em;
+}
+
 
 a.button{
   border: solid 1px $red;
@@ -26,6 +46,42 @@ a.button{
     border-color: $white;
   }
 }
+
+
+a.feature-button{
+  width:100%;
+  text-align: center;
+  color: $white;
+  border: solid 1px $black;
+  padding: .4em;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2em;
+  margin-top: 2.2em;
+  background-color: rgba(0,0,0,0.8);
+  @include transition-hover()
+}
+
+a.feature-button:hover{
+  border-color: $white;
+  color: $red;
+}
+
+
+a.button-black{
+    display: inline-block;
+    background-color: #1a1a1d;
+    padding: .3em .6em;
+    text-transform: uppercase;
+    font-size: 1.2em;
+     color: $white;
+     &:hover{
+       color: $red;
+       text-decoration:none;
+
+   }
+  }
 
 
 #top {
@@ -92,4 +148,61 @@ a.button{
 @-o-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+
+//x-small
+@media (max-width: 320px) {
+  a.button-black{
+    font-size: .6em;
+  }
+  a.feature-button{
+    font-size: .8em;
+    margin-top: 1em;
+  }
+  a.button{
+    text-align:center;
+    width:100%;
+  }
+  button.back-button{
+    font-size: .7em;
+  }
+}
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+  a.button-black{
+    font-size: .7em;
+  }
+  a.feature-button{
+   font-size: .9em;
+    margin-top: 1em;
+  }
+  a.button{
+    text-align:center;
+    width:100%;
+  }
+  button.back-button{
+    font-size: .8em;
+  }
+
+}
+//medium
+@media screen and (min-width:575.99px) and (max-width:768px){
+  a.button-black{
+    font-size: .8em;
+  }
+    a.feature-button{
+   font-size: 1em;
+    margin-top: 1em;
+  }
+}
+//large
+@media screen and (min-width:769px) and (max-width:992px){
+  a.button-black{
+    font-size: 1em;
+  }
+    a.feature-button{
+   font-size: 1.2em;
+       margin-top: 1em;
+  }
 }

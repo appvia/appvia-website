@@ -8,31 +8,36 @@
 {% block content %}
 
 
-    {{ navigation.nav('blog', hubDemoEnabled) }}
-
-    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: rss.body.story.content.Title, link: false }]) }}
-
-    <div class="page-title">
-      <h1>{{rss.body.story.content.Title}}</h1>
-    </div>
-
-    <div class="center-column">
-
-      <ul>
-        <li>{{rss.body.story.content.Author}}</li>
-        <li>{{rss.body.story.content.Date}}</li>
-      </ul>
+  {{ navigation.nav('blog') }}
 
 
-      <p>{{rss.body.story.content.Story}}</p>
 
-      <h4>Tags</h4>
-      <ul>
-          {% for tag in rss.body.story.tag_list %}
-          <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
-          {% endfor %}
+  {% if data.content.thumbnail %}
+    <div class="blog-post-main-image" style="background-image:url('{{data.content.thumbnail}}')"></div>
+  {% endif %}
+
+  <div class="center-column blog-column">
+    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
+    <div class="blog-head">
+      <h1>{{data.name}}</h1>
+      {% if data.content.author_profile_pic %}
+        <img src="{{data.content.author_profile_pic}}" alt="{{data.content.author}}" class="profile-image">
+      {% else %}
+        <i class="fas fa-user-circle generic-user"></i>
+      {% endif %}
+      <ul class="meta">
+        <li>{{data.content.author}}</li>
+        <li>{{published(data.first_published_at)}}</li>
       </ul>
     </div>
+    <div class="blog-body">{{story | safe }}</div>
+    <ul class="tags">
+      {% for tag in data.tag_list %}
+      <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
+      {% endfor %}
+    </ul>
+    <button class="back-button" onclick="javascript:history.go(-1)"><i class="fas fa-angle-double-left"></i> Go Back</button>
+  </div>
 
 {% endblock %}
 

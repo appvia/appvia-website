@@ -29,6 +29,11 @@ a:hover{
   margin-top: 6em;
 }
 
+#map {
+  height: 400px;
+  width: 100%;
+}
+
 //x-small
 @media (max-width: 320px) {
   .content-container{

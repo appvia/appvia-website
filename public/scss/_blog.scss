@@ -1,0 +1,166 @@
+ul.tags{
+	list-style: none;
+	margin-top: 1em;
+}
+
+ul.tags li{
+	border: solid 1px $red;
+	border-radius: .6em;
+	display: inline-block;
+	padding: .1em .4em;
+	font-size: .7em;
+	margin-right: .6em;
+	&:hover{
+		background-color: $red;
+		a{
+			color: $white;
+			@include transition-hover()
+		}
+	}
+	a:hover{
+		text-decoration: none;
+	}
+}
+
+.blog-post-main-image{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width:100%;
+    height:400px;
+		margin-top: -10px;
+}
+.blog-post-thumbnail-outer-div{
+  height: 200px;
+  overflow: hidden;
+}
+.blog-post-thumbnail{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width:100%;
+  height:200px;
+	transition: all 0.5s ease;
+}
+
+a:hover .blog-post-thumbnail {
+  transform: scale(1.1);
+}
+
+.blog-head{
+	h1{
+		font-size: 2em;
+		margin-bottom: 1em;
+	}
+	.meta{
+		list-style: none;
+		font-size: .8em;
+		margin-top: .3em;
+		display: inline-block;
+		li{
+			margin-bottom: .2em;
+			display: block;
+			margin-right: 2em;
+		}
+	}
+}
+
+.generic-user{
+	font-size: 3.2em;
+	float: left;
+	margin-right: .2em;
+}
+
+.profile-image {
+	width: 64px;
+  height: 64px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  margin-right: .6em;
+}
+.blog-body{
+	margin-top: 1em;
+	p{
+		margin-bottom: 1em;
+	}
+	ul,ol{
+		margin: 1em 0 1em 2em;
+		li{
+			p{
+				margin-bottom: 0;
+			}
+		}
+	}
+	img{
+		width: 100%;
+    padding: 6px;
+    background-color: $white;
+	}
+}
+blockquote{
+	border-left: solid 4px $off-white;
+  padding-left: .8em;
+  font-style: italic;
+}
+bold{
+	font-weight: 800;
+}
+italic{
+	font-style: italic;
+}
+code{
+	padding: .8em;
+  border: solid 1px $dark-grey;
+  border-radius: .8em;
+	background-color: $dark-green;
+	margin-bottom: 2em;
+}
+
+pre code{
+	background-color: $dark-blue;
+	display: block;
+}
+
+//x-small
+@media (max-width: 320px) {
+	.generic-user{
+		font-size: 2em;
+		float: none;
+	}
+	.blog-head{
+		h1{
+			font-size: 1em;
+		}
+		.meta{
+			font-size: .6em;
+		}
+	}
+
+}
+//small
+@media screen and (min-width:321px) and (max-width: 575.98px){
+	.generic-user{
+
+	}
+	.blog-head{
+		h1{
+			font-size: 1.2em;
+		}
+	}
+
+}
+//medium
+@media screen and (min-width:575.99px) and (max-width:768px){
+	.generic-user{
+		font-size: 3em;
+	}
+}
+//large
+@media screen and (min-width:769px) and (max-width:992px){
+	.generic-user{
+		font-size: 3em;
+	}
+}

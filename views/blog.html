@@ -7,39 +7,39 @@
 
 {% block content %}
 
+  {{ navigation.nav('blog') }}
 
-    {{ navigation.nav('blog', hubDemoEnabled) }}
-
+  <div class="center-column">
     {{ breadcrumb.links([{ text: 'Blog', link: false }]) }}
-
     <div class="page-title">
       <h1>Appvia Blog</h1>
       <h2 class="sub-title">Read our latest blog posts.</h2>
     </div>
-
-
-    <div class="content-container">
-      <div class="row">
-      {% for item in rss.body.stories %}
-        <div class="col-12 col-md-6">
-          <div class="item">
-              <h3>{{ item.content.Title }}</h3>
-              <ul class="meta">
-                  <li><i class="fa fa-user"></i> {{ item.content.Author }}</li>
-                  <li><i class="fas fa-calendar-alt"></i> {{ item.Date}}</li>
-              </ul>
-              <p>{{ item.content.Story | striptags(true) | truncate(220)}}</p>
-              <a href="/blog/{{ item.slug }}" class="button">Read Article</a>
-              <ul class="tags">
-                {% for tag in item.tag_list %}
-                <li><a href="/blog/tag/{{ tag }}">{{ tag }}</a></li>
-                  {% endfor %}
-              </ul>
-          </div>
+    <div class="row">
+    {% for item in data %}
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="item">
+          <a href="/blog/{{ item.slug }}">
+            <div class="blog-post-thumbnail-outer-div">
+            {% if item.content.thumbnail %}
+              <div class="blog-post-thumbnail" style="background-image:url('{{item.content.thumbnail}}')"></div>
+            {% else %}
+              <div class="blog-post-thumbnail generic-thumbnail"></div>
+            {% endif %}
+            </div>
+          </a>
+          <h3>{{ item.name }}</h3>
+          <ul class="meta">
+              <li><i class="fa fa-user"></i> {{ item.content.author }}</li>
+              <li><i class="fas fa-calendar-alt"></i> {{  published(item.first_published_at) }}</li>
+          </ul>
+          <p>{{ story(item.content.story) | striptags(true) | truncate(220)}}</p>
+          <a href="/blog/{{ item.slug }}" class="button">Read Article</a>
         </div>
-      {% endfor %}
       </div>
+    {% endfor %}
     </div>
+  </div>
 
 {% endblock %}
 

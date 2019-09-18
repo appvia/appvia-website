@@ -6,6 +6,8 @@
   transform: translate(-50%, -50%);
 }
 
+
+
 .home-title {
   @include absolute-centered()
   top: 40%;
@@ -34,45 +36,36 @@
 }
 
 .hero-title {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 74%;
-  top: 40%;
   h1{
-      margin-top: 2em;
-    font-size: 2.5em;
+    font-size: 4em;
+    margin-bottom: .4em;
   }
-  .learn-why{
-    display: inline-block;
-    margin-top: 1em;
-  background-color: #1a1a1d;
-  padding: .1em .4em;
-  text-transform: uppercase;
-  font-size:.8em;
-   a{
-     color: $white;
-     &:hover{
-       color: $red;
-       text-decoration:none;
-     }
-   }
+  h2{
+    font-size: 2.4em;
+    margin-bottom: .8em;
+  }
+  p{
+    font-size: 1.2em;
+    line-height: 1.6em;
   }
 }
 .hero-toplevel{
-
   h1{
     text-transform: uppercase;
   }
   h2{
-    margin-bottom: .4em;
-    font-size: 2em;
+    margin-bottom: .3em;
+    font-size: 2.3em;
     margin-top: .2em;
   }
+  h3{
+    font-size: 2.4em;
+    font-weight: 100;
+    line-height: 1.2em;
+    }
   p{
-    font-size: 1.2em;
-    margin-bottom: 1em;
+    font-size: 1.6em;
+    margin-bottom: 1em !important;
   }
 }
  .hero-sublevel{
@@ -116,10 +109,7 @@
 }
 
 .sub-title {
-  @include absolute-centered()
-  margin-top: 12em;
-  //top: 30%;
-  width: 90%;
+
 }
 
 .title-black-on-red{
@@ -199,14 +189,12 @@ a.back-link{
 }
 
 .content{
-  top: 8em;
+  top: 5em;
   position: relative;
   margin-bottom: 2em;
   .page-title{
-    width: auto;
+    width: 100%;
     text-align: center;
-    margin: 0 auto 2em auto;
-    display: table;
     h1{
       font-size: 4em;
       text-transform: uppercase;
@@ -216,7 +204,7 @@ a.back-link{
     }
   }
   .sub-title{
-    margin-top: 2em;
+    margin-top: 1em;
   }
   .copyright{
     position: fixed;
@@ -246,7 +234,7 @@ hr {
   font-size: 1.2em;
   padding: 1em;
   margin: 1em 0;
-  min-height: 17em;
+  min-height: 15em;
   background-color: rgba(26, 26, 29, 0.5);
   h3{
     text-transform: uppercase;
@@ -289,6 +277,9 @@ p a{
   background-color:  rgba(26, 26, 29, 0.8);
   min-height: 12em;
   text-align: center;
+  h3{
+    margin-bottom: 1em;
+  }
 }
 
 .services-box{
@@ -360,17 +351,10 @@ z-index: 10;
   float: right;
 }
 .center-column{
-  margin: 1em auto 0 auto;
-  width: 66%;
+  margin: 0 auto;
+  width: 60%;
   padding: 1em;
   font-size: 1.2em;
-  h2{
-    font-size: 2em;
-    margin-bottom: 1em;
-  }
-  h3{
-    margin-bottom: 1em;
-  }
 }
 
 
@@ -398,12 +382,7 @@ z-index: 10;
 }
 //x-small
 @media (max-width: 320px) {
-  .home-title {
-    width: 90%;
-    h1{
-      font-size: 1.2em;
-    }
-  }
+
   .scroll {
     bottom: 4em;
   }
@@ -440,9 +419,16 @@ z-index: 10;
 }
 .hero-title {
   width: 90%;
-  top: 34%;
-  .learn-why{
-    font-size: .5em;
+  top: 10%;
+  h1{
+    font-size: 1.2em;
+  }
+  h2{
+    font-size: 1em;
+  }
+  p{
+    font-size: .8em;
+    line-height: 1.4em;
   }
 }
 
@@ -481,6 +467,7 @@ z-index: 10;
     .item{
     padding:  0;
     main-height: auto;
+    font-size: .9em;
     }
 
     .help-text{
@@ -504,16 +491,13 @@ z-index: 10;
       margin: 8em 0 .5em 0;
       padding: .5em;
     }
+    .callout-job{
+      font-size: .7em;
+    }
 }
 //small
 @media screen and (min-width:321px) and (max-width: 575.98px){
-  .home-title {
-    top: 30%;
-    width: 80%;
-    h1{
-      font-size: 1.6em;
-    }
-  }
+
   .scroll {
     bottom: 10em;
   }
@@ -549,9 +533,17 @@ z-index: 10;
   .hero-title {
     width: 90%;
     top: 34%;
-    .learn-why{
-      font-size: .6em;
+    h1{
+    font-size: 1.4em;
     }
+      h2{
+    font-size: 1.2em;
+  }
+  p{
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+
   }
   .feature-boxes{
     font-size: .6em;
@@ -591,6 +583,7 @@ z-index: 10;
         .item{
         padding:  0;
         min-height: auto;
+        font-size: .9em;
         }
         .help-text{
           font-size: .6em;
@@ -606,6 +599,9 @@ z-index: 10;
         .meta{
           font-size: .6em;
         }
+  .callout-job{
+    font-size: .8em;
+  }
 }
 
 @media screen and (min-width:600px) and (max-width:600px){
@@ -630,11 +626,7 @@ z-index: 10;
 
 //medium
 @media screen and (min-width:575.99px) and (max-width:768px){
-  .home-title {
-    h1{
-      font-size: 2em;
-    }
-  }
+
 
 
   .content{
@@ -665,6 +657,17 @@ z-index: 10;
   .hero-title {
     width: 80%;
     top: 30%;
+    h1{
+    font-size: 1.8em;
+    }
+          h2{
+    font-size: 1.6em;
+  }
+  p{
+    font-size: 1em;
+    line-height: 1.4em;
+  }
+
   }
   .text-black-bordered{
     font-size: 1.4em;
@@ -682,15 +685,24 @@ z-index: 10;
     }
     .item{
       min-height: auto;
+      font-size: 1em;
     }
 
 }
 //large
 @media screen and (min-width:769px) and (max-width:992px){
-  .home-title {
+.hero-title {
+
     h1{
-      font-size: 3em;
+    font-size: 1.8em;
     }
+    h2{
+    font-size: 1.4em;
+  }
+  p{
+    font-size: 1em;
+    line-height: 1.4em;
+  }
   }
   .content{
     top: 6em;
@@ -717,16 +729,33 @@ z-index: 10;
     }
 
   .center-column{
-    width: 80%;
+    width: 90%;
+  }
+  .item{
+    min-height: auto;
+    font-size: 1em;
   }
 }
 
 @media screen and (min-width:993px) and (max-width:1930px){
-
+  .center-column{
+    width: 80%;
+  }
+    .center-column.blog-column{
+      max-width: 728px;
+    }
 .hero-title {
- 
+
   h1{
-    font-size: 2em;
+    font-size: 3em;
   }
  }
+}
+@media screen and (min-width:1800px){
+  .center-column{
+    width: 60%;
+  }
+    .center-column.blog-column{
+      max-width: 728px;
+    }
 }
