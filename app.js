@@ -61,8 +61,7 @@ if (app.get('env') === 'development') {
       status: err.status,
       html_class: 'error',
       error: err,
-      pageClass: 'content fixed-background',
-      hubDemoEnabled
+      pageClass: 'content fixed-background'
     });
   });
 }
@@ -77,8 +76,7 @@ app.use(function (err, req, res, next) {
     status: err.status,
     html_class: 'error',
     error: {},
-    pageClass: 'content fixed-background',
-    hubDemoEnabled
+    pageClass: 'content fixed-background'
   });
 });
 

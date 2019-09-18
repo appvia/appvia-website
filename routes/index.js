@@ -13,7 +13,7 @@ const Storyblok = new StoryblokClient({
 })
 
 //todo:
-// - refactor in to blog routes
+// - refactor blog and job in to seperate route files
 
 function renderStory(data){
   return Storyblok.richTextResolver.render(data)
@@ -69,8 +69,13 @@ router.get('/blog', function (req, res) {
       published: convertTime
     });
   }).catch(error => {
-    logger.info(error)
-  })
+    logger.error('Page failed: %j', error);
+      res.render('error.html', {
+      title: error.name,
+      message: error.response.statusText,
+      status: error.response.status
+    });
+  });
 });
 
 router.get('/blog/:blogpost', async function (req, res) {
@@ -84,11 +89,14 @@ router.get('/blog/:blogpost', async function (req, res) {
       published: convertTime
     });
   }).catch(error => {
-    logger.info(error)
-  })
+    logger.error('Page failed: %j', error);
+      res.render('error.html', {
+      title: error.name,
+      message: error.response.statusText,
+      status: error.response.status
+    });
+  });
 });
-
-
 
 router.get('/blog/tag/:tag', function (req, res) {
   Storyblok.get('cdn/stories/', {
@@ -105,8 +113,13 @@ router.get('/blog/tag/:tag', function (req, res) {
       published: convertTime
     });
   }).catch(error => {
-    logger.info(error)
-  })
+    logger.error('Page failed: %j', error);
+      res.render('error.html', {
+      title: error.name,
+      message: error.response.statusText,
+      status: error.response.status
+    });
+  });
 });
 
 router.get('/careers', function (req, res) {
@@ -121,8 +134,13 @@ router.get('/careers', function (req, res) {
       data: data
     });
   }).catch(error => {
-    logger.info(error)
-  })
+    logger.error('Page failed: %j', error);
+      res.render('error.html', {
+      title: error.name,
+      message: error.response.statusText,
+      status: error.response.status
+    });
+  });
 });
 
 router.get('/contact-us', function (req, res) {
@@ -146,8 +164,13 @@ router.get('/careers/:jobpost', function (req, res) {
     });
 
   }).catch(error => {
-    logger.info(error)
-  })
+    logger.error('Page failed: %j', error);
+      res.render('error.html', {
+      title: error.name,
+      message: error.response.statusText,
+      status: error.response.status
+    });
+  });
 });
 
 router.get('/privacy-policy', function (req, res) {
