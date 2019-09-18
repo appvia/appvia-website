@@ -1,14 +1,10 @@
 var express = require('express');
-var Parser = require('rss-parser');
-var parser = new Parser();
 var router = express.Router();
 
 const StoryblokClient = require('storyblok-js-client')
 const moment = require('moment');
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
-
-const jobs = require('../jobs').filter(j => j.active);
 
 let Storyblok = new StoryblokClient({
   accessToken: 'jea6Oj4I6rk2WChhurZRUgtt'
@@ -21,6 +17,7 @@ let Storyblok = new StoryblokClient({
 function renderStory(data){
   return Storyblok.richTextResolver.render(data)
 }
+
 function convertTime(date){
   return moment(date).format("MMM Do YYYY");
 }
@@ -129,18 +126,10 @@ router.get('/contact-us', function (req, res) {
   res.render('contact-us.html', {title: 'Appvia: Contact Us'});
 });
 
-/*
-jobs.forEach(job => {
-  router.get(`/careers/${job.slug}`, function (req, res) {
-    res.render('job.html', {title: 'Appvia: Careers', job: job, hubDemoEnabled});
-  });
-});
-*/
 router.get('/careers/:jobpost', async function (req, res) {
   Storyblok.get('cdn/stories/jobs/'+req.params.jobpost)
   .then(response => {
     var data = response.data.story
-    console.log(data)
     res.render('job.html', {
       title: 'Appvia: Blog - ' + data.name,
       about: renderStory(data.content.About),
@@ -157,7 +146,6 @@ router.get('/careers/:jobpost', async function (req, res) {
     console.log(error)
   })
 });
-
 
 router.get('/privacy-policy', function (req, res) {
   res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy', hubDemoEnabled});
