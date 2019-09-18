@@ -5,13 +5,13 @@ const StoryblokClient = require('storyblok-js-client')
 const moment = require('moment');
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
+const storyBlokToken = process.env.STORYBLOK_TOKEN;
 
 let Storyblok = new StoryblokClient({
-  accessToken: 'jea6Oj4I6rk2WChhurZRUgtt'
+  accessToken: storyBlokToken
 })
 
 //todo:
-// - put token in env configs
 // - refactor in to blog routes
 
 function renderStory(data){
