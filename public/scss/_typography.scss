@@ -239,7 +239,7 @@ hr {
   font-size: 1.2em;
   padding: 1em;
   margin: 1em 0;
-  min-height: 17em;
+  min-height: 15em;
   background-color: rgba(26, 26, 29, 0.5);
   h3{
     text-transform: uppercase;
@@ -282,6 +282,9 @@ p a{
   background-color:  rgba(26, 26, 29, 0.8);
   min-height: 12em;
   text-align: center;
+  h3{
+    margin-bottom: 1em;
+  }
 }
 
 .services-box{
@@ -469,6 +472,7 @@ z-index: 10;
     .item{
     padding:  0;
     main-height: auto;
+    font-size: .9em;
     }
 
     .help-text{
@@ -491,6 +495,9 @@ z-index: 10;
       line-height: 1.3em;
       margin: 8em 0 .5em 0;
       padding: .5em;
+    }
+    .callout-job{
+      font-size: .7em;
     }
 }
 //small
@@ -581,6 +588,7 @@ z-index: 10;
         .item{
         padding:  0;
         min-height: auto;
+        font-size: .9em;
         }
         .help-text{
           font-size: .6em;
@@ -596,6 +604,9 @@ z-index: 10;
         .meta{
           font-size: .6em;
         }
+  .callout-job{
+    font-size: .8em;
+  }
 }
 
 @media screen and (min-width:600px) and (max-width:600px){
@@ -679,6 +690,7 @@ z-index: 10;
     }
     .item{
       min-height: auto;
+      font-size: 1em;
     }
 
 }
@@ -723,6 +735,10 @@ z-index: 10;
 
   .center-column{
     width: 90%;
+  }
+  .item{
+    min-height: auto;
+    font-size: 1em;
   }
 }
 

@@ -59,7 +59,9 @@ router.get('/services/support', function (req, res) {
 
 
 router.get('/blog', async function (req, res) {
-  Storyblok.get('cdn/stories/')
+  Storyblok.get('cdn/stories/',{
+    'starts_with': 'blog/'
+  })
   .then(response => {
     var data = response.data.stories
     res.render('blog.html', {
@@ -79,7 +81,7 @@ router.get('/blog/:blogpost', async function (req, res) {
     var data = response.data.story
     res.render('blog-post.html', {
       title: 'Appvia: Blog - ' + data.name ,
-      story: Storyblok.richTextResolver.render(data.content.story),
+      story: renderStory(data.content.story),
       data: data,
       published: convertTime
     });
@@ -90,7 +92,8 @@ router.get('/blog/:blogpost', async function (req, res) {
 
 router.get('/blog/tag/:tag', async function (req, res) {
   Storyblok.get('cdn/stories/', {
-    "with_tag": req.params.tag
+    'starts_with': 'blog/',
+    'with_tag': req.params.tag
   })
   .then(response => {
     var data = response.data.stories
@@ -107,18 +110,54 @@ router.get('/blog/tag/:tag', async function (req, res) {
 });
 
 router.get('/careers', function (req, res) {
-  res.render('careers.html', {title: 'Appvia: Careers', jobCount: jobs.length, jobs, hubDemoEnabled});
+  Storyblok.get('cdn/stories/', {
+    'starts_with': 'jobs/'
+  })
+  .then(response => {
+    var data = response.data.stories
+    res.render('careers.html', {
+      title: 'Appvia: Careers',
+      role: renderStory,
+      data: data
+    });
+  }).catch(error => {
+    console.log(error)
+  })
 });
 
 router.get('/contact-us', function (req, res) {
   res.render('contact-us.html', {title: 'Appvia: Contact Us'});
 });
 
+/*
 jobs.forEach(job => {
   router.get(`/careers/${job.slug}`, function (req, res) {
     res.render('job.html', {title: 'Appvia: Careers', job: job, hubDemoEnabled});
   });
 });
+*/
+router.get('/careers/:jobpost', async function (req, res) {
+  Storyblok.get('cdn/stories/jobs/'+req.params.jobpost)
+  .then(response => {
+    var data = response.data.story
+    console.log(data)
+    res.render('job.html', {
+      title: 'Appvia: Blog - ' + data.name,
+      about: renderStory(data.content.About),
+      role: renderStory(data.content.the_role),
+      key_responsibilities: renderStory(data.content.key_responsibilities),
+      attributes: renderStory(data.content.attributes),
+      remuneration: renderStory(data.content.remuneration),
+      security_clearance: renderStory(data.content.security_clearance),
+      data: data,
+      published: convertTime
+    });
+
+  }).catch(error => {
+    console.log(error)
+  })
+});
+
 
 router.get('/privacy-policy', function (req, res) {
   res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy', hubDemoEnabled});

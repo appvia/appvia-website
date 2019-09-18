@@ -160,6 +160,13 @@ a.button-black{
     font-size: .8em;
     margin-top: 1em;
   }
+  a.button{
+    text-align:center;
+    width:100%;
+  }
+  button.back-button{
+    font-size: .7em;
+  }
 }
 //small
 @media screen and (min-width:321px) and (max-width: 575.98px){
@@ -170,6 +177,14 @@ a.button-black{
    font-size: .9em;
     margin-top: 1em;
   }
+  a.button{
+    text-align:center;
+    width:100%;
+  }
+  button.back-button{
+    font-size: .8em;
+  }
+
 }
 //medium
 @media screen and (min-width:575.99px) and (max-width:768px){
