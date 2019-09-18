@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const StoryblokClient = require('storyblok-js-client')
 const moment = require('moment');
@@ -60,7 +60,7 @@ router.get('/blog', async function (req, res) {
     'starts_with': 'blog/'
   })
   .then(response => {
-    var data = response.data.stories
+    let data = response.data.stories
     res.render('blog.html', {
       title: 'Appvia: Blog',
       story: renderStory,
@@ -75,7 +75,7 @@ router.get('/blog', async function (req, res) {
 router.get('/blog/:blogpost', async function (req, res) {
   Storyblok.get('cdn/stories/blog/'+req.params.blogpost)
   .then(response => {
-    var data = response.data.story
+    let data = response.data.story
     res.render('blog-post.html', {
       title: 'Appvia: Blog - ' + data.name ,
       story: renderStory(data.content.story),
@@ -93,7 +93,7 @@ router.get('/blog/tag/:tag', async function (req, res) {
     'with_tag': req.params.tag
   })
   .then(response => {
-    var data = response.data.stories
+    let data = response.data.stories
     res.render('blog-tags.html', {
       title: 'Appvia: Blog - Tag: ' + req.params.tag,
       tag: req.params.tag,
@@ -111,7 +111,7 @@ router.get('/careers', function (req, res) {
     'starts_with': 'jobs/'
   })
   .then(response => {
-    var data = response.data.stories
+    let data = response.data.stories
     res.render('careers.html', {
       title: 'Appvia: Careers',
       role: renderStory,
@@ -129,7 +129,7 @@ router.get('/contact-us', function (req, res) {
 router.get('/careers/:jobpost', async function (req, res) {
   Storyblok.get('cdn/stories/jobs/'+req.params.jobpost)
   .then(response => {
-    var data = response.data.story
+    let data = response.data.story
     res.render('job.html', {
       title: 'Appvia: Blog - ' + data.name,
       about: renderStory(data.content.About),
