@@ -22,72 +22,70 @@
       <div class="col-sm-12 col-md-6 col-lg-6">
         <h2>What is the Appvia Hub?</h2>
         <p>Appvia Hub is our core product, a complete solution for building and managing your apps independently from each other – however many you plan to run at the same time.</p>
-        <p>It’s a self-service developer platform that promotes a modern Agile approach, using cloud computing and containers to decouple your apps from the environment in which they run, 
+        <p>It’s a self-service developer platform that promotes a modern Agile approach, using cloud computing and containers to decouple your apps from the environment in which they run,
           to create highly portable, easily scalable software.</p>
- 
-          <p>The result? Appvia Hub takes the load of infrastructure management off your developers’ shoulders. It also gives them all the resources they need to build and deploy software 
+
+          <p>The result? Appvia Hub takes the load of infrastructure management off your developers’ shoulders. It also gives them all the resources they need to build and deploy software
             more efficiently. So all your efforts can go into adding value for your customers.</p>
-            
+
             <div class="tabs">
             <div class="tab">
               <input type="checkbox" id="chck1">
               <label class="tab-label" for="chck1">How Appvia Hub empowers you</label>
               <div class="tab-content">
                 <h3>Create a powerful platform for your app</h3>
-                
+
                   <ul class="list-bullet mb-2">
                     <li>Ideal for initial setup or migration</li>
                     <li>Cloud agnostic – manage your apps across multiple clouds and integrations</li>
                     <li>Includes Docker registries (Quay or ECR)</li>
                     <li>Creates Kubernetes clusters using those offered by cloud services</li>
-                  </ul>  
-                 
+                  </ul>
+
                 <h3>Future-proof your apps</h3>
                 <ul class="list-bullet mb-2">
                   <li>Our platform creates app resilience and flexibility</li>
                   <li>Standardised infrastructure that’s portable and easy to scale</li>
-                </ul>  
-                 
+                </ul>
+
                <h3>Stay in control</h3>
                 <ul class="list-bullet mb-2">
                   <li>Have a central view on your activities within a single ‘space’</li>
                   <li>Monitoring dashboards report on performance</li>
                   <li>SSO authentication integration</li>
                   <li>Manage robot tokens for continuous integration (CI) pipelines</li>
-                 </ul> 
-                 
+                 </ul>
+
                 <h3>Give your developers everything they need</h3>
                 <ul class="list-bullet mb-2">
                   <li>Git repositories with a full suite of tools</li>
                   <li>Talks to GitHub and SaaS products</li>
-                </ul>  
-                 
+                </ul>
+
                 <h3>Best practices built in for your security</h3>
                 <ul class="list-bullet mb-2">
                   <li>Rigorous performance testing through all standard testing cycles</li>
                   <li>Best practices enforced by overrides where necessary</li>
                   <li>Helps identify vulnerabilities across your Kubernetes clusters</li>
                   <li>Enforces security through the lifecycle of your app</li>
-                 </ul> 
-                 
+                 </ul>
+
                 <h3>Support to suit you</h3>
                 <ul class="list-bullet mb-2">
                   <li>24/7 service by phone and live chat</li>
                   <li>Choice of email support response times, from 24 hours to 1 hour</li>
                   <li>You manage the status and priority of support tickets</li>
                   <li>We can provide an on-site engineer and training</li>
-                 </ul> 
+                 </ul>
               </div>
             </div>
-    
+
           </div>
 
-
-
-
-          
-
+        {% if hubDemoEnabled %}
         <a href="/products/hub-demo" class="button">Request a demo</a>
+        {% endif %}
+
       </div>
       <div class="col-sm-12 col-md-6 col-lg-6">
         <img src="/assets/img/undraw_personal_settings_kihd.svg" style="width:100%">

@@ -23,7 +23,7 @@ function convertTime(date){
 }
 
 router.get('/', function (req, res) {
-  res.render('index.html', {title: 'Appvia: Home', hubDemoEnabled});
+  res.render('index.html', {title: 'Appvia: Home'});
 });
 
 router.get('/why-appvia', function (req, res) {
@@ -35,7 +35,7 @@ router.get('/products', function (req, res) {
 });
 
 router.get('/products/hub', function (req, res) {
-  res.render('hub.html', {title: 'Appvia: Hub'});
+  res.render('hub.html', {title: 'Appvia: Hub', hubDemoEnabled});
 });
 
 router.get('/products/kubernetes-security-scanner', function (req, res) {
@@ -148,7 +148,7 @@ router.get('/careers/:jobpost', function (req, res) {
 });
 
 router.get('/privacy-policy', function (req, res) {
-  res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy', hubDemoEnabled});
+  res.render('privacy-policy.html', {title: 'Appvia: Privacy Policy'});
 });
 
 module.exports = router;
