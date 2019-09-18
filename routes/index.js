@@ -72,12 +72,12 @@ router.get('/blog', function (req, res) {
   })
 });
 
-router.get('/blog/:blogpost', function (req, res) {
-  Storyblok.get('cdn/stories/blog/'+req.params.blogpost)
+router.get('/blog/:blogpost', async function (req, res) {
+  Storyblok.get(`cdn/stories/blog/${req.params.blogpost}`)
   .then(response => {
     let data = response.data.story
     res.render('blog-post.html', {
-      title: 'Appvia: Blog - ' + data.name ,
+      title: `Appvia: Blog - ${data.name}`,
       story: renderStory(data.content.story),
       data: data,
       published: convertTime
@@ -87,6 +87,8 @@ router.get('/blog/:blogpost', function (req, res) {
   })
 });
 
+
+
 router.get('/blog/tag/:tag', function (req, res) {
   Storyblok.get('cdn/stories/', {
     'starts_with': 'blog/',
@@ -95,7 +97,7 @@ router.get('/blog/tag/:tag', function (req, res) {
   .then(response => {
     let data = response.data.stories
     res.render('blog-tags.html', {
-      title: 'Appvia: Blog - Tag: ' + req.params.tag,
+      title: `Appvia: Blog - Tag: ${req.params.tag}`,
       tag: req.params.tag,
       story: renderStory,
       data: data,
@@ -127,11 +129,11 @@ router.get('/contact-us', function (req, res) {
 });
 
 router.get('/careers/:jobpost', function (req, res) {
-  Storyblok.get('cdn/stories/jobs/'+req.params.jobpost)
+  Storyblok.get(`cdn/stories/jobs/${req.params.jobpost}`)
   .then(response => {
     let data = response.data.story
     res.render('job.html', {
-      title: 'Appvia: Blog - ' + data.name,
+      title: `Appvia: Blog - ${data.name}`,
       about: renderStory(data.content.About),
       role: renderStory(data.content.the_role),
       key_responsibilities: renderStory(data.content.key_responsibilities),
