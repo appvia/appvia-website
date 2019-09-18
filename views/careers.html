@@ -9,9 +9,9 @@
 
   {{ navigation.nav('careers') }}
 
+<div class="center-column">
   {{ breadcrumb.links([{ text:'Careers', link: false }]) }}
-
-  <div class="page-title">
+  <div class="page-title">  
     <h1>Careers</h1>
     {% if data | length  %}
         <h2 class="sub-title">Please see our open positions below.</h2>
@@ -20,7 +20,6 @@
     {% endif %}
   </div>
 
-  <div class="center-column mt-3">
     <div class="row">
     {% for job in data | reverse %}
       <div class="col-12 col-md-6">

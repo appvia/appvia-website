@@ -9,16 +9,12 @@
 
   {{ navigation.nav('Services') }}
 
-  {{ breadcrumb.links([{ text: 'Services', link: '/services' }, { text: 'Consultancy', link: false }]) }}
-
-  <div class="page-title">
-    <h1>Consultancy</h1>
-
-  </div>
-
   <div class="center-column">
-
-    <div class="row">
+    {{ breadcrumb.links([{ text: 'Services', link: '/services' }, { text: 'Consultancy', link: false }]) }}
+    <div class="page-title">
+      <h1>Consultancy</h1>
+    </div>
+    <div class="row mt-3">
       <div class="col-sm-12 col-md-6 col-lg-6">
         <h2>Our consultancy services</h2>
         <p>When it comes to software engineering, we know exactly what we’re talking about. But the first thing we’ll say is nothing. Why? Because whatever stage you’re at, we won’t make any recommendations until we’ve listened to exactly what you need from us.</p>

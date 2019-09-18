@@ -7,17 +7,14 @@
 
 {% block content %}
 
-
   {{ navigation.nav('blog') }}
 
-  {{ breadcrumb.links([{ text: 'Blog', link: false }]) }}
-
-  <div class="page-title">
-    <h1>Appvia Blog</h1>
-    <h2 class="sub-title">Read our latest blog posts.</h2>
-  </div>
-
-  <div class="center-column mt-3">
+  <div class="center-column">
+    {{ breadcrumb.links([{ text: 'Blog', link: false }]) }}
+    <div class="page-title">
+      <h1>Appvia Blog</h1>
+      <h2 class="sub-title">Read our latest blog posts.</h2>
+    </div>
     <div class="row">
     {% for item in data %}
       <div class="col-sm-12 col-md-6 col-lg-6">

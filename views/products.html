@@ -9,52 +9,47 @@
 
   {{ navigation.nav('products') }}
 
+<div class="center-column">
   {{ breadcrumb.links([{ text: 'Our Poducts', link: false }]) }}
-
-    <div class="page-title">
-      <h1>Our Products</h1>
+  <div class="page-title">
+    <h1>Our Products</h1>
+  </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="section-panel hero-toplevel mt-3">
+          <h3>The products we’ve created are here to make your tech life easier, whether you need a complete build and support package, or help to manage your Kubernetes clusters.</h3>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <img src="/assets/img/undraw_product_tour_foyt.svg" style="width: 90%; margin-top: 4em;">
+      </div>
     </div>
 
-    <div class="center-column">
-
-        <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="section-panel hero-toplevel mt-3">
-              <h3>The products we’ve created are here to make your tech life easier, whether you need a complete build and support package, or help to manage your Kubernetes clusters.</h3>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <img src="/assets/img/undraw_product_tour_foyt.svg" style="width: 90%; margin-top: 4em;">
-          </div>
+    <div class="row  mt-4">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="section-panel hero-toplevel">
+          <h2>Appvia Hub</h2>
+          <p>Give your developers the platform and tools they need to deliver brilliant software – all in one place.</p>
+            <a href="/products/hub" class="button">Find out more</a>
         </div>
+      </div>
+    </div>
 
-               <div class="row  mt-4">
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="section-panel hero-toplevel">
-              <h2>Appvia Hub</h2>
-              <p>Give your developers the platform and tools they need to deliver brilliant software – all in one place.</p>
-                <a href="/products/hub" class="button">Find out more</a>
-            </div>
-          </div>
+    <div class="row  mt-4">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="section-panel hero-toplevel ">
+          <h2>Kubernetes Security Scanner</h2>
+          <p>Make it easier to manage role-based access controls (RBAC) across your Kubernetes clusters.</p>
+            <a href="/products/kubernetes-security-scanner" class="button">Find out more</a>
         </div>
-
-        <div class="row  mt-4">
-          <div class="col-sm-12 col-md-6 col-lg-6">
-            <div class="section-panel hero-toplevel ">
-              <h2>Kubernetes Security Scanner</h2>
-              <p>Make it easier to manage role-based access controls (RBAC) across your Kubernetes clusters.</p>
-                <a href="/products/kubernetes-security-scanner" class="button">Find out more</a>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-6 ">
-            <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
-          </div>
-        </div>
-
-
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 ">
+        <img src="/assets/img/undraw_wireframing_nxyi_a.svg" style="margin: 2em;">
+      </div>
+    </div>
   </div>
 
 {% endblock %}

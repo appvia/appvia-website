@@ -9,16 +9,12 @@
 
   {{ navigation.nav('Products') }}
 
-  {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Appvia Hub', link: false }]) }}
-
-  <div class="page-title">
-    <h1>Appvia Hub</h1>
-
-  </div>
-
   <div class="center-column">
-
-    <div class="row">
+    {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Appvia Hub', link: false }]) }}
+    <div class="page-title">
+      <h1>Appvia Hub</h1>
+    </div>
+    <div class="row mt-3">
       <div class="col-sm-12 col-md-6 col-lg-6">
         <h2>What is the Appvia Hub?</h2>
         <p>Appvia Hub is our core product, a complete solution for building and managing your apps independently from each other – however many you plan to run at the same time.</p>

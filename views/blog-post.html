@@ -10,13 +10,14 @@
 
   {{ navigation.nav('blog') }}
 
-  {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
+
 
   {% if data.content.thumbnail %}
     <div class="blog-post-main-image" style="background-image:url('{{data.content.thumbnail}}')"></div>
   {% endif %}
 
   <div class="center-column blog-column">
+    {{ breadcrumb.links([{ text: 'Blog', link: '/blog' }, { text: data.name, link: false }]) }}
     <div class="blog-head">
       <h1>{{data.name}}</h1>
       {% if data.content.author_profile_pic %}

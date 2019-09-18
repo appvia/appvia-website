@@ -109,10 +109,7 @@
 }
 
 .sub-title {
-  @include absolute-centered()
-  margin-top: 12em;
-  //top: 30%;
-  width: 90%;
+
 }
 
 .title-black-on-red{
@@ -192,14 +189,12 @@ a.back-link{
 }
 
 .content{
-  top: 8em;
+  top: 5em;
   position: relative;
   margin-bottom: 2em;
   .page-title{
-    width: auto;
+    width: 100%;
     text-align: center;
-    margin: 0 auto 2em auto;
-    display: table;
     h1{
       font-size: 4em;
       text-transform: uppercase;
@@ -209,7 +204,7 @@ a.back-link{
     }
   }
   .sub-title{
-    margin-top: 2em;
+    margin-top: 1em;
   }
   .copyright{
     position: fixed;
@@ -356,7 +351,7 @@ z-index: 10;
   float: right;
 }
 .center-column{
-  margin: 1em auto 0 auto;
+  margin: 0 auto;
   width: 60%;
   padding: 1em;
   font-size: 1.2em;
