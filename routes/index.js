@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const logger = require('../logger');
 
 const StoryblokClient = require('storyblok-js-client')
 const moment = require('moment');
@@ -68,7 +69,7 @@ router.get('/blog', function (req, res) {
       published: convertTime
     });
   }).catch(error => {
-    console.log(error)
+    logger.info(error)
   })
 });
 
@@ -83,7 +84,7 @@ router.get('/blog/:blogpost', async function (req, res) {
       published: convertTime
     });
   }).catch(error => {
-    console.log(error)
+    logger.info(error)
   })
 });
 
@@ -104,7 +105,7 @@ router.get('/blog/tag/:tag', function (req, res) {
       published: convertTime
     });
   }).catch(error => {
-    console.log(error)
+    logger.info(error)
   })
 });
 
@@ -120,7 +121,7 @@ router.get('/careers', function (req, res) {
       data: data
     });
   }).catch(error => {
-    console.log(error)
+    logger.info(error)
   })
 });
 
@@ -145,7 +146,7 @@ router.get('/careers/:jobpost', function (req, res) {
     });
 
   }).catch(error => {
-    console.log(error)
+    logger.info(error)
   })
 });
 
