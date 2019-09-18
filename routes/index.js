@@ -55,7 +55,7 @@ router.get('/services/support', function (req, res) {
 });
 
 
-router.get('/blog', async function (req, res) {
+router.get('/blog', function (req, res) {
   Storyblok.get('cdn/stories/',{
     'starts_with': 'blog/'
   })
@@ -72,7 +72,7 @@ router.get('/blog', async function (req, res) {
   })
 });
 
-router.get('/blog/:blogpost', async function (req, res) {
+router.get('/blog/:blogpost', function (req, res) {
   Storyblok.get('cdn/stories/blog/'+req.params.blogpost)
   .then(response => {
     let data = response.data.story
@@ -87,7 +87,7 @@ router.get('/blog/:blogpost', async function (req, res) {
   })
 });
 
-router.get('/blog/tag/:tag', async function (req, res) {
+router.get('/blog/tag/:tag', function (req, res) {
   Storyblok.get('cdn/stories/', {
     'starts_with': 'blog/',
     'with_tag': req.params.tag
@@ -126,7 +126,7 @@ router.get('/contact-us', function (req, res) {
   res.render('contact-us.html', {title: 'Appvia: Contact Us'});
 });
 
-router.get('/careers/:jobpost', async function (req, res) {
+router.get('/careers/:jobpost', function (req, res) {
   Storyblok.get('cdn/stories/jobs/'+req.params.jobpost)
   .then(response => {
     let data = response.data.story
