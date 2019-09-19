@@ -26,6 +26,7 @@ jobs:
       - PROJECT_NAME: "appvia-hosting"
       - GOOGLE_PROJECT_ID: "appvia-hosting"
       - GOOGLE_COMPUTE_ZONE: "europe-west2-a"
+      - LC_ALL: "C.UTF-8"
     steps:
       - checkout
       - run:
