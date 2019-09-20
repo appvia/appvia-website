@@ -8,16 +8,15 @@
 
   {{ navigation.nav('error') }}
 
-  <div class="page-title">
-    <h1>{{status}}</h1>
-  </div>
-  <div class="center-column text-center">
-    <h2>{{message}}</h2>
+  <div class="center-column blog-column text-center">
+    <div class="page-title">
+      <h1>{{status}}</h1>
+      <h2 class="sub-title">{{message}}</h2>
+    </div>
     <p><a href="javascript: history.go(-1)" class="back-link"><i class="fa fa-angle-left"></i>Go Back</a></p>
   </div>
 
 {% endblock %}
-
 
 {% block footer %}
   {{ footer.footer() }}
