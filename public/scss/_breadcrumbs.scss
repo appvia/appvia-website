@@ -16,14 +16,13 @@
 //x-small
 @media (max-width: 320px) {
   .breadcrumbs{
-    margin-top: -1.5em;
     font-size: .8em;
   }
 }
 //small
 @media screen and (min-width:321px) and (max-width: 575.98px){
   .breadcrumbs{
-    margin-top: -1.8em;
+
     font-size: .8em;
     li+li:before {
       padding: 4px;
@@ -35,7 +34,6 @@
 //medium
 @media screen and (min-width:575.99px) and (max-width:768px){
   .breadcrumbs{
-    margin-top: -1.8em;
     font-size: .8em;
     li+li:before {
       padding: 4px;
@@ -46,7 +44,6 @@
 //large
 @media screen and (min-width:769px) and (max-width:992px){
   .breadcrumbs{
-    margin-top: -1.4em;
     font-size: 1em;
     li+li:before {
       padding: 4px;

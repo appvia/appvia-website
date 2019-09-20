@@ -9,9 +9,8 @@
 
   {{ navigation.nav('products') }}
 
+  <div class="center-column">
   {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Hub Demo Instructions', link: false }]) }}
-
-  <div class="container-fluid">
     <div class="page-title">
       <h1>Hub Demo Instructions</h1>
     </div>
@@ -28,7 +27,7 @@
                     <input class="form-control col-md-8" type="text" name="email" id="email" required value="{{email}}" data-parsley-errors-container="#email-errors" />
                   </div>
                   <div class="col-md-12">
-                    By clicking "Access Hub Demo", I agree to the Appvia <a href="/privacy-policy">Privacy Policy</a>.
+                    <small>By clicking "Access Hub Demo", I agree to the Appvia <a href="/privacy-policy">Privacy Policy</a>.</small>
                   </div>
                   <div class="col-md-12">
                     <button type="submit" id="submit-form" class="button">Access Hub Demo</button>

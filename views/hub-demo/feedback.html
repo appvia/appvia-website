@@ -9,9 +9,8 @@
 
   {{ navigation.nav('products') }}
 
-  {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Request a Appvia Hub Demo', link: false }]) }}
-
-  <div class="container-fluid">
+  <div class="center-column">
+    {{ breadcrumb.links([{ text: 'Products', link: '/#products' },{ text: 'Request a Appvia Hub Demo', link: false }]) }}
     <div class="page-title">
       <h1>Hub Demo Feedback</h1>
     </div>
@@ -32,7 +31,7 @@
                            data-parsley-errors-container="#email-errors"/>
                   </div>
                   {% endif %}
-                  <div class="col-md-12 mb-4">
+                  <div class="col-md-12">
                       <fieldset>
                           <legend>How would you rate our current Alpha product?*</legend>
                           <div id="rating-errors"></div>
@@ -59,7 +58,7 @@
                           </div>
                       </fieldset>
                   </div>
-                  <div class="col-md-12 mb-4">
+                  <div class="col-md-12">
                       <fieldset>
                           <legend>What application types do your teams develop with?*</legend>
                           <div id="application-types-errors"></div>
@@ -126,7 +125,7 @@
                              data-parsley-type="digits" data-parsley-errors-container="#dev-teams-in-org-errors"
                              required/>
                   </div>
-                  <div class="col-md-12 mb-4">
+                  <div class="col-md-12">
                       <fieldset>
                           <legend>Are you already using any of the following Kubernetes Offerings?*</legend>
                           <div id="offerings-errors"></div>
@@ -178,7 +177,7 @@
                           </div>
                       </fieldset>
                   </div>
-                  <div class="col-md-12 mb-4">
+                  <div class="col-md-12">
                       <fieldset>
                           <legend>Are you using any of the following Cloud Providers?*</legend>
                           <div id="cloud-providers-errors"></div>
@@ -223,7 +222,7 @@
                           </div>
                       </fieldset>
                   </div>
-                  <div class="col-md-12 mb-4">
+                  <div class="col-md-12">
                       <fieldset>
                           <legend>Which of the following features would you be most interested in us prioritising?
                               (pick 3)*
@@ -337,8 +336,8 @@
                                 data-parsley-validation-threshold="10"
                                 data-parsley-errors-container="#message-errors"></textarea>
                   </div>
-                  <div class="col-md-12 mb-4">
-                      By clicking "Submit", I agree to the Appvia <a href="/privacy-policy">Privacy Policy</a>.
+                  <div class="col-md-12">
+                    <small>By clicking "Submit", I agree to the Appvia <a href="/privacy-policy">Privacy Policy</a>.</small>
                   </div>
                   <div class="col-md-12">
                       <button type="submit" id="submit-form" class="butn"><span>Submit</span></button>
