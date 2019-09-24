@@ -61,6 +61,14 @@ a.feature-button{
   margin-top: 2.2em;
   background-color: rgba(0,0,0,0.8);
   @include transition-hover()
+  h3{
+
+  }
+  p{
+    font-size: .5em;
+    text-transform: none;
+    margin-bottom: .4em;
+  }
 }
 
 a.feature-button:hover{

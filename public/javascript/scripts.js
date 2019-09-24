@@ -2,8 +2,11 @@ $('#menu a').click(function(){
   $('#menuToggle input:checkbox').prop('checked', false);
 });
 
+/*
+
 $('.parallax').scroll(function() {
-  /*
+
+
   $('.target').each(function() {
       if($(window).scrollTop() >= $(this).offset().top) {
         var id = $(this).attr('id');
@@ -11,7 +14,7 @@ $('.parallax').scroll(function() {
         $('#mainMenu a[href*='+ id +']').addClass('active');
       }
   });
-  */
+
   scrollTopButton();
 });
 
@@ -35,3 +38,4 @@ function scrollToAnchor() {
 }
 
 scrollToAnchor();
+*/

@@ -59,6 +59,12 @@ router.get('/services', function(req, res) {
   });
 });
 
+router.get('/services/kubernetes', function(req, res) {
+  res.render('kubernetes.html', {
+    title: 'Appvia: Kubernetes'
+  });
+});
+
 router.get('/services/consultancy', function(req, res) {
   res.render('consultancy.html', {
     title: 'Appvia: Consultancy'

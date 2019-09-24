@@ -3,7 +3,7 @@
 {% import "../views/partials/footer.html" as footer %}
 {% import "../views/partials/breadcrumbs.html" as breadcrumb %}
 
-{% set pageClass = 'content fixed-background' %}
+{% set pageClass = 'content background-fixed background-6' %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
 
 <div class="center-column">
   {{ breadcrumb.links([{ text:'Careers', link: false }]) }}
-  <div class="page-title">  
+  <div class="page-title">
     <h1>Careers</h1>
     {% if data | length  %}
         <h2 class="sub-title">Please see our open positions below.</h2>

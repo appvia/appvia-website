@@ -2,7 +2,7 @@
 {% import "../views/partials/nav.html" as navigation %}
 {% import "../views/partials/footer.html" as footer %}
 
-{% set pageClass = 'content fixed-background' %}
+{% set pageClass = 'content background-fixed background-2' %}
 
 {% block content %}
 
@@ -13,6 +13,7 @@
       <h1>{{status}}</h1>
       <h2 class="sub-title">{{message}}</h2>
     </div>
+    <img src="/assets/img/undraw_cancel_u1it.svg" style="width:80%">
     <p><a href="javascript: history.go(-1)" class="back-link"><i class="fa fa-angle-left"></i>Go Back</a></p>
   </div>
 

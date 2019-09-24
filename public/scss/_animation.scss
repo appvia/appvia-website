@@ -56,3 +56,35 @@
 	        animation: slide-bottom-fade 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
 }
 
+.title-fade-in{
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+		 -moz-animation: fadein 2s; /* Firefox < 16 */
+			-ms-animation: fadein 2s; /* Internet Explorer */
+			 -o-animation: fadein 2s; /* Opera < 12.1 */
+					animation: fadein 2s;
+}
+.title-fade-out{
+	-webkit-animation: fadeout 2s; /* Safari, Chrome and Opera > 12.1 */
+		 -moz-animation: fadeout 2s; /* Firefox < 16 */
+			-ms-animation: fadeout 2s; /* Internet Explorer */
+			 -o-animation: fadeout 2s; /* Opera < 12.1 */
+					animation: fadeout 2s;
+}
+
+@keyframes fadein,
+@-moz-keyframes fadein,
+@-webkit-keyframes fadein,
+@-o-keyframes fadein,
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout,
+@-moz-keyframes fadeout,
+@-webkit-keyframes fadeout,
+@-o-keyframes fadeout,
+@-ms-keyframes fadeout {
+	from { opacity: 1; }
+	to   { opacity: 0; }
+}

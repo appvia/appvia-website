@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content background-fixed background-2' %}
+
+{% block content %}
+
+  {{ navigation.nav('Services') }}
+
+  <div class="center-column">
+    {{ breadcrumb.links([{ text: 'Services', link: '/services' }, { text: 'Kubernetes', link: false }]) }}
+    <div class="page-title">
+      <h1>Kubernetes</h1>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <h2>Complete Kubernetes</h2>
+        <p>Kubernetes, an open-source container-orchestration system, is designed to automate the deployment, scaling and management of any apps you need to support your business. We can help decide if Kubernetes is right for you, and then set it up.</p>
+
+          <p>We can offer you a total package, which includes:</p>
+
+          <ul class="list-bullet">
+            <li>Building advanced Kubernetes based platforms for all your apps</li>
+            <li>Helping design and develop the right cloud platform for you</li>
+            <li>Overseeing migration from your existing platform</li>
+            <li>Creating a framework to test performance automatically</li>
+            <li>Running training courses and provide continued support</li>
+            <li>Offering our KISS tool to manage your access controls for security</li>
+          </ul>
+
+
+          <p class="mt-2">We actively maintain the Kops (Kubernetes operations) project. This puts us close to every new development, so you will be too. </p>
+
+
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <img src="/assets/img/undraw_building_blocks_n0nc.svg" style="width:100%">
+      </div>
+    </div>
+
+
+
+  </div>
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}

@@ -3,7 +3,7 @@
 {% import "../views/partials/breadcrumbs.html" as breadcrumb %}
 {% import "../views/partials/footer.html" as footer %}
 
-{% set pageClass = 'content fixed-background' %}
+{% set pageClass = 'content background-fixed background-7' %}
 
 {% block content %}
 
@@ -12,29 +12,26 @@
   <div class="center-column">
     {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Prouct', link: false }]) }}
     <div class="page-title">
-      <h1>Kubernetes Security Scanner</h1>
+      <h1>KISS</h1>
     </div>
 	  <div class="row mt-3">
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <h2>The benefits of Kubernetes Security Scanner (KSS)</h2>
-      <p>Role-based access controls (RBAC) automatically grant user permissions across your Kubernetes clusters. Our Kubernetes Security Scanner tool makes managing them simpler.</p>
-
+      <h2>The benefits of Kubernetes Infrastructure Security Scanner</h2>
+      <p>ole-based access controls (RBAC) automatically grant user permissions across your Kubernetes clusters. Our Kubernetes Infrastructure Security Scanner (KISS) tool makes managing them simpler.
       <p>When you deploy components like Ingress, certificate management and key management into Kubernetes to enhance your app, managing the access controls to them is vital. It can also be complicated and problematic, especially when running your app across multiple clusters.</p>
-
-      <p>KSS delivers clear sight of your role-based security. It does this by attaching to all your Kubernetes clusters and scanning for RBAC data. This builds a full picture of the relationships between users, groups or service accounts to the controls, no matter how complex.</p>
-
-      <p>Using this information, KSS quickly finds issues around access policy defaults, and will automatically raise alerts about any changes that may pose a risk to the security of your overall platform. It can even go a step further and make recommendations on best practices for a secure RBAC implementation.</p>
+      <p>KISS delivers clear sight of your role-based security. It does this by attaching to all your Kubernetes clusters and scanning for RBAC data. This builds a full picture of the relationships between users, groups or service accounts to the controls, no matter how complex.</p>
+      <p>Using this information, KISS quickly finds issues around access policy defaults, and will automatically raise alerts about any changes that may pose a risk to the security of your overall platform. It can even go a step further and make recommendations on best practices for a secure RBAC implementation.</p>
 
        <div class="tabs">
         <div class="tab">
           <input type="checkbox" id="chck1">
-          <label class="tab-label" for="chck1">KSS at a glance</label>
+          <label class="tab-label" for="chck1">KISS at a glance</label>
           <div class="tab-content">
 
         <h3>It could benefit your business when</h3>
           <ul class="list-bullet mb-2">
            	<li>you deploy extra components into Kubernetes</li>
-			<li>you manage apps across multiple environments</li>
+			      <li>you manage apps across multiple environments</li>
           </ul>
 
         <h3>What it does for you</h3>
@@ -46,19 +43,19 @@
 
         </ul>
 
-       <h3>KSS can improve security by</h3>
+       <h3>KISS can improve security by</h3>
         <ul class="list-bullet mb-2">
           <li>identifying risks around policy defaults</li>
           <li>making suggestions on best practices around your use of RBAC</li>
          </ul>
 
-       You can view the Kubernetes Security Scanner <a href="https://github.com/appvia/rbacvis">GitHub repo</a> for more information or to download it.
+       You can view the KISS <a href="https://github.com/appvia/rbacvis">GitHub repo</a> for more information or to download it.
           </div>
         </div>
         </div>
       </div>
       <div class="col-sm-12 col-md-6 col-lg-6">
-        <img src="/assets/img/undraw_fingerprint_swrc.svg" style="width: 100%">
+        <img src="/assets/img/undraw_in_progress_ql66.svg" style="width: 100%">
       </div>
 	  </div>
   </div>
