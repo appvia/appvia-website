@@ -10,7 +10,7 @@
 	    }
 	  }
 	  ~ .tab-content {
-	    max-height: 100vh;
+	    display: block;
 	    padding: 1em;
 	  }
 
@@ -38,6 +38,7 @@
     justify-content: space-between;
     padding: 1em;
     background: $black;
+    border: solid 1px $dark-grey;
     font-weight: bold;
     cursor: pointer;
     /* Icon */
@@ -53,7 +54,7 @@
     }
   }
   &-content {
-    max-height: 0;
+    display: none;
     padding: 0 1em;
     color: $off-white;
     //background: $black;
@@ -70,8 +71,5 @@
       background: darken($black, 10%);
     }
   }
-	.list-bullet{
-		margin-bottom: 0;
-	}
 
 }

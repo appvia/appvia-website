@@ -270,6 +270,23 @@ hr {
   margin-left: 1em;
   margin-bottom: 2em;
 }
+.list-bullet{
+  margin-bottom: 0;
+}
+.list-tick li{
+  display: inline-flex;
+  margin-bottom: .8em;
+  a{
+    display: contents;
+  }
+}
+.list-tick li:before {
+  content: '✓';
+  margin-right: 1em;
+  margin-left: -1em;
+  color: $red;
+}
+
 
 form a,
 p a{
