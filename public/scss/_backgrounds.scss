@@ -1,4 +1,11 @@
 @mixin background-size(){
+  content:"";
+  position:fixed; /* stretch a fixed position to the whole screen */
+  top:0;
+  height:100vh; /* fix for mobile browser address bar appearing disappearing */
+  left:0;
+  right:0;
+  z-index:-1; /* needed to keep in the background */
   background-repeat: no-repeat;
   -ms-background-size: cover;
   -o-background-size: cover;
@@ -7,50 +14,36 @@
   background-size: cover;
 }
 
-.background-1{
+body.background-1:after{
   background-image: url("/assets/img/containers-bg.png");
   @include background-size()
 }
-.background-2{
+body.background-2:after{
   background-image: url("/assets/img/bg-1.jpg");
   @include background-size()
 }
-.background-3{
+body.background-3:after{
   background-image: url("/assets/img/bg-2.jpg");
   @include background-size()
 }
-.background-4{
+body.background-4:after{
   background-image: url("/assets/img/bg-3.jpg");
   @include background-size()
 }
-.background-5{
+body.background-5:after{
   background-image: url("/assets/img/bg-4.jpg");
   @include background-size()
 }
-.background-6{
+body.background-6:after{
   background-image: url("/assets/img/bg-5.jpg");
   @include background-size()
 }
-.background-7{
+body.background-7:after{
   background-image: url("/assets/img/bg-6.jpg");
   @include background-size()
 }
 
-.fixed-background{
+body.fixed-background:after{
   background-image: url("/assets/img/bg-4.jpg");
-  @include background-size()
-}
-.background-fixed{
-  background-attachment: fixed;
-}
-
-body.background-fixed:after{
-  content:"";
-  position:fixed; /* stretch a fixed position to the whole screen */
-  top:0;
-  height:100vh; /* fix for mobile browser address bar appearing disappearing */
-  left:0;
-  right:0;
-  z-index:-1; /* needed to keep in the background */
   @include background-size()
 }
