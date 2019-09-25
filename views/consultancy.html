@@ -11,12 +11,12 @@
 
   <div class="center-column">
     {{ breadcrumb.links([{ text: 'Services', link: '/services' }, { text: 'Consultancy', link: false }]) }}
-    <div class="page-title">
+    <div class="page-title sub-page">
       <h1>Consultancy</h1>
     </div>
-    <div class="row mt-3">
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <h2>Our consultancy services</h2>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 blog-body">
+        <h1>Our consultancy services</h1>
         <p>When it comes to software engineering, we know exactly what we're talking about. But the first thing we'll say is nothing. Why? Because whatever stage you're at, we won't make any recommendations until we've listened to exactly what you need from us.</p>
         <p>We'll then tailor any solutions we propose around your plans, how you want your business to grow and what you expect from your apps. Through us, you'll never be locked in to software contracts you don't need, or find that your business relies on just one vendor.</p>
 
@@ -28,7 +28,7 @@
               <label class="tab-label" for="chck1">Our DevOps strategy service</label>
               <div class="tab-content">
                <p>We'll help your business think about DevOps differently. Our focus is on making you streamlined and efficient. We can help provide your developers with what they need through cost-effective self-service platforms, so that you need fewer unnecessary resources within your organisation.</p>
-              <h3>Benefits of our DevOps strategy service</h3>
+              <h2>Benefits of our DevOps strategy service</h2>
                 <ul class="list-bullet">
                   <li>Assess the DevOps maturity in your organisation</li>
                   <li>Cost-effective strategy based on your organisation's core needs</li>
@@ -60,7 +60,7 @@
               <label class="tab-label" for="chck3">Our container strategy service</label>
               <div class="tab-content">
                 <p>We've been running containers in production for years. Your DevOps team will appreciate the benefits of this experience through our planning. We maintain core open-source container projects, including Kubernetes operations (kops), and can put together a strategy that gives you industry best practices, the security you need and the flexibility to grow.</p>
-                <h3>Benefits of our container strategy service</h3>
+                <h2>Benefits of our container strategy service</h2>
                 <ul class="list-bullet">
                   <li>Balance between cloud-based and in-house services</li>
                   <li>Continuous integration (CI) and continuous deployment (CD) to iterate fast</li>
@@ -84,8 +84,7 @@
 
 
   </div>
-{% endblock %}
 
-{% block footer %}
   {{ footer.footer() }}
+  
 {% endblock %}

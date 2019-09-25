@@ -6,21 +6,22 @@ nav{
   width: 100%;
   background-color: rgba(0,0,0,1);
   height: 54px;
-
+ a.appvia-logo{
+   margin: 1em;
+   display: inline-block;
+ }
 }
-nav .appvia-logo{
+
+nav img{
   width: 100px;
-  margin-left: 1em;
-  margin-top: 1em;
 }
 
 
 @media (min-width: 999px) {
-  nav .appvia-logo{
+  nav img{
     width: 160px;
   }
   nav{
     height: 70px;
-
   }
 }

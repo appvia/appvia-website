@@ -6,8 +6,6 @@
   transform: translate(-50%, -50%);
 }
 
-
-
 .home-title {
   @include absolute-centered()
   top: 40%;
@@ -109,9 +107,7 @@
   }
 }
 
-.sub-title {
 
-}
 
 .title-black-on-red{
   font-size: 2.6em;
@@ -203,16 +199,25 @@ a.back-link{
       text-align: center;
       padding: 0 1em;
     }
+    &.sub-page{
+      h1{
+        text-transform: none;
+        border: none;
+        padding: 0;
+        text-align: left;
+
+      }
+    }
   }
   .sub-title{
     margin-top: 1em;
   }
   .copyright{
-    position: fixed;
-    bottom: 0;
-    z-index: 100;
-    background: rgba(0,0,0,.85);
-    padding: .5em;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    padding: .6em 0;
   }
   p{
     margin-bottom: 2em;
@@ -232,7 +237,7 @@ hr {
 }
 
 .item{
-  
+
   padding: 1em;
   margin: 1em 0;
   min-height: 15em;
@@ -308,19 +313,6 @@ padding: 1em;
 border-radius: 1em;
 z-index: 10;
 }
-
-
-
-.copyright{
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  font-size: 14px;
-  background: $black;
-  padding: .6em 0;
-}
-
-
 
 .quote {
   background-color: $dark-grey;
@@ -432,6 +424,15 @@ z-index: 10;
     line-height: 1.4em;
   }
 }
+.hero-toplevel{
+  h2{
+    font-size:1em;
+  }
+}
+.section-panel{
+  margin-left: 0;
+  margin-right: 0;
+}
 
 .feature-boxes{
   font-size: .5em;
@@ -466,8 +467,8 @@ z-index: 10;
     }
 
     .item{
-    padding:  0;
-    main-height: auto;
+    padding: .4em;
+    min-height: auto;
     font-size: .9em;
     }
 
@@ -546,6 +547,15 @@ z-index: 10;
   }
 
   }
+  .hero-toplevel{
+    h2{
+      font-size:1.2em;
+    }
+  }
+  .section-panel{
+    margin-left: 0;
+    margin-right: 0;
+  }
   .feature-boxes{
     font-size: .6em;
     padding: 1.4em 1em 2em 1em;
@@ -582,7 +592,7 @@ z-index: 10;
     }
 
         .item{
-        padding:  0;
+        padding:  .4em;
         min-height: auto;
         font-size: .9em;
         }
@@ -636,7 +646,6 @@ z-index: 10;
       h1{
         font-size: 2.5em ;
         padding: 0 1em;
-        margin: 0 1em;
       }
     }
     .sub-title{

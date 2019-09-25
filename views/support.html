@@ -11,12 +11,12 @@
 
   <div class="center-column">
     {{ breadcrumb.links([{ text: 'Services', link: '/services' }, { text: 'Support', link: false }]) }}
-    <div class="page-title">
+    <div class="page-title sub-page">
       <h1>Support</h1>
     </div>
-    <div class="row mt-3">
-      <div class="col-sm-12 col-md-6 col-lg-6">
-        <h2>Training and support for your business</h2>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 blog-body">
+        <h1>Training and support for your business</h1>
         <p>Delivering platforms that work for your business is the beginning of your digital evolution. Your employees also need to be comfortable and confident with them, so that they can become a more effective delivery team - and quickly.  </p>
         <p>We can train your employees to understand every detail about the solutions we provide. Once you're up and running, we can provide the reassurance of support to whatever level you need - even if that's every minute of the year.</p>
 
@@ -108,11 +108,7 @@
       </div>
     </div>
 
-
-
   </div>
-{% endblock %}
 
-{% block footer %}
-  {{ footer.footer() }}
+    {{ footer.footer() }}
 {% endblock %}

@@ -42,7 +42,7 @@
 }
 
 
-#menuToggle span
+#menuToggle span.burger
 {
   display: block;
   width: 33px;
@@ -62,31 +62,31 @@
               opacity 0.55s ease;
 }
 
-#menuToggle span:first-child
+#menuToggle span.burger:first-child
 {
   transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2)
+#menuToggle span.burger:nth-last-child(2)
 {
   transform-origin: 0% 100%;
 }
 
 
-#menuToggle input:checked ~ span
+#menuToggle input:checked ~ span.burger
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background:  $white;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3)
+#menuToggle input:checked ~ span.burger:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
+#menuToggle input:checked ~ span.burger:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
 }
@@ -119,9 +119,8 @@
     }
   }
   .appvia-logo-mobile{
-    width: 200px;
-    margin-bottom: -40px;
-    margin-left: 0;
+    width: 160px;
+    margin-bottom: 0px;
   }
 }
 
@@ -141,12 +140,15 @@
   color:  #fff;
 }
 
-#mainMenu a, #menu a{
+#mainMenu span:hover{
+  cursor: default;
+}
+#mainMenu a, #menu a, #mainMenu span,  #menu span{
   color: #fff;
   text-transform:uppercase;
 }
 
-#mainMenu a{
+#mainMenu a, #mainMenu span{
   padding: .4em .6em;
 }
 #mainMenu a.active,
@@ -157,7 +159,9 @@
   color:  #c3073f;
   text-decoration: none;
 }
-
+#menu .appvia-logo{
+  margin: 0;
+}
 @media (max-width: 1000px) {
   #mainMenu{
     display: none;

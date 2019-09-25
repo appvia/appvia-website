@@ -11,12 +11,12 @@
 
   <div class="center-column">
     {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Prouct', link: false }]) }}
-    <div class="page-title">
+    <div class="page-title sub-page">
       <h1>KISS</h1>
     </div>
-	  <div class="row mt-3">
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <h2>The benefits of Kubernetes Infrastructure Security Scanner</h2>
+	  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6 blog-body">
+      <h1>The benefits of Kubernetes Infrastructure Security Scanner</h1>
       <p>ole-based access controls (RBAC) automatically grant user permissions across your Kubernetes clusters. Our Kubernetes Infrastructure Security Scanner (KISS) tool makes managing them simpler.
       <p>When you deploy components like Ingress, certificate management and key management into Kubernetes to enhance your app, managing the access controls to them is vital. It can also be complicated and problematic, especially when running your app across multiple clusters.</p>
       <p>KISS delivers clear sight of your role-based security. It does this by attaching to all your Kubernetes clusters and scanning for RBAC data. This builds a full picture of the relationships between users, groups or service accounts to the controls, no matter how complex.</p>
@@ -28,13 +28,13 @@
           <label class="tab-label" for="chck1">KISS at a glance</label>
           <div class="tab-content">
 
-        <h3>It could benefit your business when</h3>
+        <h2>It could benefit your business when</h2>
           <ul class="list-bullet mb-2">
            	<li>you deploy extra components into Kubernetes</li>
 			      <li>you manage apps across multiple environments</li>
           </ul>
 
-        <h3>What it does for you</h3>
+        <h2>What it does for you</h2>
         <ul class="list-bullet mb-2">
            	<li>Provides a clear outline of RBAC in your Kubernetes clusters</li>
            	<li>Understands the controls for users, groups, service accounts, roles, role bindings and pod security policies</li>
@@ -43,7 +43,7 @@
 
         </ul>
 
-       <h3>KISS can improve security by</h3>
+       <h2>KISS can improve security by</h2>
         <ul class="list-bullet mb-2">
           <li>identifying risks around policy defaults</li>
           <li>making suggestions on best practices around your use of RBAC</li>
@@ -59,8 +59,5 @@
       </div>
 	  </div>
   </div>
-{% endblock %}
-
-{% block footer %}
-  {{ footer.footer() }}
+    {{ footer.footer() }}
 {% endblock %}
