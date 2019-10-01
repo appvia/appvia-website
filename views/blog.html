@@ -20,20 +20,20 @@
       <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="item">
           <a href="/blog/{{ item.slug }}">
-            <div class="blog-post-thumbnail-outer-div">
+
             {% if item.content.thumbnail %}
+            <div class="blog-post-thumbnail-outer-div">
               <div class="blog-post-thumbnail" style="background-image:url('{{item.content.thumbnail}}')"></div>
-            {% else %}
-              <div class="blog-post-thumbnail generic-thumbnail"></div>
-            {% endif %}
             </div>
+            {% endif %}
+
           </a>
           <h3>{{ item.name }}</h3>
           <ul class="meta">
               <li><i class="fa fa-user"></i> {{ item.content.author }}</li>
               <li><i class="fas fa-calendar-alt"></i> {{  published(item.first_published_at) }}</li>
           </ul>
-          <p>{{ story(item.content.story) | striptags(true) | truncate(220)}}</p>
+          <p>{{ story(item.content.story) | striptags(true) | truncate(200)}}</p>
           <a href="/blog/{{ item.slug }}" class="button">Read Article</a>
         </div>
       </div>
