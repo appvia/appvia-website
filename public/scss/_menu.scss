@@ -93,9 +93,11 @@
 
 #menuToggle input:checked ~ ul{
   margin-left: 0% !important;
+  transition: all .25s;
 }
 #menuToggle input:not(:checked) ~ ul{
   margin-left: 100%;
+  opacity: 0;
 }
 
 
@@ -113,6 +115,7 @@
   height: 100%;
   text-align: center;
   margin-left: 100%;
+
   a{
     &:hover{
       text-decoration: none;
