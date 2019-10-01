@@ -23,9 +23,9 @@
         <div class="item">
           <a href="/blog/{{ item.slug }}">
           {% if item.content.thumbnail %}
+          <div class="blog-post-thumbnail-outer-div">
             <div class="blog-post-thumbnail" style="background-image:url('{{item.content.thumbnail}}')"></div>
-          {% else %}
-            <div class="blog-post-thumbnail generic-thumbnail"></div>
+          </div>
           {% endif %}
           </a>
           <h3>{{ item.name }}</h3>
