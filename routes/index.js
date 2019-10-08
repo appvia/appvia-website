@@ -6,6 +6,7 @@ const moment = require('moment');
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 const storyBlokToken = process.env.STORYBLOK_TOKEN;
+const storyBlokVersion = process.env.STORYBLOK_VERSION;
 
 const Storyblok = new StoryblokClient({
   accessToken: storyBlokToken
@@ -80,7 +81,8 @@ router.get('/services/support', function(req, res) {
 
 router.get('/blog', function(req, res) {
   Storyblok.get('cdn/stories/', {
-      'starts_with': 'blog/'
+      'starts_with': 'blog/',
+      'version': storyBlokVersion
     })
     .then(response => {
       let data = response.data.stories
@@ -101,7 +103,9 @@ router.get('/blog', function(req, res) {
 });
 
 router.get('/blog/:blogpost', async function(req, res) {
-  Storyblok.get(`cdn/stories/blog/${req.params.blogpost}`)
+  Storyblok.get(`cdn/stories/blog/${req.params.blogpost}`, {
+      'version': storyBlokVersion
+    })
     .then(response => {
       let data = response.data.story
       res.render('blog-post.html', {
@@ -123,7 +127,8 @@ router.get('/blog/:blogpost', async function(req, res) {
 router.get('/blog/tag/:tag', function(req, res) {
   Storyblok.get('cdn/stories/', {
       'starts_with': 'blog/',
-      'with_tag': req.params.tag
+      'with_tag': req.params.tag,
+      'version': storyBlokVersion
     })
     .then(response => {
       let data = response.data.stories
@@ -146,7 +151,8 @@ router.get('/blog/tag/:tag', function(req, res) {
 
 router.get('/careers', function(req, res) {
   Storyblok.get('cdn/stories/', {
-      'starts_with': 'jobs/'
+      'starts_with': 'jobs/',
+      'version': storyBlokVersion
     })
     .then(response => {
       let data = response.data.stories
@@ -172,7 +178,9 @@ router.get('/contact-us', function(req, res) {
 });
 
 router.get('/careers/:jobpost', function(req, res) {
-  Storyblok.get(`cdn/stories/jobs/${req.params.jobpost}`)
+  Storyblok.get(`cdn/stories/jobs/${req.params.jobpost}`, {
+      'version': storyBlokVersion
+    })
     .then(response => {
       let data = response.data.story
       res.render('job.html', {
