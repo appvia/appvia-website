@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+
+{% set pageClass = 'content background-fixed background-4' %}
+
+{% block content %}
+
+  {{ navigation.nav('home') }}
+
+  <div class="center-column">
+    <div class="page-title">
+      <h1>Thanks</h1>
+    </div>
+    <h2>Your signup request has been receieved.</h2>
+    <p>We'll be in touch...</p>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ footer.footer() }}
+{% endblock %}
