@@ -43,6 +43,7 @@ jobs:
             echo "  DEMO_FEEDBACK_GFORM_URL: $DEV_DEMO_FEEDBACK_GFORM_URL">>app-dev.yaml
             echo "  SLACK_DEMOS_URL: $DEV_SLACK_DEMOS_URL">>app-dev.yaml
             echo "  STORYBLOK_TOKEN: $DEV_STORYBLOK_TOKEN">>app-dev.yaml
+            echo "  STORYBLOK_VERSION: $DEV_STORYBLOK_VERSION">>app-dev.yaml
       - run:
           command: gcloud -q app deploy app-dev.yaml dispatch.yaml
   deploy_main:
@@ -69,6 +70,7 @@ jobs:
             echo "  DEMO_FEEDBACK_GFORM_URL: $DEMO_FEEDBACK_GFORM_URL">>app.yaml
             echo "  SLACK_DEMOS_URL: $SLACK_DEMOS_URL">>app.yaml
             echo "  STORYBLOK_TOKEN: $STORYBLOK_TOKEN">>app.yaml
+            echo "  STORYBLOK_VERSION: $STORYBLOK_VERSION">>app.yaml
       - run:
           command: gcloud -q app deploy
 
