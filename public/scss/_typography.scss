@@ -188,7 +188,6 @@ a.back-link{
 .content{
   top: 4em;
   position: relative;
-  margin-bottom: 2em;
   .page-title{
     width: 100%;
     text-align: center;
@@ -228,7 +227,7 @@ a.back-link{
 hr {
     margin: 1em 0;
     border: 0;
-    border-top: 1px solid $grey;
+    border-top: 1px solid $dark-grey;
 }
 hr {
     box-sizing: content-box;
@@ -719,7 +718,6 @@ z-index: 10;
 //large
 @media screen and (min-width:769px) and (max-width:992px){
 .hero-title {
-
     h1{
     font-size: 1.8em;
     }

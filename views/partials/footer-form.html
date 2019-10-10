@@ -1,0 +1,21 @@
+{% macro form() %}
+
+<form method="POST" action="/footer-form-submit.html" data-parsley-validate>
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <label for="name" class="sr-only">Name</label>
+      <input class="form-control form-control-sm" type="text" name="name" data-parsley-errors-container="#name-errors" required placeholder="Name">
+      <div id="name-errors"></div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <label for="email" class="sr-only">Email</label>
+      <input class="form-control form-control-sm" type="email" name="email" data-parsley-errors-container="#email-errors" required placeholder="Email">
+      <div id="email-errors"></div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+      <button type="submit" class="butn mt-0"><span>Submit</span></button>
+    </div>
+  </div>
+</form>
+
+{% endmacro %}

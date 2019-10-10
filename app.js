@@ -12,6 +12,7 @@ var app = express();
 
 const routes = require('./routes/index');
 const hubDemo = require('./routes/hub-demo');
+const footerForm = require('./routes/footer-form');
 
 const hubDemoEnabled = process.env.HUB_DEMO_ENABLED === 'true';
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes setup
 app.use(routes);
+app.use(footerForm.router);
 if (hubDemoEnabled) {
   app.use(hubDemo.router);
 }
