@@ -224,10 +224,10 @@ fieldset .form-check-input {
 
 /* Style the indicator (dot/circle) */
 .form-check .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
+	top: .38em;
+  left: .38em;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: white;
 }

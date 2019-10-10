@@ -48,6 +48,12 @@ router.get('/products/hub', function(req, res) {
   });
 });
 
+router.get('/products/hub/user-research-developers', function(req, res) {
+  res.render('hub-user-research-developers.html', {
+    title: 'Appvia: Hub User Research: Developers'
+  });
+});
+
 router.get('/products/kubernetes-security-scanner', function(req, res) {
   res.render('kubernetes-security-scanner.html', {
     title: 'Appvia: Product'
