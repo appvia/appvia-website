@@ -2,6 +2,7 @@
 {% import "../views/partials/nav.html" as navigation %}
 {% import "../views/partials/footer.html" as footer %}
 {% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+{% import "../views/partials/priv-policy.html" as privPolicy %}
 
 {% set pageClass = 'content background-fixed background-6' %}
 
@@ -99,9 +100,10 @@
                     </div>
                 </fieldset>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 mb-1">
               <button type="submit" id="submit-form" class="butn"><span>Submit Request</span></button>
             </div>
+            {{ privPolicy.privPolicy() }}
           </div>
         </form>
       </div>
