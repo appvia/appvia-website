@@ -115,6 +115,9 @@ a:hover .blog-post-thumbnail {
 			}
 		}
 	}
+	.parsley-errors-list{
+		margin: 2px 0 10px;
+	}
 	img{
 		width: 100%;
 	}
@@ -147,11 +150,11 @@ pre code{
 	background-color: $dark-blue;
 	display: block;
 	overflow-x: auto;
-            white-space: pre-wrap;
-            white-space: -moz-pre-wrap;
-            white-space: -pre-wrap;
-            white-space: -o-pre-wrap;
-            word-wrap: break-word;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 
 //x-small

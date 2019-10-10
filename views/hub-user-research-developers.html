@@ -1,0 +1,120 @@
+{% extends 'layout.html' %}
+{% import "../views/partials/nav.html" as navigation %}
+{% import "../views/partials/footer.html" as footer %}
+{% import "../views/partials/breadcrumbs.html" as breadcrumb %}
+
+{% set pageClass = 'content background-fixed background-6' %}
+
+{% block content %}
+
+  {{ navigation.nav('products') }}
+
+  <div class="center-column">
+    {{ breadcrumb.links([{ text: 'Products', link: '/products' }, { text: 'Appvia Hub', link: '/products/hub' },  { text: 'User Research: Developers', link: false }]) }}
+    <div class="page-title sub-page">
+      <h1>Appvia Hub User Research</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-6 blog-body">
+        <p>This form is to allow us to contact interested developers for user research of our Appvia Hub product.</p>
+        <span class="small">(All fields are required)</span>
+
+        <form method="POST" action="/products/hub/user-research-developer-submit" data-parsley-validate>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="emailAddress">Email address</label>
+              <div id="emailAddress-errors"></div>
+              <input class="form-control" type="email" name="email" id="emailAddress" required
+                     value="{{emailAddress}}" data-parsley-errors-container="#emailAddress-errors"/>
+            </div>
+            <div class="col-md-12">
+              <label for="firstName">First Name</label>
+              <div id="firstName-errors"></div>
+              <input class="form-control" type="text" name="firstName" id="firstName" required
+                     value="{{firstName}}" data-parsley-errors-container="#firstName-errors"/>
+            </div>
+            <div class="col-md-12">
+              <label for="surname">Surname</label>
+              <div id="surname-errors"></div>
+              <input class="form-control" type="text" name="lastName" id="surname" required
+                     value="{{surname}}" data-parsley-errors-container="#surname-errors"/>
+            </div>
+            <div class="col-md-12">
+                <fieldset>
+                    <legend>How many years have you been developing for?</legend>
+                    <div id="yearsDeveloping-errors"></div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="yearsDeveloping_2">
+                        < 2 years
+                        <input class="form-check-input" name="yearsDeveloping" type="radio" value="< 2 years" id="yearsDeveloping_2" data-parsley-errors-container="#yearsDeveloping-errors" required>
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="yearsDeveloping_2_4">
+                        2 - 4 years
+                        <input class="form-check-input" name="yearsDeveloping" type="radio" value="2 - 4 years" id="yearsDeveloping_2_4" data-parsley-errors-container="#yearsDeveloping-errors">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="yearsDeveloping_5_10">
+                        5 - 10 years
+                        <input class="form-check-input" name="yearsDeveloping" type="radio" value="5 - 10 years" id="yearsDeveloping_5_10" data-parsley-errors-container="#yearsDeveloping-errors">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="yearsDeveloping_10">
+                        > 10 years
+                        <input class="form-check-input" name="yearsDeveloping" type="radio" value="> 10 years" id="yearsDeveloping_10" data-parsley-errors-container="#yearsDeveloping-errors">
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+              <label for="language">Preferred Programming Language(s)</label>
+              <div id="language-errors"></div>
+              <input class="form-control" type="text" name="programmingLanguages" id="language" required
+                     value="{{language}}" data-parsley-errors-container="#language-errors"/>
+            </div>
+            <div class="col-md-12">
+                <fieldset>
+                    <legend>Any Experience of Docker or Kubernetes?</legend>
+                    <div id="experience-errors"></div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="experience_y">
+                        Yes
+                        <input class="form-check-input" name="anyDockerOrKubernetes" type="radio" value="Yes" id="experience_y" data-parsley-errors-container="#experience-errors" required>
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <label class="form-check-label" for="experience_n">
+                        No
+                        <input class="form-check-input" name="anyDockerOrKubernetes" type="radio" value="Yes" id="experience_n" data-parsley-errors-container="#experience-errors" required>
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+              <button type="submit" id="submit-form" class="butn"><span>Submit Request</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6"></div>
+    </div>
+
+  </div>
+
+  {{ footer.footer() }}
+
+{% endblock %}
+
+{% block customScripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script>
+    <script src="/assets/javascript/form.js"></script>
+{% endblock %}
