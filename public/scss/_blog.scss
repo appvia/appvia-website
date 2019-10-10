@@ -130,7 +130,9 @@ bold{
 italic{
 	font-style: italic;
 }
+
 code{
+	font-family: monospace;
 	padding: .2em;
   border: solid 1px $dark-grey;
   border-radius: .4em;
