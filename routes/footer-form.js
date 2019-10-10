@@ -6,11 +6,11 @@ const logger = require('../logger');
 async function postFooterFormSubmitted(req, res) {
   logger.info('Data submitted: %j', req.body);
   try {
-    nameParts = req.body.name.split(" ")
+    const nameParts = req.body.name.split(" ")
     // TODO concat all middle names to firstName?
-    firstName = nameParts[0]
-    lastName = nameParts.length === 1 ? "unknown" : nameParts[1]
-    leadOrContact = {
+    const firstName = nameParts[0]
+    const lastName = nameParts.length === 1 ? "unknown" : nameParts[1]
+    const leadOrContact = {
       email: req.body.email,
       firstName: firstName,
       lastName: lastName,
