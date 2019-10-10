@@ -7,10 +7,13 @@ async function postFooterFormSubmitted(req, res) {
   logger.info('Data submitted: %j', req.body);
   try {
     nameParts = req.body.name.split(" ")
+    // TODO concat all middle names to firstName?
+    firstName = nameParts[0]
+    lastName = nameParts.length === 1 ? "unknown" : nameParts[1]
     leadOrContact = {
       email: req.body.email,
-      firstName: nameParts[0],
-      lastName: nameParts[1],
+      firstName: firstName,
+      lastName: lastName,
       companyName: "unknown"
     }
     const sfContact = await salesforce.isContact(leadOrContact);
