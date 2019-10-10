@@ -1,5 +1,60 @@
+{% import "partials/nav-items.html" as navigation %}
+{% import "partials/footer-form.html" as stayInTouch %}
+
 {% macro footer() %}
-<div class="copyright">
-  &copy; 2019 Appvia
-</div>
+
+  <footer class="mt-4">
+    <div class="center-column">
+      <div class="row mb-4 mt-4">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <a href="/" class="appvia-logo"><img src="../../assets/img/appvia_logo.svg" style="width:180px"></a>
+        </div>
+        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+          <div class="row">
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <h3>Our Products</h3>
+              <ul>
+                <li><a href="/products/hub">Appvia Hub</a></li>
+                <li><a href="/products/kubernetes-security-scanner">KSS</a></li>
+              <ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <h3>Our Services</h3>
+              <ul>
+                <li><a href="/services/consultancy">Consultancy</a></li>
+                <li><a href="/services/kubernetes">Kubernetes</a></li>
+                <li><a href="/services/support">Support</a></li>
+              <ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <h3>Resources</h3>
+              <ul>
+                <li><a href="/blog">Blog</a></li>
+              <ul>
+            </div>
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+              <h3>More Appvia</h3>
+              <ul>
+                <li><a href="/why-appvia">Why Appvia</a></li>
+                <li><a href="/careers">Careers</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+              <ul>
+            </div>
+          </div>
+          <hr class="mt-2" />
+          <div class="row mt-2">
+            <div class="col-12">
+              <p>Stay in touch. Sign up to our newsletter for news on our latest products and more.</p>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              {{  stayInTouch.form() }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 {% endmacro %}

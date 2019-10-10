@@ -281,3 +281,11 @@ fieldset .form-check-input {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
+.form-control-sm {
+    height: calc(1.5em + .5rem + 2px);
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
