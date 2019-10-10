@@ -5,12 +5,13 @@
 
 {% set pageClass = 'content background-fixed background-1' %}
 
+{% block customStyles %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/atom-one-dark.min.css">
+{% endblock %}
+
 {% block content %}
 
-
   {{ navigation.nav('blog') }}
-
-
 
   {% if data.content.thumbnail %}
     <div class="blog-post-main-image" style="background-image:url('{{data.content.thumbnail}}')"></div>
@@ -39,6 +40,11 @@
     <button class="back-button" onclick="javascript:history.go(-1)"><i class="fas fa-angle-double-left"></i> Go Back</button>
   </div>
 
+
   {{ footer.footer() }}
 
+{% endblock %}
+{% block customScripts %}
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 {% endblock %}
