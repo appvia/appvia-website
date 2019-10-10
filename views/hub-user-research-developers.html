@@ -19,12 +19,12 @@
         <p>This form is to allow us to contact interested developers for user research of our Appvia Hub product.</p>
         <span class="small">(All fields are required)</span>
 
-        <form method="POST" action="/products/user-research-submit" data-parsley-validate>
+        <form method="POST" action="/products/hub/user-research-developer-submit" data-parsley-validate>
           <div class="row">
             <div class="col-md-12">
               <label for="emailAddress">Email address</label>
               <div id="emailAddress-errors"></div>
-              <input class="form-control" type="email" name="emailAddress" id="emailAddress" required
+              <input class="form-control" type="email" name="email" id="emailAddress" required
                      value="{{emailAddress}}" data-parsley-errors-container="#emailAddress-errors"/>
             </div>
             <div class="col-md-12">
@@ -36,7 +36,7 @@
             <div class="col-md-12">
               <label for="surname">Surname</label>
               <div id="surname-errors"></div>
-              <input class="form-control" type="text" name="surname" id="surname" required
+              <input class="form-control" type="text" name="lastName" id="surname" required
                      value="{{surname}}" data-parsley-errors-container="#surname-errors"/>
             </div>
             <div class="col-md-12">
@@ -76,7 +76,7 @@
             <div class="col-md-12">
               <label for="language">Preferred Programming Language(s)</label>
               <div id="language-errors"></div>
-              <input class="form-control" type="text" name="language" id="language" required
+              <input class="form-control" type="text" name="programmingLanguages" id="language" required
                      value="{{language}}" data-parsley-errors-container="#language-errors"/>
             </div>
             <div class="col-md-12">
@@ -86,14 +86,14 @@
                     <div class="form-check">
                       <label class="form-check-label" for="experience_y">
                         Yes
-                        <input class="form-check-input" name="experience" type="radio" value="Yes" id="experience_y" data-parsley-errors-container="#experience-errors" required>
+                        <input class="form-check-input" name="anyDockerOrKubernetes" type="radio" value="Yes" id="experience_y" data-parsley-errors-container="#experience-errors" required>
                         <span class="checkmark"></span>
                       </label>
                     </div>
                     <div class="form-check">
                       <label class="form-check-label" for="experience_n">
                         No
-                        <input class="form-check-input" name="experience" type="radio" value="Yes" id="experience_n" data-parsley-errors-container="#experience-errors" required>
+                        <input class="form-check-input" name="anyDockerOrKubernetes" type="radio" value="Yes" id="experience_n" data-parsley-errors-container="#experience-errors" required>
                         <span class="checkmark"></span>
                       </label>
                     </div>
