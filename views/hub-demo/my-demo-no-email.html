@@ -2,6 +2,7 @@
 {% import "../../views/partials/nav.html" as navigation %}
 {% import "../../views/partials/breadcrumbs.html" as breadcrumb %}
 {% import "../../views/partials/footer.html" as footer %}
+{% import "../../views/partials/priv-policy.html" as privPolicy %}
 
 {% set pageClass = 'content background-fixed background-7' %}
 
@@ -26,9 +27,7 @@
                   <div class="col-md-12">
                     <input class="form-control col-md-8" type="text" name="email" id="email" required value="{{email}}" data-parsley-errors-container="#email-errors" />
                   </div>
-                  <div class="col-md-12">
-                    <small>By clicking "Access Hub Demo", I agree to the Appvia <a href="/privacy-policy">Privacy Policy</a>.</small>
-                  </div>
+                  {{ privPolicy.privPolicy() }}
                   <div class="col-md-12">
                     <button type="submit" id="submit-form" class="button">Access Hub Demo</button>
                   </div>

@@ -2,6 +2,7 @@
 {% import "../../views/partials/nav.html" as navigation %}
 {% import "../../views/partials/breadcrumbs.html" as breadcrumb %}
 {% import "../../views/partials/footer.html" as footer %}
+{% import "../../views/partials/priv-policy.html" as privPolicy %}
 
 {% set pageClass = 'content background-fixed background-4' %}
 
@@ -108,10 +109,7 @@
                            value="{{github}}" data-parsley-git data-parsley-trigger-after-failure="focusout"
                            data-parsley-errors-container="#github-errors">
                   </div>
-                  <div class="col-md-12">
-                    <span class="small">By clicking "Submit Request", I agree to the Appvia <a href="/privacy-policy">Privacy
-                    Policy</a>.</span>
-                  </div>
+                  {{ privPolicy.privPolicy() }}
                   <div class="col-md-12">
                     <button type="submit" id="submit-form" class="butn"><span>Submit Request</span></button>
                   </div>
