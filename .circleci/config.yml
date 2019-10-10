@@ -44,6 +44,7 @@ jobs:
             echo "  SLACK_DEMOS_URL: $DEV_SLACK_DEMOS_URL">>app-dev.yaml
             echo "  STORYBLOK_TOKEN: $DEV_STORYBLOK_TOKEN">>app-dev.yaml
             echo "  STORYBLOK_VERSION: $DEV_STORYBLOK_VERSION">>app-dev.yaml
+            echo "  GDOC_URL_HUB_USER_RESEARCH_DEVELOPER: $DEV_GDOC_URL_HUB_USER_RESEARCH_DEVELOPER">>app-dev.yaml
       - run:
           command: gcloud -q app deploy app-dev.yaml dispatch.yaml
   deploy_main:
@@ -71,6 +72,7 @@ jobs:
             echo "  SLACK_DEMOS_URL: $SLACK_DEMOS_URL">>app.yaml
             echo "  STORYBLOK_TOKEN: $STORYBLOK_TOKEN">>app.yaml
             echo "  STORYBLOK_VERSION: $STORYBLOK_VERSION">>app.yaml
+            echo "  GDOC_URL_HUB_USER_RESEARCH_DEVELOPER: $GDOC_URL_HUB_USER_RESEARCH_DEVELOPER">>app.yaml
       - run:
           command: gcloud -q app deploy
 
