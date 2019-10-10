@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const salesforce = require('../modules/salesforce');
-const slack = require('../modules/slack');
 const logger = require('../logger');
 
 async function postFooterFormSubmitted(req, res) {
@@ -18,11 +17,9 @@ async function postFooterFormSubmitted(req, res) {
     }
     const sfContact = await salesforce.isContact(leadOrContact);
     if (sfContact) {
-      await slack.message(
-        slackWebhookUrl,
-        `Stay in touch signup by contact ${req.email}`,
-        `*Qualified Customer* want to talk!?!`
-      );
+      logger.info('Existing contact signed up: %j', req.body.email);
+    } else {
+      logger.info('Lead signed up: %j', req.body.email);
     }
     res.render('footer-form-submit.html');
   } catch (err) {
