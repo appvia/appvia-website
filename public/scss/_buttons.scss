@@ -34,7 +34,12 @@ button.back-button{
   display: block;
   font-size: 1em;
 }
-
+.footer-btn:disabled span{
+  font-size: .6em;
+  position: absolute;
+  left: 4em;
+  margin-top: .3em;
+}
 
 a.button{
   border: solid 1px $red;
@@ -191,6 +196,9 @@ a.button-black{
   }
   button.back-button{
     font-size: .8em;
+  }
+  .footer-btn{
+    margin-bottom: .4em;
   }
 
 }

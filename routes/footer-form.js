@@ -4,6 +4,7 @@ const logger = require('../logger');
 
 async function postFooterFormSubmitted(req, res) {
   logger.info('Data submitted: %j', req.body);
+  const referer = req.headers['referer'];
   try {
     const nameParts = req.body.name.split(" ")
     // TODO concat all middle names to firstName?
@@ -21,7 +22,9 @@ async function postFooterFormSubmitted(req, res) {
     } else {
       logger.info('Lead signed up: %j', req.body.email);
     }
-    res.render('footer-form-submit.html');
+    res.render('footer-form-submit.html', {
+      referer: referer
+    });
   } catch (err) {
     logger.error('Footer form request failed: %j', err);
     res.render('error.html', {
