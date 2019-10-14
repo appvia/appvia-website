@@ -109,7 +109,7 @@
                            value="{{github}}" data-parsley-git data-parsley-trigger-after-failure="focusout"
                            data-parsley-errors-container="#github-errors">
                   </div>
-                  {{ privPolicy.privPolicy() }}
+                  {{ privPolicy.privPolicy('Submit Request') }}
                   <div class="col-md-12">
                     <button type="submit" id="submit-form" class="butn"><span>Submit Request</span></button>
                   </div>
@@ -120,10 +120,7 @@
     </div>
   </div>
 
-
-
-{% endblock %}
-
-{% block footer %}
   {{ footer.footer() }}
+
 {% endblock %}
+
