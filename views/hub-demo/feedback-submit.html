@@ -10,10 +10,15 @@
   {{ navigation.nav('products') }}
 
   <div class="center-column">
-    {{ breadcrumb.links([{ text: 'Products', link: '/products' },{ text: 'Request a Appvia Hub Demo', link: false }]) }}
-    <div class="page-title">
+    {{ breadcrumb.links([{ text: 'Products', link: '/products' },{ text: 'Appvia Hub', link: '/products/hub' },{ text: 'Hub Demo Feedback', link: false }]) }}
+    <div class="page-title sub-page">
       <h1>Hub Demo Feedback</h1>
-      <h2 class="sub-title">Thanks for your feedback.</h2>
+    </div>
+    <div class="row">
+      <div class="col-12 blog-body">
+        <h2 class="sub-title">Thanks for your feedback.</h2>
+        <a href="/products/hub" class="back-link"><i class="fa fa-angle-left"></i>Back</a>
+      </div>
     </div>
   </div>
 
