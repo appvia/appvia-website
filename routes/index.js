@@ -210,4 +210,10 @@ router.get('/privacy-policy', function(req, res) {
   });
 });
 
+//redirects
+router.get('/about', function(req, res) {
+  res.redirect(301, '/why-appvia')
+});
+
+
 module.exports = router;
