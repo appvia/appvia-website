@@ -183,6 +183,12 @@ router.get('/careers/:jobpost', function(req, res) {
     })
     .then(response => {
       let data = response.data.story
+      var security_clearance;
+      try {
+        security_clearance = renderStory(data.content.security_clearance);
+      } catch {
+        security_clearance = false;
+      }
       res.render('job.html', {
         title: `Appvia: Blog - ${data.name}`,
         about: renderStory(data.content.About),
@@ -190,7 +196,7 @@ router.get('/careers/:jobpost', function(req, res) {
         key_responsibilities: renderStory(data.content.key_responsibilities),
         attributes: renderStory(data.content.attributes),
         remuneration: renderStory(data.content.remuneration),
-        security_clearance: renderStory(data.content.security_clearance),
+        security_clearance,
         data: data,
         published: convertTime
       });
