@@ -17,7 +17,7 @@
     "express": "^4.16.3",
     "express-http-to-https": "^1.1.4",
     "jquery-serializeobject": "^1.0.0",
-    "jsforce": "^1.9.1",
+    "jsforce": "^1.9.3",
     "moment": "^2.24.0",
     "morgan": "^1.9.1",
     "nunjucks": "^3.1.3",
