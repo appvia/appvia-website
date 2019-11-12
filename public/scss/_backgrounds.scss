@@ -16,34 +16,43 @@
 
 body.background-1:after{
   background-image: url("/assets/img/containers-bg.png");
-  @include background-size()
+  @include background-size();
+  background-color: $black;
 }
 body.background-2:after{
   background-image: url("/assets/img/bg-1.jpg");
-  @include background-size()
+  @include background-size();
+  background-color: $black;
 }
-body.background-3:after{
+body.background-3:after,
+div.background-3{
   background-image: url("/assets/img/bg-2.jpg");
-  @include background-size()
+  @include background-size();
+  background-color: $red;
 }
 body.background-4:after{
   background-image: url("/assets/img/bg-3.jpg");
   @include background-size()
+  background-color: $black;
 }
 body.background-5:after{
   background-image: url("/assets/img/bg-4.jpg");
-  @include background-size()
+  @include background-size();
+  background-color: $black;
 }
 body.background-6:after{
   background-image: url("/assets/img/bg-5.jpg");
-  @include background-size()
+  @include background-size();
+  background-color: $black;
 }
 body.background-7:after{
   background-image: url("/assets/img/bg-6.jpg");
-  @include background-size()
+  @include background-size();
+  background-color: $black;
 }
 
 body.fixed-background:after{
   background-image: url("/assets/img/bg-4.jpg");
-  @include background-size()
+  @include background-size();
+  background-color: $black;
 }
