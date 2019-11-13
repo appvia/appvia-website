@@ -7,3 +7,44 @@ footer{
     }
   }
 }
+.ce-logo{
+  width: 120px;
+  position: absolute;
+  bottom: 2em;
+  left: 0;
+  margin-left: 1em;
+}
+
+
+//medium
+@media screen and (min-width:575.99px) and (max-width:768px){
+  .ce-logo{
+    width: 80px;
+    position: absolute;
+    bottom: 2em;
+    right: 0 !important;
+    left: inherit;
+    bottom: 0;
+  }
+}
+@media screen and (min-width:321px) and (max-width: 575.98px){
+  .ce-logo{
+    width: 80px;
+    position: absolute;
+    bottom: 2em;
+    right: 0 !important;
+    left: inherit;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .ce-logo{
+    width: 80px;
+    position: absolute;
+    bottom: 2em;
+    right: 0 !important;
+    left: inherit;
+    bottom: 0;
+  }
+}
